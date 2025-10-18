@@ -166,15 +166,6 @@ ISSUE    : Squiggles are connected to each other by a straight line. Each drag
 		   of the mouse should be a separate squiggle. Possibly
            the issue is with the representation of the squiggles in the Model.
 --------------------------------------------------------------------------
---------------------------------------------------------------------------
-TYPE     : BUG BUG1.006 : phanale5 : Started
-NAME     : Circle drawing is broken
-PRIORITY : 1
-ESTIMATE : 2 days   ACTUAL :
-ISSUE    : The first click should specify the center of the circle, with
-           a drag for the radius. This is not the case in the current
-           implementation.
---------------------------------------------------------------------------
 
 # COMPLETED USER STORIES/BUGS BELOW ###########################################
 --------------------------------------------------------------------------
@@ -186,6 +177,15 @@ AS A     : user
 I WANT   : To click the center of the circle, drag, and release to specify
            a circle to be drawn in the current style.
 SO THAT  : I can add circles to my canvas
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG BUG1.006 : phanale5 : Complete
+NAME     : Circle drawing is broken
+PRIORITY : 1
+ESTIMATE : 2 days   ACTUAL : 10 minutes
+ISSUE    : The first click should specify the center of the circle, with
+           a drag for the radius. This is not the case in the current
+           implementation.
 --------------------------------------------------------------------------
 
 # OMITTED USER STORIES/BUGS BELOW   ###########################################
