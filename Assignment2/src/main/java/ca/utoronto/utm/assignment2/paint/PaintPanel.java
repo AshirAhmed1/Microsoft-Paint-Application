@@ -56,7 +56,9 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
                 } else if (mouseEventType.equals(MouseEvent.MOUSE_RELEASED)) {
                     if(this.circle!=null){
                                 // Problematic notion of radius and centre!!
-                                double radius = Math.abs(this.circle.getCentre().x-mouseEvent.getX());
+                                double dx = this.circle.getCentre().x-mouseEvent.getX();
+                                double dy = this.circle.getCentre().y-mouseEvent.getY();
+                                double radius = Math.sqrt(dx*dx+dy*dy);
                                 this.circle.setRadius(radius);
                                 this.model.addCircle(this.circle);
                                 System.out.println("Added Circle");
@@ -96,10 +98,11 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
 
                 g2d.setFill(Color.GREEN);
                 for(Circle c: this.model.getCircles()){
-                        double x = c.getCentre().x;
-                        double y = c.getCentre().y;
                         double radius = c.getRadius();
-                        g2d.fillOval(x, y, radius, radius);
+                        double x = c.getCentre().x - radius;
+                        double y = c.getCentre().y - radius;
+                        double diameter = radius * 2;
+                        g2d.fillOval(x, y, diameter, diameter);
                 }
     }
 }

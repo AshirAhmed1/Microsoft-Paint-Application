@@ -1,15 +1,15 @@
 # Fill in, commit and push each day.
-Member name:      email:     utorid:   
+Member name: Alexander Phan      email: alexanderjacob.phan@mail.utoronto.ca    utorid: phanale5
 
 Oct 15,2025
-	What I did yesterday:
-	What I will do today:
+	What I did yesterday: Read over assignment 2
+	What I will do today: Plan and prepare for sprint1
 	Obstacles I face:
 
 Oct 16,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Plan and prepare sprint1
+	What I will do today: Fix Bug1.006 and work of User1.002
+	Obstacles I face: Familiarizing myself with the GraphicContext Class
 
 Oct 17,2025
 	What I did yesterday:
