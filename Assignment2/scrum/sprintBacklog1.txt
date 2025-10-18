@@ -6,10 +6,10 @@
 # Sprint 1 Backlog UserStories go below
 
 --------------------------------------------------------------------------
-TYPE     : BUG BUG1.001 : ahme1250 : Started
+TYPE     : BUG BUG1.001 : ahme1250 : Completed
 NAME     : Icons instead of text for drawing mode selection
 PRIORITY : 1 
-ESTIMATE : 2 days   ACTUAL :
+ESTIMATE : 2 days   ACTUAL : 30 mins
 ISSUE    : Would be nice to have icons instead of "Circle", "Rectangle", ...
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------

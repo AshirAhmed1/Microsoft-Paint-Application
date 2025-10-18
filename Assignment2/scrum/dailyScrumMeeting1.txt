@@ -8,17 +8,17 @@ Oct 15,2025
 
 Oct 16,2025
 	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I will do today: Set up the Assignment 2 environment with group mates
+	Obstacles I face: Needed to figure out and educate myself on branching
 
 Oct 17,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Set up the Assignment 2 environment with group mates
+	What I will do today: BUG1.001
+	Obstacles I face: I had to learn how JavaFX locates files in the classpath and restructure the project’s folder so the icons would load at runtime.
 
 Oct 18,2025
-	What I did yesterday:
-	What I will do today:
+	What I did yesterday: BUG1.001
+	What I will do today: USER STORY US1.003
 	Obstacles I face:
 
 Oct 19,2025
