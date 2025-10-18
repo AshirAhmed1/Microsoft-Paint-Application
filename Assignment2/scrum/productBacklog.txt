@@ -165,7 +165,7 @@ I WANT   : To click the center of the circle, drag, and release to specify
 SO THAT  : I can add circles to my canvas
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US1.002 : phanale5 : Started
+TYPE     : USER STORY US1.002 : phanale5 : Complete
 NAME     : Draw Circle Feedback
 PRIORITY : 2
 ESTIMATE : 2 days   ACTUAL : 30 minutes
