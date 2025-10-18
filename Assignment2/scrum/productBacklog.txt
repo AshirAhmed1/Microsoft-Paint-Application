@@ -16,20 +16,6 @@
 # as appropriate.
 
 --------------------------------------------------------------------------
-TYPE     : USER STORY US1.002 : phanale5 : Started
-NAME     : Draw Circle Feedback
-PRIORITY : 2 
-ESTIMATE : 2 days   ACTUAL :
-AS A     : user
-I WANT   : As a user is specifying a Circle, during the drag, a 'current'
-           circle should be on display. As the user drags, the 'current'
-           circle changes in real time so that a circle is drawn with
-           centre at users initial circle click, with radius out to
-           the current dragged mouse position.
-SO THAT  : I can see the circle I am about to build on release of the mouse
-           button.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
 TYPE     : USER STORY US1.003 : ahme1250 : Started
 NAME     : Draw Rectangle
 PRIORITY : 2
@@ -177,6 +163,20 @@ AS A     : user
 I WANT   : To click the center of the circle, drag, and release to specify
            a circle to be drawn in the current style.
 SO THAT  : I can add circles to my canvas
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US1.002 : phanale5 : Started
+NAME     : Draw Circle Feedback
+PRIORITY : 2
+ESTIMATE : 2 days   ACTUAL : 30 minutes
+AS A     : user
+I WANT   : As a user is specifying a Circle, during the drag, a 'current'
+           circle should be on display. As the user drags, the 'current'
+           circle changes in real time so that a circle is drawn with
+           centre at users initial circle click, with radius out to
+           the current dragged mouse position.
+SO THAT  : I can see the circle I am about to build on release of the mouse
+           button.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 TYPE     : BUG BUG1.006 : phanale5 : Complete

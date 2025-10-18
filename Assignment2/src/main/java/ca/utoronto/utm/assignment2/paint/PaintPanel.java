@@ -50,12 +50,26 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
                      Point centre = new Point(mouseEvent.getX(), mouseEvent.getY());
                         this.circle=new Circle(centre, 0);
                 } else if (mouseEventType.equals(MouseEvent.MOUSE_DRAGGED)) {
+                    double dx = this.circle.getCentre().x-mouseEvent.getX();
+                    double dy = this.circle.getCentre().y-mouseEvent.getY();
+                    double radius = Math.sqrt(dx*dx+dy*dy);
+                    this.circle.setRadius(radius);
+
+                    // Shows the circle while dragging
+                    this.update(this.model, null);
+                    GraphicsContext g2d = this.getGraphicsContext2D();
+                    g2d.setFill(Color.GREEN);
+                    double x = this.circle.getCentre().x - radius;
+                    double y = this.circle.getCentre().y - radius;
+                    double diameter = radius * 2;
+                    g2d.fillOval(x, y, diameter, diameter);
+
+
 
                 } else if (mouseEventType.equals(MouseEvent.MOUSE_MOVED)) {
 
                 } else if (mouseEventType.equals(MouseEvent.MOUSE_RELEASED)) {
                     if(this.circle!=null){
-                                // Problematic notion of radius and centre!!
                                 double dx = this.circle.getCentre().x-mouseEvent.getX();
                                 double dy = this.circle.getCentre().y-mouseEvent.getY();
                                 double radius = Math.sqrt(dx*dx+dy*dy);
