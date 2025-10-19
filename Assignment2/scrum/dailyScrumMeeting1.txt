@@ -19,12 +19,12 @@ Oct 17,2025
 Oct 18,2025
 	What I did yesterday: BUG1.001
 	What I will do today: USER STORY US1.003
-	Obstacles I face:
+	Obstacles I face: No obstacles
 
 Oct 19,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Created and completed a Rectangle class
+	What I will do today: Finish off USER STORY US1.003
+	Obstacles I face: Going through each file to see what needed to be changed/added in order for US1.003 to be complete accordingly
 
 Oct 20,2025
 	What I did yesterday:
