@@ -13,18 +13,18 @@ Oct 16,2025
 
 Oct 17,2025
 	What I did yesterday: Set up the Assignment 2 environment with group mates
-	What I will do today: BUG1.001
+	What I will do today: Complete BUG1.001
 	Obstacles I face: I had to learn how JavaFX locates files in the classpath and restructure the project’s folder so the icons would load at runtime.
 
 Oct 18,2025
-	What I did yesterday: BUG1.001
-	What I will do today: USER STORY US1.003
-	Obstacles I face: No obstacles
+	What I did yesterday: Completed BUG1.001
+	What I will do today: Complete USER STORY US1.003
+	Obstacles I face: Going through each file to see what needed to be changed/added in order for US1.003 to be complete accordingly
 
 Oct 19,2025
-	What I did yesterday: Created and completed a Rectangle class
-	What I will do today: Finish off USER STORY US1.003
-	Obstacles I face: Going through each file to see what needed to be changed/added in order for US1.003 to be complete accordingly
+	What I did yesterday: Completed USER STORY US1.003
+	What I will do today: Check in with groupmates as I have completed my individual tasks for the week
+	Obstacles I face: No obstacles
 
 Oct 20,2025
 	What I did yesterday:
