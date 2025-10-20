@@ -40,7 +40,7 @@ ISSUE    : The first click should specify the center of the circle, with
            implementation.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US1.002 : phanale5 : Started
+TYPE     : USER STORY US1.002 : phanale5 : Completed
 NAME     : Draw Circle Feedback
 PRIORITY : 2
 ESTIMATE : 2 days   ACTUAL : 30 minutes
