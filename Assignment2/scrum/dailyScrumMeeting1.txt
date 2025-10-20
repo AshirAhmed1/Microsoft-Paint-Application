@@ -1,5 +1,5 @@
 # Fill in, commit and push each day.
-Member name:      email:     utorid:   
+Member name: Ashir Ahmed      email: ashir.ahmed@mail.utoronto.ca     utorid: ahme1250
 
 Oct 15,2025
 	What I did yesterday:
@@ -27,9 +27,9 @@ Oct 19,2025
 	Obstacles I face: No obstacles
 
 Oct 20,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Checked in with groupmates
+	What I will do today: Check in with groupmates as I have completed my individual tasks for the week
+	Obstacles I face: No obstacles
 
 Oct 21,2025
 	What I did yesterday:
