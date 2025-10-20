@@ -95,6 +95,16 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
                     this.rectangle.setWidth(dx);
                     this.rectangle.setHeight(dy);
 
+
+                    // Shows the rectangle while dragging
+                    this.update(this.model, null);
+                    GraphicsContext g2d = this.getGraphicsContext2D();
+                    g2d.setFill(Color.GREEN);
+                    double x = this.rectangle.getWidth();
+                    double y = this.rectangle.getHeight();
+                    Point topleft = this.rectangle.getTop_left();
+                    g2d.fillRect(topleft.x, topleft.y, x, y);
+
                 }
                 else if (mouseEventType.equals(MouseEvent.MOUSE_RELEASED)) {
                     if (this.rectangle != null) {
