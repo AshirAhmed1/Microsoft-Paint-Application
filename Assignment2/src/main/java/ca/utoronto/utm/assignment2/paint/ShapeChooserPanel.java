@@ -28,7 +28,13 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
                     button.setMinWidth(100);
                     this.add(button, 0, row);
                     row++;
-                    button.setOnAction(this);
+                    button.setOnAction(actionEvent -> {
+                        for (javafx.scene.Node n : this.getChildren()) {
+                            n.setStyle("");
+                        }
+                        button.setStyle("-fx-background-color: skyblue;");
+                        view.setMode(label);
+                    });
                 }
         }
 
