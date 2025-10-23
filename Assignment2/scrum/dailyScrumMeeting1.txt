@@ -37,9 +37,9 @@ Oct 21,2025
 	Obstacles I face: No obstacles
 
 Oct 22,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Checked in with groupmates
+	What I will do today: Check in with groupmates as I have completed my individual tasks for the week
+	Obstacles I face: No obstacles
 
 Oct 23,2025
 	What I did yesterday:
