@@ -13,6 +13,9 @@ import java.util.Observer;
 public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Observer {
     private String mode="Circle";
     private PaintModel model;
+    // Used while the user is drawing a squiggle
+    private Squiggle currentSquiggle;
+
 
     public Circle circle; // This is VERY UGLY, should somehow fix this!!
     public Rectangle rectangle;
@@ -124,10 +127,39 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
 
             case "Square": break;
             case "Squiggle":
-                if (mouseEventType.equals(MouseEvent.MOUSE_DRAGGED)) {
-                    this.model.addPoint(new Point(mouseEvent.getX(), mouseEvent.getY()));
+                if (mouseEventType.equals(MouseEvent.MOUSE_PRESSED)) {
+                    // Start a new squiggle stroke
+                    currentSquiggle = new Squiggle();
+                    currentSquiggle.addPoint(new Point(mouseEvent.getX(), mouseEvent.getY()));
+
+                } else if (mouseEventType.equals(MouseEvent.MOUSE_DRAGGED)) {
+                    // Add points while dragging and show live drawing
+                    if (currentSquiggle != null) {
+                        currentSquiggle.addPoint(new Point(mouseEvent.getX(), mouseEvent.getY()));
+
+                        // Redraw all completed squiggles + other shapes
+                        this.update(this.model, null);
+
+                        // Draw the in-progress squiggle on top
+                        GraphicsContext g2d = this.getGraphicsContext2D();
+                        g2d.setStroke(Color.RED);
+                        ArrayList<Point> pts = currentSquiggle.getPoints();
+                        for (int i = 0; i < pts.size() - 1; i++) {
+                            Point p1 = pts.get(i);
+                            Point p2 = pts.get(i + 1);
+                            g2d.strokeLine(p1.x, p1.y, p2.x, p2.y);
+                        }
+                    }
+
+                } else if (mouseEventType.equals(MouseEvent.MOUSE_RELEASED)) {
+                    // Finalize and store squiggle
+                    if (currentSquiggle != null) {
+                        this.model.addSquiggle(currentSquiggle);
+                        currentSquiggle = null;
+                    }
                 }
                 break;
+
             case "Polyline": break;
             default: break;
         }
@@ -137,15 +169,17 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
 
                 GraphicsContext g2d = this.getGraphicsContext2D();
                 g2d.clearRect(0, 0, this.getWidth(), this.getHeight());
-                // Draw Lines
-                ArrayList<Point> points = this.model.getPoints();
-
-                g2d.setFill(Color.RED);
-                for(int i=0;i<points.size()-1; i++){
-                        Point p1=points.get(i);
-                        Point p2=points.get(i+1);
-                        g2d.strokeLine(p1.x,p1.y,p2.x,p2.y);
+                // Draw Squiggles
+                g2d.setStroke(Color.RED);
+                for (Squiggle s : this.model.getSquiggles()) {
+                    ArrayList<Point> pts = s.getPoints();
+                    for (int i = 0; i < pts.size() - 1; i++) {
+                        Point p1 = pts.get(i);
+                        Point p2 = pts.get(i + 1);
+                        g2d.strokeLine(p1.x, p1.y, p2.x, p2.y);
+                    }
                 }
+
 
                 // Draw Circles
                 ArrayList<Circle> circles = this.model.getCircles();

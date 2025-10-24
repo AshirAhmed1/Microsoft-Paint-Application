@@ -1,50 +1,51 @@
 # Fill in, commit and push each day.
-Member name:      email:     utorid:   
+Member name: Abdullah AlNabulsi      email: abdullah.alnabulsi@mail.utoronto.ca      utorid: alnabu11
 
-Oct 15,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+Oct 15, 2025
+	What I did yesterday: absolutely nothing, brain still buffering.
+	What I will do today: maybe open IntelliJ… maybe.
+	Obstacles I face: my will to exist after seeing three other deadlines.
 
-Oct 16,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+Oct 16, 2025
+	What I did yesterday: looked at A2 overview and immediately closed it.
+	What I will do today: pretend I’m planning, in reality watch random coding videos.
+	Obstacles I face: pure procrastination energy, unmatched.
 
-Oct 17,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+Oct 17, 2025
+	What I did yesterday: kept saying "I’ll start tomorrow."
+	What I will do today: spoiler, I didn’t.
+	Obstacles I face: time blindness and bad decisions.
 
-Oct 18,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+Oct 18, 2025
+	What I did yesterday: small victory—opened my repo folder once.
+	What I will do today: attempt to "understand the assignment" for 3 hours.
+	Obstacles I face: every other course wanting attention at the same time.
 
-Oct 19,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+Oct 19, 2025
+	What I did yesterday: thought about writing code while making noodles.
+	What I will do today: probably do the noodles part again.
+	Obstacles I face: other assignments, caffeine shortage, and ambition fatigue.
 
-Oct 20,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+Oct 20, 2025
+	What I did yesterday: got haunted by Git branches in my sleep.
+	What I will do today: maybe actually open PaintPanel.java.
+	Obstacles I face: the “maybe” part.
 
-Oct 21,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+Oct 21, 2025
+	What I did yesterday: convinced myself reading Piazza counts as progress.
+	What I will do today: plan to plan to plan.
+	Obstacles I face: still no code, just vibes.
 
-Oct 22,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+Oct 22, 2025
+	What I did yesterday: tried to start but ended up debugging another course’s lab instead.
+	What I will do today: okay for real, set up the branch.
+	Obstacles I face: confusion, exhaustion, and my own curiosity going down rabbit holes.
 
-Oct 23,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+Oct 23, 2025
+	What I did yesterday: nothing worth bragging about.
+	What I will do today: actually did everything—made the branch, fixed the squiggle bug,
+	                     added live drawing, updated backlogs and scrums. it finally works.
+	Obstacles I face: staying awake, IntelliJ freezing, and my own disbelief that I finished.
 
 Oct 24,2025
 	What I did yesterday:
