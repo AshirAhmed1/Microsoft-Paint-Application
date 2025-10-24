@@ -17,7 +17,7 @@ Oct 17,2025
 	Obstacles I face: Learning the functions of mouse events
 
 Oct 18,2025
-	What I did yesterday: Finish User1.002
+	What I did yesterday: Completed User1.002
 	What I will do today: Look over bug1.006 and user1.002 in case of any bugs
 	Obstacles I face: no obstacles
 
@@ -27,24 +27,24 @@ Oct 19,2025
 	Obstacles I face: no obstacles
 
 Oct 20,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Look over completed code
+	What I will do today: Check in with group, individual tasks completed
+	Obstacles I face: no obstacles
 
 Oct 21,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: check in with group
+	What I will do today: Give reminders and help other group members
+	Obstacles I face: no obstacles
 
 Oct 22,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: help group
+	What I will do today: look over and prepare for sprint 2
+	Obstacles I face: no obstacles
 
 Oct 23,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday:Look over and prepare for sprint 2
+	What I will do today: Continue to look over sprint 2
+	Obstacles I face: no obstacles
 
 Oct 24,2025
 	What I did yesterday:

@@ -42,9 +42,9 @@ Oct 22,2025
 	Obstacles I face: No obstacles
 
 Oct 23,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Checked in with groupmates
+	What I will do today: Finalize Sprint1 with groupmates
+	Obstacles I face: No obstacles
 
 Oct 24,2025
 	What I did yesterday:
