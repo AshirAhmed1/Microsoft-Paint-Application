@@ -128,17 +128,31 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
             case "Square": break;
             case "Squiggle":
                 if (mouseEventType.equals(MouseEvent.MOUSE_PRESSED)) {
-                    // start a new squiggle stroke
+                    // Start a new squiggle stroke
                     currentSquiggle = new Squiggle();
                     currentSquiggle.addPoint(new Point(mouseEvent.getX(), mouseEvent.getY()));
+
                 } else if (mouseEventType.equals(MouseEvent.MOUSE_DRAGGED)) {
-                    // add points while dragging
+                    // Add points while dragging and show live drawing
                     if (currentSquiggle != null) {
                         currentSquiggle.addPoint(new Point(mouseEvent.getX(), mouseEvent.getY()));
-                        this.update(this.model, null); // live preview
+
+                        // Redraw all completed squiggles + other shapes
+                        this.update(this.model, null);
+
+                        // Draw the in-progress squiggle on top
+                        GraphicsContext g2d = this.getGraphicsContext2D();
+                        g2d.setStroke(Color.RED);
+                        ArrayList<Point> pts = currentSquiggle.getPoints();
+                        for (int i = 0; i < pts.size() - 1; i++) {
+                            Point p1 = pts.get(i);
+                            Point p2 = pts.get(i + 1);
+                            g2d.strokeLine(p1.x, p1.y, p2.x, p2.y);
+                        }
                     }
+
                 } else if (mouseEventType.equals(MouseEvent.MOUSE_RELEASED)) {
-                    // finish and store the squiggle
+                    // Finalize and store squiggle
                     if (currentSquiggle != null) {
                         this.model.addSquiggle(currentSquiggle);
                         currentSquiggle = null;
