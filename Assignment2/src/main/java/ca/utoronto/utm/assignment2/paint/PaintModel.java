@@ -4,18 +4,27 @@ import java.util.ArrayList;
 import java.util.Observable;
 
 public class PaintModel extends Observable {
-        private ArrayList<Point> points=new ArrayList<Point>();
+        // Store all independent squiggle strokes
+        private final ArrayList<Squiggle> squiggles = new ArrayList<>();
         private ArrayList<Circle> circles=new ArrayList<Circle>();
         private ArrayList<Rectangle> rectangles = new ArrayList<Rectangle>();
 
 
-        public void addPoint(Point p){
-                this.points.add(p);
-                this.setChanged();
-                this.notifyObservers();
+        /**
+         * Add a completed squiggle to the model.
+         * @param s the squiggle to add
+         */
+        public void addSquiggle(Squiggle s) {
+            this.squiggles.add(s);
+            this.setChanged();
+            this.notifyObservers();
         }
-        public ArrayList<Point> getPoints(){
-                return points;
+
+        /**
+         * Return all squiggles currently stored in the model.
+         */
+        public ArrayList<Squiggle> getSquiggles() {
+            return this.squiggles;
         }
 
         public void addCircle(Circle c){
