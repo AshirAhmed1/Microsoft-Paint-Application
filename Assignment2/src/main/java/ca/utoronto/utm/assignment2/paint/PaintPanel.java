@@ -126,6 +126,8 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
 
 
             case "Square": break;
+            case "Triangle": break;
+            case "Oval": break;
             case "Squiggle":
                 if (mouseEventType.equals(MouseEvent.MOUSE_PRESSED)) {
                     // Start a new squiggle stroke
