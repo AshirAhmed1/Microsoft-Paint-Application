@@ -16,10 +16,10 @@
 # as appropriate.
 
 --------------------------------------------------------------------------
-TYPE     : USER STORY US1.003 : ahme1250 : Started
+TYPE     : USER STORY US1.003 : ahme1250 : Completed
 NAME     : Draw Rectangle
 PRIORITY : 2
-ESTIMATE : 2 days    ACTUAL :
+ESTIMATE : 2 days    ACTUAL : 35 mins
 AS A     : user
 I WANT   : To click on one corner of a rectangle, drag, and release to 
 		   specify two corners of a rectangle to be drawn in the current style.
@@ -105,10 +105,10 @@ I WANT   : To be able to select the current line thickness, to be applied
 SO THAT  : 
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG BUG1.001 : UTORID : NotStarted 
+TYPE     : BUG BUG1.001 : ahme1250 : Completed
 NAME     : Icons instead of text for drawing mode selection
 PRIORITY : 1
-ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :
+ESTIMATE : 2 days    ACTUAL : 30 mins
 ISSUE    : Would be nice to have icons instead of "Circle", "Rectangle", ...
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
