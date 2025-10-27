@@ -47,24 +47,24 @@ Oct 23,2025
 	Obstacles I face: No obstacles
 
 Oct 24,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Successfully reviewed and submitted our Sprint1
+	What I will do today: Discuss with groupmates about the next sprint
+	Obstacles I face: No obstacles
 
 Oct 25,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Discuss with groupmates about the next sprint
+	What I will do today: Hop on call for an organization meeting with group mates
+	Obstacles I face: No obstacles
 
 Oct 26,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Hopped on call for an organization meeting with group mates
+	What I will do today: Complete BUG2.001
+	Obstacles I face: No obstacles, everything was familiar
 
 Oct 27,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Did BUG2.001
+	What I will do today: Complete US2.001
+	Obstacles I face: No obstacles, everything was familiar
 
 Oct 28,2025
 	What I did yesterday:

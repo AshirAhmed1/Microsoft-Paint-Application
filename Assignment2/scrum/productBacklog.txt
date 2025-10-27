@@ -189,4 +189,26 @@ ISSUE    : The first click should specify the center of the circle, with
 --------------------------------------------------------------------------
 
 # OMITTED USER STORIES/BUGS BELOW   ###########################################
+--------------------------------------------------------------------------
+TYPE     : BUG BUG2.001 : ahme1250 : Completed
+NAME     : Added Triangle, Oval, and Square Buttons with Icons
+PRIORITY : 1
+ESTIMATE : 2 days   ACTUAL : 10 mins
+ISSUE    : Previously, the ShapeChooserPanel only displayed text buttons
+           for existing shapes. Updated the panel to include Triangle,
+           Oval, and Square buttons with their corresponding icons,
+           improving usability and consistency with other shape options.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US2.001 : ahme1250 : Completed
+NAME     : Draw Square and Draw Square Feedback
+PRIORITY : 2
+ESTIMATE : 2 days    ACTUAL : 1 hour
+AS A     : user
+I WANT   : To click on one corner of a square, drag, and release to
+           specify two corners of a square to be drawn in the current style,
+           and to display the square mid construction while it is being drawn.
+SO THAT  : I can see the square I am about to build and accurately
+           add it to my canvas upon releasing the mouse button.
+--------------------------------------------------------------------------
 

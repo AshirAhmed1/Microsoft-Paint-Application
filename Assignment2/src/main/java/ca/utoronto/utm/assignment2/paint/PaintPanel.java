@@ -19,6 +19,7 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
 
     public Circle circle; // This is VERY UGLY, should somehow fix this!!
     public Rectangle rectangle;
+    public Square square;
 
     public PaintPanel(PaintModel model) {
         super(300, 300);
@@ -125,7 +126,39 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
 
 
 
-            case "Square": break;
+            case "Square":
+                if(mouseEventType.equals(MouseEvent.MOUSE_PRESSED)) {
+                    System.out.println("Started Square");
+                    Point top_left = new Point(mouseEvent.getX(), mouseEvent.getY());
+                    this.square = new Square(top_left, 0);
+                }
+                else if (mouseEventType.equals(MouseEvent.MOUSE_DRAGGED)) {
+                    double dx = mouseEvent.getX() - this.square.getTop_left().x;
+                    double dy = mouseEvent.getY() - this.square.getTop_left().y;
+                    double side = Math.max(Math.abs(dx), Math.abs(dy));
+                    this.square.setSideLength(side);
+
+                    // Shows the square while dragging
+                    this.update(this.model, null);
+                    GraphicsContext g2d = this.getGraphicsContext2D();
+                    g2d.setFill(Color.GREEN);
+                    Point topleft = this.square.getTop_left();
+                    g2d.fillRect(topleft.x, topleft.y, side, side);
+                }
+
+                else if (mouseEventType.equals(MouseEvent.MOUSE_RELEASED)) {
+                    if (this.square != null) {
+                        double dx = mouseEvent.getX() - this.square.getTop_left().x;
+                        double dy = mouseEvent.getY() - this.square.getTop_left().y;
+                        double side = Math.max(Math.abs(dx), Math.abs(dy));
+                        this.square.setSideLength(side);
+                        this.model.addSquare(this.square);
+                        System.out.println("Added Square");
+                        this.square = null;
+                    }
+                }
+                break;
+
             case "Triangle": break;
             case "Oval": break;
             case "Squiggle":
@@ -203,5 +236,15 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
                 {
                     g2d.fillRect(x.getTop_left().x, x.getTop_left().y, x.getWidth(), x.getHeight());
                 }
+
+                //Draw Squares
+                ArrayList<Square> squares = this.model.getSquares();
+                g2d.setFill(Color.GREEN);
+
+                for (Square x : squares)
+                {
+                    g2d.fillRect(x.getTop_left().x, x.getTop_left().y, x.getSideLength(), x.getSideLength());
+                }
+
     }
 }
