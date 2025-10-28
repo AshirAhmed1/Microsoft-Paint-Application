@@ -9,7 +9,7 @@ public class PaintModel extends Observable {
         private ArrayList<Circle> circles=new ArrayList<Circle>();
         private ArrayList<Rectangle> rectangles = new ArrayList<Rectangle>();
         private ArrayList<Square> squares = new ArrayList<Square>();
-
+        private ArrayList<Oval> ovals = new ArrayList<Oval>();
 
         /**
          * Add a completed squiggle to the model.
@@ -59,4 +59,12 @@ public class PaintModel extends Observable {
         {
             return this.squares;
         }
+
+        public void addOval(ca.utoronto.utm.assignment2.paint.Oval o){
+            this.ovals.add(o);
+            this.setChanged();
+            this.notifyObservers();
+        }
+
+        public ArrayList<ca.utoronto.utm.assignment2.paint.Oval> getOvals(){ return this.ovals; }
 }

@@ -20,6 +20,7 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
     public Circle circle; // This is VERY UGLY, should somehow fix this!!
     public Rectangle rectangle;
     public Square square;
+    public Oval oval;
 
     public PaintPanel(PaintModel model) {
         super(300, 300);
@@ -160,7 +161,40 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
                 break;
 
             case "Triangle": break;
-            case "Oval": break;
+            case "Oval":
+                if(mouseEventType.equals(MouseEvent.MOUSE_PRESSED)) {
+                    System.out.println("Started Oval");
+                    Point topLeft = new Point(mouseEvent.getX(), mouseEvent.getY());
+                    this.oval=new ca.utoronto.utm.assignment2.paint.Oval(topLeft, 0, 0);
+
+                } else if (mouseEventType.equals(MouseEvent.MOUSE_DRAGGED)) {
+                    double dx = this.oval.getTopLeft().x-mouseEvent.getX();
+                    double dy = this.oval.getTopLeft().y-mouseEvent.getY();
+                    this.oval.setWidth(Math.abs(dx));
+                    this.oval.setHeight(Math.abs(dy));
+
+                    // Shows the oval while dragging
+                    this.update(this.model, null);
+                    GraphicsContext g2d = this.getGraphicsContext2D();
+                    g2d.setFill(Color.GREEN);
+                    double x = this.oval.getTopLeft().x;
+                    double y = this.oval.getTopLeft().y;
+                    double width =  this.oval.getWidth();
+                    double height = this.oval.getHeight();
+                    g2d.fillOval(x, y, width, height);
+
+                } else if (mouseEventType.equals(MouseEvent.MOUSE_RELEASED)) {
+                    if(this.oval!=null){
+                        double dx = this.oval.getTopLeft().x-mouseEvent.getX();
+                        double dy = this.oval.getTopLeft().y-mouseEvent.getY();
+                        this.oval.setWidth(Math.abs(dx));
+                        this.oval.setHeight(Math.abs(dy));
+                        this.model.addOval(this.oval);
+                        System.out.println("Added Oval");
+                        this.oval=null;
+                    }
+                }
+                break;
             case "Squiggle":
                 if (mouseEventType.equals(MouseEvent.MOUSE_PRESSED)) {
                     // Start a new squiggle stroke
@@ -246,5 +280,16 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
                     g2d.fillRect(x.getTop_left().x, x.getTop_left().y, x.getSideLength(), x.getSideLength());
                 }
 
+                // Draw Ovals
+                ArrayList<ca.utoronto.utm.assignment2.paint.Oval> ovals = this.model.getOvals();
+
+                g2d.setFill(Color.GREEN);
+                for(ca.utoronto.utm.assignment2.paint.Oval ov: this.model.getOvals()){
+                    double dx = ov.getTopLeft().x;
+                    double dy = ov.getTopLeft().y;
+                    double width =  ov.getWidth(); // diameter
+                    double height = ov.getHeight();
+                    g2d.fillOval(dx, dy, width, height);
+                }
     }
 }
