@@ -21,6 +21,7 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
     public Rectangle rectangle;
     public Square square;
     public Oval oval;
+    public Triangle triangle;
 
     public PaintPanel(PaintModel model) {
         super(300, 300);
@@ -160,7 +161,43 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
                 }
                 break;
 
-            case "Triangle": break;
+            case "Triangle":
+                if(mouseEventType.equals(MouseEvent.MOUSE_PRESSED)) {
+                    System.out.println("Started Triangle");
+                    Point bottom_left = new Point(mouseEvent.getX(), mouseEvent.getY());
+                    this.triangle = new ca.utoronto.utm.assignment2.paint.Triangle(bottom_left, 0, 0);
+
+                } else if (mouseEventType.equals(MouseEvent.MOUSE_DRAGGED)) {
+                    double dx = mouseEvent.getX() - this.triangle.getbottom_left().x;
+                    double dy = mouseEvent.getY() - this.triangle.getbottom_left().y;
+                    this.triangle.setWidth(Math.abs(dx));
+                    this.triangle.setHeight(Math.abs(dy));
+
+                    // Shows the triangle while dragging
+                    this.update(this.model, null);
+                    GraphicsContext g2d = this.getGraphicsContext2D();
+                    g2d.setFill(Color.GREEN);
+                    double x = this.triangle.getbottom_left().x;
+                    double y = this.triangle.getbottom_left().y;
+                    double width =  this.triangle.getWidth();
+                    double height = this.triangle.getHeight();
+                    double[] xs = {x, x + width, x + width / 2.0};
+                    double[] ys = {y + height, y + height, y};
+                    g2d.fillPolygon(xs, ys, 3);
+
+
+                } else if (mouseEventType.equals(MouseEvent.MOUSE_RELEASED)) {
+                    if(this.triangle!=null){
+                        double dx = this.triangle.getbottom_left().x - mouseEvent.getX();
+                        double dy =  this.triangle.getbottom_left().y - mouseEvent.getY();
+                        this.triangle.setWidth(Math.abs(dx));
+                        this.triangle.setHeight(Math.abs(dy));
+                        this.model.addTriangle(this.triangle);
+                        System.out.println("Added Triangle");
+                        this.triangle=null;
+                    }
+                }
+                break;
             case "Oval":
                 if(mouseEventType.equals(MouseEvent.MOUSE_PRESSED)) {
                     System.out.println("Started Oval");
@@ -291,5 +328,19 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
                     double height = ov.getHeight();
                     g2d.fillOval(dx, dy, width, height);
                 }
+                // Draw Triangles
+                ArrayList<ca.utoronto.utm.assignment2.paint.Triangle> triangles = this.model.getTriangles();
+
+                g2d.setFill(Color.GREEN);
+                for (Triangle t : this.model.getTriangles()) {
+                    double x = t.getbottom_left().x;
+                    double y = t.getbottom_left().y;
+                    double w = t.getWidth();
+                    double h = t.getHeight();
+                    double[] xs = {x, x + w, x + w / 2.0};
+                    double[] ys = {y + h, y + h, y};
+                    g2d.fillPolygon(xs, ys, 3);
+                }
+        }
     }
-}
+
