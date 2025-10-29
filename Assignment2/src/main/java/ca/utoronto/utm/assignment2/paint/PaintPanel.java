@@ -160,7 +160,9 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
                 }
                 break;
 
-            case "Triangle": break;
+            case "Triangle":
+
+                break;
             case "Oval":
                 if(mouseEventType.equals(MouseEvent.MOUSE_PRESSED)) {
                     System.out.println("Started Oval");
