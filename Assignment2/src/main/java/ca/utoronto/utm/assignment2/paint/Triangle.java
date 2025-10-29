@@ -15,7 +15,7 @@ public class Triangle {
     {
         return this.bottom_left;
     }
-    public void setbotton_left(Point botton_left)
+    public void setbottom_left(Point botton_left)
     {
         this.bottom_left = botton_left;
     }
