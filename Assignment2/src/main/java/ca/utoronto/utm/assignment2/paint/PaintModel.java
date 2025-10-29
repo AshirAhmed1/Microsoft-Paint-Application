@@ -75,9 +75,10 @@ public class PaintModel extends Observable {
         this.setChanged();
         this.notifyObservers();
     }
-
     public ArrayList<ca.utoronto.utm.assignment2.paint.Triangle> getTriangles() {
         return this.triangles;
     }
 }
+
+
 
