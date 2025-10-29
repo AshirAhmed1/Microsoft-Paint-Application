@@ -2,14 +2,18 @@ package ca.utoronto.utm.assignment2.paint;
 
 public class Triangle {
     private Point bottom_left;
-    private double width;
+    private double base;
+    private double side1; //longer side for height
+    private double side2;
     private double height;
 
-    public Triangle(Point bottom_left, double width, double height)
+    public Triangle(Point bottom_left, double base, double side1, double side2)
     {
         this.bottom_left = bottom_left;
-        this.width = width;
-        this.height = height;
+        this.base = base;
+        this.side1 = side1;
+        this.side2 = side2;
+        this.height = Math.sqrt(side1 * side1 - (base / 2) * (base / 2));
     }
     public Point getbottom_left()
     {
@@ -19,17 +23,33 @@ public class Triangle {
     {
         this.bottom_left = botton_left;
     }
-    public void setWidth(double width)
+    public void setbase(double base)
     {
-        this.width = width;
+        this.base = base;
+    }
+    public void setside1(double side1)
+    {
+        this.side1 = side1;
+    }
+    public void setside2(double side2)
+    {
+        this.side2 = side2;
     }
     public void setHeight(double height)
     {
         this.height = height;
     }
-    public double getWidth()
+    public double getbase()
     {
-        return this.width;
+        return this.base;
+    }
+    public double getside1()
+    {
+        return this.side1;
+    }
+    public double getside2()
+    {
+        return this.side2;
     }
     public double getHeight()
     {
