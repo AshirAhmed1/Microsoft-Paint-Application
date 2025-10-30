@@ -11,7 +11,7 @@ public class PaintModel extends Observable {
     private ArrayList<Square> squares = new ArrayList<Square>();
     private ArrayList<Oval> ovals = new ArrayList<Oval>();
     private ArrayList<Triangle> triangles = new ArrayList<>();
-
+    private Object preview;
     /**
      * Add a completed squiggle to the model.
      *
@@ -77,6 +77,22 @@ public class PaintModel extends Observable {
     }
     public ArrayList<ca.utoronto.utm.assignment2.paint.Triangle> getTriangles() {
         return this.triangles;
+    }
+
+    public Object getPreview() {
+        return preview;
+    }
+
+    public void setPreview(Object s) {
+        this.preview = s;
+        this.setChanged();
+        this.notifyObservers();
+    }
+
+    public void clearPreview() {
+        this.preview = null;
+        this.setChanged();
+        this.notifyObservers();
     }
 }
 
