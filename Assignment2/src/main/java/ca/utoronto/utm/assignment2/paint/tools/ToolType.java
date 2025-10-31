@@ -6,5 +6,6 @@ public enum ToolType {
     SQUARE,
     TRIANGLE,
     OVAL,
-    SQUIGGLE
+    SQUIGGLE,
+    POLYLINE
 }
