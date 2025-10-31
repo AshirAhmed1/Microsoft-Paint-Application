@@ -1,49 +1,62 @@
 package ca.utoronto.utm.assignment2.paint;
+
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
-
+import ca.utoronto.utm.assignment2.paint.tools.ToolType;
 
 public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEvent> {
 
-        private View view;
+    private View view;
 
-        public ShapeChooserPanel(View view) {
+    public ShapeChooserPanel(View view) {
+        this.view = view;
 
-                this.view = view;
+        String[] buttonLabels = {"Circle", "Rectangle", "Square", "Triangle", "Oval", "Squiggle", "Polyline"};
 
-                String[] buttonLabels = {"Circle", "Rectangle", "Square", "Triangle", "Oval", "Squiggle", "Polyline"};
+        int row = 0;
+        for (String label : buttonLabels) {
+            Image icon = new Image(getClass().getResourceAsStream("/icons/" + label.toLowerCase() + ".png"));
+            ImageView iconView = new ImageView(icon);
+            iconView.setFitWidth(24);
+            iconView.setFitHeight(24);
 
-                int row = 0;
-                for (String label : buttonLabels) {
-                    Image icon = new Image(getClass().getResourceAsStream("/icons/" + label.toLowerCase() + ".png"));
-                    ImageView iconView = new ImageView(icon);
-                    iconView.setFitWidth(24);
-                    iconView.setFitHeight(24);
+            Button button = new Button(label, iconView);
+            button.setMinWidth(100);
+            this.add(button, 0, row);
+            row++;
 
-                    Button button = new Button(label, iconView);
-                    button.setMinWidth(100);
-                    this.add(button, 0, row);
-                    row++;
-                    button.setOnAction(actionEvent -> {
-                        for (javafx.scene.Node n : this.getChildren()) {
-                            n.setStyle("");
-                        }
-                        button.setStyle("-fx-background-color: skyblue;");
-                        view.setMode(label);
-                    });
+            // Highlight selected button and set active Tool
+            button.setOnAction(actionEvent -> {
+                for (javafx.scene.Node n : this.getChildren()) {
+                    n.setStyle("");
                 }
-        }
+                button.setStyle("-fx-background-color: skyblue;");
 
-        @Override
-        public void handle(ActionEvent event) {
-                String command = ((Button) event.getSource()).getText();
-                view.setMode(command);
-                System.out.println(command);
+                try {
+                    ToolType type = ToolType.valueOf(label.toUpperCase());
+                    view.setTool(type);
+                    System.out.println("Tool selected: " + type);
+                } catch (IllegalArgumentException e) {
+                    System.out.println("Unknown tool type: " + label);
+                }
+            });
         }
+    }
+
+    @Override
+    public void handle(ActionEvent event) {
+        // Not needed anymore since we use lambdas directly,
+        // but kept for interface compliance.
+        String command = ((Button) event.getSource()).getText();
+        try {
+            ToolType type = ToolType.valueOf(command.toUpperCase());
+            view.setTool(type);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Unknown tool: " + command);
+        }
+    }
 }
-
-
