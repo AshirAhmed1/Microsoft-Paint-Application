@@ -12,6 +12,10 @@ public class ToolFactory {
             case TRIANGLE -> new TriangleTool(model, view);
             case OVAL -> new OvalTool(model, view);
             case SQUIGGLE -> new SquiggleTool(model, view);
+            case POLYLINE -> {
+                System.out.println("Polyline tool not yet implemented.");
+                yield null; // gracefully handle until PolylineTool exists
+            }
         };
     }
 }
