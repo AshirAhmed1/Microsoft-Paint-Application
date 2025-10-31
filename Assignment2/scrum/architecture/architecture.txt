@@ -6,44 +6,98 @@ High Level Architecture:
 	To keep the code simple, a partial MVC was implemented.
 	
 	Model
-	The Model captures enough information to re-draw the sketch of
-	the user.
-	
-	View+Controller
-	There is a View class as well as a few, what we call, view components.
-	The View class containing the BorderPane as well as containing all of its components.
-	View components are meant to be contained in the main View.
-	Examples of view components are PaintPanel and ShapeChooserPanel.
-	
-	The View class, and view components all implements their own controller.
-	For example, the PaintPanel listens to its own MouseEvents.
-	This is instead of separating out the Controller from the View. This choice
-	was made to simplify the code, yet still keep it modular and clear.
-	
-	Each view component can see the containing View as well as the Model
-	as appropriate. This means that each view component can speak to the
-	other view components. An example of this is when the ShapeChooserPanel
-	buttons are clicked, resulting in a mode change in the PaintPanel.
-	
+	The Model (PaintModel) captures all information needed to re-draw
+	the user’s sketch. It stores finalized shapes (circles, rectangles,
+	squares, ovals, triangles, squiggles) and a temporary “preview”
+	shape for live drawing feedback. PaintModel extends Observable
+	and notifies PaintPanel whenever shapes or preview states change.
+
+	View + Controller
+	The View consists of View.java (root layout) and multiple view components.
+	The main components are PaintPanel (the drawing area) and ShapeChooserPanel
+	(the tool selection area). The View holds a reference to the PaintModel,
+	and delegates drawing and user interactions to the appropriate components.
+
+	In the previous version, PaintPanel contained large switch statements
+	to handle mouse events for each shape type, mixing controller logic with
+	view code. During Sprint 2 (BUG2.003), we refactored this architecture to
+	introduce the Strategy and Factory patterns, decoupling shape behavior
+	from the PaintPanel.
+
+	Now, PaintPanel delegates all user input to a current Tool object
+	(e.g., CircleTool, RectangleTool, etc.). Each Tool encapsulates its
+	own mouse-handling logic (onPress, onDrag, onRelease) and communicates
+	with the PaintModel to update previews and finalized shapes.
+	This makes PaintPanel simple and extensible — new shapes can be added
+	without modifying any existing switch logic.
+
+	The View sets the active Tool via the ShapeChooserPanel buttons,
+	which call View.setTool(ToolType). The View then uses ToolFactory
+	to create the correct Tool and assigns it to the PaintPanel.
+	This cleanly fixes the association between ShapeChooserPanel and
+	PaintPanel that was previously handled through brittle string “modes”.
+
 ---------------------------------------------------------------------
-TODO!!! Add in more architecture and discussion. For example, 
-do you do something interesting to fix the association between the 
-ShapeChooser and the PaintPanel? How about the PaintModel, something
-is clearly wrong with it. Can you come up with a better architecture?
+Refactoring Notes and Architectural Improvements (Sprint 2: BUG2.003)
 ---------------------------------------------------------------------
 
+	• Removed all switch(mode) logic from PaintPanel.
+	• Introduced a generic Tool interface and AbstractShapeTool base class.
+	• Added a dedicated package: ca.utoronto.utm.assignment2.paint.tools
+	  containing Tool, AbstractShapeTool, and all concrete tool classes.
+	• Implemented ToolFactory and ToolType enum to dynamically create tools.
+	• Added a preview system in PaintModel, enabling real-time visual feedback.
+	• Updated View and ShapeChooserPanel to communicate using ToolType
+	  instead of strings.
+	• Simplified event flow: user action → ShapeChooserPanel → View → ToolFactory
+	  → PaintPanel (Tool) → PaintModel → PaintPanel (Observer update).
+
+---------------------------------------------------------------------
 DESIGN PATTERNS USED
-	TODO!!! If you introduce a Design Pattern to solve a problem, 
-	discuss it below. Only add design patterns if they simplify and improve
-	the code. I see at least two that would greatly improve code. 
-		
-	Strategy:
-	Command: 
-	Singleton:
-	Composite:
-	Factory:
-	Builder:
-	Observer/Observable:
-	... (any others you find useful) ...
+---------------------------------------------------------------------
 
+	Strategy:
+		Each Tool (e.g., CircleTool, RectangleTool, etc.) represents a strategy
+		for handling mouse input. PaintPanel delegates all mouse events to
+		the current Tool, making it easy to extend with new shapes without
+		modifying existing code.
+
+	Factory:
+		ToolFactory centralizes creation of Tool objects. View calls
+		ToolFactory.create(type, model, view) to instantiate the appropriate
+		controller strategy. This eliminates mode strings and switch logic,
+		and ensures consistency when adding new tools.
+
+	Observer/Observable:
+		PaintModel extends Observable and notifies PaintPanel (the Observer)
+		on every change — whether adding a shape or updating a live preview.
+		PaintPanel’s update() method redraws all shapes and the current preview.
+
+	MVC (Model–View–Controller Hybrid):
+		Model = PaintModel
+		View = PaintPanel + ShapeChooserPanel + View.java
+		Controller = Tool strategies
+		This hybrid approach merges controller logic into Tool classes while
+		keeping PaintPanel lean, achieving separation of concerns with less code.
+
+	Command / Singleton / Builder / Composite:
+		Not yet introduced at this stage; may appear in Sprint 3 or 4 for
+		undo/redo or grouping features.
+
+---------------------------------------------------------------------
 OTHER ARCHITECTURE DISCUSSIONS
+---------------------------------------------------------------------
+
+	This re-architecture significantly improves extensibility.
+	To add a new shape (e.g., Polyline), we only need to:
+	1. Create a new Tool class (PolylineTool.java) extending AbstractShapeTool.
+	2. Add a new constant in ToolType.
+	3. Add a case in ToolFactory.
+	No changes are required in PaintPanel, ShapeChooserPanel, or View.
+
+	This modularity fulfills the Open/Closed Principle — the system is
+	open for extension but closed for modification.
+
+	All changes were made on branch BUG2.003 as part of Sprint 2.
+
+---------------------------------------------------------------------
