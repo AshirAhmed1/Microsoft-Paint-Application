@@ -223,4 +223,17 @@ I WANT   : To draw an oval by clicking on the top left corner and dragging it
 SO THAT  : To see the shape and size of the oval about to be built on release
            and to add ovals to the canvas.
 --------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG BUG2.003 : alnabu11 : Completed
+NAME     : Architecture behind choosing selection mode is poor
+PRIORITY : 3
+ESTIMATE : 2 days    ACTUAL : 1.5 days
+AS A     : developer
+I WANT   : To replace the hardcoded switch(mode) logic in PaintPanel with a
+           flexible architecture that delegates drawing behavior through
+           individual Tool classes, each implementing the Tool interface.
+SO THAT  : The Paint program can support new shape types and tools without
+           modifying PaintPanel, improving modularity, maintainability, and
+           adherence to MVC and design pattern principles.
+--------------------------------------------------------------------------
 
