@@ -48,39 +48,39 @@ Oct 23, 2025
 	Obstacles I face: staying awake, IntelliJ freezing, and my own disbelief that I finished.
 
 Oct 24,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: finally looked at the PaintPanel switch statement and immediately regretted every life choice.
+	What I will do today: start untangling the spaghetti of ifs and switches. maybe cry a little, maybe commit some code.
+	Obstacles I face: mouse events that behave like they pay rent in my brain.
 
 Oct 25,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: removed three lines, broke six files, felt powerful.
+	What I will do today: actually refactor PaintPanel for real this time — Strategy pattern incoming.
+	Obstacles I face: my IDE takes personal offense every time I type “implements Tool”.
 
 Oct 26,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: got the Tool interface to work without the app combusting.
+	What I will do today: wire up AbstractShapeTool and test if the preview even listens to me.
+	Obstacles I face: PaintModel keeps acting like a stubborn toddler refusing to update().
 
 Oct 27,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: PaintPanel no longer has 47 switch cases — we have achieved minimalism.
+	What I will do today: test circle and rectangle tools, pretend I understand Observer notifications.
+	Obstacles I face: I keep drawing circles when I try to make squares. geometry is hard.
 
 Oct 28,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: connected View.java to the new ToolFactory system. it actually runs.
+	What I will do today: update ShapeChooserPanel to stop sending weird strings and start using enums like a civilized program.
+	Obstacles I face: uppercase vs lowercase. that’s it. that’s the boss fight.
 
 Oct 29,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: integrated ToolType and fixed a typo that somehow made everything work.
+	What I will do today: finish ToolFactory, add POLYLINE even though it does nothing yet, because we love future-proof chaos.
+	Obstacles I face: the urge to test Polyline anyway.
 
 Oct 30,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: finished refactor, tested all shapes, nothing exploded. small miracle.
+	What I will do today: write commit messages that make me sound like I knew what I was doing all along.
+	Obstacles I face: the temptation to touch architecture.txt before coffee.
 
 Oct 31,2025
 	What I did yesterday:
