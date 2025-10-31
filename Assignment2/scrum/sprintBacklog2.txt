@@ -40,4 +40,16 @@ I WANT   : To draw an oval by clicking on the top left corner and dragging it
 SO THAT  : To see the shape and size of the oval about to be built on release
            and to add ovals to the canvas.
 --------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG BUG2.003 : alnabu11 : Completed
+NAME     : Architecture behind choosing selection mode is poor
+PRIORITY : 3
+ESTIMATE : 2 days    ACTUAL : 1.5 days
+AS A     : developer
+I WANT   : To refactor PaintPanel, View, and ShapeChooserPanel to use Tool
+           delegation (Strategy pattern) and ToolFactory creation instead of
+           switch-case logic, adding live preview support through PaintModel.
+SO THAT  : The codebase becomes modular, extensible, and adheres to the
+           Strategy + Factory + MVC design principles required for Sprint 2.
+--------------------------------------------------------------------------
 
