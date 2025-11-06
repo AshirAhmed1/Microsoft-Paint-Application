@@ -40,3 +40,14 @@ ISSUE    : Currently, rectangles can only be drawn by clicking the top-left
            directions, maintaining correct width and height regardless of
            drag direction.
 --------------------------------------------------------------------------
+TYPE     : BUG BUG3.003 : imrana15 : Completed
+NAME     : Rectangle drawing restricted to one direction
+PRIORITY : 2
+ESTIMATE : 10 minutes    ACTUAL : 20 mins
+ISSUE    : Currently, triangles can only be drawn by clicking the bottom-left
+           corner and dragging towards and to the right. The drawing
+           logic does not allow users to drag in any direction. Need
+           to adjust coordinate and dimension calculations in
+           TriangleTool so users can draw triangles freely in all
+           directions.
+--------------------------------------------------------------------------

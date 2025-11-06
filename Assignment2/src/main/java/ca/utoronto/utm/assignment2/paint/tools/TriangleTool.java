@@ -11,7 +11,11 @@ public class TriangleTool extends AbstractShapeTool {
         double base = Math.abs(x - x0);
         double height = Math.abs(y - y0);
         double side = Math.sqrt(height * height + (base / 2.0) * (base / 2.0));
-        return new Triangle(new Point(x0, y0), base, side, side);
+
+        double minX = Math.min(x0, x);
+        double maxY = Math.max(y0, y);
+
+        return new Triangle(new Point(minX, maxY), base, side, side);
     }
 
     @Override
