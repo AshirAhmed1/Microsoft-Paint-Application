@@ -1,1 +1,1 @@
- BUG3.004 author:ahme1250 puller:? status:Waiting
+ BUG3.004 author:ahme1250 puller:phanale 5 status:Completed
