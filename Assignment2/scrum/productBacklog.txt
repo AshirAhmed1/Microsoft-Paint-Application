@@ -155,6 +155,19 @@ ISSUE    : Currently, squares can only be drawn by clicking the top-left
            SquareTool so users can draw squares freely in all directions.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
+TYPE     : BUG BUG3.006 : ahme1250 : Started
+NAME     : Rectangle drawing restricted to one direction
+PRIORITY : 2
+ESTIMATE : 10 minutes    ACTUAL :
+ISSUE    : Currently, rectangles can only be drawn by clicking the top-left
+           corner and dragging downwards and to the right. The drawing
+           logic does not allow users to drag in any direction (e.g., up or
+           left). Need to adjust coordinate and dimension calculations in
+           RectangleTool so users can draw rectangles freely in all
+           directions, maintaining correct width and height regardless of
+           drag direction.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
 TYPE     : BUG BUG1.005 : UTORID : NotStarted 
 NAME     : Squiggle is broken
 PRIORITY : 1
