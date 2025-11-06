@@ -135,7 +135,7 @@ ISSUE    : Code is not modular and is difficult to expand. Need a better
 TYPE     : BUG BUG3.004 : ahme1250 : Completed
 NAME     : Architecture behind Model is poor
 PRIORITY : 3
-ESTIMATE : 3 hours    ACTUAL : 4 hours
+ESTIMATE : 3 hours    ACTUAL : 5 hours
 ISSUE    : Having a list of different types of drawable things in the
            model is cumbersome. In fact, it is currently incorrect, with
            Squiggle's not drawing properly. Need to re-architect the Model
@@ -147,7 +147,7 @@ ISSUE    : Having a list of different types of drawable things in the
 TYPE     : BUG BUG3.005 : ahme1250 : Started
 NAME     : Square drawing restricted to one direction
 PRIORITY : 2
-ESTIMATE : 2 hours    ACTUAL :
+ESTIMATE : 2 hours    ACTUAL : 10 minutes
 ISSUE    : Currently, squares can only be drawn by clicking the top-left
            corner and dragging downwards and to the right. The drawing
            logic does not allow users to drag in any direction (e.g., up or
