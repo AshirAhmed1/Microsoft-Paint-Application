@@ -8,9 +8,12 @@ public class OvalTool extends AbstractShapeTool {
     }
 
     private Oval makeOval(double x, double y) {
-        double w = x - x0;
-        double h = y - y0;
-        return new Oval(new Point(x0, y0), w, h);
+        // top left is always the leftmost position
+        double cornerX = Math.min(x, x0);
+        double cornerY = Math.min(y, y0);
+        double w = Math.abs(x - x0);
+        double h = Math.abs(y - y0);
+        return new Oval(new Point(cornerX, cornerY), w, h);
     }
 
     @Override
