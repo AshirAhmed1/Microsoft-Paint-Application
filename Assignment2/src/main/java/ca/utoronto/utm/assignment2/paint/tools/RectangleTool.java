@@ -10,7 +10,25 @@ public class RectangleTool extends AbstractShapeTool {
     private Rectangle makeRect(double x, double y) {
         double w = x - x0;
         double h = y - y0;
-        return new Rectangle(new Point(x0, y0), w, h);
+
+        double topLeftX = x0;
+        double topLeftY = y0;
+
+        if (w < 0)
+        {
+            topLeftX = x0 + w;
+            w = Math.abs(w);
+        }
+
+        if (h < 0)
+        {
+            topLeftY = y0 + h;
+            h = Math.abs(h);
+        }
+
+        Point topLeft = new Point(topLeftX, topLeftY);
+
+        return new Rectangle(topLeft, w, h);
     }
 
     @Override
