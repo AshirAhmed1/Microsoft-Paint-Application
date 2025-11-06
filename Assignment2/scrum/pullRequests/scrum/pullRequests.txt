@@ -2,4 +2,4 @@
  BUG3.001 author:phanale5 puller:ahme1250 status: Completed
  BUG3.005 author:ahme1250 puller:imrana15 status: In progress
  BUG3.006 author:ahme1250 puller:? status:Waiting
- BUG3.004 author:imrana15 puller:? status:Waiting
+ BUG3.00 a3uthor:imrana15 puller:? status:Waiting
