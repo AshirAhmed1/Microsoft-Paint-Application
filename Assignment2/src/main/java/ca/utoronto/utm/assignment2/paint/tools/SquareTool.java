@@ -11,7 +11,23 @@ public class SquareTool extends AbstractShapeTool {
         double dx = x - x0;
         double dy = y - y0;
         double side = Math.max(Math.abs(dx), Math.abs(dy));
-        return new Square(new Point(x0, y0), side);
+
+        double topLeftX = x0;
+        double topLeftY = y0;
+
+        if (dx < 0)
+        {
+            topLeftX = x0 - side;
+        }
+
+        if (dy < 0)
+        {
+            topLeftY = y0 - side;
+        }
+
+        Point topLeft = new Point(topLeftX, topLeftY);
+
+        return new Square(topLeft, side);
     }
 
     @Override
