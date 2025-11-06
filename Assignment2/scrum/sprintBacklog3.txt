@@ -16,3 +16,14 @@ ISSUE    : Having a list of different types of drawable things in the
            Consider some design patterns, or change of responsibility
            here.
 --------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG BUG3.005 : ahme1250 : Started
+NAME     : Square drawing restricted to one direction
+PRIORITY : 2
+ESTIMATE : 2 hours    ACTUAL :
+ISSUE    : Currently, squares can only be drawn by clicking the top-left
+           corner and dragging downwards and to the right. The drawing
+           logic does not allow users to drag in any direction (e.g., up or
+           left). Need to adjust coordinate and dimension calculations in
+           SquareTool so users can draw squares freely in all directions.
+--------------------------------------------------------------------------
