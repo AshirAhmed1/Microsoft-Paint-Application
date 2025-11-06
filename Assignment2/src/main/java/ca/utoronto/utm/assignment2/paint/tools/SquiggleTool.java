@@ -28,7 +28,7 @@ public class SquiggleTool extends AbstractShapeTool {
     @Override
     public void onRelease(MouseEvent e) {
         if (current != null) {
-            model.addSquiggle(current);
+            model.addDrawable(current);
             model.clearPreview();
             current = null;
         }

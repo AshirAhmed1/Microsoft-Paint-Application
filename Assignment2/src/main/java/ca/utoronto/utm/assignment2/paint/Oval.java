@@ -1,6 +1,8 @@
 package ca.utoronto.utm.assignment2.paint;
 
-public class Oval {
+import javafx.scene.canvas.GraphicsContext;
+
+public class Oval implements Drawable {
     private Point topLeft;
     private double width;
     private double height;
@@ -26,5 +28,11 @@ public class Oval {
     public void setWidth(double newWidth) { this.width = newWidth; }
 
     public void setHeight(double newHeight) { this.height = newHeight; }
+
+    @Override
+    public void draw(GraphicsContext g)
+    {
+        g.fillOval(topLeft.x, topLeft.y, width, height);
+    }
 }
 

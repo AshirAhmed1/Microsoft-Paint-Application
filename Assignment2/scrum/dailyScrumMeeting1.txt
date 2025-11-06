@@ -82,39 +82,39 @@ Oct 30,2025
 	Obstacles I face: No obstacles
 
 Oct 31,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Finalized Sprint2 with groupmates and submitted
+	What I will do today: Hop on call with groupmates to discuss next sprint
+	Obstacles I face: No obstacles
 
 Nov 1,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Hopped on call with groupmates to discuss next sprint
+	What I will do today: Explore design patterns to fix BUG3.004
+	Obstacles I face: Still unsure which pattern best fits the model issue
 
 Nov 2,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Reviewed the current PaintModel structure and noted issues with multiple ArrayLists
+	What I will do today: Begin refactoring using the Composite Pattern and create a Drawable interface
+	Obstacles I face: Making sure all existing shapes fit smoothly into the new interface
 
 Nov 3,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Implemented Drawable and updated Circle, Rectangle, Square, and other shape classes
+	What I will do today: Update PaintPanel to draw all shapes through Drawable and remove old instanceof checks
+	Obstacles I face: No obstacles
 
 Nov 4,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Fixed observer logic and got all shapes drawing properly from one unified list
+	What I will do today: Test SquiggleTool and ensure live previews work after model refactor
+	Obstacles I face: Some inconsistencies in how the preview updates during fast mouse drags — need to smooth it out
 
 Nov 5,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Completed all testing, verified previews, and cleaned up redundant code
+	What I will do today: Finalize BUG3.004 as complete
+	Obstacles I face: None. the refactor works perfectly now
 
 Nov 6,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Finalized BUG3.004 as complete
+	What I will do today: Adjust rectangle and square coordinates so drag works in any direction
+	Obstacles I face: None
 
 Nov 7,2025
 	What I did yesterday:

@@ -21,7 +21,7 @@ public class SquareTool extends AbstractShapeTool {
 
     @Override
     protected void commit(double x, double y) {
-        model.addSquare(makeSquare(x, y));
+        model.addDrawable(makeSquare(x, y));
         model.clearPreview();
     }
 }
