@@ -5,10 +5,10 @@
 # Sprint 3 Oct 31-Nov 06, 2025
 # Sprint 3 Backlog UserStories go below
 --------------------------------------------------------------------------
-TYPE     : BUG BUG3.004 : ahme1250 : Started
+TYPE     : BUG BUG3.004 : ahme1250 : Completed
 NAME     : Architecture behind Model is poor
 PRIORITY : 3
-ESTIMATE : 1 day    ACTUAL :
+ESTIMATE : 3 hours    ACTUAL : 5 hours
 ISSUE    : Having a list of different types of drawable things in the
            model is cumbersome. In fact, it is currently incorrect, with
            Squiggle's not drawing properly. Need to re-architect the Model

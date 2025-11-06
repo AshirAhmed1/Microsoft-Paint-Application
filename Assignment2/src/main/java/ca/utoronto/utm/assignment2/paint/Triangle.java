@@ -1,6 +1,8 @@
 package ca.utoronto.utm.assignment2.paint;
 
-public class Triangle {
+import javafx.scene.canvas.GraphicsContext;
+
+public class Triangle implements Drawable {
     private Point bottom_left;
     private double base;
     private double side1; //longer side for height
@@ -54,6 +56,15 @@ public class Triangle {
     public double getHeight()
     {
         return this.height;
+    }
+
+    @Override
+    public void draw(GraphicsContext g)
+    {
+        double [] xs = {bottom_left.x, bottom_left.x + base, bottom_left.x + base / 2.0 };
+        double[] ys = { bottom_left.y, bottom_left.y, bottom_left.y - height };
+        g.fillPolygon(xs, ys, 3);
+
     }
 
 }

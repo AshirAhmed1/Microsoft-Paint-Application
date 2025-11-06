@@ -20,7 +20,7 @@ public class OvalTool extends AbstractShapeTool {
 
     @Override
     protected void commit(double x, double y) {
-        model.addOval(makeOval(x, y));
+        model.addDrawable(makeOval(x, y));
         model.clearPreview();
     }
 }

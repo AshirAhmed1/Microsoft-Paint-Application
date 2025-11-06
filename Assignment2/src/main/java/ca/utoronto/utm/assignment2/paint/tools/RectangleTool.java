@@ -20,7 +20,7 @@ public class RectangleTool extends AbstractShapeTool {
 
     @Override
     protected void commit(double x, double y) {
-        model.addRectangle(makeRect(x, y));
+        model.addDrawable(makeRect(x, y));
         model.clearPreview();
     }
 }

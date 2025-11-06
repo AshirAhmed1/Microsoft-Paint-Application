@@ -1,6 +1,8 @@
 package ca.utoronto.utm.assignment2.paint;
 
-public class Rectangle {
+import javafx.scene.canvas.GraphicsContext;
+
+public class Rectangle implements Drawable {
     private Point top_left;
     private double width;
     private double height;
@@ -34,6 +36,12 @@ public class Rectangle {
     public double getHeight()
     {
         return this.height;
+    }
+
+    @Override
+    public void draw(GraphicsContext g)
+    {
+        g.fillRect(top_left.x, top_left.y, width, height);
     }
 
 }

@@ -1,7 +1,9 @@
 package ca.utoronto.utm.assignment2.paint;
 
 
-public class Circle {
+import javafx.scene.canvas.GraphicsContext;
+
+public class Circle implements Drawable {
         private Point centre;
         private double radius;
 
@@ -24,6 +26,15 @@ public class Circle {
 
         public void setRadius(double radius) {
                 this.radius = radius;
+        }
+
+        @Override
+        public void draw(GraphicsContext g)
+        {
+            double x = centre.x - radius;
+            double y = centre.y - radius;
+            g.fillOval(x, y, radius * 2, radius * 2);
+
         }
 
 }

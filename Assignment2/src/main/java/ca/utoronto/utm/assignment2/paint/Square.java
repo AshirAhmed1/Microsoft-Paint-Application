@@ -1,5 +1,7 @@
 package ca.utoronto.utm.assignment2.paint;
 
+import javafx.scene.canvas.GraphicsContext;
+
 public class Square extends Rectangle{
 
 
@@ -31,6 +33,12 @@ public class Square extends Rectangle{
     {
         super.setWidth(height);
         super.setHeight(height);
+    }
+
+    @Override
+    public void draw(GraphicsContext g)
+    {
+        g.fillRect(getTop_left().x, getTop_left().y, getSideLength(), getSideLength());
     }
 
 }
