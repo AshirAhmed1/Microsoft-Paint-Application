@@ -43,78 +43,78 @@ Oct 22,2025
 
 Oct 23,2025
 	What I did yesterday:Look over and prepare for sprint 2
-	What I will do today: Continue to look over sprint 2
+	What I will do today: finished sprint 1
 	Obstacles I face: no obstacles
 
 Oct 24,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: finished sprint 1
+	What I will do today: Plan sprint 2 with group mates
+	Obstacles I face: No obstacles
 
 Oct 25,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Planned sprint 2
+	What I will do today: Finalize plan for sprint 2
+	Obstacles I face: No obstacles
 
 Oct 26,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Finalize plan for sprint 2
+	What I will do today: Begin working on US2.003
+	Obstacles I face: No Obstacles
 
 Oct 27,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Begin US2.003
+	What I will do today: Finish implementing oval to add to canvas
+	Obstacles I face: No obstacles
 
 Oct 28,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Finish drawing oval
+	What I will do today: Add oval feedback and preview
+	Obstacles I face: No obstacles
 
 Oct 29,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Add oval feedback and preview
+	What I will do today: Finish and look over US2.003
+	Obstacles I face: No obstacles
 
 Oct 30,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Finish US2.003
+	What I will do today: Check up with group and finalize sprint 2
+	Obstacles I face: No obstacles
 
 Oct 31,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Finished sprint 2
+	What I will do today: Discuss sprint 3 with group
+	Obstacles I face: No obstacles
 
 Nov 1,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Plan sprint 3
+	What I will do today: Help group member think of reimplementation of the architecture
+	Obstacles I face: No obstacles
 
 Nov 2,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Worked on thinking of a reimplementation
+	What I will do today: Discuss bugs of shapes that should be fixed
+	Obstacles I face: No obstacles
 
 Nov 3,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Discussed possible bugs
+	What I will do today: Work on Bug3.001
+	Obstacles I face: No obstacles
 
 Nov 4,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday:work on Bug3.001
+	What I will do today: Continue Bug3.001 and fix ovals implementation
+	Obstacles I face: No obstacles
 
 Nov 5,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: fix ovals implementation
+	What I will do today: Request a pull request for BUG3.001
+	Obstacles I face: No obstacles
 
 Nov 6,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Waited for pull request to be completed
+	What I will do today: Finalize sprint 3 and accept any pull requests.
+	Obstacles I face:No obstacles
 
 Nov 7,2025
 	What I did yesterday:
