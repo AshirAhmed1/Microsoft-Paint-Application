@@ -113,7 +113,7 @@ Nov 5,2025
 
 Nov 6,2025
 	What I did yesterday: Waited for pull request to be completed
-	What I will do today: Finalize sprint 3 and accept any pull requests.
+	What I will do today: Finalize sprint 3 and accept any pull requests
 	Obstacles I face:No obstacles
 
 Nov 7,2025
