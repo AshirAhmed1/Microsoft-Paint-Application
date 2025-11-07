@@ -144,7 +144,7 @@ ISSUE    : Having a list of different types of drawable things in the
            here.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG BUG3.005 : ahme1250 : Started
+TYPE     : BUG BUG3.005 : ahme1250 : Completed
 NAME     : Square drawing restricted to one direction
 PRIORITY : 2
 ESTIMATE : 2 hours    ACTUAL : 10 minutes
@@ -155,10 +155,10 @@ ISSUE    : Currently, squares can only be drawn by clicking the top-left
            SquareTool so users can draw squares freely in all directions.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG BUG3.006 : ahme1250 : Started
+TYPE     : BUG BUG3.006 : ahme1250 : Completed
 NAME     : Rectangle drawing restricted to one direction
 PRIORITY : 2
-ESTIMATE : 10 minutes    ACTUAL :
+ESTIMATE : 10 minutes    ACTUAL : 10 minutes
 ISSUE    : Currently, rectangles can only be drawn by clicking the top-left
            corner and dragging downwards and to the right. The drawing
            logic does not allow users to drag in any direction (e.g., up or
