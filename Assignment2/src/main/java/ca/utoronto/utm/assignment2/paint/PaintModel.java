@@ -9,6 +9,7 @@ public class PaintModel extends Observable {
 
     public void addDrawable(Drawable d) {
         drawables.add(d);
+        System.out.println("Shape Added: " + d.getClass().getSimpleName());
         setChanged();
         notifyObservers();
     }
