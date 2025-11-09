@@ -2,7 +2,7 @@ package ca.utoronto.utm.assignment2.paint;
 
 import javafx.scene.canvas.GraphicsContext;
 
-public class Triangle implements Drawable {
+public class Triangle extends AbstractShapeDrawable{
     private Point bottom_left;
     private double base;
     private double side1; //longer side for height
@@ -11,6 +11,7 @@ public class Triangle implements Drawable {
 
     public Triangle(Point bottom_left, double base, double side1, double side2)
     {
+        super();
         this.bottom_left = bottom_left;
         this.base = base;
         this.side1 = side1;

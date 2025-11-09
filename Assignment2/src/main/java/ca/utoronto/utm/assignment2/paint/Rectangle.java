@@ -2,13 +2,14 @@ package ca.utoronto.utm.assignment2.paint;
 
 import javafx.scene.canvas.GraphicsContext;
 
-public class Rectangle implements Drawable {
+public class Rectangle extends AbstractShapeDrawable{
     private Point top_left;
     private double width;
     private double height;
 
     public Rectangle(Point top_left, double width, double height)
     {
+        super();
         this.top_left = top_left;
         this.width = width;
         this.height = height;

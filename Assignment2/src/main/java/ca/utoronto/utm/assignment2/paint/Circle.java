@@ -3,13 +3,14 @@ package ca.utoronto.utm.assignment2.paint;
 
 import javafx.scene.canvas.GraphicsContext;
 
-public class Circle implements Drawable {
+public class Circle extends AbstractShapeDrawable {
         private Point centre;
         private double radius;
 
         public Circle(Point centre, int radius){
-                this.centre = centre;
-                this.radius = radius;
+            super();
+            this.centre = centre;
+            this.radius = radius;
         }
 
         public Point getCentre() {

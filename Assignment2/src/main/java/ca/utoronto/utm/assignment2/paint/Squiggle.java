@@ -9,9 +9,13 @@ import java.util.ArrayList;
  * Each Squiggle is an ordered list of points.
  */
 
-public class Squiggle implements Drawable {
+public class Squiggle extends AbstractShapeDrawable{
 
     private final ArrayList<Point> points = new ArrayList<>();
+
+    public Squiggle(){
+        super();
+    }
 
     /**
      * Add a new point to this squiggle.

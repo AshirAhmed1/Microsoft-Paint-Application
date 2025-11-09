@@ -4,10 +4,13 @@ import javafx.scene.canvas.GraphicsContext;
 
 import java.util.ArrayList;
 
-public class Polyline implements Drawable{
+public class Polyline extends AbstractShapeDrawable{
 
     private final ArrayList<Point> points = new ArrayList<>();
 
+    public Polyline(){
+        super();
+    }
     /**
      * Add a new point to polyline segment.
      * @param p the point to add

@@ -2,12 +2,13 @@ package ca.utoronto.utm.assignment2.paint;
 
 import javafx.scene.canvas.GraphicsContext;
 
-public class Oval implements Drawable {
+public class Oval extends AbstractShapeDrawable {
     private Point topLeft;
     private double width;
     private double height;
 
     public Oval(Point topLeft, double width, double height){
+        super();
         this.topLeft = topLeft;
         this.width = width;
         this.height = height;
