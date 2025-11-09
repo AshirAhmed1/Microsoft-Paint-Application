@@ -8,6 +8,10 @@ public class Polyline implements Drawable{
 
     private final ArrayList<Point> points = new ArrayList<>();
 
+    /**
+     * Add a new point to polyline segment.
+     * @param p the point to add
+     */
     public void addPoint(Point p) {points.add(p);}
 
     public ArrayList<Point> getPoints(){
