@@ -4,4 +4,15 @@
 
 # Sprint 4 Nov 7-Nov 13, 2025
 # Sprint 4 Backlog UserStories go below
-
+--------------------------------------------------------------------------
+TYPE     : USER STORY US4.001 : phanale5 : Completed
+NAME     : Draw Polyline
+PRIORITY : 2
+ESTIMATE : 2 days    ACTUAL : 2 hours
+AS A     : user
+I WANT   : To specify a starting point from an intial left click. The user can move the mouse
+           and left-click to select another point which is connected to the last point with a straight
+           line. The user should be able to see the line about to be created before their next click.
+           A polyline is finished by right-clicking on the last point.
+SO THAT  : I can add polylines to my canvas
+--------------------------------------------------------------------------

@@ -25,6 +25,9 @@ public class PaintPanel extends Canvas implements Observer {
         this.addEventHandler(MouseEvent.MOUSE_DRAGGED, e -> {
             if (currentTool != null) currentTool.onDrag(e);
         });
+        this.addEventHandler(MouseEvent.MOUSE_MOVED, e -> {
+            if (currentTool != null) currentTool.onMove(e);
+        });
         this.addEventHandler(MouseEvent.MOUSE_RELEASED, e -> {
             if (currentTool != null) currentTool.onRelease(e);
         });

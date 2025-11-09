@@ -24,6 +24,8 @@ public abstract class AbstractShapeTool implements Tool {
     public void onDrag(MouseEvent e) {
         drawPreview(e.getX(), e.getY());
     }
+    @Override
+    public void onMove(MouseEvent e) {}
 
     @Override
     public void onRelease(MouseEvent e) {
