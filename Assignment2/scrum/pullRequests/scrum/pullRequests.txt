@@ -3,3 +3,4 @@
  BUG3.005 author:ahme1250 puller:imrana15 status: Completed
  BUG3.006 author:ahme1250 puller:imrana15 status: Completed
  BUG3.003 author:imrana15 puller:ahme1250 status: Completed
+ US4.001 author:phanale5 puller:? status: Waiting
