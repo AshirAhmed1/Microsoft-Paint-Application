@@ -12,9 +12,13 @@ public abstract class AbstractShapeDrawable implements Drawable {
         this.color = color;
     }
 
+    public Color getColor() {return color;}
+
     public void setThickness(double thickness) {
         this.thickness = thickness;
     }
+
+    public double getThickness() {return thickness;}
 
     public abstract void draw(GraphicsContext gc);
 }
