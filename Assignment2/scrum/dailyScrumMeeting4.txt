@@ -117,24 +117,24 @@ Nov 6,2025
 	Obstacles I face:No obstacles
 
 Nov 7,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Finalize sprint 3
+	What I will do today: Implement Polyline tool
+	Obstacles I face: None
 
 Nov 8,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Implement Polyline tool
+	What I will do today: Added visual feedback to polyline tool
+	Obstacles I face: Understanding architecture rework for previews
 
 Nov 9,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Added visual feedback to polyline
+	What I will do today: Implement a color change panel
+	Obstacles I face: Adjusting abstract interface and shape tools
 
 Nov 10,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday:Implement color change panel
+	What I will do today: Look over group members work
+	Obstacles I face: none
 
 Nov 11,2025
 	What I did yesterday:
