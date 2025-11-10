@@ -18,7 +18,11 @@ public class OvalTool extends AbstractShapeTool {
 
     @Override
     protected void drawPreview(double x, double y) {
-        model.setPreview(makeOval(x, y));
+        Oval preview = makeOval(x, y);
+        preview.setColor(model.getCurrentColor());
+        preview.setThickness(model.getCurrentThickness());
+        preview.setFilled(model.isFillMode());
+        model.setPreview(preview);
     }
 
     @Override
@@ -26,6 +30,7 @@ public class OvalTool extends AbstractShapeTool {
         Oval oval = makeOval(x, y);
         oval.setColor(model.getCurrentColor());
         oval.setThickness(model.getCurrentThickness());
+        oval.setFilled(model.isFillMode());
         model.addDrawable(oval);
         model.clearPreview();
     }

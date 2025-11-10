@@ -65,12 +65,17 @@ public class Triangle extends AbstractShapeDrawable{
         double [] xs = {bottom_left.x, bottom_left.x + base, bottom_left.x + base / 2.0 };
         double[] ys = { bottom_left.y, bottom_left.y, bottom_left.y - height };
 
-        g.setFill(color);
-        g.fillPolygon(xs, ys, 3);
-
         g.setStroke(color);
         g.setLineWidth(thickness);
-        g.strokePolygon(xs, ys, 3);
+
+        if (filled) {
+            g.setFill(color);
+            g.fillPolygon(xs, ys, 3);
+        }
+
+        else {
+            g.strokePolygon(xs, ys, 3);
+        }
 
     }
 

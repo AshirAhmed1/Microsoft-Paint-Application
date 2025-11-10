@@ -34,12 +34,18 @@ public class Circle extends AbstractShapeDrawable {
         {
             double x = centre.x - radius;
             double y = centre.y - radius;
-            g.setFill(color);
-            g.fillOval(x, y, radius * 2, radius * 2);
 
             g.setStroke(color);
             g.setLineWidth(thickness);
-            g.strokeOval(x, y, radius * 2, radius * 2);
+            if (filled)
+            {
+                g.setFill(color);
+                g.fillOval(x, y, radius * 2, radius * 2);
+            }
+            else
+            {
+                g.strokeOval(x, y, radius * 2, radius * 2);
+            }
 
         }
 

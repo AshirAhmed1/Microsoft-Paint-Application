@@ -32,7 +32,12 @@ public class SquareTool extends AbstractShapeTool {
 
     @Override
     protected void drawPreview(double x, double y) {
-        model.setPreview(makeSquare(x, y));
+
+        Square preview = makeSquare(x, y);
+        preview.setColor(model.getCurrentColor());
+        preview.setThickness(model.getCurrentThickness());
+        preview.setFilled(model.isFillMode());
+        model.setPreview(preview);
     }
 
     @Override
@@ -40,6 +45,7 @@ public class SquareTool extends AbstractShapeTool {
         Square square = makeSquare(x, y);
         square.setColor(model.getCurrentColor());
         square.setThickness(model.getCurrentThickness());
+        square.setFilled(model.isFillMode());
         model.addDrawable(square);
         model.clearPreview();
     }
