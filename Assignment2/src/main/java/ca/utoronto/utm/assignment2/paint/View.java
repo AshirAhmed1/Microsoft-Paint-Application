@@ -17,17 +17,20 @@ public class View implements EventHandler<ActionEvent> {
     private PaintModel paintModel;
     private PaintPanel paintPanel;
     private ShapeChooserPanel shapeChooserPanel;
+    private ColorChooserPanel colorChooserPanel;
 
     public View(PaintModel model, Stage stage) {
         this.paintModel = model;
 
         this.paintPanel = new PaintPanel(this.paintModel);
         this.shapeChooserPanel = new ShapeChooserPanel(this);
+        this.colorChooserPanel = new ColorChooserPanel(paintModel);
 
         BorderPane root = new BorderPane();
         root.setTop(createMenuBar());
         root.setCenter(this.paintPanel);
         root.setLeft(this.shapeChooserPanel);
+        root.setBottom(this.colorChooserPanel);
 
         Scene scene = new Scene(root);
         stage.setScene(scene);

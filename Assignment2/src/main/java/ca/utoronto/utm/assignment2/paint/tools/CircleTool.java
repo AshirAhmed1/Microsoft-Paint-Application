@@ -21,7 +21,9 @@ public class CircleTool extends AbstractShapeTool {
 
     @Override
     protected void commit(double x, double y) {
-        model.addDrawable(makeCircle(x, y));
+        Circle circle = makeCircle(x, y);
+        circle.setColor(model.getCurrentColor());
+        model.addDrawable(circle);
         model.clearPreview();
     }
 }

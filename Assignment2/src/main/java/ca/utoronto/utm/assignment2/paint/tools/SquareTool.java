@@ -37,7 +37,9 @@ public class SquareTool extends AbstractShapeTool {
 
     @Override
     protected void commit(double x, double y) {
-        model.addDrawable(makeSquare(x, y));
+        Square square = makeSquare(x, y);
+        square.setColor(model.getCurrentColor());
+        model.addDrawable(square);
         model.clearPreview();
     }
 }
