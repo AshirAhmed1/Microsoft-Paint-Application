@@ -27,6 +27,7 @@ public class TriangleTool extends AbstractShapeTool {
     protected void commit(double x, double y) {
         Triangle triangle = makeTriangle(x, y);
         triangle.setColor(model.getCurrentColor());
+        triangle.setThickness(model.getCurrentThickness());
         model.addDrawable(triangle);
         model.clearPreview();
     }

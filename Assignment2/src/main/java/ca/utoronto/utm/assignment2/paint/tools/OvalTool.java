@@ -25,6 +25,7 @@ public class OvalTool extends AbstractShapeTool {
     protected void commit(double x, double y) {
         Oval oval = makeOval(x, y);
         oval.setColor(model.getCurrentColor());
+        oval.setThickness(model.getCurrentThickness());
         model.addDrawable(oval);
         model.clearPreview();
     }

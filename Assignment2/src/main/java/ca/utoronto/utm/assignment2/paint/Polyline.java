@@ -24,6 +24,9 @@ public class Polyline extends AbstractShapeDrawable{
     public void draw(GraphicsContext g) {
         if (points.size() < 2) return;
 
+        g.setStroke(color);
+        g.setLineWidth(thickness);
+
         for (int i = 0; i < points.size() - 1; i++) {
             Point p1 = points.get(i);
             Point p2 = points.get(i + 1);

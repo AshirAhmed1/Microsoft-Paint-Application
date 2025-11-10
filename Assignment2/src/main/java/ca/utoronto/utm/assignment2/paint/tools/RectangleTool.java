@@ -40,6 +40,7 @@ public class RectangleTool extends AbstractShapeTool {
     protected void commit(double x, double y) {
         Rectangle rectangle = makeRect(x, y);
         rectangle.setColor(model.getCurrentColor());
+        rectangle.setThickness(model.getCurrentThickness());
         model.addDrawable(rectangle);
         model.clearPreview();
     }

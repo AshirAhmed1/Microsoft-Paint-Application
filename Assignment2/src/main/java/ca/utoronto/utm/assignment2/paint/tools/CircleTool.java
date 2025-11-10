@@ -23,6 +23,7 @@ public class CircleTool extends AbstractShapeTool {
     protected void commit(double x, double y) {
         Circle circle = makeCircle(x, y);
         circle.setColor(model.getCurrentColor());
+        circle.setThickness(model.getCurrentThickness());
         model.addDrawable(circle);
         model.clearPreview();
     }
