@@ -23,7 +23,9 @@ public class OvalTool extends AbstractShapeTool {
 
     @Override
     protected void commit(double x, double y) {
-        model.addDrawable(makeOval(x, y));
+        Oval oval = makeOval(x, y);
+        oval.setColor(model.getCurrentColor());
+        model.addDrawable(oval);
         model.clearPreview();
     }
 }

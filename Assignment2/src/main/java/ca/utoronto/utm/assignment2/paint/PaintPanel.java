@@ -47,16 +47,16 @@ public class PaintPanel extends Canvas implements Observer {
         GraphicsContext g = getGraphicsContext2D();
         g.clearRect(0, 0, getWidth(), getHeight());
 
-        g.setFill(Color.GREEN);
-        g.setStroke(Color.GREEN);
         for (Drawable d : model.getDrawables()) {
+            g.setFill(d.getColor());
+            g.setStroke(d.getColor());
             d.draw(g);
         }
 
         Drawable preview = model.getPreview();
         if (preview != null) {
-            g.setFill(Color.LIGHTGREEN);
-            g.setStroke(Color.LIGHTGREEN);
+            g.setFill(model.getCurrentColor());
+            g.setStroke(model.getCurrentColor());
             preview.draw(g);
         }
     }

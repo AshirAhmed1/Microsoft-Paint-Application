@@ -38,7 +38,9 @@ public class RectangleTool extends AbstractShapeTool {
 
     @Override
     protected void commit(double x, double y) {
-        model.addDrawable(makeRect(x, y));
+        Rectangle rectangle = makeRect(x, y);
+        rectangle.setColor(model.getCurrentColor());
+        model.addDrawable(rectangle);
         model.clearPreview();
     }
 }

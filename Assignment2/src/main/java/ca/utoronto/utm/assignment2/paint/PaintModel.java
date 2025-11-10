@@ -2,10 +2,12 @@ package ca.utoronto.utm.assignment2.paint;
 
 import java.util.ArrayList;
 import java.util.Observable;
+import javafx.scene.paint.Color;
 
 public class PaintModel extends Observable {
     private final ArrayList<Drawable> drawables = new ArrayList<>();
     private Drawable preview;
+    private Color currentColor = Color.BLACK;
 
     public void addDrawable(Drawable d) {
         drawables.add(d);
@@ -32,4 +34,8 @@ public class PaintModel extends Observable {
         setChanged();
         notifyObservers();
     }
+
+    public void setCurrentColor(Color color) { this.currentColor = color;}
+
+    public Color getCurrentColor() { return this.currentColor;}
 }

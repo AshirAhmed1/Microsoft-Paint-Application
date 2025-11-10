@@ -13,6 +13,7 @@ public class SquiggleTool extends AbstractShapeTool {
     @Override
     public void onPress(MouseEvent e) {
         current = new Squiggle();
+        current.setColor(model.getCurrentColor());
         current.addPoint(new Point(e.getX(), e.getY()));
         model.setPreview(current);
     }
