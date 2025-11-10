@@ -8,6 +8,7 @@ public class PaintModel extends Observable {
     private final ArrayList<Drawable> drawables = new ArrayList<>();
     private Drawable preview;
     private Color currentColor = Color.BLACK;
+    private double currentThickness = 2.0;
 
     public void addDrawable(Drawable d) {
         drawables.add(d);
@@ -39,4 +40,17 @@ public class PaintModel extends Observable {
     public void setCurrentColor(Color color) { this.currentColor = color;}
 
     public Color getCurrentColor() { return this.currentColor;}
+
+    public double getCurrentThickness()
+    {
+        return this.currentThickness;
+    }
+
+    public void setCurrentThickness(double thickness)
+    {
+        this.currentThickness = thickness;
+        setChanged();
+        notifyObservers();
+    }
+
 }

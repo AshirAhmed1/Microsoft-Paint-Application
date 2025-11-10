@@ -17,6 +17,7 @@ public class PolylineTool extends AbstractShapeTool{
         if (current == null) {
             current = new Polyline(); // creates a start point, no line is created
             current.setColor(model.getCurrentColor());
+            current.setThickness(model.getCurrentThickness());
         }
         current.addPoint(new Point(e.getX(), e.getY()));
         model.setPreview(current);

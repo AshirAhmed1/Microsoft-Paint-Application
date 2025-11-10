@@ -38,7 +38,13 @@ public class Square extends Rectangle{
     @Override
     public void draw(GraphicsContext g)
     {
+        g.setFill(getColor());
         g.fillRect(getTop_left().x, getTop_left().y, getSideLength(), getSideLength());
+
+        g.setStroke(getColor());
+        g.setLineWidth(getThickness());
+        g.strokeRect(getTop_left().x, getTop_left().y, getSideLength(), getSideLength());
+
     }
 
 }

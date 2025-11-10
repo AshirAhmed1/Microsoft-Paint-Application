@@ -9,6 +9,7 @@ import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.SeparatorMenuItem;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import ca.utoronto.utm.assignment2.paint.tools.*; // import for Tool, ToolType, ToolFactory
 
@@ -25,11 +26,13 @@ public class View implements EventHandler<ActionEvent> {
         this.paintPanel = new PaintPanel(this.paintModel);
         this.shapeChooserPanel = new ShapeChooserPanel(this);
         this.colorChooserPanel = new ColorChooserPanel(paintModel);
+        ThicknessChooserPanel thicknessChooserPanel = new ThicknessChooserPanel(this.paintModel);
 
         BorderPane root = new BorderPane();
         root.setTop(createMenuBar());
         root.setCenter(this.paintPanel);
-        root.setLeft(this.shapeChooserPanel);
+        VBox leftPanel = new VBox(this.shapeChooserPanel, thicknessChooserPanel);
+        root.setLeft(leftPanel);
         root.setBottom(this.colorChooserPanel);
 
         Scene scene = new Scene(root);
