@@ -20,7 +20,12 @@ public class TriangleTool extends AbstractShapeTool {
 
     @Override
     protected void drawPreview(double x, double y) {
-        model.setPreview(makeTriangle(x, y));
+
+        Triangle preview = makeTriangle(x, y);
+        preview.setColor(model.getCurrentColor());
+        preview.setThickness(model.getCurrentThickness());
+        preview.setFilled(model.isFillMode());
+        model.setPreview(preview);
     }
 
     @Override
@@ -28,6 +33,7 @@ public class TriangleTool extends AbstractShapeTool {
         Triangle triangle = makeTriangle(x, y);
         triangle.setColor(model.getCurrentColor());
         triangle.setThickness(model.getCurrentThickness());
+        triangle.setFilled(model.isFillMode());
         model.addDrawable(triangle);
         model.clearPreview();
     }

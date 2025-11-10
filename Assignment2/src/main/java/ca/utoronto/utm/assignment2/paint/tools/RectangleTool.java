@@ -33,7 +33,12 @@ public class RectangleTool extends AbstractShapeTool {
 
     @Override
     protected void drawPreview(double x, double y) {
-        model.setPreview(makeRect(x, y));
+
+        Rectangle preview = makeRect(x, y);
+        preview.setColor(model.getCurrentColor());
+        preview.setThickness(model.getCurrentThickness());
+        preview.setFilled(model.isFillMode());
+        model.setPreview(preview);
     }
 
     @Override
@@ -41,6 +46,7 @@ public class RectangleTool extends AbstractShapeTool {
         Rectangle rectangle = makeRect(x, y);
         rectangle.setColor(model.getCurrentColor());
         rectangle.setThickness(model.getCurrentThickness());
+        rectangle.setFilled(model.isFillMode());
         model.addDrawable(rectangle);
         model.clearPreview();
     }

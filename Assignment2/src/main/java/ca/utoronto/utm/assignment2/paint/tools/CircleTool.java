@@ -16,7 +16,13 @@ public class CircleTool extends AbstractShapeTool {
 
     @Override
     protected void drawPreview(double x, double y) {
-        model.setPreview(makeCircle(x, y));
+
+        Circle preview = makeCircle(x, y);
+        preview.setColor(model.getCurrentColor());
+        preview.setThickness(model.getCurrentThickness());
+        preview.setFilled(model.isFillMode());
+        model.setPreview(preview);
+
     }
 
     @Override
@@ -24,6 +30,7 @@ public class CircleTool extends AbstractShapeTool {
         Circle circle = makeCircle(x, y);
         circle.setColor(model.getCurrentColor());
         circle.setThickness(model.getCurrentThickness());
+        circle.setFilled(model.isFillMode());
         model.addDrawable(circle);
         model.clearPreview();
     }

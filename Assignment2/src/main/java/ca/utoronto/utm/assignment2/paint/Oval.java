@@ -33,12 +33,17 @@ public class Oval extends AbstractShapeDrawable {
     @Override
     public void draw(GraphicsContext g)
     {
-        g.setFill(color);
-        g.fillOval(topLeft.x, topLeft.y, width, height);
-
         g.setStroke(color);
         g.setLineWidth(thickness);
-        g.strokeOval(topLeft.x, topLeft.y, width, height);
+
+        if (filled) {
+            g.setFill(color);
+            g.fillOval(topLeft.x, topLeft.y, width, height);
+        }
+
+        else {
+            g.strokeOval(topLeft.x, topLeft.y, width, height);
+        }
     }
 }
 

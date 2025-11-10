@@ -27,11 +27,12 @@ public class View implements EventHandler<ActionEvent> {
         this.shapeChooserPanel = new ShapeChooserPanel(this);
         this.colorChooserPanel = new ColorChooserPanel(paintModel);
         ThicknessChooserPanel thicknessChooserPanel = new ThicknessChooserPanel(this.paintModel);
+        FillStyleChooserPanel fillStyleChooserPanel = new FillStyleChooserPanel(this.paintModel);
 
         BorderPane root = new BorderPane();
         root.setTop(createMenuBar());
         root.setCenter(this.paintPanel);
-        VBox leftPanel = new VBox(this.shapeChooserPanel, thicknessChooserPanel);
+        VBox leftPanel = new VBox(this.shapeChooserPanel, thicknessChooserPanel, fillStyleChooserPanel);
         root.setLeft(leftPanel);
         root.setBottom(this.colorChooserPanel);
 

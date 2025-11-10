@@ -9,6 +9,7 @@ public class PaintModel extends Observable {
     private Drawable preview;
     private Color currentColor = Color.BLACK;
     private double currentThickness = 2.0;
+    private boolean fillMode = true;
 
     public void addDrawable(Drawable d) {
         drawables.add(d);
@@ -49,6 +50,18 @@ public class PaintModel extends Observable {
     public void setCurrentThickness(double thickness)
     {
         this.currentThickness = thickness;
+        setChanged();
+        notifyObservers();
+    }
+
+    public boolean isFillMode()
+    {
+        return fillMode;
+    }
+
+    public void setFillMode(boolean fillMode)
+    {
+        this.fillMode = fillMode;
         setChanged();
         notifyObservers();
     }
