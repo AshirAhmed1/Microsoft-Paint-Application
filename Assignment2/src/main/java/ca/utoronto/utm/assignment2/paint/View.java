@@ -39,6 +39,20 @@ public class View implements EventHandler<ActionEvent> {
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.setTitle("Paint");
+        scene.setOnKeyPressed(e -> {
+            switch (e.getCode()) {
+                case C -> { setTool(ToolType.CIRCLE); shapeChooserPanel.highlightButton("Circle"); }
+                case R -> { setTool(ToolType.RECTANGLE); shapeChooserPanel.highlightButton("Rectangle"); }
+                case S -> { setTool(ToolType.SQUARE); shapeChooserPanel.highlightButton("Square"); }
+                case T -> { setTool(ToolType.TRIANGLE); shapeChooserPanel.highlightButton("Triangle"); }
+                case O -> { setTool(ToolType.OVAL); shapeChooserPanel.highlightButton("Oval"); }
+                case Q -> { setTool(ToolType.SQUIGGLE); shapeChooserPanel.highlightButton("Squiggle"); }
+                case L -> { setTool(ToolType.POLYLINE); shapeChooserPanel.highlightButton("Polyline"); }
+                case M -> { setTool(ToolType.SELECTMOVE); shapeChooserPanel.highlightButton("SelectMove"); }
+                default -> {}
+            }
+        });
+
         stage.show();
     }
 
