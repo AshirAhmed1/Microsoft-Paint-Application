@@ -48,5 +48,16 @@ public class Circle extends AbstractShapeDrawable {
             }
 
         }
+        @Override
+        public boolean contains(Point p) {
+            double dx = p.x - centre.x;
+            double dy = p.y - centre.y;
+            return dx * dx + dy * dy <= radius * radius;
+        }
+
+        @Override
+        public void translate(double dx, double dy) {
+            centre = new Point(centre.x + dx, centre.y + dy);
+        }
 
 }
