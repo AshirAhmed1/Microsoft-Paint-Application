@@ -66,11 +66,10 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
 
     public void highlightButton(String toolName) {
         for (javafx.scene.Node node : this.getChildren()) {
-            node.setStyle("");
-            if (node instanceof Button btn) {
-                if (btn.getText().toUpperCase().startsWith(toolName.toUpperCase())) {
-                    btn.setStyle("-fx-background-color: skyblue;");
-                }
+            Button btn = (Button) node;
+            btn.setStyle("");
+            if (btn.getText().toUpperCase().startsWith(toolName.toUpperCase())) {
+                btn.setStyle("-fx-background-color: skyblue;");
             }
         }
     }
