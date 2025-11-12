@@ -79,5 +79,20 @@ public class Triangle extends AbstractShapeDrawable{
 
     }
 
+    @Override
+    public boolean contains(Point p) {
+        double minX = bottom_left.x;
+        double maxX = bottom_left.x + base;
+        double minY = bottom_left.y - height;
+        double maxY = bottom_left.y;
+        return p.x >= minX && p.x <= maxX && p.y >= minY && p.y <= maxY;
+    }
+
+    @Override
+    public void translate(double dx, double dy) {
+        bottom_left = new Point(bottom_left.x + dx, bottom_left.y + dy);
+    }
+
+
 }
 

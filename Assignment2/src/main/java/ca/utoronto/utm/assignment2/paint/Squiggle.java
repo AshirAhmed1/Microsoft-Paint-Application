@@ -47,4 +47,36 @@ public class Squiggle extends AbstractShapeDrawable{
         }
     }
 
+    @Override
+    public boolean contains(Point p) {
+        for (int i = 0; i < points.size() - 1; i++) {
+            Point a = points.get(i);
+            Point b = points.get(i + 1);
+            double distance = pointToSegmentDistance(p, a, b);
+            if (distance <= 5) return true;
+        }
+        return false;
+    }
+
+    private double pointToSegmentDistance(Point p, Point a, Point b) {
+        double dx = b.x - a.x;
+        double dy = b.y - a.y;
+        double lenSq = dx * dx + dy * dy;
+        if (lenSq == 0) return Math.hypot(p.x - a.x, p.y - a.y);
+        double t = ((p.x - a.x) * dx + (p.y - a.y) * dy) / lenSq;
+        t = Math.max(0, Math.min(1, t));
+        double projX = a.x + t * dx;
+        double projY = a.y + t * dy;
+        return Math.hypot(p.x - projX, p.y - projY);
+    }
+
+    @Override
+    public void translate(double dx, double dy) {
+        for (Point pt : points) {
+            pt.x += dx;
+            pt.y += dy;
+        }
+    }
+
+
 }

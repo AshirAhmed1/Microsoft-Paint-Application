@@ -52,4 +52,19 @@ public class Square extends Rectangle{
 
     }
 
+    @Override
+    public boolean contains(Point p) {
+        Point tl = getTop_left();
+        double s = getSideLength();
+        return p.x >= tl.x && p.x <= tl.x + s &&
+                p.y >= tl.y && p.y <= tl.y + s;
+    }
+
+    @Override
+    public void translate(double dx, double dy) {
+        Point tl = getTop_left();
+        setTop_left(new Point(tl.x + dx, tl.y + dy));
+    }
+
+
 }

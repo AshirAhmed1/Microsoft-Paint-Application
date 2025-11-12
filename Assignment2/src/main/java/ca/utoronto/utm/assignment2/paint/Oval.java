@@ -45,5 +45,21 @@ public class Oval extends AbstractShapeDrawable {
             g.strokeOval(topLeft.x, topLeft.y, width, height);
         }
     }
+
+    @Override
+    public boolean contains(Point p) {
+        double rx = width / 2.0;
+        double ry = height / 2.0;
+        double cx = topLeft.x + rx;
+        double cy = topLeft.y + ry;
+        double normalized = Math.pow((p.x - cx) / rx, 2) + Math.pow((p.y - cy) / ry, 2);
+        return normalized <= 1.0;
+    }
+
+    @Override
+    public void translate(double dx, double dy) {
+        topLeft = new Point(topLeft.x + dx, topLeft.y + dy);
+    }
+
 }
 

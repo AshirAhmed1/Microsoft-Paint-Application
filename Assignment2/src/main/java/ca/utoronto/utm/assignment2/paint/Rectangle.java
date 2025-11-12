@@ -53,4 +53,16 @@ public class Rectangle extends AbstractShapeDrawable{
         }
     }
 
+    @Override
+    public boolean contains(Point p) {
+        return p.x >= top_left.x && p.x <= top_left.x + width &&
+                p.y >= top_left.y && p.y <= top_left.y + height;
+    }
+
+    @Override
+    public void translate(double dx, double dy) {
+        top_left = new Point(top_left.x + dx, top_left.y + dy);
+    }
+
+
 }

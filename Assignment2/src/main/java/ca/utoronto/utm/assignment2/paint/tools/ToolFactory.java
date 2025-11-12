@@ -13,6 +13,7 @@ public class ToolFactory {
             case OVAL -> new OvalTool(model, view);
             case SQUIGGLE -> new SquiggleTool(model, view);
             case POLYLINE -> new PolylineTool(model, view);
+            case SELECTMOVE -> new SelectMoveTool(model, view);
         };
     }
 }

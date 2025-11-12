@@ -9,4 +9,7 @@ public interface Drawable {
     void setThickness(double thickness);
     double getThickness();
 
+    boolean contains(Point p);
+    void translate(double dx, double dy);
+
 }
