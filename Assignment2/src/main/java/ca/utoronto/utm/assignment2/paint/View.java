@@ -72,7 +72,16 @@ public class View implements EventHandler<ActionEvent> {
     public void setTool(ToolType type) {
         Tool tool = ToolFactory.create(type, this.paintModel, this.paintPanel);
         this.paintPanel.setCurrentTool(tool);
+
     }
+    public void copySelection() {
+        this.paintModel.copySelected();
+    }
+
+    public void cutSelection() {
+        this.paintModel.cutSelected();
+    }
+
 
     private MenuBar createMenuBar() {
         MenuBar menuBar = new MenuBar();

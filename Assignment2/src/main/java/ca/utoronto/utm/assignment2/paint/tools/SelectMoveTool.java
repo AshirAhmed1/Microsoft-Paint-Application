@@ -20,7 +20,7 @@ public class SelectMoveTool extends AbstractShapeTool {
         for (int i = model.getDrawables().size() - 1; i >= 0; i--) {
             Drawable d = model.getDrawables().get(i);
             if (d.contains(click)) {
-                selectedShape = d;
+                model.setSelected(d);
                 lastX = e.getX();
                 lastY = e.getY();
                 isDragging = true;
