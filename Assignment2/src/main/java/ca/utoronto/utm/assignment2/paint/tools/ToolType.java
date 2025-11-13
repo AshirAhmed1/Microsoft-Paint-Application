@@ -8,5 +8,8 @@ public enum ToolType {
     TRIANGLE,
     OVAL,
     SQUIGGLE,
-    POLYLINE
+    POLYLINE,
+    PASTE,
+    CUT,
+    COPY,
 }

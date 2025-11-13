@@ -7,6 +7,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import ca.utoronto.utm.assignment2.paint.tools.ToolType;
+import java.io.InputStream;
 
 public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEvent> {
 
@@ -15,19 +16,29 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
     public ShapeChooserPanel(View view) {
         this.view = view;
 
-        String[] buttonLabels = {"Circle", "Rectangle", "Square", "Triangle", "Oval", "Squiggle", "Polyline", "SelectMove"};
+        String[] buttonLabels = {"Circle", "Rectangle", "Square", "Triangle", "Oval", "Squiggle", "Polyline", "SelectMove","Paste", "cut", "copy"};
 
         int row = 0;
         for (String label : buttonLabels) {
-            Image icon = new Image(getClass().getResourceAsStream("/icons/" + label.toLowerCase() + ".png"));
-            ImageView iconView = new ImageView(icon);
-            iconView.setFitWidth(24);
-            iconView.setFitHeight(24);
+//            Image icon = new Image(getClass().getResourceAsStream("/icons/" + label.toLowerCase() + ".png"));
+            String path = "/icons/" + label.toLowerCase() + ".png";
+            InputStream is = getClass().getResourceAsStream(path);
+            Button button;
+            if (is != null) {
+                Image icon = new Image(is);
+                ImageView iconView = new ImageView(icon);
+                iconView.setFitWidth(24);
+                iconView.setFitHeight(24);
 
-            Button button = new Button(label, iconView);
+                button = new Button(label, iconView);
+            } else {
+                // No icon? Just make a text-only button
+                System.out.println("No icon found for " + label + " at " + path);
+                button = new Button(label);
+            }
+
             button.setMinWidth(100);
-            this.add(button, 0, row);
-            row++;
+            this.add(button, 0, row++);
 
             // Highlight selected button and set active Tool
             button.setOnAction(actionEvent -> {
@@ -43,6 +54,8 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
                 } catch (IllegalArgumentException e) {
                     System.out.println("Unknown tool type: " + label);
                 }
+
+
             });
         }
     }
