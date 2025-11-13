@@ -77,47 +77,67 @@ public class PaintModel extends Observable {
 
         if (d instanceof Triangle t) {
             Point bl = t.getbottom_left();
-            return new Triangle(
+            Triangle cs =  new Triangle(   // copyshape
                     new Point(bl.x + dx, bl.y + dy),
                     t.getbase(),
                     t.getside1(),
                     t.getside2()
             );
+            cs.setColor(t.getColor());
+            cs.setThickness(t.getThickness());
+
+            return cs;
         }
 
         if (d instanceof Square s) {
             Point tl = s.getTop_left();
-            return new Square(
+            Square cs =  new Square(
                     new Point(tl.x + dx, tl.y + dy),
                     (int) s.getSideLength()
             );
+            cs.setColor(s.getColor());
+            cs.setThickness(s.getThickness());
+
+            return cs;
         }
 
         if (d instanceof Circle c) {
             Point centre = c.getCentre();
-            return new Circle(
+            Circle cs =new Circle(
                     new Point(centre.x + dx, centre.y + dy),
                     (int) c.getRadius()
             );
+            cs.setColor(c.getColor());
+            cs.setThickness(c.getThickness());
+
+            return cs;
         }
 
         if (d instanceof Oval o) {
             Point tl = o.getTopLeft();
-            return new Oval(
+            Oval cs =new Oval(
                     new Point(tl.x + dx, tl.y + dy),
                     o.getWidth(),
                     o.getHeight()
             );
+            cs.setColor(o.getColor());
+            cs.setThickness(o.getThickness());
+
+            return cs;
         }
 
 
         if (d instanceof Rectangle r) {
             Point tl = r.getTop_left();
-            return new Rectangle(
+            Rectangle cs = new Rectangle(
                     new Point(tl.x + dx, tl.y + dy),
                     r.getWidth(),
                     r.getHeight()
             );
+            cs.setColor(r.getColor());
+            cs.setThickness(r.getThickness());
+
+            return cs;
         }
         return d;
     }
