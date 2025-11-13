@@ -28,3 +28,12 @@ Description:
 Reference:
 	USER STORY US4.011
 --------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+FeatureName: Eraser Tool
+
+Description:
+		This feature allows for the user to eraser drawn shapes on the canvas.
+
+Reference:
+	USER STORY US4.010
+--------------------------------------------------------------------------------

@@ -4,6 +4,9 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import java.util.ArrayList;
 
+/**
+ *
+ */
 public class Eraser extends AbstractShapeDrawable {
 
     private final ArrayList<Point> points = new ArrayList<>();

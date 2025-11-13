@@ -14,6 +14,7 @@ public class EraserTool extends AbstractShapeTool{
     @Override
     public void onPress(MouseEvent e){
         current = new Eraser();
+        current.setThickness(model.getCurrentThickness());
         current.addPoint(new Point(e.getX(), e.getY()));
         model.addDrawable(current);
     }
