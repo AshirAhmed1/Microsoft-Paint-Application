@@ -5,19 +5,32 @@ import javafx.scene.paint.Color;
 import java.util.ArrayList;
 
 /**
- *
+ * Represents an eraser which can "erase" parts of the drawing by clicking and dragging the ouse
+ * over the canvas.
  */
 public class Eraser extends AbstractShapeDrawable {
 
     private final ArrayList<Point> points = new ArrayList<>();
     private Color color = Color.WHITE;
 
+    /**
+     * Constructs a new eraser.
+     */
     public Eraser() { super(); }
 
+    /**
+     * Adds a point to the eraser's path which connect to eachother.
+     * @param p
+     */
     public void addPoint(Point p) {
         points.add(p);
     }
 
+    /**
+     * Erases anything on the canvas on the path of the points given.
+     *
+     * @param g which is the current canvas.
+     */
     @Override
     public void draw(GraphicsContext g) {
         if (points.size() < 2) return;

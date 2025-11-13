@@ -2,6 +2,9 @@ package ca.utoronto.utm.assignment2.paint;
 
 import javafx.scene.canvas.GraphicsContext;
 
+/**
+ * Represent a triangle shape which can be added to the canvas.
+ */
 public class Triangle extends AbstractShapeDrawable{
     private Point bottom_left;
     private double base;
@@ -9,6 +12,13 @@ public class Triangle extends AbstractShapeDrawable{
     private double side2;
     private double height;
 
+    /**
+     * Construct a new triangle shape with the specified parameters.
+     * @param bottom_left
+     * @param base
+     * @param side1
+     * @param side2
+     */
     public Triangle(Point bottom_left, double base, double side1, double side2)
     {
         super();
@@ -18,45 +28,41 @@ public class Triangle extends AbstractShapeDrawable{
         this.side2 = side2;
         this.height = Math.sqrt(side1 * side1 - (base / 2) * (base / 2));
     }
+
+    /**
+     * Return the bottom left point
+     * @return
+     */
     public Point getbottom_left()
     {
         return this.bottom_left;
     }
-    public void setbottom_left(Point botton_left)
-    {
-        this.bottom_left = botton_left;
-    }
-    public void setbase(double base)
-    {
-        this.base = base;
-    }
-    public void setside1(double side1)
-    {
-        this.side1 = side1;
-    }
-    public void setside2(double side2)
-    {
-        this.side2 = side2;
-    }
-    public void setHeight(double height)
-    {
-        this.height = height;
-    }
+
+    /**
+     * Return the length of the base of the triangle.
+     * @return base length
+     */
     public double getbase()
     {
         return this.base;
     }
+
+    /**
+     * Return the length of side1 of the triangle.
+     * @return side1 length
+     */
     public double getside1()
     {
         return this.side1;
     }
+
+    /**
+     * Return the length of side2 of the triangle
+     * @return side2 length
+     */
     public double getside2()
     {
         return this.side2;
-    }
-    public double getHeight()
-    {
-        return this.height;
     }
 
     @Override

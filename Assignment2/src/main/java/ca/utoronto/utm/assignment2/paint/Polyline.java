@@ -4,22 +4,34 @@ import javafx.scene.canvas.GraphicsContext;
 
 import java.util.ArrayList;
 
+/**
+ * Represents the current path of clicks from a user which form a polyline which is added to the canvas.
+ */
 public class Polyline extends AbstractShapeDrawable{
 
     private final ArrayList<Point> points = new ArrayList<>();
 
+    /**
+     * Construct a new polyline shape.
+     */
     public Polyline(){
         super();
     }
+
     /**
      * Add a new point to polyline segment.
      * @param p the point to add
      */
     public void addPoint(Point p) {points.add(p);}
 
+    /**
+     * return the list of points making up the polyline.
+     * @return list of points
+     */
     public ArrayList<Point> getPoints(){
         return points;
     }
+
     @Override
     public void draw(GraphicsContext g) {
         if (points.size() < 2) return;

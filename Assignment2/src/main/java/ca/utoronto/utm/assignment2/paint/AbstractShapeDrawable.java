@@ -72,4 +72,18 @@ public abstract class AbstractShapeDrawable implements Drawable {
      * @param gc which is the current canvas.
      */
     public abstract void draw(GraphicsContext gc);
+
+    /**
+     * returns if the current point clicked lies within the specified shape.
+     * @param p
+     * @return
+     */
+    public boolean contains(Point p){ return true;}
+
+    /**
+     * Moves the selected shape by the specified directions.
+     * @param dx
+     * @param dy
+     */
+    public void translate(double dx, double dy){}
 }

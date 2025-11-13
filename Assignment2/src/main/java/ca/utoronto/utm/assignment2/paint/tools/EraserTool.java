@@ -1,16 +1,26 @@
 package ca.utoronto.utm.assignment2.paint.tools;
 
 import ca.utoronto.utm.assignment2.paint.*;
-import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.paint.Color;
 
+/**
+ * Controls the eraser on the canvas depending on the current MouseEvent.
+ */
 public class EraserTool extends AbstractShapeTool{
 
     private Eraser current;
 
+    /**
+     * Constructs a new EraserTool object
+     * @param model
+     * @param view
+     */
     public EraserTool(PaintModel model, PaintPanel view){ super(model,view); }
 
+    /**
+     * Begins the current erase.
+     * @param e
+     */
     @Override
     public void onPress(MouseEvent e){
         current = new Eraser();
@@ -19,6 +29,10 @@ public class EraserTool extends AbstractShapeTool{
         model.addDrawable(current);
     }
 
+    /**
+     * Erases anything the mouse is dragged over.
+     * @param e
+     */
     @Override
     public void onDrag(MouseEvent e){
         if (current != null) {
@@ -27,6 +41,10 @@ public class EraserTool extends AbstractShapeTool{
         }
     }
 
+    /**
+     * Ends the erase.
+     * @param e
+     */
     @Override
     public void onRelease(MouseEvent e){
         current.addPoint(new Point(e.getX(), e.getY()));
