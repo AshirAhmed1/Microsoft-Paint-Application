@@ -18,14 +18,17 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
         this.view = view;
 
         String[] buttonLabels = {"Circle", "Rectangle", "Square", "Triangle", "Oval", "Squiggle", "Polyline", "Eraser", "SelectMove","Paste", "cut", "copy"};
-        String[] shortcuts = {"C", "R", "S", "T", "O", "Q", "L", "M"};
+        String[] shortcuts = {"C", "R", "S", "T", "O", "Q", "L", "E", "M", "", "", ""};
 
         int row = 0;
-        for (String label : buttonLabels) {
-//          Image icon = new Image(getClass().getResourceAsStream("/icons/" + label.toLowerCase() + ".png"));
+        for (int i = 0; i < buttonLabels.length; i++) {
+            String label = buttonLabels[i];
+            String shortcut = shortcuts[i];
+
             String path = "/icons/" + label.toLowerCase() + ".png";
             InputStream is = getClass().getResourceAsStream(path);
 
+            String fullLabel = label + (shortcut.isEmpty() ? "" : "(" + shortcut + ")");
             Button button;
             if (is != null) {
                 Image icon = new Image(is);
@@ -33,15 +36,16 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
                 iconView.setFitWidth(24);
                 iconView.setFitHeight(24);
 
-                button = new Button(label, iconView);
+                button = new Button(fullLabel, iconView);
             } else {
                 // No icon? Just make a text-only button
                 System.out.println("No icon found for " + label + " at " + path);
-                button = new Button(label);
+                button = new Button(fullLabel);
             }
-
-            button.setMinWidth(100);
-            this.add(button, 0, row++);
+            if (!shortcut.isEmpty()) {
+                button.setTooltip(new javafx.scene.control.Tooltip("Press " + shortcut + " to select " + label));
+                this.add(button, 0, row++);
+            }
 
             // Highlight selected button and set active Tool
             button.setOnAction(actionEvent -> {
