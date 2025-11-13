@@ -16,16 +16,20 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
         this.view = view;
 
         String[] buttonLabels = {"Circle", "Rectangle", "Square", "Triangle", "Oval", "Squiggle", "Polyline", "SelectMove"};
+        String[] shortcuts = {"C", "R", "S", "T", "O", "Q", "L", "M"};
 
         int row = 0;
-        for (String label : buttonLabels) {
+        for (int i = 0; i < buttonLabels.length; i++) {
+            String label = buttonLabels[i];
+            String shortcut = shortcuts[i];
             Image icon = new Image(getClass().getResourceAsStream("/icons/" + label.toLowerCase() + ".png"));
             ImageView iconView = new ImageView(icon);
             iconView.setFitWidth(24);
             iconView.setFitHeight(24);
 
-            Button button = new Button(label, iconView);
+            Button button = new Button(label + " (" + shortcut + ")", iconView);
             button.setMinWidth(100);
+            button.setTooltip(new javafx.scene.control.Tooltip("Press " + shortcut + " to select " + label));
             this.add(button, 0, row);
             row++;
 
@@ -57,6 +61,16 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
             view.setTool(type);
         } catch (IllegalArgumentException e) {
             System.out.println("Unknown tool: " + command);
+        }
+    }
+
+    public void highlightButton(String toolName) {
+        for (javafx.scene.Node node : this.getChildren()) {
+            Button btn = (Button) node;
+            btn.setStyle("");
+            if (btn.getText().toUpperCase().startsWith(toolName.toUpperCase())) {
+                btn.setStyle("-fx-background-color: skyblue;");
+            }
         }
     }
 }

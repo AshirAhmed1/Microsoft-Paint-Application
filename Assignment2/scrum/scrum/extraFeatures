@@ -1,0 +1,30 @@
+--------------------------------------------------------------------------------
+FeatureName: Select and Move Tool
+
+Description:
+		This feature adds a Select and Move button that allows users to move any
+    	shape on the canvas. When this tool is selected, users can click and hold
+    	on any shape, drag it to a new position, and see it moving in real time.
+    	When the mouse is released, the shape is repositioned to its new location.
+    	This works for all shape types on the canvas.
+
+Reference:
+	USER STORY US4.010
+--------------------------------------------------------------------------------
+FeatureName: Keyboard Shortcuts for Tool Selection
+
+Description:
+		This feature allows users to quickly switch between different drawing tools
+    	using keyboard shortcuts. Each shape button, including the Select/Move tool,
+    	has an assigned shortcut key (e.g., C for Circle, R for Rectangle, S for Square,
+    	T for Triangle, O for Oval, Q for Squiggle, L for Polyline, and M for Select/Move).
+    	When a user presses one of these keys, the corresponding tool becomes active
+    	instantly.
+
+    	Additionally, each button displays its shortcut key in brackets beside its name
+    	and shows the shortcut when hovered over, making it clear and intuitive for users
+    	to learn and use the hotkeys efficiently.
+
+Reference:
+	USER STORY US4.011
+--------------------------------------------------------------------------------
