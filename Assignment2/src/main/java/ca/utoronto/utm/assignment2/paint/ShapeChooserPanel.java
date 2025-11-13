@@ -42,9 +42,9 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
                 System.out.println("No icon found for " + label + " at " + path);
                 button = new Button(fullLabel);
             }
+            this.add(button, 0, row++);
             if (!shortcut.isEmpty()) {
                 button.setTooltip(new javafx.scene.control.Tooltip("Press " + shortcut + " to select " + label));
-                this.add(button, 0, row++);
             }
 
             // Highlight selected button and set active Tool
