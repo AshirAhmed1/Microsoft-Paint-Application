@@ -9,6 +9,7 @@ public enum ToolType {
     OVAL,
     SQUIGGLE,
     POLYLINE,
+    ERASER,
     PASTE,
     CUT,
     COPY,
