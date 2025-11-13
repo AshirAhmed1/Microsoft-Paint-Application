@@ -20,27 +20,23 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
 
         int row = 0;
         for (String label : buttonLabels) {
-//            Image icon = new Image(getClass().getResourceAsStream("/icons/" + label.toLowerCase() + ".png"));
-            String path = "/icons/" + label.toLowerCase() + ".png";
-            InputStream is = getClass().getResourceAsStream(path);
+          Image icon = new Image(getClass().getResourceAsStream("/icons/" + label.toLowerCase() + ".png"));
+
             Button button;
-            if (is != null) {
-                Image icon = new Image(is);
+            if (!icon.isError()) {
                 ImageView iconView = new ImageView(icon);
                 iconView.setFitWidth(24);
                 iconView.setFitHeight(24);
 
                 button = new Button(label, iconView);
             } else {
-                // No icon? Just make a text-only button
-                System.out.println("No icon found for " + label + " at " + path);
                 button = new Button(label);
             }
 
             button.setMinWidth(100);
             this.add(button, 0, row++);
 
-            // Highlight selected button and set active Tool
+
             button.setOnAction(actionEvent -> {
                 for (javafx.scene.Node n : this.getChildren()) {
                     n.setStyle("");

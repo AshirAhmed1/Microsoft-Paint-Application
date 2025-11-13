@@ -10,31 +10,19 @@ public class PasteTool extends AbstractShapeTool {
         super(model, view);
     }
 
-    // When user clicks on the canvas, paste the clipboard shape at that point
     @Override
     public void onPress(MouseEvent e) {
         model.pasteAt(e.getX(), e.getY());
     }
 
-    // Paste is a click-only operation, so we don't need drag or release
     @Override
-    public void onDrag(MouseEvent e) {
-        // no-op
-    }
+    public void onDrag(MouseEvent e) {}
 
     @Override
-    public void onRelease(MouseEvent e) {
-        // no-op
-    }
-
-    // Not used for paste; required by AbstractShapeTool
+    public void onRelease(MouseEvent e) {}
     @Override
-    protected void drawPreview(double x, double y) {
-        // no-op
-    }
+    protected void drawPreview(double x, double y) {}
 
     @Override
-    protected void commit(double x, double y) {
-        // no-op
-    }
+    protected void commit(double x, double y) {}
 }

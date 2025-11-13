@@ -16,12 +16,11 @@ public class CopyTool extends AbstractShapeTool {
     public void onPress(MouseEvent e) {
         Point click = new Point(e.getX(), e.getY());
 
-        // Search from top-most drawable downwards
         for (int i = model.getDrawables().size() - 1; i >= 0; i--) {
             Drawable d = model.getDrawables().get(i);
             if (d.contains(click)) {
-                model.setSelected(d);   // remember which shape
-                model.copySelected();   // fill clipboard
+                model.setSelected(d);
+                model.copySelected();
                 System.out.println("Copied: " + d.getClass().getSimpleName());
                 break;
             }
@@ -29,22 +28,14 @@ public class CopyTool extends AbstractShapeTool {
     }
 
     @Override
-    public void onDrag(MouseEvent e) {
-        // No dragging needed for copy
-    }
+    public void onDrag(MouseEvent e) {}
 
     @Override
-    public void onRelease(MouseEvent e) {
-        // Nothing needed on release
-    }
+    public void onRelease(MouseEvent e) {}
 
     @Override
-    protected void drawPreview(double x, double y) {
-        // No preview for copy
-    }
+    protected void drawPreview(double x, double y) {}
 
     @Override
-    protected void commit(double x, double y) {
-        // Not used
-    }
+    protected void commit(double x, double y) {}
 }

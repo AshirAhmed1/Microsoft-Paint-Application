@@ -16,12 +16,11 @@ public class CutTool extends AbstractShapeTool {
     public void onPress(MouseEvent e) {
         Point click = new Point(e.getX(), e.getY());
 
-        // Search from top-most drawable downwards
         for (int i = model.getDrawables().size() - 1; i >= 0; i--) {
             Drawable d = model.getDrawables().get(i);
             if (d.contains(click)) {
-                model.setSelected(d);   // remember which shape
-                model.cutSelected();    // remove + put into clipboard
+                model.setSelected(d);
+                model.cutSelected();
                 System.out.println("Cut: " + d.getClass().getSimpleName());
                 break;
             }
@@ -29,22 +28,14 @@ public class CutTool extends AbstractShapeTool {
     }
 
     @Override
-    public void onDrag(MouseEvent e) {
-        // No dragging needed for cut
-    }
+    public void onDrag(MouseEvent e) {}
 
     @Override
-    public void onRelease(MouseEvent e) {
-        // Nothing needed on release
-    }
+    public void onRelease(MouseEvent e) {}
 
     @Override
-    protected void drawPreview(double x, double y) {
-        // No preview for cut
-    }
+    protected void drawPreview(double x, double y) {}
 
     @Override
-    protected void commit(double x, double y) {
-        // Not used
-    }
+    protected void commit(double x, double y) {}
 }

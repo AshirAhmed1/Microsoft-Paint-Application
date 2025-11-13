@@ -74,46 +74,7 @@ public class PaintModel extends Observable {
     }
 
     private Drawable copyPasteHelper(Drawable d, double dx, double dy) {
-        // Circle
-        if (d instanceof Circle c) {
-            Point centre = c.getCentre();
-            // Circle(Point centre, int radius)
-            return new Circle(
-                    new Point(centre.x + dx, centre.y + dy),
-                    (int) c.getRadius()
-            );
-        }
 
-        // Rectangle
-        if (d instanceof Rectangle r) {
-            Point tl = r.getTop_left();
-            return new Rectangle(
-                    new Point(tl.x + dx, tl.y + dy),
-                    r.getWidth(),
-                    r.getHeight()
-            );
-        }
-
-        // Square  (if this gives warnings, you can delete this whole if-block)
-        if (d instanceof Square s) {
-            Point tl = s.getTop_left();
-            return new Square(
-                    new Point(tl.x + dx, tl.y + dy),
-                    (int) s.getSideLength()
-            );
-        }
-
-        // Oval
-        if (d instanceof Oval o) {
-            Point tl = o.getTopLeft();
-            return new Oval(
-                    new Point(tl.x + dx, tl.y + dy),
-                    o.getWidth(),
-                    o.getHeight()
-            );
-        }
-
-        // Triangle  (if getter names differ, we can fix, or comment this out)
         if (d instanceof Triangle t) {
             Point bl = t.getbottom_left();
             return new Triangle(
@@ -124,7 +85,40 @@ public class PaintModel extends Observable {
             );
         }
 
-        // If some other Drawable we didn't handle, just return it
+        if (d instanceof Square s) {
+            Point tl = s.getTop_left();
+            return new Square(
+                    new Point(tl.x + dx, tl.y + dy),
+                    (int) s.getSideLength()
+            );
+        }
+
+        if (d instanceof Circle c) {
+            Point centre = c.getCentre();
+            return new Circle(
+                    new Point(centre.x + dx, centre.y + dy),
+                    (int) c.getRadius()
+            );
+        }
+
+        if (d instanceof Oval o) {
+            Point tl = o.getTopLeft();
+            return new Oval(
+                    new Point(tl.x + dx, tl.y + dy),
+                    o.getWidth(),
+                    o.getHeight()
+            );
+        }
+
+
+        if (d instanceof Rectangle r) {
+            Point tl = r.getTop_left();
+            return new Rectangle(
+                    new Point(tl.x + dx, tl.y + dy),
+                    r.getWidth(),
+                    r.getHeight()
+            );
+        }
         return d;
     }
 
@@ -150,7 +144,7 @@ public class PaintModel extends Observable {
         if (selected != null) {
             drawables.remove(selected);
             clipboard = copyPasteHelper(selected, 0, 0);
-            selected = null;   // nothing selected now
+            selected = null;
             setChanged();
             notifyObservers();
         }
@@ -159,7 +153,6 @@ public class PaintModel extends Observable {
     private Drawable createClipboardCopyAt(double x, double y) {
         if (clipboard == null) return null;
 
-        // First make a copy at the same place as original
         Drawable copy = copyPasteHelper(clipboard, 0, 0);
 
         double dx = 0;
@@ -190,15 +183,13 @@ public class PaintModel extends Observable {
             dx = x - p0.x;
             dy = y - p0.y;
         }
-
-        // All drawables support translate(dx, dy)
         copy.translate(dx, dy);
         return copy;
     }
     public void pasteAt(double x, double y) {
         Drawable pasted = createClipboardCopyAt(x, y);
         if (pasted != null) {
-            addDrawable(pasted);  // your existing addDrawable, which notifies observers
+            addDrawable(pasted);
         }
     }
 }
