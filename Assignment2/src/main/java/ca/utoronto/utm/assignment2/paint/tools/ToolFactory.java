@@ -14,6 +14,7 @@ public class ToolFactory {
             case SQUIGGLE -> new SquiggleTool(model, view);
             case POLYLINE -> new PolylineTool(model, view);
             case ERASER -> new EraserTool(model, view);
+            case PAINTBUCKET -> new PaintBucketTool(model, view);
             case SELECTMOVE -> new SelectMoveTool(model, view);
             case PASTE  -> new PasteTool(model, view);
             case CUT -> new CutTool(model, view);
