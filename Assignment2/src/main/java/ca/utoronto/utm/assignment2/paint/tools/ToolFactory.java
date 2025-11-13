@@ -17,6 +17,7 @@ public class ToolFactory {
             case PASTE  -> new PasteTool(model, view);
             case CUT -> new CutTool(model, view);
             case COPY  -> new CopyTool(model, view);
+            case CLEAR -> new ClearCanvasTool(model, view);
         };
     }
 }

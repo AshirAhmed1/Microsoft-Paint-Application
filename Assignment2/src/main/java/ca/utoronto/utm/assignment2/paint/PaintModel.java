@@ -148,6 +148,16 @@ public class PaintModel extends Observable {
         notifyObservers();
     }
 
+    public void clearCanvas() {
+
+        if (drawables.isEmpty()) {
+            return;
+        }
+        drawables.clear();
+        clearPreview();
+        setChanged();
+        notifyObservers();
+    }
     public Drawable getSelected() {
         return this.selected;
     }
