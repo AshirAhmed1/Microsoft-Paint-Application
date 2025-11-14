@@ -1,6 +1,7 @@
 package ca.utoronto.utm.assignment2.paint.tools;
 
 import ca.utoronto.utm.assignment2.paint.*;
+import ca.utoronto.utm.assignment2.paint.command.AddShapeCommand;
 
 public class OvalTool extends AbstractShapeTool {
     public OvalTool(PaintModel model, PaintPanel view) {
@@ -31,7 +32,7 @@ public class OvalTool extends AbstractShapeTool {
         oval.setColor(model.getCurrentColor());
         oval.setThickness(model.getCurrentThickness());
         oval.setFilled(model.isFillMode());
-        model.addDrawable(oval);
+        model.executeCommand(new AddShapeCommand(model, oval));
         model.clearPreview();
     }
 }

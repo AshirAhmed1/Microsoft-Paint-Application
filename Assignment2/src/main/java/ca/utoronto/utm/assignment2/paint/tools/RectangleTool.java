@@ -1,6 +1,7 @@
 package ca.utoronto.utm.assignment2.paint.tools;
 
 import ca.utoronto.utm.assignment2.paint.*;
+import ca.utoronto.utm.assignment2.paint.command.AddShapeCommand;
 
 public class RectangleTool extends AbstractShapeTool {
     public RectangleTool(PaintModel model, PaintPanel view) {
@@ -47,7 +48,7 @@ public class RectangleTool extends AbstractShapeTool {
         rectangle.setColor(model.getCurrentColor());
         rectangle.setThickness(model.getCurrentThickness());
         rectangle.setFilled(model.isFillMode());
-        model.addDrawable(rectangle);
+        model.executeCommand(new AddShapeCommand(model, rectangle));
         model.clearPreview();
     }
 }

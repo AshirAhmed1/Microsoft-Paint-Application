@@ -1,6 +1,7 @@
 package ca.utoronto.utm.assignment2.paint.tools;
 
 import ca.utoronto.utm.assignment2.paint.*;
+import ca.utoronto.utm.assignment2.paint.command.AddShapeCommand;
 
 public class SquareTool extends AbstractShapeTool {
     public SquareTool(PaintModel model, PaintPanel view) {
@@ -46,7 +47,7 @@ public class SquareTool extends AbstractShapeTool {
         square.setColor(model.getCurrentColor());
         square.setThickness(model.getCurrentThickness());
         square.setFilled(model.isFillMode());
-        model.addDrawable(square);
+        model.executeCommand(new AddShapeCommand(model, square));
         model.clearPreview();
     }
 }

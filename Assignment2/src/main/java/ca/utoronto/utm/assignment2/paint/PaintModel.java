@@ -2,7 +2,11 @@ package ca.utoronto.utm.assignment2.paint;
 
 import java.util.ArrayList;
 import java.util.Observable;
+
+import ca.utoronto.utm.assignment2.paint.command.PasteCommand;
 import javafx.scene.paint.Color;
+import java.util.Stack;
+import ca.utoronto.utm.assignment2.paint.command.Command;
 
 public class PaintModel extends Observable {
     private final ArrayList<Drawable> drawables = new ArrayList<>();
@@ -12,6 +16,8 @@ public class PaintModel extends Observable {
     private boolean fillMode = true;
     private Drawable clipboard;
     private Drawable selected;
+    private final Stack<Command> undoStack = new Stack<>();
+    private final Stack<Command> redoStack = new Stack<>();
 
     public void addDrawable(Drawable d) {
         drawables.add(d);
@@ -211,7 +217,32 @@ public class PaintModel extends Observable {
     public void pasteAt(double x, double y) {
         Drawable pasted = createClipboardCopyAt(x, y);
         if (pasted != null) {
-            addDrawable(pasted);
+            executeCommand(new PasteCommand(this, pasted));
+        }
+    }
+
+    public void executeCommand(Command command) {
+        command.execute();
+        undoStack.push(command);
+        redoStack.clear();
+        updateObservers();
+    }
+
+    public void undo() {
+        if (!undoStack.isEmpty()) {
+            Command cmd = undoStack.pop();
+            cmd.undo();
+            redoStack.push(cmd);
+            updateObservers();
+        }
+    }
+
+    public void redo() {
+        if (!redoStack.isEmpty()) {
+            Command cmd = redoStack.pop();
+            cmd.execute();
+            undoStack.push(cmd);
+            updateObservers();
         }
     }
 }

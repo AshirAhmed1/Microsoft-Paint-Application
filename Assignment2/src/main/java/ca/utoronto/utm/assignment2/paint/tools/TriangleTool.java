@@ -1,6 +1,7 @@
 package ca.utoronto.utm.assignment2.paint.tools;
 
 import ca.utoronto.utm.assignment2.paint.*;
+import ca.utoronto.utm.assignment2.paint.command.AddShapeCommand;
 
 public class TriangleTool extends AbstractShapeTool {
     public TriangleTool(PaintModel model, PaintPanel view) {
@@ -34,7 +35,7 @@ public class TriangleTool extends AbstractShapeTool {
         triangle.setColor(model.getCurrentColor());
         triangle.setThickness(model.getCurrentThickness());
         triangle.setFilled(model.isFillMode());
-        model.addDrawable(triangle);
+        model.executeCommand(new AddShapeCommand(model, triangle));
         model.clearPreview();
     }
 }

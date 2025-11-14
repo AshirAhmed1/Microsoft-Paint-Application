@@ -1,12 +1,13 @@
 package ca.utoronto.utm.assignment2.paint;
 
+import ca.utoronto.utm.assignment2.paint.command.StyleCommand;
 import javafx.geometry.Insets;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.HBox;
 
 public class FillStyleChooserPanel extends HBox {
-    private PaintModel model;
+    private final PaintModel model;
 
     public FillStyleChooserPanel(PaintModel model)
     {
@@ -22,16 +23,23 @@ public class FillStyleChooserPanel extends HBox {
         filledBtn.setToggleGroup(toggle);
         outlineBtn.setToggleGroup(toggle);
 
-        filledBtn.setSelected(model.isFillMode());
+        if (model.isFillMode()) filledBtn.setSelected(true);
+        else outlineBtn.setSelected(true);
 
         toggle.selectedToggleProperty().addListener((obs, oldToggle, newToggle) -> {
-            if (newToggle == filledBtn) {
-                model.setFillMode(true);
-                System.out.println("Fill mode: FILLED");
-            } else if (newToggle == outlineBtn) {
-                model.setFillMode(false);
-                System.out.println("Fill mode: OUTLINE");
+
+            boolean newFilled = (newToggle == filledBtn);
+            boolean oldFilled = model.isFillMode();
+
+            model.setFillMode(newFilled);
+
+            if (model.getSelected() != null) {
+                model.executeCommand(
+                        new StyleCommand(model, model.getSelected(), oldFilled, newFilled)
+                );
             }
+
+            System.out.println("Fill mode: " + (newFilled ? "FILLED" : "OUTLINE"));
         });
 
         this.getChildren().addAll(filledBtn, outlineBtn);
