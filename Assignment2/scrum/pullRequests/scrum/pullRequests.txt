@@ -11,4 +11,4 @@
  US4.011 author:ahme1250 puller: phanale5 status: Completed
  US4.008 author:imrana15 puller: phanale5 status: Completed
  US4.013 author:phanale5 puller: alnabu11 status: Completed
- US4.014 author:phanale5 puller: alnabu11 status: InProcess
+ US4.014 author:phanale5 puller: alnabu11 status: Completed
