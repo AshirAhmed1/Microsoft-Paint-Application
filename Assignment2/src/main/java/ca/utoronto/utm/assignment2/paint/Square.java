@@ -1,6 +1,9 @@
 package ca.utoronto.utm.assignment2.paint;
 
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.paint.Color;
+
+import java.util.ArrayList;
 
 /**
  * Represents a square shape which can be added to the canvas.
@@ -62,6 +65,9 @@ public class Square extends Rectangle{
         else {
             g.strokeRect(getTop_left().x, getTop_left().y, getSideLength(), getSideLength());
         }
+        g.setFill(Color.WHITE);
+        // Makes sure when the shape is moved after erased, it remains erased.
+        erase(g);
 
     }
 
@@ -77,6 +83,12 @@ public class Square extends Rectangle{
     public void translate(double dx, double dy) {
         Point tl = getTop_left();
         setTop_left(new Point(tl.x + dx, tl.y + dy));
+        for (ArrayList<ErasePoint> stroke: erasedStrokes) {
+            for (ErasePoint p: stroke) {
+                p.x += dx;
+                p.y += dy;
+            }
+        }
     }
 
 

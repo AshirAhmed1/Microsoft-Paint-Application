@@ -1,6 +1,9 @@
 package ca.utoronto.utm.assignment2.paint;
 
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.paint.Color;
+
+import java.util.ArrayList;
 
 /**
  * Represent a triangle shape which can be added to the canvas.
@@ -83,6 +86,9 @@ public class Triangle extends AbstractShapeDrawable{
             g.strokePolygon(xs, ys, 3);
         }
 
+        g.setFill(Color.WHITE);
+        // Makes sure when the shape is moved after erased, it remains erased.
+        erase(g);
     }
 
     @Override
@@ -97,6 +103,12 @@ public class Triangle extends AbstractShapeDrawable{
     @Override
     public void translate(double dx, double dy) {
         bottom_left = new Point(bottom_left.x + dx, bottom_left.y + dy);
+        for (ArrayList<ErasePoint> stroke: erasedStrokes) {
+            for (ErasePoint p: stroke) {
+                p.x += dx;
+                p.y += dy;
+            }
+        }
     }
 
 

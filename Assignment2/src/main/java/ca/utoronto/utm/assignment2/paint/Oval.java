@@ -1,6 +1,9 @@
 package ca.utoronto.utm.assignment2.paint;
 
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.paint.Color;
+
+import java.util.ArrayList;
 
 /**
  * Represents an oval shape that can be drawn on the canvas.
@@ -61,6 +64,9 @@ public class Oval extends AbstractShapeDrawable {
         else {
             g.strokeOval(topLeft.x, topLeft.y, width, height);
         }
+        g.setFill(Color.WHITE);
+        // Makes sure when the shape is moved after erased, it remains erased.
+        erase(g);
     }
 
     @Override
@@ -77,6 +83,12 @@ public class Oval extends AbstractShapeDrawable {
     @Override
     public void translate(double dx, double dy) {
         topLeft = new Point(topLeft.x + dx, topLeft.y + dy);
+        for (ArrayList<ErasePoint> stroke: erasedStrokes) {
+            for (ErasePoint p: stroke) {
+                p.x += dx;
+                p.y += dy;
+            }
+        }
     }
 
 }
