@@ -14,4 +14,5 @@ public enum ToolType {
     PASTE,
     CUT,
     COPY,
+    TEXT
 }

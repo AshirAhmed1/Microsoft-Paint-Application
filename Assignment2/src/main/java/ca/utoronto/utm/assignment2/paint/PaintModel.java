@@ -147,6 +147,17 @@ public class PaintModel extends Observable {
 
             return cs;
         }
+
+        if (d instanceof Text t) {
+//            Text copy = new Text(
+//                    new Point(t.getPosition().x, t.getPosition().y),
+//                    t.getText()
+//            );
+            copy.setColor(t.getColor());
+            copy.setThickness(t.getThickness());
+            copy.setFilled(t.isFilled());
+            return copy;
+        }
         return d;
     }
 
