@@ -64,3 +64,14 @@ Description:
 Reference:
 	USER STORY US4.014
 --------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+FeatureName: Adaptive Cursor
+
+Description:
+		This feature allows the user to be sure about the tool selected by giving visual
+		feedback in which the cursor represents the selected tool. For shapes, the cursor
+		turns into a crosshair to help with precision while drawing. For the paint bucket
+		and eyedropper tool
+Reference:
+	USER STORY US4.018
+--------------------------------------------------------------------------------
