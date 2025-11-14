@@ -117,42 +117,42 @@ Nov 6,2025
 	Obstacles I face: None
 
 Nov 7,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Adjusted rectangle and square coordinates for flexible dragging
+	What I will do today: Begin USER STORY US4.007 (StyleCommand – toggling fill/outline for shapes)
+	Obstacles I face: Needed to understand how fill state interacts with existing shape classes
 
 Nov 8,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Implemented US4.007 and added StyleCommand functionality
+	What I will do today: Work on US4.006 (ThicknessCommand + thickness UI integration)
+	Obstacles I face: No obstacles
 
 Nov 9,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Finished US4.006 and cleaned up ThicknessChooserPanel
+	What I will do today: Begin implementing the Select & Move Tool
+	Obstacles I face: Handling shape translation smoothly during drag was challenging
 
 Nov 10,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Implemented the Select & Move Tool (basic version working)
+	What I will do today: Improve accuracy and responsiveness, fix dragging jitter
+	Obstacles I face: Movement was jumpy due to inconsistent reference point tracking
 
 Nov 11,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Fixed Select & Move Tool drag logic for smoother shape movement
+	What I will do today: Implement keyboard shortcuts system
+	Obstacles I face: Needed to coordinate tool switching through the existing ToolFactory
 
 Nov 12,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Completed the Shortcuts System with hover descriptions and real-time tool switching
+	What I will do today: Begin the Undo / Redo System using the Command Pattern
+	Obstacles I face: Needed to restructure PaintModel to support command-based undo properly
 
 Nov 13,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Implemented undo/redo system and connected it to Add, Delete, Recolor, Style, and Move commands
+	What I will do today: Test all tools for command consistency and fix SelectMoveCommand behavior
+	Obstacles I face: Ensuring move commands restore correct shape positions during undo
 
 Nov 14,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Finalized undo/redo for all tools and fixed remaining move-related issues
+	What I will do today: Add the full color wheel (ColorPicker) and integrate it with RecolorCommand
+	Obstacles I face: Needed to update ColorChooserPanel to use the new command-based API
 
