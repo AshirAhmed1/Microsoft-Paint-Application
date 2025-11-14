@@ -39,3 +39,16 @@ Description:
 Reference:
 	USER STORY US4.013
 --------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+FeatureName: PaintBucket Tool
+
+Description:
+		This feature allows the user to click on any shape and change its color to
+		the current color selected on the canvas. This tool first detects which shape is
+		clicked and immediately changes it's color. This allows the user to draw more
+		efficiently without having to restart or redraw any shapes.
+
+Reference:
+	USER STORY US4.014
+--------------------------------------------------------------------------------

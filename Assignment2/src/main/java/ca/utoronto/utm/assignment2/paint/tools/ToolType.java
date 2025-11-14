@@ -10,6 +10,7 @@ public enum ToolType {
     SQUIGGLE,
     POLYLINE,
     ERASER,
+    PAINTBUCKET,
     PASTE,
     CUT,
     COPY,
