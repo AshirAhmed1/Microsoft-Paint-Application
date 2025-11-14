@@ -3,6 +3,9 @@ package ca.utoronto.utm.assignment2.paint;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.ImageCursor;
 import javafx.scene.Scene;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
@@ -53,6 +56,9 @@ public class View implements EventHandler<ActionEvent> {
                 case O -> { setTool(ToolType.OVAL); shapeChooserPanel.highlightButton("Oval"); }
                 case Q -> { setTool(ToolType.SQUIGGLE); shapeChooserPanel.highlightButton("Squiggle"); }
                 case L -> { setTool(ToolType.POLYLINE); shapeChooserPanel.highlightButton("Polyline"); }
+                case E -> { setTool(ToolType.ERASER); shapeChooserPanel.highlightButton("Eraser"); }
+                case P -> { setTool(ToolType.PAINTBUCKET); shapeChooserPanel.highlightButton("PaintBucket"); }
+                case I -> { setTool(ToolType.EYEDROPPER); shapeChooserPanel.highlightButton("Eyedropper"); }
                 case M -> { setTool(ToolType.SELECTMOVE); shapeChooserPanel.highlightButton("SelectMove"); }
                 default -> {}
             }
@@ -77,6 +83,13 @@ public class View implements EventHandler<ActionEvent> {
     public void setTool(ToolType type) {
         Tool tool = ToolFactory.create(type, this.paintModel, this.paintPanel);
         this.paintPanel.setCurrentTool(tool);
+        switch (type) {
+            case PAINTBUCKET -> shapeChooserPanel.setCanvasCursor("/icons/paintbucket.png", 100, 100);
+            case EYEDROPPER -> shapeChooserPanel.setCanvasCursor("/icons/eyedropper.png", 32, 165);
+            case ERASER -> shapeChooserPanel.setCanvasCursor("/icons/eraser.png", 187, 492);
+            case SELECTMOVE, PASTE, CUT, COPY -> paintPanel.setCursor(ImageCursor.DEFAULT);
+            default -> paintPanel.setCursor(ImageCursor.CROSSHAIR);
+        }
 
     }
     public void copySelection() {

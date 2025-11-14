@@ -14,6 +14,10 @@ public class PaintBucketTool extends AbstractShapeTool {
         super(model, view);
     }
 
+    /**
+     * Change the color of the shape clicked on to the current selected color of the canvas.
+     * @param e
+     */
     @Override
     public void onPress(MouseEvent e) {
         Point click = new Point(e.getX(), e.getY());
@@ -24,8 +28,8 @@ public class PaintBucketTool extends AbstractShapeTool {
 
                 model.setSelected(d);
                 model.executeCommand(
-                        new RecolorCommand(model, d, model.getCurrentColor())
-                );
+                        new RecolorCommand(model, d, model.getCurrentColor()));
+                model.setSelected(null);
                 break;
             }
         }

@@ -2,6 +2,7 @@ package ca.utoronto.utm.assignment2.paint;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.ImageCursor;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -10,6 +11,10 @@ import ca.utoronto.utm.assignment2.paint.tools.ToolType;
 
 import java.io.InputStream;
 
+/**
+ * ShapeChooserPanel is a UI component that allows the user to select different tools for painting.
+ * Selecting a tool highlights its button and sets the current tool in the PaintPanel.
+ */
 public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEvent> {
 
     private View view;
@@ -74,6 +79,11 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
         }
     }
 
+    /**
+     * Provide visual feedback by highlighting a selected shape
+     * by giving the button a blue tint.
+     * @param toolName
+     */
     public void highlightButton(String toolName) {
         for (javafx.scene.Node node : this.getChildren()) {
             Button btn = (Button) node;
@@ -81,6 +91,24 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
             if (btn.getText().toUpperCase().startsWith(toolName.toUpperCase())) {
                 btn.setStyle("-fx-background-color: skyblue;");
             }
+        }
+    }
+
+    /**
+     * Set the cursor of the canvas to represent the tool currently selected.
+     * Icons for Eraser, PaintBucket, Eyedropper.
+     * Crosshair for Shapes.
+     * Default otherwise.
+     * @param tool
+     */
+    protected void setCanvasCursor(String tool, double x, double y){
+        InputStream cursor = getClass().getResourceAsStream(tool);
+        if (cursor != null) {
+            Image cursorImage = new Image(cursor);
+            view.getPaintPanel().setCursor(new ImageCursor(cursorImage, x, y));
+        } else {
+            System.out.println("Cursor image not found");
+            view.getPaintPanel().setCursor(ImageCursor.DEFAULT);
         }
     }
 }

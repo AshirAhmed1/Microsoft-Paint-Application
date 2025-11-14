@@ -13,14 +13,19 @@ import javafx.scene.shape.Circle;
 import java.util.Map;
 import ca.utoronto.utm.assignment2.paint.command.RecolorCommand;
 
+/**
+ * ColorChooserPanel is a UI component that allows the user to select different Colors for painting.
+ * Provides a default set of colors and a customizable color panel.
+ */
 public class ColorChooserPanel extends GridPane implements EventHandler<ActionEvent>{
 
+    private ColorPicker picker;
     public ColorChooserPanel(PaintModel paintModel) {
         this.setHgap(10);
         this.setPadding(new Insets(10));
 
 
-        ColorPicker picker = new ColorPicker(Color.BLACK);
+       this.picker = new ColorPicker(Color.BLACK);
 
 
         picker.setOnAction(e -> {
@@ -65,12 +70,20 @@ public class ColorChooserPanel extends GridPane implements EventHandler<ActionEv
                 System.out.println("selected color " + name);
 
                 paintModel.setCurrentColor(color);
+                picker.setValue(color);
                 
                 if (paintModel.getSelected() != null) {
                     paintModel.executeCommand(
                             new RecolorCommand(paintModel, paintModel.getSelected(), color)
                     );
                 }
+                // Detect if any color change is done outside the color chooser panel
+                paintModel.addObserver((obs, args) ->{
+                    Color curr = paintModel.getCurrentColor();
+                    if (!picker.getValue().equals(curr)) {
+                        picker.setValue(curr);
+                    }
+                });
             });
         }
     }
