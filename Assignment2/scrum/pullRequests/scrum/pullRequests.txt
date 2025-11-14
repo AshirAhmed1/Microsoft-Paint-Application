@@ -1,4 +1,4 @@
- BUG3.004 author:ahme1250 puller:phanale5 status:Completed
+ BUG3.004 author:ahme1250 puller:phanale5 status: Completed
  BUG3.001 author:phanale5 puller:ahme1250 status: Completed
  BUG3.005 author:ahme1250 puller:imrana15 status: Completed
  BUG3.006 author:ahme1250 puller:imrana15 status: Completed
@@ -12,4 +12,4 @@
  US4.008 author:imrana15 puller: phanale5 status: Completed
  US4.013 author:phanale5 puller: alnabu11 status: Completed
  US4.014 author:phanale5 puller: alnabu11 status: Completed
- US4.012 author:ahme1250 puller: ? status: waiting
+ US4.012 author:ahme1250 puller: alnabu11 status: InProcess
