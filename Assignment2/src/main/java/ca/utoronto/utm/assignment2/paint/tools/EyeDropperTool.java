@@ -10,10 +10,19 @@ import javafx.scene.input.MouseEvent;
  */
 public class EyeDropperTool extends AbstractShapeTool {
 
+    /**
+     * Construct a new EyeDropperTool
+     * @param model
+     * @param view
+     */
     public EyeDropperTool(PaintModel model, PaintPanel view) {
         super(model, view);
     }
 
+    /**
+     * Select the color of the shape clicked on.
+     * @param e
+     */
     @Override
     public void onPress(MouseEvent e) {
         Point click = new Point(e.getX(), e.getY());
@@ -22,6 +31,7 @@ public class EyeDropperTool extends AbstractShapeTool {
             Drawable d = model.getDrawables().get(i);
             if (d.contains(click)) {
                 model.setCurrentColor(d.getColor());
+                model.updateObservers();
                 break;
             }
         }
