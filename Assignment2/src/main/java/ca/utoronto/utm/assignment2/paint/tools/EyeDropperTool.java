@@ -5,8 +5,8 @@ import ca.utoronto.utm.assignment2.paint.command.RecolorCommand;
 import javafx.scene.input.MouseEvent;
 
 /**
- * Represent a paint bucket tool that can change the color of a selected shape
- * to the current color selected on the canvas.
+ * Represent an eyedropper tool that can change the selected color
+ * to the color of the selected shape on the canvas.
  */
 public class EyeDropperTool extends AbstractShapeTool {
 
