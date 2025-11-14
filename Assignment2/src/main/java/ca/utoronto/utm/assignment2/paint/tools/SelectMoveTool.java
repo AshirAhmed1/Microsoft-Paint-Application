@@ -2,11 +2,16 @@ package ca.utoronto.utm.assignment2.paint.tools;
 
 import ca.utoronto.utm.assignment2.paint.*;
 import javafx.scene.input.MouseEvent;
+import ca.utoronto.utm.assignment2.paint.command.MoveCommand;
 
 public class SelectMoveTool extends AbstractShapeTool {
-    private Drawable selectedShape;   // the shape being moved
-    private double lastX, lastY;      // last mouse position
+
+    private Drawable selectedShape;
+    private double lastX, lastY;
     private boolean isDragging = false;
+
+    private double totalDx = 0;
+    private double totalDy = 0;
 
     public SelectMoveTool(PaintModel model, PaintPanel view) {
         super(model, view);
@@ -20,38 +25,58 @@ public class SelectMoveTool extends AbstractShapeTool {
         for (int i = model.getDrawables().size() - 1; i >= 0; i--) {
             Drawable d = model.getDrawables().get(i);
             if (d.contains(click)) {
+
                 selectedShape = d;
                 model.setSelected(d);
+
                 lastX = e.getX();
                 lastY = e.getY();
+
+                totalDx = 0;
+                totalDy = 0;
+
                 isDragging = true;
-                System.out.println("Selected: " + d.getClass().getSimpleName());
-                break;
+                return;
             }
         }
+
+
+        selectedShape = null;
+        model.setSelected(null);
     }
 
     @Override
     public void onDrag(MouseEvent e) {
-        if (selectedShape != null && isDragging) {
-            double dx = e.getX() - lastX;
-            double dy = e.getY() - lastY;
+        if (!isDragging || selectedShape == null) return;
 
+        double dx = e.getX() - lastX;
+        double dy = e.getY() - lastY;
+
+        if (dx != 0 || dy != 0) {
             selectedShape.translate(dx, dy);
-            lastX = e.getX();
-            lastY = e.getY();
-
             model.updateObservers();
+
+            totalDx += dx;
+            totalDy += dy;
         }
+
+        lastX = e.getX();
+        lastY = e.getY();
     }
 
     @Override
     public void onRelease(MouseEvent e) {
-        if (selectedShape != null) {
-            selectedShape = null;
-            isDragging = false;
-            model.clearPreview();
+        if (!isDragging || selectedShape == null) return;
+
+
+        if (totalDx != 0 || totalDy != 0) {
+            model.executeCommand(
+                    new MoveCommand(model, selectedShape, totalDx, totalDy)
+            );
         }
+
+        isDragging = false;
+        selectedShape = null;
     }
 
     @Override protected void drawPreview(double x, double y) {}

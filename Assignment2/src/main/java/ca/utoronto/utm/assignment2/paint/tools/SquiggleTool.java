@@ -1,6 +1,7 @@
 package ca.utoronto.utm.assignment2.paint.tools;
 
 import ca.utoronto.utm.assignment2.paint.*;
+import ca.utoronto.utm.assignment2.paint.command.AddShapeCommand;
 import javafx.scene.input.MouseEvent;
 
 public class SquiggleTool extends AbstractShapeTool {
@@ -30,7 +31,7 @@ public class SquiggleTool extends AbstractShapeTool {
     @Override
     public void onRelease(MouseEvent e) {
         if (current != null) {
-            model.addDrawable(current);
+            model.executeCommand(new AddShapeCommand(model, current));
             model.clearPreview();
             current = null;
         }

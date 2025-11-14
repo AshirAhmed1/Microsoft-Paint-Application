@@ -12,4 +12,5 @@ public interface Drawable {
     boolean contains(Point p);
     void translate(double dx, double dy);
 
+    void setFilled(boolean filled);
 }

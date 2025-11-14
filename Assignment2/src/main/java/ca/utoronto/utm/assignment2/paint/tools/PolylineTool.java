@@ -2,6 +2,7 @@ package ca.utoronto.utm.assignment2.paint.tools;
 
 
 import ca.utoronto.utm.assignment2.paint.*;
+import ca.utoronto.utm.assignment2.paint.command.AddShapeCommand;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 
@@ -48,7 +49,7 @@ public class PolylineTool extends AbstractShapeTool{
      */
     private void finishPolyline(){
         if (current != null) {
-            model.addDrawable(current);
+            model.executeCommand(new AddShapeCommand(model, current));
             model.clearPreview();
             current = null;
         }

@@ -1,6 +1,7 @@
 package ca.utoronto.utm.assignment2.paint.tools;
 
 import ca.utoronto.utm.assignment2.paint.*;
+import ca.utoronto.utm.assignment2.paint.command.AddShapeCommand;
 import javafx.scene.input.MouseEvent;
 
 /**
@@ -22,11 +23,11 @@ public class EraserTool extends AbstractShapeTool{
      * @param e
      */
     @Override
-    public void onPress(MouseEvent e){
+    public void onPress(MouseEvent e) {
         current = new Eraser();
         current.setThickness(model.getCurrentThickness());
         current.addPoint(new Point(e.getX(), e.getY()));
-        model.addDrawable(current);
+        model.setPreview(current);
     }
 
     /**
@@ -34,10 +35,10 @@ public class EraserTool extends AbstractShapeTool{
      * @param e
      */
     @Override
-    public void onDrag(MouseEvent e){
+    public void onDrag(MouseEvent e) {
         if (current != null) {
             current.addPoint(new Point(e.getX(), e.getY()));
-            model.updateObservers();
+            model.setPreview(current);
         }
     }
 
@@ -47,9 +48,12 @@ public class EraserTool extends AbstractShapeTool{
      */
     @Override
     public void onRelease(MouseEvent e){
-        current.addPoint(new Point(e.getX(), e.getY()));
-        model.updateObservers();
-        current = null;
+        if (current != null) {
+            current.addPoint(new Point(e.getX(), e.getY()));
+            model.executeCommand(new AddShapeCommand(model, current));
+            current = null;
+            model.clearPreview();
+        }
     }
 
     @Override

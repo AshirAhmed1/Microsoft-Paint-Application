@@ -1,6 +1,7 @@
 package ca.utoronto.utm.assignment2.paint.tools;
 
 import ca.utoronto.utm.assignment2.paint.*;
+import ca.utoronto.utm.assignment2.paint.command.AddShapeCommand;
 
 public class CircleTool extends AbstractShapeTool {
     public CircleTool(PaintModel model, PaintPanel view) {
@@ -31,7 +32,7 @@ public class CircleTool extends AbstractShapeTool {
         circle.setColor(model.getCurrentColor());
         circle.setThickness(model.getCurrentThickness());
         circle.setFilled(model.isFillMode());
-        model.addDrawable(circle);
+        model.executeCommand(new AddShapeCommand(model, circle));
         model.clearPreview();
     }
 }
