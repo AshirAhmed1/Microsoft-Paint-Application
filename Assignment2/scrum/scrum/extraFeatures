@@ -17,7 +17,7 @@ Description:
 		This feature allows users to quickly switch between different drawing tools
     	using keyboard shortcuts. Each shape button, including the Select/Move tool,
     	has an assigned shortcut key (e.g., C for Circle, R for Rectangle, S for Square,
-    	T for Triangle, O for Oval, Q for Squiggle, L for Polyline, and M for Select/Move).
+    	T for Triangle, O for Oval, Q for Squiggle, L for Polyline, M for Select/Move, etc).
     	When a user presses one of these keys, the corresponding tool becomes active
     	instantly.
 
@@ -27,6 +27,41 @@ Description:
 
 Reference:
 	USER STORY US4.011
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+FeatureName: Undo/Redo Functionality
+
+Description:
+        This feature implements full Undo and Redo support for the paint
+        application. Any canvas-modifying action—such as drawing a shape,
+        moving a shape, changing color or fill style, erasing, cutting,
+        copying, pasting, or adding text—is wrapped inside a Command and
+        recorded in the command history.
+
+        When the user presses Undo, the most recent command is undone and the
+        canvas immediately reflects the previous state. When the user presses
+        Redo, the undone command is reapplied and restored on the canvas.
+        The system supports multiple consecutive undos/redos and behaves like
+        a professional drawing program.
+
+        This allows users to freely reverse mistakes, restore actions, and
+        maintain full control over their editing workflow.
+
+Reference:
+        USER STORY US4.012
+        BUG FIX BUG4.010
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+FeatureName: Color Wheel Selector
+
+Description:
+        This feature adds a color wheel to the interface, allowing users to pick
+        any custom color in addition to the preset color buttons. The selected
+        color becomes the active drawing color for all tools and can also be
+        used with the Paint Bucket tool to recolor shapes on the canvas.
+
+Reference:
+        USER STORY US4.015
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 FeatureName: Eraser Tool
