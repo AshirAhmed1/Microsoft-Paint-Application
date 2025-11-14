@@ -4,12 +4,15 @@ import ca.utoronto.utm.assignment2.paint.*;
 import ca.utoronto.utm.assignment2.paint.command.AddShapeCommand;
 import javafx.scene.input.MouseEvent;
 
+import java.util.ArrayList;
+
 /**
  * Controls the eraser on the canvas depending on the current MouseEvent.
  */
 public class EraserTool extends AbstractShapeTool{
 
-    private Eraser current;
+    private ArrayList<ErasePoint> currentStroke = new  ArrayList<>();
+    private Drawable erasedShape;
 
     /**
      * Constructs a new EraserTool object
@@ -24,38 +27,39 @@ public class EraserTool extends AbstractShapeTool{
      */
     @Override
     public void onPress(MouseEvent e) {
-        current = new Eraser();
-        current.setThickness(model.getCurrentThickness());
-        current.addPoint(new Point(e.getX(), e.getY()));
-        model.setPreview(current);
+        erasedShape = null;
+        currentStroke.clear();
+        eraseAt(e);
     }
-
-    /**
-     * Erases anything the mouse is dragged over.
-     * @param e
-     */
-    @Override
     public void onDrag(MouseEvent e) {
-        if (current != null) {
-            current.addPoint(new Point(e.getX(), e.getY()));
-            model.setPreview(current);
-        }
+        eraseAt(e);
+        model.updateObservers();
     }
 
-    /**
-     * Ends the erase.
-     * @param e
-     */
     @Override
-    public void onRelease(MouseEvent e){
-        if (current != null) {
-            current.addPoint(new Point(e.getX(), e.getY()));
-            model.executeCommand(new AddShapeCommand(model, current));
-            current = null;
-            model.clearPreview();
+    public void onRelease(MouseEvent e) {
+        if (erasedShape != null) {
+            erasedShape.addEraseStroke();
+        }
+        erasedShape = null;
+        model.updateObservers();
+        }
+
+    public void eraseAt(MouseEvent e) {
+        Point click = new Point(e.getX(), e.getY());
+
+        for (int i = model.getDrawables().size() - 1; i >= 0; i--) {
+            Drawable d = model.getDrawables().get(i);
+            if (d.contains(click)) {
+                if (erasedShape == null) {
+                    erasedShape = d;
+                }
+                d.addErasePoint(new ErasePoint(click.x, click.y, model.getCurrentThickness()));
+                model.updateObservers();
+                break;
+            }
         }
     }
-
     @Override
     protected void drawPreview(double x, double y) {}
 

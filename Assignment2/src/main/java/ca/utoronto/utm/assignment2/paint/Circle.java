@@ -1,7 +1,9 @@
 package ca.utoronto.utm.assignment2.paint;
 
-
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.paint.Color;
+
+import java.util.ArrayList;
 
 /**
  * Represent a circle shape that can be drawn on the convas.
@@ -56,6 +58,9 @@ public class Circle extends AbstractShapeDrawable {
         {
             g.strokeOval(x, y, radius * 2, radius * 2);
         }
+        g.setFill(Color.WHITE);
+        // Makes sure when the shape is moved after erased, it remains erased.
+        erase(g);
 
     }
 
@@ -69,6 +74,12 @@ public class Circle extends AbstractShapeDrawable {
     @Override
     public void translate(double dx, double dy) {
         centre = new Point(centre.x + dx, centre.y + dy);
+        for (ArrayList<ErasePoint> stroke: erasedStrokes) {
+            for (ErasePoint p: stroke) {
+                p.x += dx;
+                p.y += dy;
+            }
+        }
     }
 
 }
