@@ -45,6 +45,8 @@ public class Squiggle extends AbstractShapeDrawable{
             Point p2 = points.get(i + 1);
             g.strokeLine(p1.x, p1.y, p2.x, p2.y);
         }
+        // Makes sure when the shape is moved after erased, it remains erased.
+        erase(g);
     }
 
     @Override
@@ -53,7 +55,7 @@ public class Squiggle extends AbstractShapeDrawable{
             Point a = points.get(i);
             Point b = points.get(i + 1);
             double distance = pointToSegmentDistance(p, a, b);
-            if (distance <= 5) return true;
+            if (distance <= thickness / 2) return true;
         }
         return false;
     }
@@ -75,6 +77,12 @@ public class Squiggle extends AbstractShapeDrawable{
         for (Point pt : points) {
             pt.x += dx;
             pt.y += dy;
+        }
+        for (ArrayList<ErasePoint> stroke: erasedStrokes) {
+            for (ErasePoint p: stroke) {
+                p.x += dx;
+                p.y += dy;
+            }
         }
     }
 
