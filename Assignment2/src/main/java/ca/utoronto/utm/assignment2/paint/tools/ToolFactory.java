@@ -18,6 +18,7 @@ public class ToolFactory {
             case CUT -> new CutTool(model, view);
             case COPY  -> new CopyTool(model, view);
             case CLEAR -> new ClearCanvasTool(model, view);
+            case UNDO -> new UndoTool(model, view);
         };
     }
 }

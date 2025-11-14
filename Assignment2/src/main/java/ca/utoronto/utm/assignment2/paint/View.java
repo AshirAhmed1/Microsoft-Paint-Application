@@ -19,6 +19,7 @@ public class View implements EventHandler<ActionEvent> {
     private PaintPanel paintPanel;
     private ShapeChooserPanel shapeChooserPanel;
     private ColorChooserPanel colorChooserPanel;
+    private EditToolPanel editToolPanel;
 
     public View(PaintModel model, Stage stage) {
         this.paintModel = model;
@@ -29,12 +30,16 @@ public class View implements EventHandler<ActionEvent> {
         ThicknessChooserPanel thicknessChooserPanel = new ThicknessChooserPanel(this.paintModel);
         FillStyleChooserPanel fillStyleChooserPanel = new FillStyleChooserPanel(this.paintModel);
 
+        this.editToolPanel = new EditToolPanel(this);
         BorderPane root = new BorderPane();
         root.setTop(createMenuBar());
         root.setCenter(this.paintPanel);
         VBox leftPanel = new VBox(this.shapeChooserPanel, thicknessChooserPanel, fillStyleChooserPanel);
         root.setLeft(leftPanel);
+        root.setRight(this.editToolPanel);
         root.setBottom(this.colorChooserPanel);
+
+
 
         Scene scene = new Scene(root);
         stage.setScene(scene);

@@ -3,6 +3,8 @@ package ca.utoronto.utm.assignment2.paint;
 import java.util.ArrayList;
 import java.util.Observable;
 import javafx.scene.paint.Color;
+import java.util.ArrayDeque;
+import java.util.Deque;
 
 public class PaintModel extends Observable {
     private final ArrayList<Drawable> drawables = new ArrayList<>();
@@ -12,8 +14,10 @@ public class PaintModel extends Observable {
     private boolean fillMode = true;
     private Drawable clipboard;
     private Drawable selected;
+    private final Deque<ArrayList<Drawable>> undo = new ArrayDeque<>();
 
     public void addDrawable(Drawable d) {
+        pushUndoState();
         drawables.add(d);
         System.out.println("Shape Added: " + d.getClass().getSimpleName());
         setChanged();
@@ -153,6 +157,7 @@ public class PaintModel extends Observable {
         if (drawables.isEmpty()) {
             return;
         }
+        pushUndoState();
         drawables.clear();
         clearPreview();
         setChanged();
@@ -221,5 +226,23 @@ public class PaintModel extends Observable {
         if (pasted != null) {
             addDrawable(pasted);
         }
+    }
+
+    private void pushUndoState() {
+        ArrayList<Drawable> snapshot = new ArrayList<>();
+        for (Drawable d : drawables) {
+            snapshot.add(copyPasteHelper(d, 0, 0));
+        }
+        undo.push(snapshot);
+    }
+    public void undo() {
+        if (undo.isEmpty()) {
+            return;
+        }
+        ArrayList<Drawable> previous = undo.pop();
+        drawables.clear();
+        drawables.addAll(previous);
+        setChanged();
+        notifyObservers();
     }
 }

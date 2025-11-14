@@ -13,4 +13,5 @@ public enum ToolType {
     CUT,
     COPY,
     CLEAR,
+    UNDO
 }
