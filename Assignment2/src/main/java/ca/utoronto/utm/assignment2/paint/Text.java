@@ -38,9 +38,14 @@ public class Text extends AbstractShapeDrawable {
 
     @Override
     public boolean contains(Point p) {
-        return false; // simple text: usually not selectable by shape hitbox
-    }
+        double width = content.length() * (getThickness() + 6);
+        double height = getThickness() * 10;
 
+        return p.x >= position.x &&
+                p.x <= position.x + width &&
+                p.y >= position.y - height &&
+                p.y <= position.y;
+    }
     @Override
     public void translate(double dx, double dy) {
         this.position = new Point(position.x + dx, position.y + dy);
