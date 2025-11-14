@@ -102,6 +102,7 @@ public abstract class AbstractShapeDrawable implements Drawable {
         }
     }
 
+    public ArrayList getErasePoints() {return currentStroke;}
     /**
      * Erase part of the shape specified by the path of user's mouse with the
      * eraser tool
