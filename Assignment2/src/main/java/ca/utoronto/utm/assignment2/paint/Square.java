@@ -2,25 +2,34 @@ package ca.utoronto.utm.assignment2.paint;
 
 import javafx.scene.canvas.GraphicsContext;
 
+/**
+ * Represents a square shape which can be added to the canvas.
+ */
 public class Square extends Rectangle{
 
-
+    /**
+     * Constructs a new square with the specified parameters
+     * @param topLeft
+     * @param sideLength
+     */
     public Square(Point topLeft, double sideLength)
     {
         super(topLeft, sideLength, sideLength);
     }
 
+    /**
+     * Return the side length of the square.
+     * @return
+     */
     public double getSideLength()
     {
         return super.getWidth();
     }
 
-    public void setSideLength(double sideLength)
-    {
-        super.setHeight(sideLength);
-        super.setWidth(sideLength);
-    }
-
+    /**
+     * Set the side lengths of the square.
+     * @param width
+     */
     @Override
     public void setWidth(double width)
     {
@@ -28,6 +37,10 @@ public class Square extends Rectangle{
         super.setHeight(width);
     }
 
+    /**
+     * Set the side lengths of the square.
+     * @param height
+     */
     @Override
     public void setHeight(double height)
     {

@@ -137,19 +137,19 @@ Nov 10,2025
 	Obstacles I face: none
 
 Nov 11,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday:Look over group members work
+	What I will do today: Accept pull requests
+	Obstacles I face: Merging conflicts
 
 Nov 12,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Accept pull requests
+	What I will do today: Implement eraser tool, fix bugs from merging.
+	Obstacles I face: Fixing bugs by understanding new refactored code
 
 Nov 13,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Implement eraser tool.
+	What I will do today: Implement paint bucket tool and eye drop tool. Add javadoc to most shapes.
+	Obstacles I face: Fixing bugs lost from merging branches.
 
 Nov 14,2025
 	What I did yesterday:

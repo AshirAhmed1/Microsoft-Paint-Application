@@ -2,11 +2,21 @@ package ca.utoronto.utm.assignment2.paint;
 
 import javafx.scene.canvas.GraphicsContext;
 
+/**
+ * Represents an oval shape that can be drawn on the canvas.
+ */
+
 public class Oval extends AbstractShapeDrawable {
     private Point topLeft;
     private double width;
     private double height;
 
+    /**
+     * Constructs an oval with the given parameters.
+     * @param topLeft
+     * @param width
+     * @param height
+     */
     public Oval(Point topLeft, double width, double height){
         super();
         this.topLeft = topLeft;
@@ -14,21 +24,28 @@ public class Oval extends AbstractShapeDrawable {
         this.height = height;
     }
 
+    /**
+     * Return the top left point of the oval.
+     *
+     * @return top left Point
+     */
     public Point getTopLeft() {
         return topLeft;
     }
 
-    public void setTopLeft(Point corner) {
-        this.topLeft = corner;
-    }
-
+    /**
+     * Return the width of the oval.
+     *
+     * @return height
+     */
     public double getWidth() { return width; }
 
+    /**
+     * return the height of the oval.
+     *
+     * @return height
+     */
     public double getHeight() { return height; }
-
-    public void setWidth(double newWidth) { this.width = newWidth; }
-
-    public void setHeight(double newHeight) { this.height = newHeight; }
 
     @Override
     public void draw(GraphicsContext g)
@@ -55,6 +72,7 @@ public class Oval extends AbstractShapeDrawable {
         double normalized = Math.pow((p.x - cx) / rx, 2) + Math.pow((p.y - cy) / ry, 2);
         return normalized <= 1.0;
     }
+
 
     @Override
     public void translate(double dx, double dy) {
