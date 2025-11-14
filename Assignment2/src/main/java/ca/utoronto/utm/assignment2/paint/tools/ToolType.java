@@ -11,6 +11,7 @@ public enum ToolType {
     POLYLINE,
     ERASER,
     PAINTBUCKET,
+    EYEDROPPER,
     PASTE,
     CUT,
     COPY,
