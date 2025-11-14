@@ -3,16 +3,15 @@ package ca.utoronto.utm.assignment2.paint;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.Menu;
+import javafx.scene.control.MenuBar;
+import javafx.scene.control.MenuItem;
+import javafx.scene.control.SeparatorMenuItem;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import ca.utoronto.utm.assignment2.paint.tools.*;
-import javafx.scene.layout.StackPane;
+import ca.utoronto.utm.assignment2.paint.tools.*; // import for Tool, ToolType, ToolFactory
 
 public class View implements EventHandler<ActionEvent> {
 
@@ -20,6 +19,7 @@ public class View implements EventHandler<ActionEvent> {
     private PaintPanel paintPanel;
     private ShapeChooserPanel shapeChooserPanel;
     private ColorChooserPanel colorChooserPanel;
+    private EditToolPanel editToolPanel;
 
     public View(PaintModel model, Stage stage) {
         this.paintModel = model;
@@ -27,37 +27,19 @@ public class View implements EventHandler<ActionEvent> {
         this.paintPanel = new PaintPanel(this.paintModel);
         this.shapeChooserPanel = new ShapeChooserPanel(this);
         this.colorChooserPanel = new ColorChooserPanel(paintModel);
-
-        Button undoBtn = new Button("Undo");
-        Button redoBtn = new Button("Redo");
-
-        undoBtn.setOnAction(e -> paintModel.undo());
-        redoBtn.setOnAction(e -> paintModel.redo());
-
-        HBox undoRedoPanel = new HBox(10);
-        undoRedoPanel.setPadding(new Insets(10));
-        undoRedoPanel.getChildren().addAll(undoBtn, redoBtn);
-
         ThicknessChooserPanel thicknessChooserPanel = new ThicknessChooserPanel(this.paintModel);
         FillStyleChooserPanel fillStyleChooserPanel = new FillStyleChooserPanel(this.paintModel);
 
+        this.editToolPanel = new EditToolPanel(this);
         BorderPane root = new BorderPane();
         root.setTop(createMenuBar());
-
-        StackPane canvasContainer = new StackPane(this.paintPanel);
-        this.paintPanel.widthProperty().bind(canvasContainer.widthProperty());
-        this.paintPanel.heightProperty().bind(canvasContainer.heightProperty());
-        root.setCenter(canvasContainer);
-
-        // Detect when the canvas is being adjusted
-        canvasContainer.widthProperty().addListener((obs, oldVal, newVal) -> model.updateObservers());
-        canvasContainer.heightProperty().addListener((obs, oldVal, newVal) -> model.updateObservers());
-        this.paintModel.updateObservers();
-
+        root.setCenter(this.paintPanel);
         VBox leftPanel = new VBox(this.shapeChooserPanel, thicknessChooserPanel, fillStyleChooserPanel);
         root.setLeft(leftPanel);
-        VBox bottomPanel = new VBox(this.colorChooserPanel, undoRedoPanel);
-        root.setBottom(bottomPanel);
+        root.setRight(this.editToolPanel);
+        root.setBottom(this.colorChooserPanel);
+
+
 
         Scene scene = new Scene(root);
         stage.setScene(scene);

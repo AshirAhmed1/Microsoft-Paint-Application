@@ -2,11 +2,9 @@ package ca.utoronto.utm.assignment2.paint;
 
 import java.util.ArrayList;
 import java.util.Observable;
-
-import ca.utoronto.utm.assignment2.paint.command.PasteCommand;
 import javafx.scene.paint.Color;
-import java.util.Stack;
-import ca.utoronto.utm.assignment2.paint.command.Command;
+import java.util.ArrayDeque;
+import java.util.Deque;
 
 public class PaintModel extends Observable {
     private final ArrayList<Drawable> drawables = new ArrayList<>();
@@ -16,14 +14,12 @@ public class PaintModel extends Observable {
     private boolean fillMode = true;
     private Drawable clipboard;
     private Drawable selected;
-    private final Stack<Command> undoStack = new Stack<>();
-    private final Stack<Command> redoStack = new Stack<>();
+    private final Deque<ArrayList<Drawable>> undo = new ArrayDeque<>();
 
     public void addDrawable(Drawable d) {
+        pushUndoState();
         drawables.add(d);
-        if (!d.getClass().getSimpleName().equals("Eraser")) {
-            System.out.println("Shape Added: " + d.getClass().getSimpleName());
-        }
+        System.out.println("Shape Added: " + d.getClass().getSimpleName());
         setChanged();
         notifyObservers();
     }
@@ -156,6 +152,17 @@ public class PaintModel extends Observable {
         notifyObservers();
     }
 
+    public void clearCanvas() {
+
+        if (drawables.isEmpty()) {
+            return;
+        }
+        pushUndoState();
+        drawables.clear();
+        clearPreview();
+        setChanged();
+        notifyObservers();
+    }
     public Drawable getSelected() {
         return this.selected;
     }
@@ -217,32 +224,25 @@ public class PaintModel extends Observable {
     public void pasteAt(double x, double y) {
         Drawable pasted = createClipboardCopyAt(x, y);
         if (pasted != null) {
-            executeCommand(new PasteCommand(this, pasted));
+            addDrawable(pasted);
         }
     }
 
-    public void executeCommand(Command command) {
-        command.execute();
-        undoStack.push(command);
-        redoStack.clear();
-        updateObservers();
+    private void pushUndoState() {
+        ArrayList<Drawable> snapshot = new ArrayList<>();
+        for (Drawable d : drawables) {
+            snapshot.add(copyPasteHelper(d, 0, 0));
+        }
+        undo.push(snapshot);
     }
-
     public void undo() {
-        if (!undoStack.isEmpty()) {
-            Command cmd = undoStack.pop();
-            cmd.undo();
-            redoStack.push(cmd);
-            updateObservers();
+        if (undo.isEmpty()) {
+            return;
         }
-    }
-
-    public void redo() {
-        if (!redoStack.isEmpty()) {
-            Command cmd = redoStack.pop();
-            cmd.execute();
-            undoStack.push(cmd);
-            updateObservers();
-        }
+        ArrayList<Drawable> previous = undo.pop();
+        drawables.clear();
+        drawables.addAll(previous);
+        setChanged();
+        notifyObservers();
     }
 }

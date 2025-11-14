@@ -10,16 +10,15 @@ import ca.utoronto.utm.assignment2.paint.tools.ToolType;
 
 import java.io.InputStream;
 
-public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEvent> {
+public class EditToolPanel extends GridPane implements EventHandler<ActionEvent> {
 
     private View view;
 
-    public ShapeChooserPanel(View view) {
+    public EditToolPanel(View view) {
         this.view = view;
 
-        String[] buttonLabels = {"Circle", "Rectangle", "Square", "Triangle", "Oval", "Squiggle", "Polyline",
-                "SelectMove"};
-        String[] shortcuts = {"C", "R", "S", "T", "O", "Q", "L", "M"};
+        String[] buttonLabels =  {"Paste", "Cut", "Copy", "Clear", "Undo"};
+
 
         int row = 0;
         for (String label : buttonLabels) {
