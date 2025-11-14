@@ -15,12 +15,14 @@ public class ToolFactory {
             case POLYLINE -> new PolylineTool(model, view);
             case ERASER -> new EraserTool(model, view);
             case PAINTBUCKET -> new PaintBucketTool(model, view);
+            case EYEDROPPER -> new EyeDropperTool(model, view);
             case SELECTMOVE -> new SelectMoveTool(model, view);
             case PASTE  -> new PasteTool(model, view);
             case CUT -> new CutTool(model, view);
             case COPY  -> new CopyTool(model, view);
             case CLEAR -> new ClearCanvasTool(model, view);
             case UNDO -> new UndoTool(model, view);
+            case TEXT -> new TextTool(model, view);
         };
     }
 }

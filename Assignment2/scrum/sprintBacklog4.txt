@@ -104,3 +104,13 @@ I WANT   : To select a shape by clicking on it with the paint bucket tool, chang
            color to the current chosen color.
 SO THAT  : The color of already drawn shapes can be changed.
 --------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US4.017 : phanale5 : Completed
+NAME     : EyeDropper Tool
+PRIORITY : 3
+ESTIMATE : 1 hour    ACTUAL : 30 minutes
+AS A     : user
+I WANT   : To change the current selected color of the canvas to the color of a selected shape on
+           the canvas.
+SO THAT  : The color of an already drawn shape can quickly be selected.
+--------------------------------------------------------------------------
