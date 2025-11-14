@@ -125,3 +125,56 @@ I WANT   : The cursor should give visual feedback that clearly indicates the cur
            All other tools are a normal crosshair.
 SO THAT  : It is more clear which tool is currently selected.
 --------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US4.010 : ahme1250 : Completed
+NAME     : Select and Move Tool
+PRIORITY : 3
+ESTIMATE : 2 hours    ACTUAL : 2.5 hours
+AS A     : user
+I WANT   : To click on an existing shape or text object and drag it to a new position on the canvas.
+SO THAT  : I can easily reposition any drawn element without redrawing it.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US4.011 : ahme1250 : Completed
+NAME     : Keyboard Shortcuts for Tool Selection
+PRIORITY : 2
+ESTIMATE : 1 hour    ACTUAL : 45 minutes
+AS A     : user
+I WANT   : To quickly switch between drawing tools using keyboard shortcut keys (C, R, S, T, O, Q, L, E, P, I, M, etc.).
+SO THAT  : I can more efficiently choose tools without manually clicking the buttons.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US4.012 : ahme1250 : Completed
+NAME     : Undo/Redo Functionality
+PRIORITY : 3
+ESTIMATE : 2 hours    ACTUAL : 4.5 hours
+AS A     : user
+I WANT   : To undo or redo any change I make on the canvas, including drawing, moving,
+           erasing, recoloring, cutting/copying/pasting, and adding text.
+SO THAT  : I can easily correct mistakes, restore previous actions, and maintain full
+           control of my editing workflow.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG BUG4.010 : ahme1250 : Completed
+NAME     : Command Pattern Not Implemented (Undo/Redo Non-Functional)
+PRIORITY : 3
+ESTIMATE : 1 hour   ACTUAL : 45 minutes
+ISSUE    : The paint application did not support Undo or Redo because the
+           executeCommand() method and command-history system were not
+           implemented. Actions such as drawing, moving, or editing shapes
+           were not recorded as Commands and therefore could not be undone
+           or redone. Implementing executeCommand(), undo(), redo(), and
+           proper command stacks resolved the issue and restored expected
+           editor functionality.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US4.015 : ahme1250 : Completed
+NAME     : Color Wheel Selector
+PRIORITY : 3
+ESTIMATE : 1 hour    ACTUAL : 30 minutes
+AS A     : user
+I WANT   : To select any custom color using a color wheel instead of being
+           limited to preset color buttons.
+SO THAT  : I can draw shapes in any color I choose and also use the Paint
+           Bucket tool to recolor existing shapes with the selected custom color.
+--------------------------------------------------------------------------
