@@ -18,7 +18,7 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
         this.view = view;
 
         String[] buttonLabels = {"Circle", "Rectangle", "Square", "Triangle", "Oval", "Squiggle", "Polyline", "Eraser", "PaintBucket", "SelectMove","Paste", "Cut", "Copy", "Text"};
-        String[] shortcuts = {"C", "R", "S", "T", "O", "Q", "L", "E","P","M", "", "", ""};
+        String[] shortcuts = {"C", "R", "S", "T", "O", "Q", "L", "E","P","M", "", "", "", ""};
 
         int row = 0;
         for (int i = 0; i < buttonLabels.length; i++) {

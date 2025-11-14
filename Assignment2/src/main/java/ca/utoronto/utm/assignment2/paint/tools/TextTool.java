@@ -9,9 +9,6 @@ import javafx.scene.input.MouseEvent;
 
 import java.util.Optional;
 
-/**
- * Tool that lets the user place text on the canvas.
- */
 public class TextTool extends AbstractShapeTool {
 
     public TextTool(PaintModel model, PaintPanel view) {
@@ -20,52 +17,47 @@ public class TextTool extends AbstractShapeTool {
 
     @Override
     public void onPress(MouseEvent e) {
-        // Ask the user for the text to place
-        TextInputDialog dialog = new TextInputDialog();
+        double x = e.getX();
+        double y = e.getY();
+
+        TextInputDialog dialog = new TextInputDialog("");
         dialog.setTitle("Text");
-        dialog.setHeaderText(null);
-        dialog.setContentText("Enter text:");
+        dialog.setHeaderText("Enter text:");
+        dialog.setContentText("Text:");
 
         Optional<String> result = dialog.showAndWait();
-        if (result.isPresent()) {
-            String s = result.get().trim();
-            if (!s.isEmpty()) {
-                Point pos = new Point(e.getX(), e.getY());
-                // Choose a reasonable default font size
-                double fontSize = 18;
+        if (result.isPresent() && !result.get().isEmpty()) {
+            Text t = new Text(new Point(x, y), result.get());
+            t.setColor(model.getCurrentColor());
+            t.setThickness(model.getCurrentThickness());
+            t.setFilled(false); // outline / just text
 
-                Text ts = new Text(pos, s, fontSize);
-                ts.setColor(model.getCurrentColor());
-                ts.setThickness(model.getCurrentThickness());
-                ts.setFilled(model.isFillMode());
-
-                model.addDrawable(ts);
-            }
+            model.addDrawable(t);
         }
     }
 
     @Override
     public void onDrag(MouseEvent e) {
-        // No dragging behaviour for this simple text tool
+        // no dragging behaviour for text
     }
 
     @Override
     public void onMove(MouseEvent e) {
-        // Not needed
+        // no preview for now
     }
 
     @Override
     public void onRelease(MouseEvent e) {
-        // Nothing special here
+        // nothing to do
     }
 
     @Override
     protected void drawPreview(double x, double y) {
-        // No preview for text in this basic version
+        // no preview drawing
     }
 
     @Override
     protected void commit(double x, double y) {
-        // Not used
+        // not used in this tool
     }
 }

@@ -1,76 +1,48 @@
 package ca.utoronto.utm.assignment2.paint;
 
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.text.Font;
 
-/**
- * Drawable text that can be placed on the canvas.
- */
 public class Text extends AbstractShapeDrawable {
     private Point position;
-    private String text;
-    private double fontSize;
+    private String content;
 
-    public Text (Point position, String text, double fontSize) {
-        super();
+    public Text(Point position, String content) {
         this.position = position;
-        this.text = text;
-        this.fontSize = fontSize;
+        this.content = content;
     }
 
     public Point getPosition() {
         return position;
     }
 
-    public void setPosition(Point position) {
-        this.position = position;
+    public void setPosition(Point p) {
+        this.position = p;
     }
 
+    // 🔥 ADD THIS
     public String getText() {
-        return text;
+        return content;
     }
 
-    public void setText(String text) {
-        this.text = text;
-    }
-
-    public double getFontSize() {
-        return fontSize;
-    }
-
-    public void setFontSize(double fontSize) {
-        this.fontSize = fontSize;
+    // 🔥 And also add a setter (not required, but useful)
+    public void setText(String content) {
+        this.content = content;
     }
 
     @Override
     public void draw(GraphicsContext g) {
-        g.setLineWidth(thickness);
-        g.setFont(new Font(fontSize));
-
-        if (filled) {
-            g.setFill(color);
-            g.fillText(text, position.x, position.y);
-        } else {
-            g.setStroke(color);
-            g.strokeText(text, position.x, position.y);
-        }
+        g.setFill(color);
+        g.setStroke(color);
+        g.fillText(content, position.x, position.y);
     }
 
     @Override
     public boolean contains(Point p) {
-        // VERY rough bounding box – good enough for selection/move.
-        double w = text.length() * fontSize * 0.6;  // approx. width
-        double h = fontSize;                        // approx. height
-
-        double x0 = position.x;
-        double y0 = position.y - h * 0.8;           // baseline to top
-
-        return p.x >= x0 && p.x <= x0 + w &&
-                p.y >= y0 && p.y <= y0 + h;
+        return false; // simple text: usually not selectable by shape hitbox
     }
 
     @Override
     public void translate(double dx, double dy) {
-        position = new Point(position.x + dx, position.y + dy);
+        this.position = new Point(position.x + dx, position.y + dy);
     }
 }
