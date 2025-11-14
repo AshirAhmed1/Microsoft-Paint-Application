@@ -52,3 +52,15 @@ Description:
 Reference:
 	USER STORY US4.014
 --------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+FeatureName: EyeDropper Tool
+
+Description:
+		This feature allows the user to click on any already drawn shape on the canvas and
+		change the currently selected color of the canvas to the color of the selected shape.
+		This feature allows users to quickly reuse colors instead of attempting to find the color
+		again in the color panel.
+
+Reference:
+	USER STORY US4.014
+--------------------------------------------------------------------------------

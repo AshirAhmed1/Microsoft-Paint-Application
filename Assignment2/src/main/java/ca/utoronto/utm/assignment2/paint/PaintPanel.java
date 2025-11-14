@@ -18,11 +18,6 @@ public class PaintPanel extends Canvas implements Observer {
         this.model = model;
         this.model.addObserver(this);
 
-        // setup canvas
-        GraphicsContext g = getGraphicsContext2D();
-        g.setFill(Color.WHITE);
-        g.fillRect(0, 0, getWidth(), getHeight());
-
         // 🧩 Delegate all mouse events to the current Tool
         this.addEventHandler(MouseEvent.MOUSE_PRESSED, e -> {
             if (currentTool != null) currentTool.onPress(e);

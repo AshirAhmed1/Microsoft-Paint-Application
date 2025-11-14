@@ -4,6 +4,7 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
@@ -11,6 +12,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import ca.utoronto.utm.assignment2.paint.tools.*;
+import javafx.scene.layout.StackPane;
 
 public class View implements EventHandler<ActionEvent> {
 
@@ -41,7 +43,17 @@ public class View implements EventHandler<ActionEvent> {
 
         BorderPane root = new BorderPane();
         root.setTop(createMenuBar());
-        root.setCenter(this.paintPanel);
+
+        StackPane canvasContainer = new StackPane(this.paintPanel);
+        this.paintPanel.widthProperty().bind(canvasContainer.widthProperty());
+        this.paintPanel.heightProperty().bind(canvasContainer.heightProperty());
+        root.setCenter(canvasContainer);
+
+        // Detect when the canvas is being adjusted
+        canvasContainer.widthProperty().addListener((obs, oldVal, newVal) -> model.updateObservers());
+        canvasContainer.heightProperty().addListener((obs, oldVal, newVal) -> model.updateObservers());
+        this.paintModel.updateObservers();
+
         VBox leftPanel = new VBox(this.shapeChooserPanel, thicknessChooserPanel, fillStyleChooserPanel);
         root.setLeft(leftPanel);
         VBox bottomPanel = new VBox(this.colorChooserPanel, undoRedoPanel);
