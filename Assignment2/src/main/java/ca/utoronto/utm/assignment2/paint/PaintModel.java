@@ -2,74 +2,69 @@ package ca.utoronto.utm.assignment2.paint;
 
 import java.util.ArrayList;
 import java.util.Observable;
+
+import ca.utoronto.utm.assignment2.paint.command.Command;
+import ca.utoronto.utm.assignment2.paint.command.ClearCanvasCommand;
 import javafx.scene.paint.Color;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
 public class PaintModel extends Observable {
+
     private final ArrayList<Drawable> drawables = new ArrayList<>();
     private Drawable preview;
+
     private Color currentColor = Color.BLACK;
     private double currentThickness = 2.0;
     private boolean fillMode = true;
+
     private Drawable clipboard;
     private Drawable selected;
-    private final Deque<ArrayList<Drawable>> undo = new ArrayDeque<>();
 
-    public void addDrawable(Drawable d) {
-        pushUndoState();
-        drawables.add(d);
-        System.out.println("Shape Added: " + d.getClass().getSimpleName());
-        setChanged();
-        notifyObservers();
-    }
+    private final Deque<Command> undoStack = new ArrayDeque<>();
+    private final Deque<Command> redoStack = new ArrayDeque<>();
 
     public ArrayList<Drawable> getDrawables() {
         return drawables;
     }
 
-    public void setPreview(Drawable d) {
-        this.preview = d;
-        setChanged();
-        notifyObservers();
+    public void addDrawable(Drawable d) {
+        drawables.add(d);
+        updateObservers();
     }
 
-    public Drawable getPreview() {
-        return this.preview;
+    public void removeDrawable(Drawable d) {
+        drawables.remove(d);
+        updateObservers();
     }
+
+    public void setPreview(Drawable d) {
+        this.preview = d;
+        updateObservers();
+    }
+
+    public Drawable getPreview() { return preview; }
 
     public void clearPreview() {
         this.preview = null;
-        setChanged();
-        notifyObservers();
+        updateObservers();
     }
 
-    public void setCurrentColor(Color color) { this.currentColor = color;}
+    public void setCurrentColor(Color color) { this.currentColor = color; }
+    public Color getCurrentColor() { return currentColor; }
 
-    public Color getCurrentColor() { return this.currentColor;}
+    public double getCurrentThickness() { return currentThickness; }
 
-    public double getCurrentThickness()
-    {
-        return this.currentThickness;
-    }
-
-    public void setCurrentThickness(double thickness)
-    {
+    public void setCurrentThickness(double thickness) {
         this.currentThickness = thickness;
-        setChanged();
-        notifyObservers();
+        updateObservers();
     }
 
-    public boolean isFillMode()
-    {
-        return fillMode;
-    }
+    public boolean isFillMode() { return fillMode; }
 
-    public void setFillMode(boolean fillMode)
-    {
+    public void setFillMode(boolean fillMode) {
         this.fillMode = fillMode;
-        setChanged();
-        notifyObservers();
+        updateObservers();
     }
 
     public void updateObservers() {
@@ -77,109 +72,15 @@ public class PaintModel extends Observable {
         notifyObservers();
     }
 
-    private Drawable copyPasteHelper(Drawable d, double dx, double dy) {
-
-        if (d instanceof Triangle t) {
-            Point bl = t.getbottom_left();
-            Triangle cs =  new Triangle(   // copyshape
-                    new Point(bl.x + dx, bl.y + dy),
-                    t.getbase(),
-                    t.getside1(),
-                    t.getside2()
-            );
-            cs.setColor(t.getColor());
-            cs.setThickness(t.getThickness());
-
-            return cs;
-        }
-
-        if (d instanceof Square s) {
-            Point tl = s.getTop_left();
-            Square cs =  new Square(
-                    new Point(tl.x + dx, tl.y + dy),
-                    (int) s.getSideLength()
-            );
-            cs.setColor(s.getColor());
-            cs.setThickness(s.getThickness());
-
-            return cs;
-        }
-
-        if (d instanceof Circle c) {
-            Point centre = c.getCentre();
-            Circle cs =new Circle(
-                    new Point(centre.x + dx, centre.y + dy),
-                    (int) c.getRadius()
-            );
-            cs.setColor(c.getColor());
-            cs.setThickness(c.getThickness());
-
-            return cs;
-        }
-
-        if (d instanceof Oval o) {
-            Point tl = o.getTopLeft();
-            Oval cs =new Oval(
-                    new Point(tl.x + dx, tl.y + dy),
-                    o.getWidth(),
-                    o.getHeight()
-            );
-            cs.setColor(o.getColor());
-            cs.setThickness(o.getThickness());
-
-            return cs;
-        }
-
-
-        if (d instanceof Rectangle r) {
-            Point tl = r.getTop_left();
-            Rectangle cs = new Rectangle(
-                    new Point(tl.x + dx, tl.y + dy),
-                    r.getWidth(),
-                    r.getHeight()
-            );
-            cs.setColor(r.getColor());
-            cs.setThickness(r.getThickness());
-
-            return cs;
-        }
-
-        if (d instanceof Text t) {
-            Text copy = new Text(
-                    new Point(t.getPosition().x, t.getPosition().y),
-                    t.getText()
-            );
-            copy.setColor(t.getColor());
-            copy.setThickness(t.getThickness());
-            copy.setFilled(t.isFilled());
-            return copy;
-        }
-        return d;
-    }
-
     public void setSelected(Drawable d) {
-        this.selected = d;
-        setChanged();
-        notifyObservers();
+        selected = d;
+        updateObservers();
     }
 
-    public void clearCanvas() {
+    public Drawable getSelected() { return selected; }
 
-        if (drawables.isEmpty()) {
-            return;
-        }
-        pushUndoState();
-        drawables.clear();
-        clearPreview();
-        setChanged();
-        notifyObservers();
-    }
-    public Drawable getSelected() {
-        return this.selected;
-    }
-    public Drawable getClipboard() {
-        return clipboard;
-    }
+    public Drawable getClipboard() { return clipboard; }
+
     public void copySelected() {
         if (selected != null) {
             clipboard = copyPasteHelper(selected, 0, 0);
@@ -191,9 +92,123 @@ public class PaintModel extends Observable {
             drawables.remove(selected);
             clipboard = copyPasteHelper(selected, 0, 0);
             selected = null;
-            setChanged();
-            notifyObservers();
+            updateObservers();
         }
+    }
+
+
+    public void pasteAt(double x, double y) {
+        if (clipboard == null) return;
+
+        Drawable copy = createClipboardCopyAt(x, y);
+
+        if (copy != null) {
+            // paste must be undoable via AddShapeCommand,
+            // not direct modification
+            addDrawable(copy);
+        }
+    }
+
+
+    public void executeCommand(Command cmd) {
+        cmd.execute();
+        undoStack.push(cmd);
+        redoStack.clear();
+        updateObservers();
+    }
+
+    public void undo() {
+        if (!undoStack.isEmpty()) {
+            Command cmd = undoStack.pop();
+            cmd.undo();
+            redoStack.push(cmd);
+            updateObservers();
+        }
+    }
+
+    public void redo() {
+        if (!redoStack.isEmpty()) {
+            Command cmd = redoStack.pop();
+            cmd.execute();
+            undoStack.push(cmd);
+            updateObservers();
+        }
+    }
+
+
+    public void clearCanvas() {
+        if (drawables.isEmpty()) return;
+
+        executeCommand(new ClearCanvasCommand(this));
+    }
+
+    private Drawable copyPasteHelper(Drawable d, double dx, double dy) {
+        if (d instanceof Triangle t) {
+            Triangle cs = new Triangle(
+                    new Point(t.getbottom_left().x + dx, t.getbottom_left().y + dy),
+                    t.getbase(),
+                    t.getside1(),
+                    t.getside2()
+            );
+            cs.setColor(t.getColor());
+            cs.setThickness(t.getThickness());
+            return cs;
+        }
+
+        if (d instanceof Square s) {
+            Square cs = new Square(
+                    new Point(s.getTop_left().x + dx, s.getTop_left().y + dy),
+                    s.getSideLength()
+            );
+            cs.setColor(s.getColor());
+            cs.setThickness(s.getThickness());
+            return cs;
+        }
+
+        if (d instanceof Circle c) {
+            Circle cs = new Circle(
+                    new Point(c.getCentre().x + dx, c.getCentre().y + dy),
+                    (int) c.getRadius()
+            );
+            cs.setColor(c.getColor());
+            cs.setThickness(c.getThickness());
+            return cs;
+        }
+
+        if (d instanceof Oval o) {
+            Oval cs = new Oval(
+                    new Point(o.getTopLeft().x + dx, o.getTopLeft().y + dy),
+                    o.getWidth(),
+                    o.getHeight()
+            );
+            cs.setColor(o.getColor());
+            cs.setThickness(o.getThickness());
+            return cs;
+        }
+
+        if (d instanceof Rectangle r) {
+            Rectangle cs = new Rectangle(
+                    new Point(r.getTop_left().x + dx, r.getTop_left().y + dy),
+                    r.getWidth(),
+                    r.getHeight()
+            );
+            cs.setColor(r.getColor());
+            cs.setThickness(r.getThickness());
+            return cs;
+        }
+
+        if (d instanceof Text t) {
+            Text copy = new Text(
+                    new Point(t.getPosition().x + dx, t.getPosition().y + dy),
+                    t.getText()
+            );
+            copy.setColor(t.getColor());
+            copy.setThickness(t.getThickness());
+            copy.setFilled(t.isFilled());
+            return copy;
+        }
+
+        return d;
     }
 
     private Drawable createClipboardCopyAt(double x, double y) {
@@ -201,59 +216,27 @@ public class PaintModel extends Observable {
 
         Drawable copy = copyPasteHelper(clipboard, 0, 0);
 
-        double dx = 0;
-        double dy = 0;
+        double dx = 0, dy = 0;
 
-        if (clipboard instanceof Circle c && copy instanceof Circle cc) {
+        if (clipboard instanceof Circle c)
             dx = x - c.getCentre().x;
-            dy = y - c.getCentre().y;
-        } else if (clipboard instanceof Rectangle r && copy instanceof Rectangle rr) {
+        else if (clipboard instanceof Rectangle r)
             dx = x - r.getTop_left().x;
-            dy = y - r.getTop_left().y;
-        } else if (clipboard instanceof Square s && copy instanceof Square ss) {
+        else if (clipboard instanceof Square s)
             dx = x - s.getTop_left().x;
-            dy = y - s.getTop_left().y;
-        } else if (clipboard instanceof Oval o && copy instanceof Oval oo) {
+        else if (clipboard instanceof Oval o)
             dx = x - o.getTopLeft().x;
-            dy = y - o.getTopLeft().y;
-        } else if (clipboard instanceof Triangle t && copy instanceof Triangle tt) {
+        else if (clipboard instanceof Triangle t)
             dx = x - t.getbottom_left().x;
-            dy = y - t.getbottom_left().y;
-        } else if (clipboard instanceof Polyline p && copy instanceof Polyline pp) {
-            // For polyline/squiggle, anchor on first point
-            Point p0 = p.getPoints().get(0);
-            dx = x - p0.x;
-            dy = y - p0.y;
-        } else if (clipboard instanceof Squiggle s && copy instanceof Squiggle ss) {
-            Point p0 = s.getPoints().get(0);
-            dx = x - p0.x;
-            dy = y - p0.y;
-        }
+
+        dy = dy == 0 ? dx : dy;
+
         copy.translate(dx, dy);
         return copy;
     }
-    public void pasteAt(double x, double y) {
-        Drawable pasted = createClipboardCopyAt(x, y);
-        if (pasted != null) {
-            addDrawable(pasted);
-        }
-    }
 
-    private void pushUndoState() {
-        ArrayList<Drawable> snapshot = new ArrayList<>();
-        for (Drawable d : drawables) {
-            snapshot.add(copyPasteHelper(d, 0, 0));
-        }
-        undo.push(snapshot);
-    }
-    public void undo() {
-        if (undo.isEmpty()) {
-            return;
-        }
-        ArrayList<Drawable> previous = undo.pop();
-        drawables.clear();
-        drawables.addAll(previous);
-        setChanged();
-        notifyObservers();
+    public Drawable copyForUndo(Drawable d) {
+        return copyPasteHelper(d, 0, 0);
     }
 }
+

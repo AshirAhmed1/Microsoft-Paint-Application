@@ -4,6 +4,7 @@ import ca.utoronto.utm.assignment2.paint.PaintModel;
 import ca.utoronto.utm.assignment2.paint.PaintPanel;
 import ca.utoronto.utm.assignment2.paint.Point;
 import ca.utoronto.utm.assignment2.paint.Text;
+import ca.utoronto.utm.assignment2.paint.command.TextCommand;
 import javafx.scene.control.TextInputDialog;
 import javafx.scene.input.MouseEvent;
 
@@ -30,9 +31,9 @@ public class TextTool extends AbstractShapeTool {
             Text t = new Text(new Point(x, y), result.get());
             t.setColor(model.getCurrentColor());
             t.setThickness(model.getCurrentThickness());
-            t.setFilled(false); // outline / just text
+            t.setFilled(false);
 
-            model.addDrawable(t);
+            model.executeCommand(new TextCommand(model, t));
         }
     }
 

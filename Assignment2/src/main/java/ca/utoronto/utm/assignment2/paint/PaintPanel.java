@@ -61,4 +61,7 @@ public class PaintPanel extends Canvas implements Observer {
             preview.draw(g);
         }
     }
+    public void refresh() {
+        update(model, null);
+    }
 }

@@ -6,7 +6,6 @@ import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
-import ca.utoronto.utm.assignment2.paint.tools.ToolType;
 
 import java.io.InputStream;
 
@@ -17,12 +16,11 @@ public class EditToolPanel extends GridPane implements EventHandler<ActionEvent>
     public EditToolPanel(View view) {
         this.view = view;
 
-        String[] buttonLabels =  {"Paste", "Cut", "Copy", "Clear", "Undo"};
-
+        String[] buttonLabels = {"Paste", "Cut", "Copy", "Clear", "Undo", "Redo"};
 
         int row = 0;
         for (String label : buttonLabels) {
-//          Image icon = new Image(getClass().getResourceAsStream("/icons/" + label.toLowerCase() + ".png"));
+
             String path = "/icons/" + label.toLowerCase() + ".png";
             InputStream is = getClass().getResourceAsStream(path);
 
@@ -32,10 +30,8 @@ public class EditToolPanel extends GridPane implements EventHandler<ActionEvent>
                 ImageView iconView = new ImageView(icon);
                 iconView.setFitWidth(24);
                 iconView.setFitHeight(24);
-
                 button = new Button(label, iconView);
             } else {
-                // No icon? Just make a text-only button
                 System.out.println("No icon found for " + label + " at " + path);
                 button = new Button(label);
             }
@@ -43,44 +39,43 @@ public class EditToolPanel extends GridPane implements EventHandler<ActionEvent>
             button.setMinWidth(100);
             this.add(button, 0, row++);
 
-            // Highlight selected button and set active Tool
-            button.setOnAction(actionEvent -> {
-                for (javafx.scene.Node n : this.getChildren()) {
-                    n.setStyle("");
-                }
-                button.setStyle("-fx-background-color: skyblue;");
+            button.setOnAction(e -> handleButton(label));
+        }
+    }
 
-                try {
-                    ToolType type = ToolType.valueOf(label.toUpperCase());
-                    view.setTool(type);
-                    System.out.println("Tool selected: " + type);
-                } catch (IllegalArgumentException e) {
-                    System.out.println("Unknown tool type: " + label);
-                }
-            });
+    private void handleButton(String label) {
+        switch (label) {
+            case "Copy" -> {
+                view.copySelection();
+            }
+            case "Cut" -> {
+                view.cutSelection();
+                view.getPaintPanel().refresh();
+            }
+            case "Paste" -> {
+                // You can improve with mouse location later.
+                view.getPaintModel().pasteAt(150, 150);
+                view.getPaintPanel().refresh();
+            }
+            case "Clear" -> {
+                view.getPaintModel().clearCanvas();
+                view.getPaintPanel().refresh();
+            }
+            case "Undo" -> {
+                view.getPaintModel().undo();
+                view.getPaintPanel().refresh();
+            }
+            case "Redo" -> {
+                view.getPaintModel().redo();
+                view.getPaintPanel().refresh();
+            }
+            default -> System.out.println("Unknown edit action: " + label);
         }
     }
 
     @Override
     public void handle(ActionEvent event) {
-        // Not needed anymore since we use lambdas directly,
-        // but kept for interface compliance.
-        String command = ((Button) event.getSource()).getText();
-        try {
-            ToolType type = ToolType.valueOf(command.toUpperCase());
-            view.setTool(type);
-        } catch (IllegalArgumentException e) {
-            System.out.println("Unknown tool: " + command);
-        }
+
     }
 
-    public void highlightButton(String toolName) {
-        for (javafx.scene.Node node : this.getChildren()) {
-            Button btn = (Button) node;
-            btn.setStyle("");
-            if (btn.getText().toUpperCase().startsWith(toolName.toUpperCase())) {
-                btn.setStyle("-fx-background-color: skyblue;");
-            }
-        }
-    }
 }
