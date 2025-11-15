@@ -8,17 +8,29 @@ import java.util.Observer;
 import java.util.Observable;
 import ca.utoronto.utm.assignment2.paint.tools.*; // import tools package
 
+/**
+ * The canvas on which all shapes are drawn. This panel listens to the model
+ * for updates and displays all drawables as well as any preview shape.
+ * Mouse actions are delegated to the currently active Tool.
+ *
+ * @author Ashir / Alex / Abdullah / Ahmed / Arnold
+ */
 public class PaintPanel extends Canvas implements Observer {
 
     private PaintModel model;
-    private Tool currentTool; // New Strategy delegate
+    private Tool currentTool;
 
+    /**
+     * Creates a new PaintPanel and attaches mouse listeners that delegate to
+     * the active Tool. The panel observes the PaintModel for updates.
+     *
+     * @param model the PaintModel providing drawable content
+     */
     public PaintPanel(PaintModel model) {
         super(300, 300);
         this.model = model;
         this.model.addObserver(this);
 
-        // 🧩 Delegate all mouse events to the current Tool
         this.addEventHandler(MouseEvent.MOUSE_PRESSED, e -> {
             if (currentTool != null) currentTool.onPress(e);
         });
@@ -34,7 +46,9 @@ public class PaintPanel extends Canvas implements Observer {
     }
 
     /**
-     * Called by View to update which Tool (Controller) is active.
+     * Sets the currently active Tool, which receives all mouse input.
+     *
+     * @param tool the tool that should handle mouse actions
      */
     public void setCurrentTool(Tool tool) {
         this.currentTool = tool;
@@ -42,6 +56,12 @@ public class PaintPanel extends Canvas implements Observer {
             System.out.println("Tool set to: " + tool.getClass().getSimpleName());
     }
 
+    /**
+     * Redraws the canvas when the model changes.
+     *
+     * @param o   the observable PaintModel
+     * @param arg unused
+     */
     @Override
     public void update(Observable o, Object arg) {
         GraphicsContext g = getGraphicsContext2D();
@@ -61,6 +81,10 @@ public class PaintPanel extends Canvas implements Observer {
             preview.draw(g);
         }
     }
+
+    /**
+     * Forces the panel to repaint the canvas immediately.
+     */
     public void refresh() {
         update(model, null);
     }

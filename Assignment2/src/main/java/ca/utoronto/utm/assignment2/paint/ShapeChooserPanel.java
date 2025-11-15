@@ -11,10 +11,23 @@ import ca.utoronto.utm.assignment2.paint.tools.ToolType;
 
 import java.io.InputStream;
 
+/**
+ * A panel that displays buttons for selecting different drawing tools and shapes.
+ * Each button is associated with an icon, a keyboard shortcut, and updates the
+ * active tool in the view when pressed.
+ *
+ * @author Ashir / Alex / Abdullah / Ahmed / Arnold
+ */
 public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEvent> {
 
     private View view;
 
+    /**
+     * Creates the shape chooser panel and initializes all tool buttons with
+     * icons, labels, and click handlers.
+     *
+     * @param view the main view controlling the canvas and tools
+     */
     public ShapeChooserPanel(View view) {
         this.view = view;
 
@@ -62,10 +75,21 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
         }
     }
 
+    /**
+     * Required override for EventHandler; no action performed here because
+     * buttons use individual lambda handlers instead.
+     *
+     * @param event the triggered event
+     */
     @Override
-    public void handle(ActionEvent event) {
-    }
+    public void handle(ActionEvent event) { }
 
+    /**
+     * Highlights the button corresponding to the currently active tool by
+     * applying a background style and removing it from all others.
+     *
+     * @param toolName the name of the tool to highlight
+     */
     public void highlightButton(String toolName) {
         for (javafx.scene.Node node : this.getChildren()) {
             Button btn = (Button) node;
@@ -76,6 +100,13 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
         }
     }
 
+    /**
+     * Sets the cursor on the canvas to a custom image associated with the tool.
+     *
+     * @param tool the image filename for the cursor
+     * @param x    hotspot x-coordinate
+     * @param y    hotspot y-coordinate
+     */
     protected void setCanvasCursor(String tool, double x, double y){
         InputStream cursor = getClass().getResourceAsStream(tool);
         if (cursor != null) {

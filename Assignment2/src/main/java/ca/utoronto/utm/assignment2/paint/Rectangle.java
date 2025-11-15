@@ -6,18 +6,23 @@ import javafx.scene.paint.Color;
 import java.util.ArrayList;
 
 /**
- * Represent a rectangle shape which can be drawn on the canvas.
+ * Represents a rectangle shape that can be drawn on the canvas. The rectangle
+ * is defined by its top-left point, width, and height, and supports filling,
+ * outlining, hit detection, translation, and erasing.
+ *
+ * @author Ashir / Alex / Abdullah / Ahmed / Arnold
  */
-public class Rectangle extends AbstractShapeDrawable{
+public class Rectangle extends AbstractShapeDrawable {
     private Point top_left;
     private double width;
     private double height;
 
     /**
-     * Construct a new rectangle with the given parameters.
-     * @param top_left
-     * @param width
-     * @param height
+     * Creates a new rectangle with the specified top-left point, width, and height.
+     *
+     * @param top_left the top-left coordinate
+     * @param width the width of the rectangle
+     * @param height the height of the rectangle
      */
     public Rectangle(Point top_left, double width, double height)
     {
@@ -28,8 +33,9 @@ public class Rectangle extends AbstractShapeDrawable{
     }
 
     /**
-     * return the top left coordinate of the rectangle
-     * @return top left Point
+     * Returns the top-left point of the rectangle.
+     *
+     * @return the top-left coordinate
      */
     public Point getTop_left()
     {
@@ -37,8 +43,9 @@ public class Rectangle extends AbstractShapeDrawable{
     }
 
     /**
-     * Set the top left point of the rectangle to specified point.
-     * @param top_left
+     * Sets the top-left corner of the rectangle.
+     *
+     * @param top_left the new top-left point
      */
     public void setTop_left(Point top_left)
     {
@@ -46,8 +53,9 @@ public class Rectangle extends AbstractShapeDrawable{
     }
 
     /**
-     * Set the width of the current rectangle to specified width.
-     * @param width
+     * Sets the width of the rectangle.
+     *
+     * @param width the new width
      */
     public void setWidth(double width)
     {
@@ -55,8 +63,9 @@ public class Rectangle extends AbstractShapeDrawable{
     }
 
     /**
-     *  Set the height of the current rectangle to specified height.
-     * @param height
+     * Sets the height of the rectangle.
+     *
+     * @param height the new height
      */
     public void setHeight(double height)
     {
@@ -64,7 +73,8 @@ public class Rectangle extends AbstractShapeDrawable{
     }
 
     /**
-     * Return the width of the current rectangle.
+     * Returns the width of the rectangle.
+     *
      * @return width
      */
     public double getWidth()
@@ -73,7 +83,8 @@ public class Rectangle extends AbstractShapeDrawable{
     }
 
     /**
-     * Return the height of the current rectangle.
+     * Returns the height of the rectangle.
+     *
      * @return height
      */
     public double getHeight()
@@ -81,6 +92,11 @@ public class Rectangle extends AbstractShapeDrawable{
         return this.height;
     }
 
+    /**
+     * Draws the rectangle on the canvas using the shape's style settings.
+     *
+     * @param g the GraphicsContext used to draw
+     */
     @Override
     public void draw(GraphicsContext g)
     {
@@ -95,16 +111,26 @@ public class Rectangle extends AbstractShapeDrawable{
         }
     }
 
+    /**
+     * Checks whether a point lies inside the rectangle.
+     *
+     * @param p the point to test
+     * @return true if the point is inside the rectangle
+     */
     @Override
     public boolean contains(Point p) {
         return p.x >= top_left.x && p.x <= top_left.x + width &&
                 p.y >= top_left.y && p.y <= top_left.y + height;
     }
 
+    /**
+     * Moves the rectangle by the given offsets.
+     *
+     * @param dx movement in x direction
+     * @param dy movement in y direction
+     */
     @Override
     public void translate(double dx, double dy) {
         top_left = new Point(top_left.x + dx, top_left.y + dy);
     }
-
-
 }

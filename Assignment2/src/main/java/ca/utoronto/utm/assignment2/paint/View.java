@@ -15,8 +15,19 @@ import javafx.scene.control.SeparatorMenuItem;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import ca.utoronto.utm.assignment2.paint.tools.*; // import for Tool, ToolType, ToolFactory
+import ca.utoronto.utm.assignment2.paint.tools.*;
 
+/**
+ * The main View class of the paint application. It constructs the UI layout,
+ * initializes all tool panels, handles keyboard shortcuts, and delegates tool
+ * creation to the ToolFactory. It also routes menu bar actions and forwards
+ * selection or editing actions to the PaintModel.
+ *
+ * This class acts as both the View and (partially) the Controller in the MVC
+ * architecture, linking user interaction to model updates and canvas repainting.
+ *
+ * @author Ashir / Alex / Abdullah / Ahmed / Arnold
+ */
 public class View implements EventHandler<ActionEvent> {
 
     private PaintModel paintModel;
@@ -25,6 +36,13 @@ public class View implements EventHandler<ActionEvent> {
     private ColorChooserPanel colorChooserPanel;
     private EditToolPanel editToolPanel;
 
+    /**
+     * Constructs the main View, initializes all UI components, registers
+     * keyboard shortcuts, and sets up the scene layout.
+     *
+     * @param model the PaintModel used for all drawing state and operations
+     * @param stage the main application window
+     */
     public View(PaintModel model, Stage stage) {
         this.paintModel = model;
 
@@ -35,19 +53,24 @@ public class View implements EventHandler<ActionEvent> {
         FillStyleChooserPanel fillStyleChooserPanel = new FillStyleChooserPanel(this.paintModel);
 
         this.editToolPanel = new EditToolPanel(this);
+
         BorderPane root = new BorderPane();
         root.setTop(createMenuBar());
         root.setCenter(this.paintPanel);
+
         VBox leftPanel = new VBox(this.shapeChooserPanel, thicknessChooserPanel, fillStyleChooserPanel);
         root.setLeft(leftPanel);
+
         root.setRight(this.editToolPanel);
         root.setBottom(this.colorChooserPanel);
-
-
 
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.setTitle("Paint");
+
+        // ============================
+        //      TOOL SHORTCUT KEYS
+        // ============================
         scene.setOnKeyPressed(e -> {
             switch (e.getCode()) {
                 case C -> { setTool(ToolType.CIRCLE); shapeChooserPanel.highlightButton("Circle"); }
@@ -65,6 +88,9 @@ public class View implements EventHandler<ActionEvent> {
             }
         });
 
+        // ============================
+        //      EDIT ACTION SHORTCUTS
+        // ============================
         scene.addEventFilter(javafx.scene.input.KeyEvent.KEY_PRESSED, e -> {
 
             if (e.isControlDown() && e.getCode() == javafx.scene.input.KeyCode.Z) {
@@ -115,35 +141,54 @@ public class View implements EventHandler<ActionEvent> {
         stage.show();
     }
 
+    /**
+     * Returns the application's PaintModel.
+     *
+     * @return the model instance
+     */
     public PaintModel getPaintModel() {
         return this.paintModel;
     }
 
+    /**
+     * Returns the PaintPanel (canvas area).
+     *
+     * @return the canvas panel
+     */
     public PaintPanel getPaintPanel() {
         return this.paintPanel;
     }
 
     /**
-     * Old: setMode(String mode)
-     * New: setTool(ToolType type)
-     * Called by ShapeChooserPanel when a button is clicked.
+     * Sets the currently active tool. This method delegates tool creation to the
+     * ToolFactory and updates the cursor depending on the tool selected.
+     *
+     * @param type the tool type selected by the user
      */
     public void setTool(ToolType type) {
         Tool tool = ToolFactory.create(type, this.paintModel, this.paintPanel);
         this.paintPanel.setCurrentTool(tool);
+
         switch (type) {
             case PAINTBUCKET -> shapeChooserPanel.setCanvasCursor("/icons/paintbucket.png", 100, 100);
             case EYEDROPPER -> shapeChooserPanel.setCanvasCursor("/icons/eyedropper.png", 32, 165);
             case SELECTMOVE, PASTE, CUT, COPY -> paintPanel.setCursor(ImageCursor.DEFAULT);
             default -> paintPanel.setCursor(ImageCursor.CROSSHAIR);
         }
-
     }
+
+    /**
+     * Delegates a copy request to the model.
+     */
     public void copySelection() {
         this.paintModel.copySelected();
     }
 
-
+    /**
+     * Builds and returns the menu bar containing File and Edit menus.
+     *
+     * @return a fully constructed MenuBar
+     */
     private MenuBar createMenuBar() {
         MenuBar menuBar = new MenuBar();
         Menu menu;
@@ -151,6 +196,7 @@ public class View implements EventHandler<ActionEvent> {
 
         // === File Menu ===
         menu = new Menu("File");
+
         menuItem = new MenuItem("New");
         menuItem.setOnAction(this);
         menu.getItems().add(menuItem);
@@ -173,6 +219,7 @@ public class View implements EventHandler<ActionEvent> {
 
         // === Edit Menu ===
         menu = new Menu("Edit");
+
         menuItem = new MenuItem("Cut");
         menuItem.setOnAction(this);
         menu.getItems().add(menuItem);
@@ -186,6 +233,7 @@ public class View implements EventHandler<ActionEvent> {
         menu.getItems().add(menuItem);
 
         menu.getItems().add(new SeparatorMenuItem());
+
         menuItem = new MenuItem("Undo");
         menuItem.setOnAction(this);
         menu.getItems().add(menuItem);
@@ -199,10 +247,16 @@ public class View implements EventHandler<ActionEvent> {
         return menuBar;
     }
 
+    /**
+     * Handles menu bar actions such as New, Open, Save, and Exit.
+     *
+     * @param event the triggered action event
+     */
     @Override
     public void handle(ActionEvent event) {
         String command = ((MenuItem) event.getSource()).getText();
         System.out.println("Menu command: " + command);
+
         if (command.equals("Exit")) {
             Platform.exit();
         }

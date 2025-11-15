@@ -10,10 +10,22 @@ import javafx.scene.layout.GridPane;
 
 import java.io.InputStream;
 
+/**
+ * A panel providing editing tools, including cut, copy, paste, clear,
+ * undo, and redo. Each button triggers its corresponding action on the
+ * PaintModel and refreshes the canvas.
+ *
+ * @author Ashir / Alex / Abdullah / Ahmed / Arnold
+ */
 public class EditToolPanel extends GridPane implements EventHandler<ActionEvent> {
 
     private View view;
 
+    /**
+     * Constructs a new EditToolPanel and creates the set of edit buttons.
+     *
+     * @param view the application view used to access model and panel updates
+     */
     public EditToolPanel(View view) {
         this.view = view;
 
@@ -43,6 +55,12 @@ public class EditToolPanel extends GridPane implements EventHandler<ActionEvent>
         }
     }
 
+    /**
+     * Handles the action of a button based on its label.
+     * Executes the appropriate edit command and refreshes the canvas.
+     *
+     * @param label the label of the button clicked
+     */
     private void handleButton(String label) {
         System.out.println("Button pressed: " + label);
         switch (label) {
@@ -76,6 +94,11 @@ public class EditToolPanel extends GridPane implements EventHandler<ActionEvent>
         }
     }
 
+    /**
+     * Required event handler implementation, unused by this panel.
+     *
+     * @param event ignored
+     */
     @Override
     public void handle(ActionEvent event) {
 

@@ -6,9 +6,22 @@ import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.HBox;
 
+/**
+ * A panel that allows the user to toggle between filled and outline
+ * drawing styles. The currently selected shape can also have its style
+ * updated via a StyleCommand.
+ *
+ * @author Ashir / Alex / Abdullah / Ahmed / Arnold
+ */
 public class FillStyleChooserPanel extends HBox {
     private final PaintModel model;
 
+    /**
+     * Constructs a new FillStyleChooserPanel connected to the given PaintModel.
+     * Provides two toggle buttons: "Filled" and "Outline".
+     *
+     * @param model the paint model whose fill mode and selected shape may be modified
+     */
     public FillStyleChooserPanel(PaintModel model)
     {
         this.model = model;

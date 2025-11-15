@@ -7,6 +7,8 @@ import java.util.ArrayList;
 /**
  * An abstract class that represents a drawable shape which can be added to the canvas in
  * the paint application.
+ *
+ * @author Ashir / Alex / Abdullah / Ahmed / Arnold
  */
 
 public abstract class AbstractShapeDrawable implements Drawable {
