@@ -11,7 +11,7 @@ Description:
 Reference:
 	USER STORY US4.010
 --------------------------------------------------------------------------------
-FeatureName: Keyboard Shortcuts for Tool Selection
+FeatureName: Keyboard Shortcuts for Tool Selection (Accessibility Feature)
 
 Description:
 		This feature allows users to quickly switch between different drawing tools
@@ -24,6 +24,15 @@ Description:
     	Additionally, each button displays its shortcut key in brackets beside its name
     	and shows the shortcut when hovered over, making it clear and intuitive for users
     	to learn and use the hotkeys efficiently.
+
+    	Accessibility Benefits:
+    	The introduction of keyboard shortcuts also improves accessibility for users who
+    	may have difficulty using a mouse or performing precise pointer movements. People
+    	with limited motor control, hand tremors, or repetitive strain injuries benefit from
+    	being able to switch tools without needing to click small UI buttons. Keyboard navigation
+    	reduces reliance on fine motor skills and provides an alternative input method for users
+    	who cannot effectively use a mouse. By offering both visual tool selection and efficient
+    	keyboard access, the feature supports a wider range of user needs and interaction preferences.
 
 Reference:
 	USER STORY US4.011
