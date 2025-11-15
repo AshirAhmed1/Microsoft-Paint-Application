@@ -85,10 +85,6 @@ public class Triangle extends AbstractShapeDrawable{
         else {
             g.strokePolygon(xs, ys, 3);
         }
-
-        g.setFill(Color.WHITE);
-        // Makes sure when the shape is moved after erased, it remains erased.
-        erase(g);
     }
 
     @Override
@@ -103,12 +99,6 @@ public class Triangle extends AbstractShapeDrawable{
     @Override
     public void translate(double dx, double dy) {
         bottom_left = new Point(bottom_left.x + dx, bottom_left.y + dy);
-        for (ArrayList<ErasePoint> stroke: erasedStrokes) {
-            for (ErasePoint p: stroke) {
-                p.x += dx;
-                p.y += dy;
-            }
-        }
     }
 
 

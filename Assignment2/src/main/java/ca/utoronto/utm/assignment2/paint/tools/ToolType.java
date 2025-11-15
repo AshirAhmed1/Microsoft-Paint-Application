@@ -9,7 +9,6 @@ public enum ToolType {
     OVAL,
     SQUIGGLE,
     POLYLINE,
-    ERASER,
     PAINTBUCKET,
     EYEDROPPER,
     PASTE,

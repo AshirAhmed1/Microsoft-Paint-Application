@@ -6,12 +6,29 @@ import ca.utoronto.utm.assignment2.paint.Point;
 import ca.utoronto.utm.assignment2.paint.Drawable;
 import javafx.scene.input.MouseEvent;
 
+/**
+ * A tool for copying a currently selected shape by clicking on it and storing it
+ * in the model's clipboard.
+ *
+ * @author arnold/Ashir/Alex/Ahmed/Abdullah
+ */
 public class CopyTool extends AbstractShapeTool {
 
+    /**
+     * Constructs a CopyTool with references to the model and panel.
+     *
+     * @param model the PaintModel storing shapes and selection
+     * @param view the PaintPanel where shapes are drawn
+     */
     public CopyTool(PaintModel model, PaintPanel view) {
         super(model, view);
     }
 
+    /**
+     * Selects the top-most shape near the point of the mouse click and
+     * copies it.
+     * @param e the current mouse press
+     */
     @Override
     public void onPress(MouseEvent e) {
         Point click = new Point(e.getX(), e.getY());

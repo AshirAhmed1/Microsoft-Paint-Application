@@ -5,14 +5,33 @@ import ca.utoronto.utm.assignment2.paint.*;
 import ca.utoronto.utm.assignment2.paint.command.AddShapeCommand;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
-
+/**
+ * A tool for drawing polylines on a PaintPanel.
+ * Users can click multiple points to create connected line segments.
+ * The polyline is finalized with a right-click.
+ *
+ * @author arnold/Ashir/Alex/Ahmed/Abdullah
+ */
 public class PolylineTool extends AbstractShapeTool{
     private Polyline current;
 
+    /**
+     * Constructs a PolylineTool with references to the model and panel.
+     *
+     * @param model the PaintModel storing shapes
+     * @param panel the PaintPanel where shapes are drawn
+     */
     public PolylineTool(PaintModel model, PaintPanel panel) {
         super(model, panel);
     }
 
+    /**
+     * Handles mouse press events. Starts a new polyline if none exists,
+     * adds a point to the current polyline, and shows the preview.
+     * Right-click will finish the polyline and add it to the model.
+     *
+     * @param e the MouseEvent representing the mouse press
+     */
     @Override
     public void onPress(MouseEvent e) {
         if (current == null) {
@@ -29,6 +48,12 @@ public class PolylineTool extends AbstractShapeTool{
         }
     }
 
+    /**
+     * Handles mouse move events. Updates the preview of the polyline
+     * by showing a temporary line to the current mouse position.
+     *
+     * @param e the MouseEvent representing the mouse movement
+     */
     @Override
     public void onMove(MouseEvent e) {
         // show polyline only if it is started with at least a starting point

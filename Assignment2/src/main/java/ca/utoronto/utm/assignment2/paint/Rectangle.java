@@ -93,9 +93,6 @@ public class Rectangle extends AbstractShapeDrawable{
         else {
             g.strokeRect(top_left.x, top_left.y, width, height);
         }
-        g.setFill(Color.WHITE);
-        // Makes sure when the shape is moved after erased, it remains erased.
-        erase(g);
     }
 
     @Override
@@ -107,12 +104,6 @@ public class Rectangle extends AbstractShapeDrawable{
     @Override
     public void translate(double dx, double dy) {
         top_left = new Point(top_left.x + dx, top_left.y + dy);
-        for (ArrayList<ErasePoint> stroke: erasedStrokes) {
-            for (ErasePoint p: stroke) {
-                p.x += dx;
-                p.y += dy;
-            }
-        }
     }
 
 
