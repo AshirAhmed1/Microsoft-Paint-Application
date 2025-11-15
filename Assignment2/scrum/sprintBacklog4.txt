@@ -187,3 +187,23 @@ ISSUE    : Tool buttons did not display their assigned keyboard shortcuts,
            • Ensuring both tool selection shortcuts and edit shortcuts
              (Undo, Redo, Cut, Copy, Paste, Delete) work consistently.
 --------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US4.019 : Imrana15 : Completed
+NAME     : Color Wheel Selector
+PRIORITY : 3
+ESTIMATE : 1 hour    ACTUAL : 1 minutes
+AS A     : user
+I WANT   : To add text to the canvas with the selected color and be able
+           to move it around after placement.
+SO THAT  : I can easily create and position text wherever I want on the canvas,
+           with the color automatically set to my selected color.
+--------------------------------------------------------------------------
+TYPE     : USER STORY US4.016 : Imrana15 : Completed
+NAME     : Color Wheel Selector
+PRIORITY : 3
+ESTIMATE : 1 hour    ACTUAL : 1.5 minutes
+AS A     : user
+I WANT   : The canvas to automatically adjust its size based on the window size.
+SO THAT  : When I resize the window, the canvas will stretch or shrink accordingly,
+           providing a more flexible and dynamic user experience.
+--------------------------------------------------------------------------

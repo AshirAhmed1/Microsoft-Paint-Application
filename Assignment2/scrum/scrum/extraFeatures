@@ -110,3 +110,28 @@ Description:
 Reference:
 	USER STORY US4.018
 --------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+FeatureName: Text Tool Color and Movement
+
+Description:
+		The Text Tool allows users to add text to the canvas. When a color is selected
+		using the ColorChooserPanel, it is applied to any new text created. The text
+		can be moved around the canvas after it is placed using the SelectMoveTool,
+		giving users flexibility in repositioning it.
+
+Reference:
+	USER STORY US4.019
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+FeatureName: Text Tool Color and Movement
+
+Description:
+		The canvas automatically adjusts its size based on the window size. When the
+		user resizes the window, the canvas dynamically expands or contracts to fit
+		within the new window dimensions. This ensures that the canvas remains responsive,
+		providing an optimal user experience across various screen sizes without losing any
+		drawing content.
+
+Reference:
+	USER STORY US4.016
+--------------------------------------------------------------------------------
