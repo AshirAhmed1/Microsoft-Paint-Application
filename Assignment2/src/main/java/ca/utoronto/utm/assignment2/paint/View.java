@@ -13,6 +13,7 @@ import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.SeparatorMenuItem;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import ca.utoronto.utm.assignment2.paint.tools.*;
@@ -46,23 +47,39 @@ public class View implements EventHandler<ActionEvent> {
     public View(PaintModel model, Stage stage) {
         this.paintModel = model;
 
+
         this.paintPanel = new PaintPanel(this.paintModel);
         this.shapeChooserPanel = new ShapeChooserPanel(this);
         this.colorChooserPanel = new ColorChooserPanel(paintModel);
         ThicknessChooserPanel thicknessChooserPanel = new ThicknessChooserPanel(this.paintModel);
         FillStyleChooserPanel fillStyleChooserPanel = new FillStyleChooserPanel(this.paintModel);
-
         this.editToolPanel = new EditToolPanel(this);
+
 
         BorderPane root = new BorderPane();
         root.setTop(createMenuBar());
-        root.setCenter(this.paintPanel);
+
+        StackPane canvasContainer = new StackPane(this.paintPanel);
+        this.paintPanel.widthProperty().bind(canvasContainer.widthProperty());
+        this.paintPanel.heightProperty().bind(canvasContainer.heightProperty());
+        root.setCenter(canvasContainer);
+
+
+        canvasContainer.widthProperty().addListener((obs, oldVal, newVal) -> model.updateObservers());
+        canvasContainer.heightProperty().addListener((obs, oldVal, newVal) -> model.updateObservers());
+        this.paintModel.updateObservers();
+
 
         VBox leftPanel = new VBox(this.shapeChooserPanel, thicknessChooserPanel, fillStyleChooserPanel);
         root.setLeft(leftPanel);
 
+
         root.setRight(this.editToolPanel);
-        root.setBottom(this.colorChooserPanel);
+
+
+        VBox bottomPanel = new VBox(this.colorChooserPanel);
+        root.setBottom(bottomPanel);
+
 
         Scene scene = new Scene(root);
         stage.setScene(scene);
@@ -233,7 +250,6 @@ public class View implements EventHandler<ActionEvent> {
         menu.getItems().add(menuItem);
 
         menu.getItems().add(new SeparatorMenuItem());
-
         menuItem = new MenuItem("Undo");
         menuItem.setOnAction(this);
         menu.getItems().add(menuItem);
