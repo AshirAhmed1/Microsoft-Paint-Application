@@ -1,5 +1,6 @@
 package ca.utoronto.utm.assignment2.paint;
 
+import ca.utoronto.utm.assignment2.paint.command.CutCommand;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
@@ -16,7 +17,7 @@ public class EditToolPanel extends GridPane implements EventHandler<ActionEvent>
     public EditToolPanel(View view) {
         this.view = view;
 
-        String[] buttonLabels = {"Paste", "Cut", "Copy", "Clear", "Undo", "Redo"};
+        String[] buttonLabels = {"Paste (Ctrl+V)", "Cut (Ctrl+X)", "Copy (Ctrl+C)", "Clear (DEL)", "Undo (Ctrl+Z)", "Redo (Ctrl+Y)"};
 
         int row = 0;
         for (String label : buttonLabels) {
@@ -32,7 +33,6 @@ public class EditToolPanel extends GridPane implements EventHandler<ActionEvent>
                 iconView.setFitHeight(24);
                 button = new Button(label, iconView);
             } else {
-                System.out.println("No icon found for " + label + " at " + path);
                 button = new Button(label);
             }
 
@@ -44,28 +44,31 @@ public class EditToolPanel extends GridPane implements EventHandler<ActionEvent>
     }
 
     private void handleButton(String label) {
+        System.out.println("Button pressed: " + label);
         switch (label) {
-            case "Copy" -> {
+            case "Copy (Ctrl+C)" -> {
                 view.copySelection();
             }
-            case "Cut" -> {
-                view.cutSelection();
+            case "Cut (Ctrl+X)" -> {
+                Drawable sel = view.getPaintModel().getSelected();
+                if (sel != null) {
+                    view.getPaintModel().executeCommand(new CutCommand(view.getPaintModel(), sel));
+                }
                 view.getPaintPanel().refresh();
             }
-            case "Paste" -> {
-                // You can improve with mouse location later.
+            case "Paste (Ctrl+V)" -> {
                 view.getPaintModel().pasteAt(150, 150);
                 view.getPaintPanel().refresh();
             }
-            case "Clear" -> {
+            case "Clear (DEL)" -> {
                 view.getPaintModel().clearCanvas();
                 view.getPaintPanel().refresh();
             }
-            case "Undo" -> {
+            case "Undo (Ctrl+Z)" -> {
                 view.getPaintModel().undo();
                 view.getPaintPanel().refresh();
             }
-            case "Redo" -> {
+            case "Redo (Ctrl+Y)" -> {
                 view.getPaintModel().redo();
                 view.getPaintPanel().refresh();
             }

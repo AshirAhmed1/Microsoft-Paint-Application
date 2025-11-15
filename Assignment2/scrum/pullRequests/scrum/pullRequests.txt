@@ -19,4 +19,3 @@
  US4.019 author:imrana15 puller: ? status: waiting
  US4.017 author:phanale5 puller: ahme1250 status: Completed
  US4.018 author:phanale5 puller: ahme1250 status: Completed
- BUG4.010 author:ahme1250 puller: ahme1250 status: Completed

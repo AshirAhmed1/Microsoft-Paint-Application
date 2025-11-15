@@ -11,10 +11,6 @@ import ca.utoronto.utm.assignment2.paint.tools.ToolType;
 
 import java.io.InputStream;
 
-/**
- * ShapeChooserPanel is a UI component that allows the user to select different tools for painting.
- * Selecting a tool highlights its button and sets the current tool in the PaintPanel.
- */
 public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEvent> {
 
     private View view;
@@ -22,33 +18,34 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
     public ShapeChooserPanel(View view) {
         this.view = view;
 
-        String[] buttonLabels = {"Circle", "Rectangle", "Square", "Triangle", "Oval", "Squiggle", "Polyline", "Eraser", "PaintBucket", "SelectMove","Paste", "Cut", "Copy", "Text"};
-        String[] shortcuts = {"C", "R", "S", "T", "O", "Q", "L", "E","P","M", "", "", "", ""};
+        String[] buttonLabels = {
+                "Circle", "Rectangle", "Square", "Triangle", "Oval",
+                "Squiggle", "Polyline", "Eraser", "PaintBucket",
+                "SelectMove", "Text"
+        };
+
+        String[] shortcuts = {"C", "R", "S", "T", "O", "Q", "L", "E", "P", "M", "X"};
 
         int row = 0;
         for (String label : buttonLabels) {
-//          Image icon = new Image(getClass().getResourceAsStream("/icons/" + label.toLowerCase() + ".png"));
+
             String path = "/icons/" + label.toLowerCase() + ".png";
             InputStream is = getClass().getResourceAsStream(path);
 
-            Button button;
-            if (is != null) {
-                Image icon = new Image(is);
-                ImageView iconView = new ImageView(icon);
-                iconView.setFitWidth(24);
-                iconView.setFitHeight(24);
-
-                button = new Button(label, iconView);
-            } else {
-                // No icon? Just make a text-only button
-                System.out.println("No icon found for " + label + " at " + path);
-                button = new Button(label);
+            if (is == null) {
+                System.out.println("Missing icon for: " + label + " → " + path);
             }
+
+            Image icon = (is != null) ? new Image(is) : null;
+            ImageView iconView = new ImageView(icon);
+            iconView.setFitWidth(24);
+            iconView.setFitHeight(24);
+
+            Button button = new Button(label + " (" + shortcuts[row] + ")", iconView);
 
             button.setMinWidth(100);
             this.add(button, 0, row++);
 
-            // Highlight selected button and set active Tool
             button.setOnAction(actionEvent -> {
                 for (javafx.scene.Node n : this.getChildren()) {
                     n.setStyle("");
@@ -58,7 +55,6 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
                 try {
                     ToolType type = ToolType.valueOf(label.toUpperCase());
                     view.setTool(type);
-                    System.out.println("Tool selected: " + type);
                 } catch (IllegalArgumentException e) {
                     System.out.println("Unknown tool type: " + label);
                 }
@@ -68,22 +64,8 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
 
     @Override
     public void handle(ActionEvent event) {
-        // Not needed anymore since we use lambdas directly,
-        // but kept for interface compliance.
-        String command = ((Button) event.getSource()).getText();
-        try {
-            ToolType type = ToolType.valueOf(command.toUpperCase());
-            view.setTool(type);
-        } catch (IllegalArgumentException e) {
-            System.out.println("Unknown tool: " + command);
-        }
     }
 
-    /**
-     * Provide visual feedback by highlighting a selected shape
-     * by giving the button a blue tint.
-     * @param toolName
-     */
     public void highlightButton(String toolName) {
         for (javafx.scene.Node node : this.getChildren()) {
             Button btn = (Button) node;
@@ -94,13 +76,6 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
         }
     }
 
-    /**
-     * Set the cursor of the canvas to represent the tool currently selected.
-     * Icons for Eraser, PaintBucket, Eyedropper.
-     * Crosshair for Shapes.
-     * Default otherwise.
-     * @param tool
-     */
     protected void setCanvasCursor(String tool, double x, double y){
         InputStream cursor = getClass().getResourceAsStream(tool);
         if (cursor != null) {

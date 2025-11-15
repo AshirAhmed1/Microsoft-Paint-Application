@@ -1,12 +1,8 @@
 package ca.utoronto.utm.assignment2.paint.tools;
 
-import ca.utoronto.utm.assignment2.paint.PaintModel;
-import ca.utoronto.utm.assignment2.paint.PaintPanel;
-import ca.utoronto.utm.assignment2.paint.Point;
-import ca.utoronto.utm.assignment2.paint.Drawable;
+import ca.utoronto.utm.assignment2.paint.*;
+import ca.utoronto.utm.assignment2.paint.command.CutCommand;
 import javafx.scene.input.MouseEvent;
-
-import ca.utoronto.utm.assignment2.paint.command.DeleteCommand;
 
 public class CutTool extends AbstractShapeTool {
 
@@ -23,10 +19,8 @@ public class CutTool extends AbstractShapeTool {
             if (d.contains(click)) {
 
                 model.setSelected(d);
-                model.copySelected();
-                model.executeCommand(new DeleteCommand(model, d));
+                model.executeCommand(new CutCommand(model, d));
 
-                System.out.println("Cut: " + d.getClass().getSimpleName());
                 break;
             }
         }

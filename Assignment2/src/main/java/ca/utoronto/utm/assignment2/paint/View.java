@@ -1,5 +1,6 @@
 package ca.utoronto.utm.assignment2.paint;
 
+import ca.utoronto.utm.assignment2.paint.command.CutCommand;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -60,7 +61,55 @@ public class View implements EventHandler<ActionEvent> {
                 case P -> { setTool(ToolType.PAINTBUCKET); shapeChooserPanel.highlightButton("PaintBucket"); }
                 case I -> { setTool(ToolType.EYEDROPPER); shapeChooserPanel.highlightButton("Eyedropper"); }
                 case M -> { setTool(ToolType.SELECTMOVE); shapeChooserPanel.highlightButton("SelectMove"); }
+                case X -> { setTool(ToolType.TEXT); shapeChooserPanel.highlightButton("Text"); }
                 default -> {}
+            }
+        });
+
+        scene.addEventFilter(javafx.scene.input.KeyEvent.KEY_PRESSED, e -> {
+
+            if (e.isControlDown() && e.getCode() == javafx.scene.input.KeyCode.Z) {
+                System.out.println("Button pressed: Undo");
+                paintModel.undo();
+                e.consume();
+                return;
+            }
+
+            if (e.isControlDown() && e.getCode() == javafx.scene.input.KeyCode.Y) {
+                System.out.println("Button pressed: Redo");
+                paintModel.redo();
+                e.consume();
+                return;
+            }
+
+            if (e.isControlDown() && e.getCode() == javafx.scene.input.KeyCode.C) {
+                System.out.println("Button pressed: Copy");
+                paintModel.copySelected();
+                e.consume();
+                return;
+            }
+
+            if (e.isControlDown() && e.getCode() == javafx.scene.input.KeyCode.X) {
+                System.out.println("Button pressed: Cut");
+                Drawable sel = paintModel.getSelected();
+                if (sel != null) {
+                    paintModel.executeCommand(new CutCommand(paintModel, sel));
+                }
+                e.consume();
+                return;
+            }
+
+            if (e.isControlDown() && e.getCode() == javafx.scene.input.KeyCode.V) {
+                System.out.println("Button pressed: Paste");
+                paintModel.pasteAt(150, 150);
+                e.consume();
+                return;
+            }
+
+            if (e.getCode() == javafx.scene.input.KeyCode.DELETE) {
+                System.out.println("Button pressed: Clear");
+                paintModel.clearCanvas();
+                e.consume();
             }
         });
 
@@ -94,10 +143,6 @@ public class View implements EventHandler<ActionEvent> {
     }
     public void copySelection() {
         this.paintModel.copySelected();
-    }
-
-    public void cutSelection() {
-        this.paintModel.cutSelected();
     }
 
 

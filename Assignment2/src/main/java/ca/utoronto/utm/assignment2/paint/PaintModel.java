@@ -5,6 +5,7 @@ import java.util.Observable;
 
 import ca.utoronto.utm.assignment2.paint.command.Command;
 import ca.utoronto.utm.assignment2.paint.command.ClearCanvasCommand;
+import ca.utoronto.utm.assignment2.paint.command.PasteCommand;
 import javafx.scene.paint.Color;
 import java.util.ArrayDeque;
 import java.util.Deque;
@@ -87,25 +88,14 @@ public class PaintModel extends Observable {
         }
     }
 
-    public void cutSelected() {
-        if (selected != null) {
-            drawables.remove(selected);
-            clipboard = copyPasteHelper(selected, 0, 0);
-            selected = null;
-            updateObservers();
-        }
-    }
 
 
     public void pasteAt(double x, double y) {
         if (clipboard == null) return;
 
-        Drawable copy = createClipboardCopyAt(x, y);
-
-        if (copy != null) {
-            // paste must be undoable via AddShapeCommand,
-            // not direct modification
-            addDrawable(copy);
+        Drawable pasted = createClipboardCopyAt(x, y);
+        if (pasted != null) {
+            executeCommand(new PasteCommand(this, pasted));
         }
     }
 
@@ -238,5 +228,10 @@ public class PaintModel extends Observable {
     public Drawable copyForUndo(Drawable d) {
         return copyPasteHelper(d, 0, 0);
     }
+    public void setClipboard(Drawable d) {
+        this.clipboard = d;
+    }
+
+
 }
 
