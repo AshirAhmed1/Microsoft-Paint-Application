@@ -1,4 +1,5 @@
 package ca.utoronto.utm.assignment2.paint;
+
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
@@ -14,24 +15,31 @@ import java.util.Map;
 import ca.utoronto.utm.assignment2.paint.command.RecolorCommand;
 
 /**
- * ColorChooserPanel is a UI component that allows the user to select different Colors for painting.
- * Provides a default set of colors and a customizable color panel.
+ * A panel that allows users to choose colors for drawing. It provides both
+ * a ColorPicker for custom colors and preset color buttons for quick selection.
+ * Selected shapes are recolored through the command system to support undo and redo.
+ *
+ * @author Ashir / Alex / Abdullah / Ahmed / Arnold
  */
-public class ColorChooserPanel extends GridPane implements EventHandler<ActionEvent>{
+public class ColorChooserPanel extends GridPane implements EventHandler<ActionEvent> {
 
     private ColorPicker picker;
+
+    /**
+     * Constructs a new ColorChooserPanel and initializes the color picker
+     * and preset color buttons. Selecting a color updates the PaintModel.
+     *
+     * @param paintModel the model whose current color will be modified
+     */
     public ColorChooserPanel(PaintModel paintModel) {
         this.setHgap(10);
         this.setPadding(new Insets(10));
 
-
-       this.picker = new ColorPicker(Color.BLACK);
-
+        this.picker = new ColorPicker(Color.BLACK);
 
         picker.setOnAction(e -> {
             Color newColor = picker.getValue();
             paintModel.setCurrentColor(newColor);
-
 
             if (paintModel.getSelected() != null) {
                 paintModel.executeCommand(
@@ -41,7 +49,8 @@ public class ColorChooserPanel extends GridPane implements EventHandler<ActionEv
         });
 
         this.add(picker, 0, 0);
-        Map<Color, String> colors= Map.of(
+
+        Map<Color, String> colors = Map.of(
                 Color.RED, "RED",
                 Color.ORANGE, "ORANGE",
                 Color.YELLOW, "YELLOW",
@@ -71,14 +80,14 @@ public class ColorChooserPanel extends GridPane implements EventHandler<ActionEv
 
                 paintModel.setCurrentColor(color);
                 picker.setValue(color);
-                
+
                 if (paintModel.getSelected() != null) {
                     paintModel.executeCommand(
                             new RecolorCommand(paintModel, paintModel.getSelected(), color)
                     );
                 }
-                // Detect if any color change is done outside the color chooser panel
-                paintModel.addObserver((obs, args) ->{
+
+                paintModel.addObserver((obs, args) -> {
                     Color curr = paintModel.getCurrentColor();
                     if (!picker.getValue().equals(curr)) {
                         picker.setValue(curr);
@@ -88,7 +97,12 @@ public class ColorChooserPanel extends GridPane implements EventHandler<ActionEv
         }
     }
 
-
+    /**
+     * Required implementation of EventHandler, but not used
+     * for this panel’s behavior.
+     *
+     * @param event unused
+     */
     @Override
     public void handle(ActionEvent event) {}
 }

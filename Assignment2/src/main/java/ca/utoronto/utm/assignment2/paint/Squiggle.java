@@ -5,20 +5,26 @@ import javafx.scene.canvas.GraphicsContext;
 import java.util.ArrayList;
 
 /**
- * Represents one freehand stroke drawn by the user.
- * Each Squiggle is an ordered list of points.
+ * Represents a freehand drawing stroke made by the user. A Squiggle is an
+ * ordered list of points connected by straight segments, supporting drawing,
+ * hit detection, translation, and erasing operations.
+ *
+ * @author Ashir / Alex / Abdullah / Ahmed / Arnold
  */
-
 public class Squiggle extends AbstractShapeDrawable{
 
     private final ArrayList<Point> points = new ArrayList<>();
 
+    /**
+     * Constructs a new empty squiggle.
+     */
     public Squiggle(){
         super();
     }
 
     /**
-     * Add a new point to this squiggle.
+     * Adds a point to the squiggle’s list of vertices.
+     *
      * @param p the point to add
      */
     public void addPoint(Point p) {
@@ -26,13 +32,19 @@ public class Squiggle extends AbstractShapeDrawable{
     }
 
     /**
-     * Return all points in this squiggle.
-     * @return list of points forming the squiggle
+     * Returns all points that form this squiggle.
+     *
+     * @return the ordered list of points
      */
     public ArrayList<Point> getPoints() {
         return points;
     }
 
+    /**
+     * Draws the squiggle by connecting each pair of consecutive points.
+     *
+     * @param g the graphics context used to draw on the canvas
+     */
     @Override
     public void draw(GraphicsContext g) {
         if (points.size() < 2) return;
@@ -45,10 +57,18 @@ public class Squiggle extends AbstractShapeDrawable{
             Point p2 = points.get(i + 1);
             g.strokeLine(p1.x, p1.y, p2.x, p2.y);
         }
-        // Makes sure when the shape is moved after erased, it remains erased.
+
+        // Ensure erased segments remain erased after movement
         erase(g);
     }
 
+    /**
+     * Determines whether the given point is close enough to any segment of
+     * the squiggle to be considered "contained" within it.
+     *
+     * @param p the point to test
+     * @return true if the point lies within tolerance of the squiggle, false otherwise
+     */
     @Override
     public boolean contains(Point p) {
         for (int i = 0; i < points.size() - 1; i++) {
@@ -60,6 +80,14 @@ public class Squiggle extends AbstractShapeDrawable{
         return false;
     }
 
+    /**
+     * Computes the shortest distance from point p to the segment ab.
+     *
+     * @param p the test point
+     * @param a segment start
+     * @param b segment end
+     * @return the perpendicular or endpoint distance
+     */
     private double pointToSegmentDistance(Point p, Point a, Point b) {
         double dx = b.x - a.x;
         double dy = b.y - a.y;
@@ -72,6 +100,13 @@ public class Squiggle extends AbstractShapeDrawable{
         return Math.hypot(p.x - projX, p.y - projY);
     }
 
+    /**
+     * Moves the squiggle by the given horizontal and vertical offsets.
+     * All stored erase points are translated along with the shape.
+     *
+     * @param dx horizontal translation
+     * @param dy vertical translation
+     */
     @Override
     public void translate(double dx, double dy) {
         for (Point pt : points) {
@@ -85,6 +120,4 @@ public class Squiggle extends AbstractShapeDrawable{
             }
         }
     }
-
-
 }
