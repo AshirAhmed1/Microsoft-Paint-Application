@@ -86,15 +86,15 @@ public class ColorChooserPanel extends GridPane implements EventHandler<ActionEv
                             new RecolorCommand(paintModel, paintModel.getSelected(), color)
                     );
                 }
-
-                paintModel.addObserver((obs, args) -> {
-                    Color curr = paintModel.getCurrentColor();
-                    if (!picker.getValue().equals(curr)) {
-                        picker.setValue(curr);
-                    }
-                });
             });
         }
+
+        paintModel.addObserver((obs, args) -> {
+            Color curr = paintModel.getCurrentColor();
+            if (!picker.getValue().equals(curr)) {
+                picker.setValue(curr);
+            }
+        });
     }
 
     /**
