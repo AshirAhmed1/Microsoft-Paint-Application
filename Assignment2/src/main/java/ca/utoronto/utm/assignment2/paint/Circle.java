@@ -49,7 +49,6 @@ public class Circle extends AbstractShapeDrawable {
     /**
      * Draws the circle onto the provided GraphicsContext. The circle
      * is drawn filled or outlined depending on the current fill setting.
-     * Any erase strokes affecting this circle are also rendered.
      *
      * @param g the GraphicsContext used to draw the circle
      */
@@ -68,10 +67,6 @@ public class Circle extends AbstractShapeDrawable {
         } else {
             g.strokeOval(x, y, radius * 2, radius * 2);
         }
-
-        // Ensure erased portions remain erased after movement.
-        g.setFill(Color.WHITE);
-        erase(g);
     }
 
     /**
@@ -89,7 +84,6 @@ public class Circle extends AbstractShapeDrawable {
 
     /**
      * Translates the circle by the specified horizontal and vertical amounts.
-     * Any associated erase strokes are moved by the same offset.
      *
      * @param dx the horizontal displacement
      * @param dy the vertical displacement
@@ -97,12 +91,5 @@ public class Circle extends AbstractShapeDrawable {
     @Override
     public void translate(double dx, double dy) {
         centre = new Point(centre.x + dx, centre.y + dy);
-
-        for (ArrayList<ErasePoint> stroke: erasedStrokes) {
-            for (ErasePoint p: stroke) {
-                p.x += dx;
-                p.y += dy;
-            }
-        }
     }
 }

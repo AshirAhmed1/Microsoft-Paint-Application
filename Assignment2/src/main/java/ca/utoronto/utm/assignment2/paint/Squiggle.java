@@ -57,9 +57,6 @@ public class Squiggle extends AbstractShapeDrawable{
             Point p2 = points.get(i + 1);
             g.strokeLine(p1.x, p1.y, p2.x, p2.y);
         }
-
-        // Ensure erased segments remain erased after movement
-        erase(g);
     }
 
     /**
@@ -102,7 +99,6 @@ public class Squiggle extends AbstractShapeDrawable{
 
     /**
      * Moves the squiggle by the given horizontal and vertical offsets.
-     * All stored erase points are translated along with the shape.
      *
      * @param dx horizontal translation
      * @param dy vertical translation
@@ -112,12 +108,6 @@ public class Squiggle extends AbstractShapeDrawable{
         for (Point pt : points) {
             pt.x += dx;
             pt.y += dy;
-        }
-        for (ArrayList<ErasePoint> stroke: erasedStrokes) {
-            for (ErasePoint p: stroke) {
-                p.x += dx;
-                p.y += dy;
-            }
         }
     }
 }

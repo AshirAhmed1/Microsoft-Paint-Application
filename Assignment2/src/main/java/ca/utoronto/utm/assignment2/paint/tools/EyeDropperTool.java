@@ -7,6 +7,8 @@ import javafx.scene.input.MouseEvent;
 /**
  * Represent an eyedropper tool that can change the selected color
  * to the color of the selected shape on the canvas.
+ *
+ * @author arnold/Ashir/Alex/Ahmed/Abdullah
  */
 public class EyeDropperTool extends AbstractShapeTool {
 

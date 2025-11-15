@@ -85,16 +85,6 @@ I WANT   : To be able to select the current drawing style (filled or outline), t
 SO THAT  : I can control whether my shapes are drawn as filled or outlined
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US4.013 : phanale5 : Completed
-NAME     : Eraser Tool
-PRIORITY : 3
-ESTIMATE : 1 hour    ACTUAL : 30 minutes
-AS A     : user
-I WANT   : Be able to erase parts of the canvas by clicking and dragging the mouse
-           over the canvas.
-SO THAT  : Certain parts of the canvas can be removed.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
 TYPE     : USER STORY US4.014 : phanale5 : Completed
 NAME     : Paint Bucket Tool
 PRIORITY : 3

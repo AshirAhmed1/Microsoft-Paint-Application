@@ -10,12 +10,29 @@ import javafx.scene.input.MouseEvent;
 
 import java.util.Optional;
 
+/**
+ * A tool for adding text onto the canvas by clicking on a specific point.
+ * The user will be prompt to enter the text which will be added to the canvas.
+ *
+ * @author arnold/Ashir/Alex/Ahmed/Abdullah
+ */
 public class TextTool extends AbstractShapeTool {
 
+    /**
+     * Constructs a TextTool with references to the model and panel.
+     *
+     * @param model the PaintModel storing shapes and selection
+     * @param view the PaintPanel where shapes are drawn
+     */
     public TextTool(PaintModel model, PaintPanel view) {
         super(model, view);
     }
 
+    /**
+     * Selects a point on the canvas in which the user is prompted with a textbox
+     * in which the following inputed text will be added to the canvas.
+     * @param e the current mouse press
+     */
     @Override
     public void onPress(MouseEvent e) {
         double x = e.getX();

@@ -13,7 +13,6 @@ public class ToolFactory {
             case OVAL -> new OvalTool(model, view);
             case SQUIGGLE -> new SquiggleTool(model, view);
             case POLYLINE -> new PolylineTool(model, view);
-            case ERASER -> new EraserTool(model, view);
             case PAINTBUCKET -> new PaintBucketTool(model, view);
             case EYEDROPPER -> new EyeDropperTool(model, view);
             case SELECTMOVE -> new SelectMoveTool(model, view);

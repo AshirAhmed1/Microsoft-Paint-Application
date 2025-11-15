@@ -62,7 +62,7 @@ public class Square extends Rectangle{
 
     /**
      * Draws the square on the canvas using the current color, fill mode,
-     * thickness, and erase strokes.
+     * thickness.
      *
      * @param g the graphics context used for drawing
      */
@@ -78,9 +78,6 @@ public class Square extends Rectangle{
         } else {
             g.strokeRect(getTop_left().x, getTop_left().y, getSideLength(), getSideLength());
         }
-
-        g.setFill(Color.WHITE);
-        erase(g);
     }
 
     /**
@@ -99,7 +96,6 @@ public class Square extends Rectangle{
 
     /**
      * Moves the square by the given horizontal and vertical offsets.
-     * All stored erase paths are also translated so erased regions remain aligned.
      *
      * @param dx the horizontal movement
      * @param dy the vertical movement
@@ -108,12 +104,5 @@ public class Square extends Rectangle{
     public void translate(double dx, double dy) {
         Point tl = getTop_left();
         setTop_left(new Point(tl.x + dx, tl.y + dy));
-
-        for (ArrayList<ErasePoint> stroke: erasedStrokes) {
-            for (ErasePoint p: stroke) {
-                p.x += dx;
-                p.y += dy;
-            }
-        }
     }
 }

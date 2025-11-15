@@ -97,9 +97,6 @@ public class Triangle extends AbstractShapeDrawable {
         } else {
             g.strokePolygon(xs, ys, 3);
         }
-
-        g.setFill(Color.WHITE);
-        erase(g);
     }
 
     /**
@@ -127,11 +124,5 @@ public class Triangle extends AbstractShapeDrawable {
     @Override
     public void translate(double dx, double dy) {
         bottom_left = new Point(bottom_left.x + dx, bottom_left.y + dy);
-        for (ArrayList<ErasePoint> stroke : erasedStrokes) {
-            for (ErasePoint p : stroke) {
-                p.x += dx;
-                p.y += dy;
-            }
-        }
     }
 }

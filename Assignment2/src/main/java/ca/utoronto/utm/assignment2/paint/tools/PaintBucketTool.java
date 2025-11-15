@@ -7,6 +7,8 @@ import javafx.scene.input.MouseEvent;
 /**
  * Represent a paint bucket tool that can change the color of a selected shape
  * to the current color selected on the canvas.
+ *
+ * @author arnold/Ashir/Alex/Ahmed/Abdullah
  */
 public class PaintBucketTool extends AbstractShapeTool {
 

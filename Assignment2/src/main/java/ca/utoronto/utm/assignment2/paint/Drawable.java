@@ -20,9 +20,5 @@ public interface Drawable {
 
     boolean contains(Point p);
     void translate(double dx, double dy);
-    void addErasePoint(ErasePoint e);
-    void addEraseStroke();
-    ArrayList<ErasePoint> getErasePoints();
-    void erase(GraphicsContext g);
     void setFilled(boolean filled);
 }
