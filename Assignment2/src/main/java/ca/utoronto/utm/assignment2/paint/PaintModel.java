@@ -315,6 +315,26 @@ public class PaintModel extends Observable {
             return copy;
         }
 
+        if (d instanceof Polyline p) {
+            Polyline copy = new Polyline();
+            for (Point pt : p.getPoints()) {
+                copy.addPoint(new Point(pt.x + dx, pt.y + dy));
+            }
+            copy.setColor(p.getColor());
+            copy.setThickness(p.getThickness());
+            return copy;
+        }
+
+        if (d instanceof Squiggle s) {
+            Squiggle copy = new Squiggle();
+            for (Point pt : s.getPoints()) {
+                copy.addPoint(new Point(pt.x + dx, pt.y + dy));
+            }
+            copy.setColor(s.getColor());
+            copy.setThickness(s.getThickness());
+            return copy;
+        }
+
         return d;
     }
 
@@ -333,22 +353,45 @@ public class PaintModel extends Observable {
 
         double dx = 0, dy = 0;
 
-        if (clipboard instanceof Circle c)
+        if (clipboard instanceof Circle c) {
             dx = x - c.getCentre().x;
-        else if (clipboard instanceof Rectangle r)
+            dy = y - c.getCentre().y;
+        }
+        else if (clipboard instanceof Rectangle r) {
             dx = x - r.getTop_left().x;
-        else if (clipboard instanceof Square s)
+            dy = y - r.getTop_left().y;
+        }
+        else if (clipboard instanceof Square s) {
             dx = x - s.getTop_left().x;
-        else if (clipboard instanceof Oval o)
+            dy = y - s.getTop_left().y;
+        }
+        else if (clipboard instanceof Oval o) {
             dx = x - o.getTopLeft().x;
-        else if (clipboard instanceof Triangle t)
+            dy = y - o.getTopLeft().y;
+        }
+        else if (clipboard instanceof Triangle t) {
             dx = x - t.getbottom_left().x;
-
-        dy = dy == 0 ? dx : dy;
+            dy = y - t.getbottom_left().y;
+        }
+        else if (clipboard instanceof Polyline p && copy instanceof Polyline cp) {
+            Point p0 = p.getPoints().get(0);
+            dx = x - p0.x;
+            dy = y - p0.y;
+            cp.translate(dx, dy);
+            return cp;
+        }
+        else if (clipboard instanceof Squiggle s && copy instanceof Squiggle cs) {
+            Point p0 = s.getPoints().get(0);
+            dx = x - p0.x;
+            dy = y - p0.y;
+            cs.translate(dx, dy);
+            return cs;
+        }
 
         copy.translate(dx, dy);
         return copy;
     }
+
 
     /**
      * Returns a deep copy of the given drawable for undo operations.
