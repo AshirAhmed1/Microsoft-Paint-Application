@@ -1,0 +1,118 @@
+_____________________________________________
+Overall Structure (MVC)
+_____________________________________________
+The Model (PaintModel) is responsible for storing all application state. It holds the list of shapes drawn on the canvas,
+the currently selected shape, clipboard data for copy/paste, the active preview shape, and drawing settings such as color,
+thickness, and fill mode. It also manages undo and redo using two stacks of Command objects. All changes to the application’s
+state occur through the model, making it the single source of truth.
+
+The View contains everything the user interacts with visually. The PaintPanel is the main drawing surface, and its only
+job is to render whatever the model contains. It observes the model using Java’s Observable/Observer framework: whenever
+the model changes, PaintPanel automatically redraws the canvas. Supporting UI panels include ShapeChooserPanel, ColorChooserPanel,
+FillStyleChooserPanel, EditToolPanel, and ThicknessChooserPanel. These panels allow the user to adjust settings and trigger actions,
+and they update the model accordingly.
+
+The Controller role is handled by the tool system. Instead of the view containing large switch statements or manually interpreting
+mouse events, each Tool encapsulates a specific behavior, making the system modular and easier to reason about.
+
+_____________________________________________
+Tool System (Strategy Pattern + ToolFactory)
+_____________________________________________
+A major architectural improvement in this project was the introduction of a proper Tool system. Each drawing or editing
+behavior—creating circles, rectangles, squares, triangles, ovals, polylines, squiggles, selecting and moving shapes, bucket fill,
+eyedropper sampling, and text placement—is implemented inside its own class.
+
+Each tool implements the same Tool interface with the following methods:
+-onPress(MouseEvent e)
+-onDrag(MouseEvent e)
+-onRelease(MouseEvent e)
+-onMove(MouseEvent e)
+
+This design applies the Strategy pattern: instead of PaintPanel knowing how to handle every mode, it simply forwards events
+to the currently active tool. This keeps the drawing logic highly modular.
+
+The ToolFactory creates each tool based on a ToolType enum. Whenever the user clicks a button or presses a keyboard shortcut,
+the View switches the active tool by asking the factory for the appropriate instance. Adding a new tool now requires minimal
+modification—just a new class and a ToolType entry.
+
+_____________________________________________
+Undo/Redo System (Command Pattern)
+_____________________________________________
+Undo and redo are implemented using the Command pattern. Every state-changing action creates its own Command object,
+which has execute() and undo() methods.
+Examples include:
+-CutCommand
+-PasteCommand
+-ClearCanvasCommand
+-RecolorCommand
+-MoveCommand
+-AddShapeCommand
+-TextCommand
+-StyleCommand
+
+The PaintModel maintains an undo stack and a redo stack. When a command executes, it’s pushed onto the undo stack.
+Undo pops a command and calls undo(), while redo re-executes a previously undone command. This makes undo/redo consistent a
+cross the entire application and keeps all mutating logic centralized and reversible.
+
+_____________________________________________
+Shape Hierarchy (Composite Pattern + Inheritance)
+_____________________________________________
+All shapes implement the Drawable interface, and most of them extend AbstractShapeDrawable, which provides shared functionality
+such as color, thickness, fill status, hit-testing helpers, and translation. Concrete shape classes include:
+-Circle
+-Rectangle
+-Square
+-Oval
+-Triangle
+-Polyline
+-Squiggle
+-Text
+Since everything implements Drawable, the model only needs a single ArrayList<Drawable> to store shapes. The view draws
+all shapes in a simple loop without needing to know what type they are. Each shape class provides its own logic for drawing,
+detecting whether a point lies inside it (for selection), and translating its position.
+
+_____________________________________________
+Observer Pattern for Updating the UI
+_____________________________________________
+PaintModel extends Observable, and PaintPanel implements Observer. Whenever the model changes—whether a shape is added,
+moved, recolored, or replaced—the model calls:
+setChanged();
+notifyObservers();
+
+and PaintPanel responds by redrawing the canvas.
+
+This avoids the need for tools or commands to manually refresh the display. As long as they modify the model, the UI stays in sync automatically.
+
+_____________________________________________
+Clipboard and Copy/Paste Behavior
+_____________________________________________
+The model supports cut, copy, and paste by storing a Drawable in a clipboard variable. Copying or pasting a shape uses a helper
+method to create a fresh copy with the same geometry and style. This ensures that clipboard shapes and canvas shapes do not share
+internal data structures. Pasting positions the copied shape based on the user’s action and integrates cleanly with the undo/redo system.
+
+_____________________________________________
+Keyboard Shortcuts and Cursor Management
+_____________________________________________
+The View handles all keyboard shortcuts for tool switching and editing actions. These include shortcuts for shapes (C, R, S, T, O, Q, L, etc.)
+and standard actions such as:
+-Ctrl+Z (Undo)
+-Ctrl+Y (Redo)
+-Ctrl+C (Copy)
+-Ctrl+X (Cut)
+-Ctrl+V (Paste)
+-Delete (Clear)
+
+The view also changes the cursor depending on the active tool, improving clarity and usability.
+
+_____________________________________________
+Summary
+_____________________________________________
+The final architecture is clean, modular, and easy to extend. The model manages all application state, the view renders
+that state and manages user interaction components, and the tools act as controllers that interpret mouse input.
+The Strategy pattern (Tools), Command pattern (undo/redo), and Observer pattern (model–view communication) all play a visible role
+in simplifying and structuring the system.
+
+
+
+
+
