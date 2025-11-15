@@ -21,10 +21,10 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
         String[] buttonLabels = {
                 "Circle", "Rectangle", "Square", "Triangle", "Oval",
                 "Squiggle", "Polyline", "Eraser", "PaintBucket",
-                "SelectMove", "Text"
+                "SelectMove", "Text", "EyeDropper"
         };
 
-        String[] shortcuts = {"C", "R", "S", "T", "O", "Q", "L", "E", "P", "M", "X"};
+        String[] shortcuts = {"C", "R", "S", "T", "O", "Q", "L", "E", "P", "M", "X", "I"};
 
         int row = 0;
         for (String label : buttonLabels) {
