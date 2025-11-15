@@ -178,3 +178,22 @@ I WANT   : To select any custom color using a color wheel instead of being
 SO THAT  : I can draw shapes in any color I choose and also use the Paint
            Bucket tool to recolor existing shapes with the selected custom color.
 --------------------------------------------------------------------------
+TYPE     : BUG BUG4.011 : ahme1250 : Completed
+NAME     : Shortcut Keys Not Displayed / Keyboard Shortcuts Not Working
+PRIORITY : 2
+ESTIMATE : 45 minutes   ACTUAL : 1.25 hours
+ISSUE    : Tool buttons did not display their assigned keyboard shortcuts,
+           causing unclear UI feedback and inconsistent tool selection.
+           Additionally, several keyboard shortcuts such as Ctrl+X (Cut),
+           Ctrl+C (Copy), Ctrl+V (Paste), Ctrl+Z (Undo), Ctrl+Y (Redo),
+           and Delete (Clear Canvas) were not being detected by the system,
+           leading to user actions not activating the correct commands.
+
+           Fixes included:
+           • Updating ShapeChooserPanel so each button displays its shortcut
+             in brackets (e.g., "Circle (C)", "SelectMove (M)").
+           • Adding a global KeyEvent filter in View to properly detect
+             Ctrl-modified shortcuts and trigger corresponding actions.
+           • Ensuring both tool selection shortcuts and edit shortcuts
+             (Undo, Redo, Cut, Copy, Paste, Delete) work consistently.
+--------------------------------------------------------------------------
