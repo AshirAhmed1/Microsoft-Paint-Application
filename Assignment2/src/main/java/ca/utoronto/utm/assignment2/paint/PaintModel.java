@@ -244,14 +244,17 @@ public class PaintModel extends Observable {
      * @return copied drawable
      */
     private Drawable copyPasteHelper(Drawable d, double dx, double dy) {
-        // (This method intentionally left unchanged. Only header added.)
+
         if (d instanceof Triangle t) {
             Triangle cs = new Triangle(
                     new Point(t.getbottom_left().x + dx, t.getbottom_left().y + dy),
-                    t.getbase(), t.getside1(), t.getside2()
+                    t.getbase(),
+                    t.getside1(),
+                    t.getside2()
             );
             cs.setColor(t.getColor());
             cs.setThickness(t.getThickness());
+            cs.setFilled(t.isFilled());
             return cs;
         }
 
@@ -262,6 +265,7 @@ public class PaintModel extends Observable {
             );
             cs.setColor(s.getColor());
             cs.setThickness(s.getThickness());
+            cs.setFilled(s.isFilled());
             return cs;
         }
 
@@ -272,26 +276,31 @@ public class PaintModel extends Observable {
             );
             cs.setColor(c.getColor());
             cs.setThickness(c.getThickness());
+            cs.setFilled(c.isFilled());
             return cs;
         }
 
         if (d instanceof Oval o) {
             Oval cs = new Oval(
                     new Point(o.getTopLeft().x + dx, o.getTopLeft().y + dy),
-                    o.getWidth(), o.getHeight()
+                    o.getWidth(),
+                    o.getHeight()
             );
             cs.setColor(o.getColor());
             cs.setThickness(o.getThickness());
+            cs.setFilled(o.isFilled());
             return cs;
         }
 
         if (d instanceof Rectangle r) {
             Rectangle cs = new Rectangle(
                     new Point(r.getTop_left().x + dx, r.getTop_left().y + dy),
-                    r.getWidth(), r.getHeight()
+                    r.getWidth(),
+                    r.getHeight()
             );
             cs.setColor(r.getColor());
             cs.setThickness(r.getThickness());
+            cs.setFilled(r.isFilled());
             return cs;
         }
 
@@ -308,6 +317,7 @@ public class PaintModel extends Observable {
 
         return d;
     }
+
 
     /**
      * Creates a translated copy of the clipboard drawable placed at a given point.
