@@ -152,7 +152,9 @@ Nov 13,2025
 	Obstacles I face: Fixing bugs lost from merging branches.
 
 Nov 14,2025
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Implement paint bucket tool
+	What I will do today: Merge group members features and finish up sprint 4.
+	Looked for bugs in the code and adjusted areas of code. For example, the selected color viewer to
+	update from the eye dropper.
+	Obstacles I face: Had to scrap eraser due to bugs and to avoid rework on the architecture
 
