@@ -189,21 +189,39 @@ ISSUE    : Tool buttons did not display their assigned keyboard shortcuts,
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 TYPE     : USER STORY US4.019 : Imrana15 : Completed
-NAME     : Color Wheel Selector
+NAME     : Text tool
 PRIORITY : 3
-ESTIMATE : 1 hour    ACTUAL : 1 minutes
+ESTIMATE : 1 hour    ACTUAL : 1 hour
 AS A     : user
 I WANT   : To add text to the canvas with the selected color and be able
            to move it around after placement.
 SO THAT  : I can easily create and position text wherever I want on the canvas,
            with the color automatically set to my selected color.
 --------------------------------------------------------------------------
-TYPE     : USER STORY US4.016 : Imrana15 : Completed
-NAME     : Color Wheel Selector
+TYPE     : USER STORY US4.017 : Imrana15 : Completed
+NAME     : adjustable canvas
 PRIORITY : 3
-ESTIMATE : 1 hour    ACTUAL : 1.5 minutes
+ESTIMATE : 1 hour    ACTUAL : 1.5 hour
 AS A     : user
 I WANT   : The canvas to automatically adjust its size based on the window size.
 SO THAT  : When I resize the window, the canvas will stretch or shrink accordingly,
            providing a more flexible and dynamic user experience.
+--------------------------------------------------------------------------
+TYPE     : USER STORY US4.009 : Imrana15 : Completed
+NAME     : Cut, Copy , Paste
+PRIORITY : 3
+ESTIMATE : 1 hour    ACTUAL : 1.5 hour
+AS A     : user
+I WANT   : To be able to cut or copy a shape then, paste it in the same colour and size
+SO THAT  : When the user draws a shape in the wrong place on the canvas, he can cut the shape
+           to place it in another spot, or copy the shape to make a new instance of the shape
+           and use the paste tool to place the shape wherever he wants on the canvas
+--------------------------------------------------------------------------
+TYPE     : USER STORY US4.016 : Imrana15 : Completed
+NAME     : Clear
+PRIORITY : 3
+ESTIMATE : 1 hour    ACTUAL : 1.5 hour
+AS A     : user
+I WANT   : Remove everything from the canvas.
+SO THAT  : When the user presses the clear button, everything from the canvas should be removed
 --------------------------------------------------------------------------
