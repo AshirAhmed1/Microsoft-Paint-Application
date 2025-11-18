@@ -74,17 +74,6 @@ Reference:
         USER STORY US4.015
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-FeatureName: Eraser Tool
-
-Description:
-		This feature allows for the user to eraser drawn shapes on the canvas. The eraser functions
-		like a freehand too, similar to squiggle. The user can click and drag the mouse over the canvas
-        and remove anything in the path of the cursor.
-
-Reference:
-	USER STORY US4.013
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
 FeatureName: PaintBucket Tool
 
 Description:
@@ -132,7 +121,7 @@ Reference:
 	USER STORY US4.019
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-FeatureName: Text Tool Color and Movement
+FeatureName: Adaptable Canvas
 
 Description:
 		The canvas automatically adjusts its size based on the window size. When the
