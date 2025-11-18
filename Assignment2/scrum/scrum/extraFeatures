@@ -132,7 +132,7 @@ Reference:
 	USER STORY US4.019
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-FeatureName: Text Tool Color and Movement
+FeatureName: adjustable canvas
 
 Description:
 		The canvas automatically adjusts its size based on the window size. When the
@@ -142,5 +142,38 @@ Description:
 		drawing content.
 
 Reference:
-	USER STORY US4.016
+	USER STORY US4.017
 --------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+FeatureName: Text tool
+
+Description:
+		To add text to the canvas with the selected color and be able to move it around
+		after placement.I can easily create and position text wherever I want on the
+		canvas, with the color automatically set to my selected color.
+
+Reference:
+	USER STORY US4.019
+----------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+FeatureName: Cut, Copy , Paste
+
+Description:
+		To be able to cut or copy a shape then, paste it in the same colour and size
+		When the user draws a shape in the wrong place on the canvas, he can cut the shape
+        to place it in another spot, or copy the shape to make a new instance of the shape
+        and use the paste tool to place the shape wherever he wants on the canvas
+
+Reference:
+	USER STORY US4.009
+----------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+FeatureName: Clear
+
+Description:
+		Remove everything from the canvas.When the user presses the clear button,
+		everything from the canvas should be removed
+
+Reference:
+	USER STORY US4.016
+----------------------------------------------------------------------------------
