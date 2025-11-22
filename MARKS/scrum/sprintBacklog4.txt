@@ -1,0 +1,227 @@
+# Move User Stories from the ProductBacklog 
+# to the appropriate sprintBacklogN.txt after the 
+# Sprint Planning Meeting.
+
+# Sprint 4 Nov 7-Nov 13, 2025
+# Sprint 4 Backlog UserStories go below
+--------------------------------------------------------------------------
+TYPE     : USER STORY US4.001 : phanale5 : Completed
+NAME     : Draw Polyline
+PRIORITY : 2
+ESTIMATE : 2 days    ACTUAL : 2 hours
+AS A     : user
+I WANT   : To specify a starting point from an intial left click. The user can move the mouse
+           and left-click to select another point which is connected to the last point with a straight
+           line. The user should be able to see the line about to be created before their next click.
+           A polyline is finished by right-clicking on the last point.
+SO THAT  : I can add polylines to my canvas
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US4.005 : phanale5 : Started
+NAME     : Color selector
+PRIORITY : 3
+ESTIMATE : 2 hours    ACTUAL :
+AS A     : user
+I WANT   : To be able to select the current drawing color, to be applied
+           to subsequent shapes. Example:
+           		selects color red
+           		mode circle
+           		draw a circle
+           		draw a circle
+           		mode rectangle
+           		draw a rectangle
+           		select color green
+           		draw a rectangle
+           		draw a rectangle
+           		select mode squiggle
+           		draw a squiggle
+           	results in two red circles and a red rectangle as well as
+           	two green rectangles and a green squiggle
+SO THAT  :
+--------------------------------------------------------------------------
+TYPE     : USER STORY US4.007 : ahme1250 : Completed
+NAME     : Line thickness selector
+PRIORITY : 3
+ESTIMATE : 2 hours    ACTUAL : 1.5 hours
+AS A     : user
+I WANT   : To be able to select the current line thickness, to be applied
+           to subsequent shapes. Example:
+           		select fill style outline
+           		selects line thickness 1
+           		mode circle
+           		draw a circle
+           		draw a circle
+           		mode rectangle
+           		draw a rectangle
+           		select line thickness 9
+           		draw a rectangle
+           		draw a rectangle
+           		select mode squiggle
+           		draw a squiggle
+           	results in two thinly outlined circles and a thinly outlined
+           	rectangle as well as two thickly outlined rectangles and a thick squiggle
+SO THAT  :  Shapes have different outline thicknesses depending on my preference.
+--------------------------------------------------------------------------
+TYPE     : USER STORY US4.006 : ahme1250 : Completed
+NAME     : Fill style selector
+PRIORITY : 3
+ESTIMATE : 1 hour    ACTUAL : 1.25 hours
+AS A     : user
+I WANT   : To be able to select the current drawing style (filled or outline), to be applied
+           to subsequent shapes. Example:
+           		selects fill style solid
+           		mode circle
+           		draw a circle
+           		draw a circle
+           		mode rectangle
+           		draw a rectangle
+           		select fill style outline
+           		draw a rectangle
+           		draw a rectangle
+           		select mode squiggle
+           		draw a squiggle
+           	results in two solid circles and a solid rectangle as well as
+           	two outlined rectangles and a squiggle
+SO THAT  : I can control whether my shapes are drawn as filled or outlined
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US4.014 : phanale5 : Completed
+NAME     : Paint Bucket Tool
+PRIORITY : 3
+ESTIMATE : 1 hour    ACTUAL : 30 minutes
+AS A     : user
+I WANT   : To select a shape by clicking on it with the paint bucket tool, changing it's
+           color to the current chosen color.
+SO THAT  : The color of already drawn shapes can be changed.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US4.017 : phanale5 : Completed
+NAME     : EyeDropper Tool
+PRIORITY : 3
+ESTIMATE : 1 hour    ACTUAL : 30 minutes
+AS A     : user
+I WANT   : To change the current selected color of the canvas to the color of a selected shape on
+           the canvas.
+SO THAT  : The color of an already drawn shape can quickly be selected.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US4.018 : phanale5 : Completed
+NAME     : Adaptive Cursor
+PRIORITY : 3
+ESTIMATE : 1 hour    ACTUAL : 30 minutes
+AS A     : user
+I WANT   : The cursor should give visual feedback that clearly indicates the current tool
+           selected. Shapes use a crosshair. Eraser, Eyedropper, and Paint bucket use their icons.
+           All other tools are a normal crosshair.
+SO THAT  : It is more clear which tool is currently selected.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US4.010 : ahme1250 : Completed
+NAME     : Select and Move Tool
+PRIORITY : 3
+ESTIMATE : 2 hours    ACTUAL : 2.5 hours
+AS A     : user
+I WANT   : To click on an existing shape or text object and drag it to a new position on the canvas.
+SO THAT  : I can easily reposition any drawn element without redrawing it.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US4.011 : ahme1250 : Completed
+NAME     : Keyboard Shortcuts for Tool Selection
+PRIORITY : 2
+ESTIMATE : 1 hour    ACTUAL : 45 minutes
+AS A     : user
+I WANT   : To quickly switch between drawing tools using keyboard shortcut keys (C, R, S, T, O, Q, L, E, P, I, M, etc.).
+SO THAT  : I can more efficiently choose tools without manually clicking the buttons.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US4.012 : ahme1250 : Completed
+NAME     : Undo/Redo Functionality
+PRIORITY : 3
+ESTIMATE : 2 hours    ACTUAL : 4.5 hours
+AS A     : user
+I WANT   : To undo or redo any change I make on the canvas, including drawing, moving,
+           erasing, recoloring, cutting/copying/pasting, and adding text.
+SO THAT  : I can easily correct mistakes, restore previous actions, and maintain full
+           control of my editing workflow.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG BUG4.010 : ahme1250 : Completed
+NAME     : Command Pattern Not Implemented (Undo/Redo Non-Functional)
+PRIORITY : 3
+ESTIMATE : 1 hour   ACTUAL : 45 minutes
+ISSUE    : The paint application did not support Undo or Redo because the
+           executeCommand() method and command-history system were not
+           implemented. Actions such as drawing, moving, or editing shapes
+           were not recorded as Commands and therefore could not be undone
+           or redone. Implementing executeCommand(), undo(), redo(), and
+           proper command stacks resolved the issue and restored expected
+           editor functionality.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US4.015 : ahme1250 : Completed
+NAME     : Color Wheel Selector
+PRIORITY : 3
+ESTIMATE : 1 hour    ACTUAL : 30 minutes
+AS A     : user
+I WANT   : To select any custom color using a color wheel instead of being
+           limited to preset color buttons.
+SO THAT  : I can draw shapes in any color I choose and also use the Paint
+           Bucket tool to recolor existing shapes with the selected custom color.
+--------------------------------------------------------------------------
+TYPE     : BUG BUG4.011 : ahme1250 : Completed
+NAME     : Shortcut Keys Not Displayed / Keyboard Shortcuts Not Working
+PRIORITY : 2
+ESTIMATE : 45 minutes   ACTUAL : 1.25 hours
+ISSUE    : Tool buttons did not display their assigned keyboard shortcuts,
+           causing unclear UI feedback and inconsistent tool selection.
+           Additionally, several keyboard shortcuts such as Ctrl+X (Cut),
+           Ctrl+C (Copy), Ctrl+V (Paste), Ctrl+Z (Undo), Ctrl+Y (Redo),
+           and Delete (Clear Canvas) were not being detected by the system,
+           leading to user actions not activating the correct commands.
+
+           Fixes included:
+           • Updating ShapeChooserPanel so each button displays its shortcut
+             in brackets (e.g., "Circle (C)", "SelectMove (M)").
+           • Adding a global KeyEvent filter in View to properly detect
+             Ctrl-modified shortcuts and trigger corresponding actions.
+           • Ensuring both tool selection shortcuts and edit shortcuts
+             (Undo, Redo, Cut, Copy, Paste, Delete) work consistently.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US4.019 : Imrana15 : Completed
+NAME     : Text tool
+PRIORITY : 3
+ESTIMATE : 1 hour    ACTUAL : 1 hour
+AS A     : user
+I WANT   : To add text to the canvas with the selected color and be able
+           to move it around after placement.
+SO THAT  : I can easily create and position text wherever I want on the canvas,
+           with the color automatically set to my selected color.
+--------------------------------------------------------------------------
+TYPE     : USER STORY US4.017 : Imrana15 : Completed
+NAME     : adjustable canvas
+PRIORITY : 3
+ESTIMATE : 1 hour    ACTUAL : 1.5 hour
+AS A     : user
+I WANT   : The canvas to automatically adjust its size based on the window size.
+SO THAT  : When I resize the window, the canvas will stretch or shrink accordingly,
+           providing a more flexible and dynamic user experience.
+--------------------------------------------------------------------------
+TYPE     : USER STORY US4.009 : Imrana15 : Completed
+NAME     : Cut, Copy , Paste
+PRIORITY : 3
+ESTIMATE : 1 hour    ACTUAL : 1.5 hour
+AS A     : user
+I WANT   : To be able to cut or copy a shape then, paste it in the same colour and size
+SO THAT  : When the user draws a shape in the wrong place on the canvas, he can cut the shape
+           to place it in another spot, or copy the shape to make a new instance of the shape
+           and use the paste tool to place the shape wherever he wants on the canvas
+--------------------------------------------------------------------------
+TYPE     : USER STORY US4.016 : Imrana15 : Completed
+NAME     : Clear
+PRIORITY : 3
+ESTIMATE : 1 hour    ACTUAL : 1.5 hour
+AS A     : user
+I WANT   : Remove everything from the canvas.
+SO THAT  : When the user presses the clear button, everything from the canvas should be removed
+--------------------------------------------------------------------------

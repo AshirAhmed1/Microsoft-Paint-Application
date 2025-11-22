@@ -1,0 +1,89 @@
+--------------------------------------------------------------------
+ ahme1250 
+--------------------------------------------------------------------
+CONTRIBUTION TO sprint1 
+TYPE     : BUG BUG1.001 : ahme1250 : Completed
+TYPE     : USER STORY US1.003 : ahme1250 : Completed
+CONTRIBUTION TO sprint2 
+TYPE     : BUG BUG2.001 : ahme1250 : Completed
+TYPE     : USER STORY US2.001 : ahme1250 : Completed
+CONTRIBUTION TO sprint3 
+TYPE     : BUG BUG3.004 : ahme1250 : Completed
+TYPE     : BUG BUG3.005 : ahme1250 : Completed
+TYPE     : BUG BUG3.006 : ahme1250 : Completed
+CONTRIBUTION TO sprint4 
+TYPE     : USER STORY US4.007 : ahme1250 : Completed
+TYPE     : USER STORY US4.006 : ahme1250 : Completed
+TYPE     : USER STORY US4.010 : ahme1250 : Completed
+TYPE     : USER STORY US4.011 : ahme1250 : Completed
+TYPE     : USER STORY US4.012 : ahme1250 : Completed
+TYPE     : BUG BUG4.010 : ahme1250 : Completed
+TYPE     : USER STORY US4.015 : ahme1250 : Completed
+TYPE     : BUG BUG4.011 : ahme1250 : Completed
+SPRINT_CONTRIBUTION:ahme1250:(2, 2, 3, 8)
+CONTRIBUTION TO project 
+TYPE     : USER STORY US1.003 : ahme1250 : Completed
+TYPE     : USER STORY US4.006 : ahme1250 : Completed
+TYPE     : USER STORY US4.007 : ahme1250 : Completed
+TYPE     : BUG BUG1.001 : ahme1250 : Completed
+TYPE     : BUG BUG3.004 : ahme1250 : Completed
+TYPE     : BUG BUG3.005 : ahme1250 : Completed
+TYPE     : BUG BUG3.006 : ahme1250 : Completed
+TYPE     : BUG BUG2.001 : ahme1250 : Completed
+TYPE     : USER STORY US2.001 : ahme1250 : Completed
+PRODUCT_CONTRIBUTION:ahme1250:9
+--------------------------------------------------------------------
+ alnabu11 
+--------------------------------------------------------------------
+CONTRIBUTION TO sprint1 
+TYPE     : BUG BUG1.005 : alnabu11 : Completed
+CONTRIBUTION TO sprint2 
+TYPE     : BUG BUG2.003 : alnabu11 : Completed
+CONTRIBUTION TO sprint3 
+CONTRIBUTION TO sprint4 
+SPRINT_CONTRIBUTION:alnabu11:(1, 1, 0, 0)
+CONTRIBUTION TO project 
+TYPE     : BUG BUG1.003 : alnabu11 : Completed
+TYPE     : BUG BUG1.005 : alnabu11 : Completed
+TYPE     : BUG BUG2.003 : alnabu11 : Completed
+PRODUCT_CONTRIBUTION:alnabu11:3
+--------------------------------------------------------------------
+ imrana15 
+--------------------------------------------------------------------
+CONTRIBUTION TO sprint1 
+CONTRIBUTION TO sprint2 
+CONTRIBUTION TO sprint3 
+TYPE     : BUG BUG3.003 : imrana15 : Completed
+CONTRIBUTION TO sprint4 
+SPRINT_CONTRIBUTION:imrana15:(0, 0, 1, 0)
+CONTRIBUTION TO project 
+TYPE     : USER STORY US1.004 : imrana15 : Completed
+PRODUCT_CONTRIBUTION:imrana15:1
+--------------------------------------------------------------------
+ phanale5 
+--------------------------------------------------------------------
+CONTRIBUTION TO sprint1 
+TYPE     : BUG BUG1.006 : phanale5 : Completed
+TYPE     : USER STORY US1.002 : phanale5 : Completed
+CONTRIBUTION TO sprint2 
+TYPE     : USER STORY US2.003 : phanale5 : Completed
+CONTRIBUTION TO sprint3 
+TYPE     : BUG BUG3.001 : phanale5 : Completed
+CONTRIBUTION TO sprint4 
+TYPE     : USER STORY US4.001 : phanale5 : Completed
+TYPE     : USER STORY US4.014 : phanale5 : Completed
+TYPE     : USER STORY US4.017 : phanale5 : Completed
+TYPE     : USER STORY US4.018 : phanale5 : Completed
+SPRINT_CONTRIBUTION:phanale5:(2, 1, 1, 4)
+CONTRIBUTION TO project 
+TYPE     : USER STORY US4.005 : phanale5 : Completed
+TYPE     : BUG BUG3.001 : phanale5 : Completed
+TYPE     : USER STORY US1.002 : phanale5 : Complete
+TYPE     : BUG BUG1.006 : phanale5 : Complete
+TYPE     : USER STORY US2.003 : phanale5 : Completed
+PRODUCT_CONTRIBUTION:phanale5:5
+--------------------------------------------------------------------
+ TOTALS 
+--------------------------------------------------------------------
+TOTAL_SPRINT:(5, 4, 5, 12)
+TOTAL_WORK:18

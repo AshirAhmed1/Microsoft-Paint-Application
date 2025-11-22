@@ -1,0 +1,1909 @@
+--------------------------------------------------------------------
+ git branches 
+--------------------------------------------------------------------
+* MARKS
+  master
+  remotes/origin/BUG1.001
+  remotes/origin/BUG1.005
+  remotes/origin/BUG1.006
+  remotes/origin/BUG2.003
+  remotes/origin/BUG3.001
+  remotes/origin/BUG3.004
+  remotes/origin/BUG3.005
+  remotes/origin/BUG3.006
+  remotes/origin/BUG4.001
+  remotes/origin/BUG4.010
+  remotes/origin/BUG4.011
+  remotes/origin/Bug3.003
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/MARKS
+  remotes/origin/US1.002
+  remotes/origin/US1.003
+  remotes/origin/US2.001
+  remotes/origin/US2.003
+  remotes/origin/US2.004
+  remotes/origin/US4.001
+  remotes/origin/US4.005
+  remotes/origin/US4.006
+  remotes/origin/US4.007
+  remotes/origin/US4.008
+  remotes/origin/US4.009
+  remotes/origin/US4.010
+  remotes/origin/US4.011
+  remotes/origin/US4.012
+  remotes/origin/US4.013
+  remotes/origin/US4.014
+  remotes/origin/US4.015
+  remotes/origin/US4.016
+  remotes/origin/US4.017
+  remotes/origin/US4.018
+  remotes/origin/bug1.002
+  remotes/origin/bug1.004
+  remotes/origin/master
+--------------------------------------------------------------------
+ git log --graph 
+--------------------------------------------------------------------
+* commit d9b56fa791e71e5dfc626f3579d738341d53976d
+| Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| Date:   Tue Nov 18 21:53:56 2025 -0500
+| 
+|     Updated extra features
+| 
+* commit e725a00ac20120d28317872b3312383471b432ce
+| Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| Date:   Tue Nov 18 17:33:27 2025 -0500
+| 
+|     Merge remote-tracking branch 'origin/US4.017' into US4.019
+|   
+*   commit 398581297eca2a83eadc4c2b9fc3b6400640f865
+|\  Merge: f4d2841 07d944b
+| | Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| | Date:   Tue Nov 18 17:26:36 2025 -0500
+| | 
+| |     Merge remote-tracking branch 'origin/master'
+| |     
+| |     # Conflicts:
+| |     #       Assignment2/scrum/scrum/extraFeatures
+| | 
+| * commit 07d944b34d1fa14fd07b43a428acabc3557a8e98
+| | Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| | Date:   Tue Nov 18 16:45:42 2025 -0500
+| | 
+| |     Updated extraFeatures
+| | 
+* | commit f4d284188466640203d2061d077d517b92140c12
+|/  Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+|   Date:   Tue Nov 18 17:23:09 2025 -0500
+|   
+|       Merge remote-tracking branch 'origin/US4.017' into US4.019
+| 
+* commit 43c9b136171d763d6c03671d4bc0d5176e9e0c95
+| Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| Date:   Tue Nov 18 14:21:15 2025 -0500
+| 
+|     Merge remote-tracking branch 'origin/US4.017' into US4.019
+| 
+* commit d26c878a899e1bbd27752562dcb4538e7b65b843
+| Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| Date:   Fri Nov 14 23:48:18 2025 -0500
+| 
+|     Updated PaintModel
+|   
+*   commit c7a9036e3db32881e9fbd48356d12bb9a8b4ffc5
+|\  Merge: 101177d e68f91e
+| | Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| | Date:   Fri Nov 14 23:35:02 2025 -0500
+| | 
+| |     Merge branch 'master' of https://mcsscm.utm.utoronto.ca:9999/git/207/25f/repo_a2_372
+| |   
+| *   commit e68f91eb785801db22a96d0f5d3f2964ba9728cc
+| |\  Merge: 172221a 55af2fc
+| | | Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+| | | Date:   Fri Nov 14 23:29:35 2025 -0500
+| | | 
+| | |     Merge remote-tracking branch 'origin/master'
+| | | 
+| * | commit 172221a59b68bd98b16836b24c293e8f2761dfff
+| | | Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+| | | Date:   Fri Nov 14 23:29:10 2025 -0500
+| | | 
+| | |     updated daily scrum phanale5
+| | | 
+* | | commit 101177d511eca6b46a29285905e185370e6db242
+| |/  Author: AshirAhmed1 <ashirahmed884@gmail.com>
+|/|   Date:   Fri Nov 14 23:34:49 2025 -0500
+| |   
+| |       Updated extraFeatures
+| | 
+* | commit 55af2fc7d8c9dc111b44f66e747bbafe074366f9
+|/  Author: AshirAhmed1 <ashirahmed884@gmail.com>
+|   Date:   Fri Nov 14 23:28:57 2025 -0500
+|   
+|       Updated ProductBacklog
+| 
+* commit f11641407450029473975e5368066bc6f9bfe19d
+| Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| Date:   Fri Nov 14 23:22:34 2025 -0500
+| 
+|     Updated view
+|   
+*   commit e2d37e9a33afed8e12d27bc4c5c8934075e147af
+|\  Merge: cb090ab 0d4c55c
+| | Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| | Date:   Fri Nov 14 22:50:55 2025 -0500
+| | 
+| |     Merge branch 'US4.016'
+| | 
+| * commit 0d4c55c99c461908dddae9d0315bc247b5fdcc91
+| | Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| | Date:   Fri Nov 14 22:33:25 2025 -0500
+| | 
+| |     .idea...
+| | 
+* | commit cb090ab1af5aea1f4cfdd12e56e3ac066ab684f5
+| | Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| | Date:   Fri Nov 14 22:49:21 2025 -0500
+| | 
+| |     Backlog and extraFeatures updated
+| | 
+* | commit 89af260d42ab7dc43bc16dc6b719c4605264bb30
+| | Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| | Date:   Fri Nov 14 21:53:39 2025 -0500
+| | 
+| |     Updated ColorChooserPanel to fix EyeDropper
+| | 
+* | commit 7c78c5b43e09491e2facd4215318506ed7151656
+| | Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| | Date:   Fri Nov 14 21:47:09 2025 -0500
+| | 
+| |     Updated PaintModel
+| |   
+* |   commit 356f6ee145f1c15f52d5665da7587cd76ca84c7f
+|\ \  Merge: 42836b5 b39f0b3
+| | | Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| | | Date:   Fri Nov 14 21:39:28 2025 -0500
+| | | 
+| | |     Merge branch 'master' of https://mcsscm.utm.utoronto.ca:9999/git/207/25f/repo_a2_372
+| | |   
+| * |   commit b39f0b31d8a91770f526f44960e6fb3e722b6c3b
+| |\ \  Merge: 5398335 2320821
+| | | | Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+| | | | Date:   Fri Nov 14 21:32:59 2025 -0500
+| | | | 
+| | | |     Added Java doc to tools
+| | | | 
+| * | | commit 5398335c1211fce8c15ae5c880ce5feb93a3a8e6
+| | | | Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+| | | | Date:   Fri Nov 14 21:24:45 2025 -0500
+| | | | 
+| | | |     JAVA DOC TOOLS - DELETED ERASER
+| | | | 
+* | | | commit 42836b5e8e832520dc9cdb7252ef96b49bbed8e8
+| |/ /  Author: AshirAhmed1 <ashirahmed884@gmail.com>
+|/| |   Date:   Fri Nov 14 21:39:08 2025 -0500
+| | |   
+| | |       Updated Architecture.txt
+| | | 
+* | | commit 2320821650f185da56b8684d049042fba950b48f
+|/ /  Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| |   Date:   Fri Nov 14 21:03:29 2025 -0500
+| |   
+| |       JavaDocs (ahme1250)
+| | 
+* | commit 956316a731d544f3a4fb0fa16d9a137e62d710ad
+| | Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| | Date:   Fri Nov 14 20:22:32 2025 -0500
+| | 
+| |     Updated EyeDropper button
+| | 
+* | commit e5e17cc35b774200c559c53215e99b791b58c291
+| | Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| | Date:   Fri Nov 14 20:02:32 2025 -0500
+| | 
+| |     Updated sprintBacklog4 (ahme1250)
+| | 
+* | commit 231d40a2bbcfa7de562b6bace1b638fa29a3fe12
+| | Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| | Date:   Fri Nov 14 19:58:15 2025 -0500
+| | 
+| |     Completed BUG4.011 (ahme1250)
+| | 
+* | commit aac5611cff0cb88c3019348644393c823117fa55
+| | Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| | Date:   Fri Nov 14 18:52:03 2025 -0500
+| | 
+| |     Updated extraFeatures (ahme1250)
+| | 
+* | commit c360bb11d7e888bc0d2b18ec22cffba03de9ec6a
+| | Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| | Date:   Fri Nov 14 18:45:42 2025 -0500
+| | 
+| |     Updated extra features (ahme1250)
+| | 
+* | commit a1ce268e2857ab188ed8b1ccafb279a18cd5f029
+| | Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| | Date:   Fri Nov 14 18:33:42 2025 -0500
+| | 
+| |     Made Text moveable (ahme1250)
+| | 
+* | commit 5e12b4509a78deb8d6d1d1800cf60fc758e839a7
+| | Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| | Date:   Fri Nov 14 18:30:41 2025 -0500
+| | 
+| |     Merged BUG4.010
+| | 
+* | commit 68228975c81ad5f9f5fbecf9f28fa6d423d6f933
+| | Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| | Date:   Fri Nov 14 18:28:30 2025 -0500
+| | 
+| |     Completed BUG4.010
+| | 
+* | commit 86d7196e516113b5e77b5260b6412af09aa50168
+| | Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| | Date:   Fri Nov 14 17:45:37 2025 -0500
+| | 
+| |     Completed US4.018 (ahme1250)
+| |   
+* |   commit bd89d297de575007d888eec91dd45d883fa3303a
+|\ \  Merge: 1342d09 ef5db11
+| | | Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| | | Date:   Fri Nov 14 17:44:45 2025 -0500
+| | | 
+| | |     Fixed merge conflicts (ahme1250)
+| | | 
+| * | commit ef5db112d8632d14f7f19a203904a5bf6ae8d72f
+| | | Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+| | | Date:   Fri Nov 14 14:00:15 2025 -0500
+| | | 
+| | |     implement adaptive icons and eraser
+| | | 
+| * | commit 7ea1afc88dbd0fabbe2cdea1a6c76a03a4c7d029
+| | | Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+| | | Date:   Fri Nov 14 13:46:21 2025 -0500
+| | | 
+| | |     added extra feature
+| | | 
+| * | commit 1668148c392e9974f0c157c13c1127aac70370bb
+| | | Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+| | | Date:   Fri Nov 14 13:31:09 2025 -0500
+| | | 
+| | |     implement adaptive icons and eraser
+| | | 
+| * | commit d96e8727aa20f5b7debbb18c681b840009954f4e
+| | | Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+| | | Date:   Fri Nov 14 11:40:36 2025 -0500
+| | | 
+| | |     added extra feature
+| | | 
+| * | commit e1529a1b320f35cccad994263ac882c60668dddd
+| | | Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+| | | Date:   Fri Nov 14 10:33:17 2025 -0500
+| | | 
+| | |     added extra feature
+| | | 
+| * | commit 145f7c4da5cff002c227d596e1b2326b93378b9a
+| | | Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+| | | Date:   Fri Nov 14 10:32:12 2025 -0500
+| | | 
+| | |     added extra feature
+| | |     
+| | |     # Conflicts:
+| | |     #       Assignment2/scrum/scrum/extraFeatures
+| | | 
+| * | commit 3adc86f7cda1a7acc7886853651a6cee9dfd15ca
+| | | Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+| | | Date:   Fri Nov 14 10:26:32 2025 -0500
+| | | 
+| | |     pull request US4.017 made
+| | | 
+* | | commit 1342d09190739203b8e9ec06362a0fd7c8d74f50
+| | | Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+| | | Date:   Fri Nov 14 14:00:15 2025 -0500
+| | | 
+| | |     implement adaptive icons and eraser
+| | | 
+* | | commit eda1f8c0438d19718217aaed7a9a286cc3f6fcff
+| | | Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+| | | Date:   Fri Nov 14 13:46:21 2025 -0500
+| | | 
+| | |     added extra feature
+| | | 
+* | | commit 56417caf40bf92b30b0b1aaafcb11d598be41cd9
+| | | Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+| | | Date:   Fri Nov 14 13:31:09 2025 -0500
+| | | 
+| | |     implement adaptive icons and eraser
+| | | 
+* | | commit 229ca84fa8f1fc0da523c92a525ef06642769c71
+| | | Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+| | | Date:   Fri Nov 14 11:40:36 2025 -0500
+| | | 
+| | |     added extra feature
+| | | 
+* | | commit 7d201045e3fc3611331dccab95d9ef615ed38c06
+| | | Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+| | | Date:   Fri Nov 14 10:33:17 2025 -0500
+| | | 
+| | |     added extra feature
+| | | 
+* | | commit 38859539216041901ec51f734be8d997a9781316
+| | | Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+| | | Date:   Fri Nov 14 10:32:12 2025 -0500
+| | | 
+| | |     added extra feature
+| | |     
+| | |     # Conflicts:
+| | |     #       Assignment2/scrum/scrum/extraFeatures
+| | | 
+* | | commit 99f0b15d8b966dce0d8e7c22312b3ab2ffea51a9
+| | | Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| | | Date:   Fri Nov 14 17:32:56 2025 -0500
+| | | 
+| | |     Accepted Pull request US4.018 (ahem1250)
+| | | 
+* | | commit 67166f3f2263f5895d4d14ba16e7a5d55aaba81d
+| | | Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| | | Date:   Fri Nov 14 17:28:41 2025 -0500
+| | | 
+| | |     Completed pull request US4.017
+| | |   
+* | |   commit 5c7e566cfebc7b55f3c87c2f05c5ad4375848c8f
+|\ \ \  Merge: bed8558 05d81b1
+| | | | Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| | | | Date:   Fri Nov 14 17:26:53 2025 -0500
+| | | | 
+| | | |     Fixed merge conflicts (ahme1250)
+| | | | 
+| * | | commit 05d81b1fee9a581edd37e036f61ab9aa2fcab72d
+| | | | Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| | | | Date:   Fri Nov 14 17:19:50 2025 -0500
+| | | | 
+| | | |     Added .idea/misc (ahme1250)
+| | | | 
+| * | | commit 68a5abdf1e525b88e0cf01e032905e7af218a588
+| |\| | Merge: 9665cc4 809b4d9
+| | | | Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| | | | Date:   Fri Nov 14 16:21:01 2025 -0500
+| | | | 
+| | | |     Merge remote-tracking branch 'origin/US4.017' into US4.017
+| | | |     
+| | | |     # Conflicts:
+| | | |     #       Assignment2/scrum/pullRequests/scrum/pullRequests.txt
+| | | |     #       Assignment2/src/main/java/ca/utoronto/utm/assignment2/paint/ShapeChooserPanel.java
+| | | | 
+| | * | commit 809b4d93bd0659e9415704c3f8efb106d8f41f65
+| | | | Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+| | | | Date:   Fri Nov 14 10:24:35 2025 -0500
+| | | | 
+| | | |     Merged US4.016
+| | | | 
+| | * | commit 6f527c5632f5700683aac16e339d2cfd1403f1bc
+| | | | Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+| | | | Date:   Fri Nov 14 10:21:43 2025 -0500
+| | | | 
+| | | |     Merged US4.016
+| | | | 
+| * | | commit 9665cc471e5b6e822695664c21bc4ab80048e424
+| | | | Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| | | | Date:   Fri Nov 14 16:18:59 2025 -0500
+| | | | 
+| | | |     imrana15
+| | | | 
+| * | | commit 8050faad06c81cb0f5db3f3671b5fa0ab3b2df85
+| | | | Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| | | | Date:   Fri Nov 14 09:11:10 2025 -0500
+| | | | 
+| | | |     imrana15
+| | | | 
+* | | | commit bed855895b4ef03dd3e9738e71b7f22ddd8ec7d5
+| | | | Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| | | | Date:   Fri Nov 14 17:04:48 2025 -0500
+| | | | 
+| | | |     Started pull request US4.017
+| | | |   
+* | | |   commit 19de873356711e786881d294a96bb7a8e23cb4c3
+|\ \ \ \  Merge: 50e7bf8 3f8f272
+| | | | | Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| | | | | Date:   Fri Nov 14 16:59:28 2025 -0500
+| | | | | 
+| | | | |     Merge branch 'master' of https://mcsscm.utm.utoronto.ca:9999/git/207/25f/repo_a2_372
+| | | | | 
+| * | | | commit 3f8f272878bc9f286ca855748e3b9e65f02b15f6
+| | | | | Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| | | | | Date:   Fri Nov 14 16:28:59 2025 -0500
+| | | | | 
+| | | | |     imrana15
+| | | | | 
+* | | | | commit 50e7bf8bbbedc0f266df653cd820a4e313de5de8
+|/ / / /  Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| | | |   Date:   Fri Nov 14 16:44:12 2025 -0500
+| | | |   
+| | | |       Updated DailyScrum1 (ahme1250)
+| | | | 
+* | | | commit e213adfcfc3492c31547d5ccf6b0ea7628698ded
+| | | | Author: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| | | | Date:   Fri Nov 14 14:11:37 2025 -0500
+| | | | 
+| | | |     US4.009 Pull Accepted (alnabu11)
+| | | |     
+| | | |     Signed-off-by: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| | | |   
+* | | |   commit b0f01dbaf93f3cfae7b75e3d3717b39d427e891b
+|\ \ \ \  Merge: 9f2cd73 6519f4d
+| | | | | Author: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| | | | | Date:   Fri Nov 14 14:10:54 2025 -0500
+| | | | | 
+| | | | |     Merge remote-tracking branch 'origin/US4.009'
+| | | | |     
+| | | | |     # Conflicts:
+| | | | |     #       Assignment2/src/main/java/ca/utoronto/utm/assignment2/paint/PaintModel.java
+| | | | |     #       Assignment2/src/main/java/ca/utoronto/utm/assignment2/paint/ShapeChooserPanel.java
+| | | | |     #       Assignment2/src/main/java/ca/utoronto/utm/assignment2/paint/View.java
+| | | | | 
+| * | | | commit 6519f4d08d224767958b87b649e5bcdb5dd457ea
+| | | | | Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| | | | | Date:   Fri Nov 14 07:00:10 2025 -0500
+| | | | | 
+| | | | |     imrana15
+| | | | | 
+| * | | | commit f14b8874cea719f22ef4b0384e6eabaa14b234b5
+| | | | | Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| | | | | Date:   Thu Nov 13 15:23:18 2025 -0500
+| | | | | 
+| | | | |     imrana15
+| | | | | 
+* | | | | commit 9f2cd73483e923efba4a06c7e4b86e88ebca8262
+| | | | | Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+| | | | | Date:   Fri Nov 14 14:01:15 2025 -0500
+| | | | | 
+| | | | |     pull request for US4.018
+| | | | | 
+* | | | | commit d9f08dbe259e53b122fa7c46abece53aff794e8d
+| |_|/ /  Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+|/| | |   Date:   Fri Nov 14 10:26:32 2025 -0500
+| | | |   
+| | | |       pull request US4.017 made
+| | | | 
+* | | | commit ce98bc7dc374f6638b470f2c7d74dfd74afcf3ad
+| |_|/  Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+|/| |   Date:   Fri Nov 14 10:01:03 2025 -0500
+| | |   
+| | |       Merged US4.016
+| | | 
+* | | commit d35dee0524dada10ccd71f00d12b1d562839af2a
+| | | Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+| | | Date:   Fri Nov 14 09:55:48 2025 -0500
+| | | 
+| | |     fixed background
+| | | 
+* | | commit fbbb48355a72177e409b84f8690fc3858ce984c8
+| | | Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| | | Date:   Fri Nov 14 07:16:43 2025 -0500
+| | | 
+| | |     imrana15
+| | | 
+* | | commit 1b5d58fc346fb10b8b5fb352b00f2ac9735adb16
+| | | Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+| | | Date:   Fri Nov 14 09:18:03 2025 -0500
+| | | 
+| | |     Merged US4.015 and accepted request
+| | | 
+* | | commit fe8af01474cef0aa60b5f8b92edfaa24f3e1e345
+| |/  Author: AshirAhmed1 <ashirahmed884@gmail.com>
+|/|   Date:   Fri Nov 14 01:12:26 2025 -0500
+| |   
+| |       Completed US4.015 (ahme1250)
+| | 
+* | commit cc2711ef3503bf76a29af2d51daee97f793b1b3b
+| | Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| | Date:   Fri Nov 14 07:17:32 2025 -0500
+| | 
+| |     imrana15
+| | 
+* | commit c8fa4738d9e9ba9e8aa8e7baf2c3ad8c758127a8
+| | Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| | Date:   Fri Nov 14 07:01:19 2025 -0500
+| | 
+| |     imrana15
+| | 
+* | commit fc5b7c8fa9cd44bd271d38586a9307a8bff121bb
+| | Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| | Date:   Fri Nov 14 01:13:18 2025 -0500
+| | 
+| |     Completed US4.015, I have left a pull request (ahme1250)
+| | 
+* | commit 1eebc6f612ee04b33a4cf0aa5b32a37d8f87a564
+| | Author: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| | Date:   Fri Nov 14 01:08:56 2025 -0500
+| | 
+| |     US4.012 Pull Accepted (alnabu11)
+| |     
+| |     Signed-off-by: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| |   
+* |   commit c58259ae4bf488548258a6685acaf1acc3cd5eeb
+|\ \  Merge: 793a2ee f98803f
+| | | Author: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| | | Date:   Fri Nov 14 01:08:03 2025 -0500
+| | | 
+| | |     Merge branch 'US4.012'
+| | | 
+| * | commit f98803fdfd60d6afb50547898b80e3d7c399abe5
+| | | Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| | | Date:   Fri Nov 14 00:57:06 2025 -0500
+| | | 
+| | |     Completed US4.012 (ahme1250)
+| | | 
+* | | commit 793a2eec8a212972c143de5639ec1c2fd58098bf
+| | | Author: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| | | Date:   Fri Nov 14 01:05:25 2025 -0500
+| | | 
+| | |     US4.012 Pull InProcess (alnabu11)
+| | |     
+| | |     Signed-off-by: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| | | 
+* | | commit c68ece2044e9e0290c3f6f3d41d1be705e2d3342
+|/ /  Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| |   Date:   Fri Nov 14 00:58:41 2025 -0500
+| |   
+| |       Completed US4.012, I have left a pull request (ahme1250)
+| | 
+* | commit 872a9c478ef57574a372f7fca0e2182171b49b38
+| | Author: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| | Date:   Thu Nov 13 22:35:11 2025 -0500
+| | 
+| |     US4.014 Pull Accepted (alnabu11)
+| |     
+| |     Signed-off-by: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| |   
+* |   commit 0669f97a1fc3b6864ea60ad8ce19e83424bc1e98
+|\ \  Merge: e0098e7 d130303
+| | | Author: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| | | Date:   Thu Nov 13 22:32:34 2025 -0500
+| | | 
+| | |     Merge branch 'US4.014'
+| | | 
+| * | commit d130303370ca51094a9bf8139bd65c0114b1830d
+| | | Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+| | | Date:   Thu Nov 13 17:10:49 2025 -0500
+| | | 
+| | |     edited userstory
+| | | 
+| * | commit ae83bc3b02d77c272f1e88edbd5470455fc57a15
+| | | Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+| | | Date:   Thu Nov 13 17:03:20 2025 -0500
+| | | 
+| | |     Implemented PaintBucket Tool
+| | | 
+* | | commit e0098e7d84d9bcaacf623754a85d896b2b60f34e
+| | | Author: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| | | Date:   Thu Nov 13 22:28:25 2025 -0500
+| | | 
+| | |     US4.014 Pull InProcess (alnabu11)
+| | |     
+| | |     Signed-off-by: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| | | 
+* | | commit a612404a1252ac3287fb739629b57b9ff704a2d1
+|\| | Merge: 9999bfc 48fac55
+| | | Author: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| | | Date:   Thu Nov 13 22:26:02 2025 -0500
+| | | 
+| | |     US4.013 Pull Accepted (alnabu11)
+| | |     
+| | |     Signed-off-by: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| | | 
+| * | commit 48fac5509fd173684d5fcba7b54ad165af679198
+| | | Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+| | | Date:   Thu Nov 13 15:41:53 2025 -0500
+| | | 
+| | |     gonna rebase
+| | | 
+| * | commit 11d276c8f49a149496e9d3eadc373ca2fe501218
+| | | Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+| | | Date:   Thu Nov 13 15:36:10 2025 -0500
+| | | 
+| | |     fixed view
+| | | 
+| * | commit a0a13b670008aaab1818f7f84ef501e72650d204
+| | | Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+| | | Date:   Thu Nov 13 15:26:54 2025 -0500
+| | | 
+| | |     fixed view
+| | | 
+| * | commit 49d009a24e8a8e416d5a3572494cd9d1aa497683
+| | | Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+| | | Date:   Thu Nov 13 15:23:51 2025 -0500
+| | | 
+| | |     Added doc to all shapes
+| | | 
+| * | commit 71beaca55de512f6eda4a97e89ece4c94a5cdacc
+| | | Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+| | | Date:   Thu Nov 13 14:39:43 2025 -0500
+| | | 
+| | |     update
+| | | 
+| * | commit 71b026dfa94644b5ffb01e5940939e3eaa4eec10
+| | | Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+| | | Date:   Thu Nov 13 14:30:26 2025 -0500
+| | | 
+| | |     fixed shapechoserpanel
+| | | 
+| * | commit 6fbbd019a33803d7e0f20b26e4fbbabda1d83473
+| | | Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+| | | Date:   Thu Nov 13 14:10:44 2025 -0500
+| | | 
+| | |     implmented erase
+| | | 
+| * | commit c7e6043e9e98d9e30ee24651fd8f041cf10abcae
+| | | Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+| | | Date:   Thu Nov 13 14:10:35 2025 -0500
+| | | 
+| | |     implmented erase
+| | | 
+| * | commit f84168719d7dd89f6911780af34592f10e5ac001
+| | | Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+| | | Date:   Thu Nov 13 12:42:22 2025 -0500
+| | | 
+| | |     updated javadoc
+| | | 
+* | | commit 9999bfc913a469591525787900a5a9af0596d511
+| | | Author: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| | | Date:   Thu Nov 13 22:16:19 2025 -0500
+| | | 
+| | |     US4.013 Pull InProcess
+| | |     
+| | |     Signed-off-by: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| | | 
+* | | commit cb8ae00d1d4c727f2cc5adc2fa90abf3e70dc61c
+| | | Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+| | | Date:   Thu Nov 13 17:04:16 2025 -0500
+| | | 
+| | |     Added pull request US4.013
+| | | 
+* | | commit 0f8f94daa874ad993e3e46bb4c6baa423664dcec
+|/ /  Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+| |   Date:   Thu Nov 13 15:45:02 2025 -0500
+| |   
+| |       Added pull request US4.013
+| |   
+* |   commit 9cc5c94d37b24efefcc332fe915c2c958d19890b
+|\ \  Merge: 48eb85a c1496e6
+| |/  Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+|/|   Date:   Thu Nov 13 15:38:22 2025 -0500
+| |   
+| |       Merge branch 'US4.008'
+| | 
+| * commit c1496e6b15c449673cd1e7860a3b9412d176790c
+| | Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| | Date:   Thu Nov 13 15:34:53 2025 -0500
+| | 
+| |     imrana15
+| | 
+* | commit 48eb85afa384581f38de5f0318df06e7658108a9
+| | Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+| | Date:   Thu Nov 13 13:08:08 2025 -0500
+| | 
+| |     updated pull requests
+| | 
+* | commit 6dd0e288b02fd464192e007c17fe440895998a85
+|\| Merge: a66088c 17c04de
+| | Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+| | Date:   Thu Nov 13 13:05:43 2025 -0500
+| | 
+| |     Merge branch 'US4.008'
+| | 
+| * commit 17c04deff3b2504effc7b682389740bbae8468a8
+| | Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| | Date:   Thu Nov 13 12:40:42 2025 -0500
+| | 
+| |     imrana15
+| | 
+| * commit aab0051f0e26e65af26f9337a0d1f993f008e6a6
+| | Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| | Date:   Thu Nov 13 11:37:48 2025 -0500
+| | 
+| |     imrana15
+| | 
+| * commit 49e5985f0163024c6fdb3debc74c7cd1e8cb95ab
+| | Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| | Date:   Thu Nov 13 00:56:36 2025 -0500
+| | 
+| |     imrana15
+| | 
+* | commit a66088c7f2ff782df0b86b0437cb1c431af5538d
+| | Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| | Date:   Thu Nov 13 11:40:11 2025 -0500
+| | 
+| |     imrana15
+| |   
+* |   commit 42de19e42497894e1b7cb8f403879d4f7d416084
+|\ \  Merge: 8bdd0a2 33d5973
+| | | Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| | | Date:   Thu Nov 13 11:39:52 2025 -0500
+| | | 
+| | |     Merge remote-tracking branch 'origin/master'
+| | |     
+| | |     # Conflicts:
+| | |     #       Assignment2/scrum/pullRequests/scrum/pullRequests.txt
+| | | 
+| * | commit 33d5973abd756167fc6082a107f7495c55557546
+| | | Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| | | Date:   Thu Nov 13 00:51:30 2025 -0500
+| | | 
+| | |     Updated extraFeatures
+| | | 
+| * | commit ef4cd48917cc82cd7c1b97356653e7c08ecb94da
+| | | Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| | | Date:   Thu Nov 13 00:50:51 2025 -0500
+| | | 
+| | |     Created and updated extraFeatures.txt (ahme1250)
+| | | 
+| * | commit 00d3b52c5481733498426497d410f38ab320e4be
+| | | Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| | | Date:   Wed Nov 12 17:13:19 2025 -0500
+| | | 
+| | |     Updated ShapeChooserPanel (ahme1250)
+| | | 
+| * | commit 61902cff704911b5f45e898367cd286c32257165
+| | | Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+| | | Date:   Wed Nov 12 15:40:14 2025 -0500
+| | | 
+| | |     Merged US4.011 and accepted pull request
+| | |   
+| * |   commit 97548b0541ebc7e471d6ffcc2047ef3b6eec0ad5
+| |\ \  Merge: dc14249 a139f93
+| | | | Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+| | | | Date:   Wed Nov 12 15:36:45 2025 -0500
+| | | | 
+| | | |     Merge branch 'US4.011'
+| | | | 
+| | * | commit a139f93cbaf7e0d9d9ae3e16bc392e3cc0903f41
+| | | | Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| | | | Date:   Wed Nov 12 14:06:46 2025 -0500
+| | | | 
+| | | |     Completed US4.011 (ahme1250)
+| | | | 
+| * | | commit dc14249ca78e383962d6c74098f48790e5f7446f
+| |/ /  Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| | |   Date:   Wed Nov 12 14:08:12 2025 -0500
+| | |   
+| | |       Completed US4.011, I have left a pull request (ahme1250)
+| | | 
+* | | commit 8bdd0a2974596e9c15605ab5729708675e30ae13
+| | | Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| | | Date:   Thu Nov 13 11:39:38 2025 -0500
+| | | 
+| | |     imrana15
+| | | 
+* | | commit 6abe33f6b2116cfffb79c3d4945b90734acc1a60
+| |/  Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+|/|   Date:   Thu Nov 13 11:38:35 2025 -0500
+| |   
+| |       imrana15
+| | 
+* | commit 64f0d7fef9b251c77d220858e1adc08dd0127e32
+|/  Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+|   Date:   Wed Nov 12 10:27:35 2025 -0500
+|   
+|       imrana15
+|   
+*   commit b10eb1fdc294a8abd30910147837c3f3676dfbc0
+|\  Merge: 2950a78 bb11216
+| | Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| | Date:   Wed Nov 12 10:26:41 2025 -0500
+| | 
+| |     Merge branch 'US4.010'
+| | 
+| * commit bb112162eac5e8ea3db96a57c9cf0afe732ca5da
+| | Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| | Date:   Wed Nov 12 01:45:37 2025 -0500
+| | 
+| |     Completed US4.010 (ahme1250)
+| | 
+* | commit 2950a78e22f7e871e6ca547309001cd628a24a00
+| | Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| | Date:   Wed Nov 12 10:25:02 2025 -0500
+| | 
+| |      imrana15
+| | 
+* | commit bd01086c2c4934adfe68293b30829b1446cb428a
+|/  Author: AshirAhmed1 <ashirahmed884@gmail.com>
+|   Date:   Wed Nov 12 01:46:56 2025 -0500
+|   
+|       Finished US4.010, I have left a pull request (ahme1250)
+| 
+* commit 963c6989b6779380da76737f074def219e4ef0c7
+| Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+| Date:   Mon Nov 10 18:06:28 2025 -0500
+| 
+|     Updated dailyScrumMeeting4.txt
+| 
+* commit a3e6c36c1eb7805a6e74e8a40b9f7962f13b00ce
+| Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| Date:   Mon Nov 10 16:35:06 2025 -0500
+| 
+|      imrana15
+|   
+*   commit 302af28d277342391d6b96a310ce5d9f2079568d
+|\  Merge: a26eade 50868a5
+| | Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| | Date:   Mon Nov 10 16:34:35 2025 -0500
+| | 
+| |     Merge branch 'US4.006' imrana15
+| | 
+| * commit 50868a5317e441df85b19fa58982f113be13d8a6
+| | Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| | Date:   Mon Nov 10 00:40:30 2025 -0500
+| | 
+| |     Completed US4.006
+| | 
+* | commit a26eade028df5e59e331c3ecd8f239a502a9b6b0
+| | Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| | Date:   Mon Nov 10 16:18:55 2025 -0500
+| | 
+| |     imrana15
+| | 
+* | commit 28521072c31c4a2d7ddf7f55c2d24d31e6e05a20
+| | Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| | Date:   Mon Nov 10 00:43:14 2025 -0500
+| | 
+| |     Completed US4.006, I have left a pull request (ahme1250)
+| | 
+* | commit fb6f6236170b01da76aa12b6d8859563523770ef
+|/  Author: AshirAhmed1 <ashirahmed884@gmail.com>
+|   Date:   Mon Nov 10 00:42:24 2025 -0500
+|   
+|       updated prodct/sprint backlog (ahme1250)
+| 
+* commit 5b47cb311cfb7a4de56421f5e355077e33b0c997
+| Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| Date:   Sun Nov 9 23:57:00 2025 -0500
+| 
+|     Starting US4.006 (ahme1250)
+|   
+*   commit 621ed3fa1e17c9bdeaf2d02775f0c03516812d48
+|\  Merge: 4f9f77a 598b6ce
+| | Author: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| | Date:   Sun Nov 9 23:53:17 2025 -0500
+| | 
+| |     Merge US4.007
+| |     
+| |     Signed-off-by: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| | 
+| * commit 598b6cef6c45d0439cbd84f856fcf8fada26a35c
+| | Author: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| | Date:   Sun Nov 9 23:37:38 2025 -0500
+| | 
+| |     Taking pull request US4.007 for review (alnabu11)
+| |     
+| |     Signed-off-by: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| | 
+| * commit 58ebb9773f3620e41c2856968173341ab8cb84f1
+| | Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| | Date:   Sun Nov 9 23:22:07 2025 -0500
+| | 
+| |     Completed US4.007 (ahme1250)
+| | 
+* | commit 4f9f77a304f3c7c7f19f5158a8db9b3f1cd402a3
+| | Author: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| | Date:   Sun Nov 9 23:43:47 2025 -0500
+| | 
+| |     Accepted pull request by ahme1250 (alnabu11)
+| |     
+| |     Signed-off-by: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| | 
+* | commit 231fd0791c7d8868ce21a45f9497b2fbdef0a95d
+| | Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| | Date:   Sun Nov 9 23:31:00 2025 -0500
+| | 
+| |     updated product and sprint back logs (ahme1250)
+| | 
+* | commit 6e3cd04dde3fe62bdcf77e53bacf121892d80a06
+|/  Author: AshirAhmed1 <ashirahmed884@gmail.com>
+|   Date:   Sun Nov 9 23:23:44 2025 -0500
+|   
+|       US4.007 is complete, I have left a pull request (ahme1250)
+| 
+* commit ad30fd59a5371762b400121ac53090b130f70896
+| Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| Date:   Sun Nov 9 22:43:36 2025 -0500
+| 
+|     Completed pull request US4.005
+|   
+*   commit 0766db76c8f54a25377ecdb005c7d412f1639106
+|\  Merge: d104f9c 6d4d2a1
+| | Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| | Date:   Sun Nov 9 22:43:01 2025 -0500
+| | 
+| |     Merge branch 'US4.005'
+| | 
+| * commit 6d4d2a199f3beeecc8f34d1349d878835bf8bbc9
+| | Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| | Date:   Sun Nov 9 22:42:41 2025 -0500
+| | 
+| |     Assignment2/.idea.. commit (ahme1250)
+| | 
+| * commit cbf00c11f01953b9544b5ab73e2aaef41ebe0c79
+| | Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+| | Date:   Sun Nov 9 22:29:48 2025 -0500
+| | 
+| |     implemented US4.005, color panel
+| | 
+* | commit d104f9c6b140aa1046322fdcfb19e1529008fce8
+| | Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| | Date:   Sun Nov 9 22:41:15 2025 -0500
+| | 
+| |     Accepted pull request US4.005
+| | 
+* | commit cab74e62c48018628e428939c8ea50a51571674a
+| | Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+| | Date:   Sun Nov 9 22:39:31 2025 -0500
+| | 
+| |     Updated pullrequest (phanale5)
+| | 
+* | commit af401e8c0ed8a2e7d273f11deea36dfb3f33eb60
+| | Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| | Date:   Sun Nov 9 22:31:07 2025 -0500
+| | 
+| |     Updated pullRequest (ahme1250)
+| | 
+* | commit d39378bd5aaa05c63192cc11e381371ab832b3f0
+| | Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| | Date:   Sun Nov 9 21:09:10 2025 -0500
+| | 
+| |     Updated sprint/product back log to started US4.007 (ahme1250)
+| | 
+* | commit 1d0be19d396a9b2eb3be652172482c1c07046ee5
+|/  Author: AshirAhmed1 <ashirahmed884@gmail.com>
+|   Date:   Sun Nov 9 14:19:46 2025 -0500
+|   
+|       Shape added fix (ahme1250)
+| 
+* commit 9a78d1b499dea7dacd6641113f9b1d5c035868f2
+| Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+| Date:   Sun Nov 9 13:50:45 2025 -0500
+| 
+|     Added methods to drawable interface
+| 
+* commit 80c83280e26fb3a04b1bfa4fb688dcc7bee8c9b4
+| Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+| Date:   Sun Nov 9 13:30:32 2025 -0500
+| 
+|     Implemented AbstractShapeDrawable
+| 
+* commit 7065d45b4e545d52b9d0b6f7fe646288e3ff8da1
+| Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| Date:   Sun Nov 9 12:55:43 2025 -0500
+| 
+|     Completed pull request US4.001 (ahme125)
+|   
+*   commit aa1761aeee7bd8237e723b2d33deafbae2787fca
+|\  Merge: 8ef0461 fedfdf5
+| | Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| | Date:   Sun Nov 9 12:54:46 2025 -0500
+| | 
+| |     Merge branch 'US4.001'
+| | 
+| * commit fedfdf5fb53e17912665490f5e3621399eba151a
+| | Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| | Date:   Sun Nov 9 12:54:34 2025 -0500
+| | 
+| |     Assignmnet2/.idea/misc.xml (ahme1250)
+| | 
+| * commit 540209cf6c7432088cf910f3e508c13a147c8161
+| | Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+| | Date:   Sun Nov 9 12:34:29 2025 -0500
+| | 
+| |     US4.001 completed. Polyline shows feedback to the user.
+| | 
+| * commit c3d5fd51cb54c998031f3957183eae66e619ce0d
+| | Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+| | Date:   Thu Nov 6 21:14:16 2025 -0500
+| | 
+| |     Implemented Polyline
+| | 
+* | commit 8ef0461a341081c6bfebe247b44616129e6908c5
+| | Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| | Date:   Sun Nov 9 12:51:44 2025 -0500
+| | 
+| |     Accepte pull request US4.001 (ahme1250)
+| | 
+* | commit e78473b93a188cb8488284109dfe2a2723411987
+| | Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+| | Date:   Sun Nov 9 12:36:11 2025 -0500
+| | 
+| |     Completed US4.001, submitted an pull request.
+| | 
+* | commit 0a92bc5069d48f4b28a715281c7d7e3ab405bed2
+| | Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| | Date:   Thu Nov 6 23:19:10 2025 -0500
+| | 
+| |     Modified OvalTool
+| | 
+* | commit 6a621e7b5b31acae289057e0b674e2cfa3b590bb
+| | Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| | Date:   Thu Nov 6 23:08:56 2025 -0500
+| | 
+| |     Approved pull request for BUG3.003 (ahme1250)
+| |   
+* |   commit 8026823fa969ebaa40024f06938578227ce1677e
+|\ \  Merge: 494cb87 b6a926b
+| | | Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| | | Date:   Thu Nov 6 23:07:40 2025 -0500
+| | | 
+| | |     Merge branch 'BUG3.003'
+| | | 
+| * | commit b6a926bfb031d9bc45eb8dd765dd13594130ee59
+| | | Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| | | Date:   Thu Nov 6 18:05:05 2025 -0500
+| | | 
+| | |     imrana15
+| | |   
+* | |   commit 494cb87c1a147853f39e9bf45f243e80f987124f
+|\ \ \  Merge: 849bb74 e6b9273
+| | | | Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| | | | Date:   Thu Nov 6 23:03:58 2025 -0500
+| | | | 
+| | | |     Merge branch 'master' of https://mcsscm.utm.utoronto.ca:9999/git/207/25f/repo_a2_372
+| | | | 
+| * | | commit e6b927320c3bde90a318e3217c385e1e5973f46a
+| | | | Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+| | | | Date:   Thu Nov 6 21:29:08 2025 -0500
+| | | | 
+| | | |     Updated Backlogs
+| | | | 
+| * | | commit 2c6f1921cae104b87cec814bcb2c63622f974aea
+| | | | Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+| | | | Date:   Thu Nov 6 21:28:11 2025 -0500
+| | | | 
+| | | |     BUG3.001 is completed, a pull request have been made. (phanale5)
+| | | | 
+* | | | commit 849bb74c0de5f38a8a6d02f4d8712f4f3fdf57e3
+|/ / /  Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| | |   Date:   Thu Nov 6 23:03:17 2025 -0500
+| | |   
+| | |       Accepted BUG3.003 pull request (ahme1250)
+| | | 
+* | | commit 78a3b0b9c89b093b8043678a852da28f8951c892
+| | | Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| | | Date:   Thu Nov 6 20:18:13 2025 -0500
+| | | 
+| | |     Updated sprint/product backlog (ahme1250)
+| | | 
+* | | commit 0659606f15887ea38b24ffa191b403abfd5c20a8
+| | | Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| | | Date:   Thu Nov 6 18:15:22 2025 -0500
+| | | 
+| | |     Merge branch 'BUG3.006' imrana15
+| | | 
+* | | commit 7c959fc3ab8452f77fcb7397a353c28e5b1e1128
+| | | Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| | | Date:   Thu Nov 6 18:15:06 2025 -0500
+| | | 
+| | |     Merge branch 'BUG3.006' imrana15
+| | |   
+* | |   commit de297be1aa9c4c618c7bebd233f987e8443c8a8c
+|\ \ \  Merge: e1557a0 74237ce
+| | | | Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| | | | Date:   Thu Nov 6 18:14:01 2025 -0500
+| | | | 
+| | | |     Merge branch 'BUG3.006' imrana15
+| | | | 
+| * | | commit 74237ce87baa083361b9824c520170a8836d55ac
+| | | | Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| | | | Date:   Thu Nov 6 16:46:49 2025 -0500
+| | | | 
+| | | |     Completed BUG3.006
+| | | | 
+* | | | commit e1557a0f46cdac8012c2980c80c57e6df56b4b11
+| | | | Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| | | | Date:   Thu Nov 6 18:12:56 2025 -0500
+| | | | 
+| | | |     Merge branch 'BUG3.005' imrana15
+| | | |   
+* | | |   commit 7f7edbad3ad1e7d831b551e88cbbdf2a82796147
+|\ \ \ \  Merge: 17ef989 7c8a129
+| | | | | Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| | | | | Date:   Thu Nov 6 18:12:13 2025 -0500
+| | | | | 
+| | | | |     Merge branch 'BUG3.005' imrana15
+| | | | | 
+| * | | | commit 7c8a129536f8bf9fa06e4ededa6405fa0df181b3
+| | | | | Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| | | | | Date:   Thu Nov 6 16:29:48 2025 -0500
+| | | | | 
+| | | | |     Completed BUG.005, updated Product/Sprint Backlog (ahme1250)
+| | | | | 
+| * | | | commit 4ef04616fba57e077c7d1e6607ae31ae70e6c4cc
+| | | | | Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| | | | | Date:   Thu Nov 6 16:28:11 2025 -0500
+| | | | | 
+| | | | |     Completed BUG3.005
+| | | | | 
+* | | | | commit 17ef989ba55cf2022f160acfbef6483f8e95d053
+| | | | | Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| | | | | Date:   Thu Nov 6 17:34:54 2025 -0500
+| | | | | 
+| | | | |     imrana15
+| | | | | 
+* | | | | commit bdb7eb0681b28236bb341685ba882c6b7159eab5
+| | | | | Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| | | | | Date:   Thu Nov 6 17:34:39 2025 -0500
+| | | | | 
+| | | | |     imrana15
+| | | | | 
+* | | | | commit 2088922ac758292fa21ca9e1cb85737cd9ccf02c
+| | | | | Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| | | | | Date:   Thu Nov 6 17:34:22 2025 -0500
+| | | | | 
+| | | | |     imrana15
+| | | | |   
+* | | | |   commit e143e2c0432898cede0ffbc5fc541a72f6bb5e16
+|\ \ \ \ \  Merge: 16474e8 79d5701
+| | |_|_|/  Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| |/| | |   Date:   Thu Nov 6 17:33:03 2025 -0500
+| | | | |   
+| | | | |       Merge remote-tracking branch 'origin/master'
+| | | | |       
+| | | | |       # Conflicts:
+| | | | |       #       Assignment2/scrum/pullRequests/scrum/pullRequests.txt
+| | | | | 
+| * | | | commit 79d5701f56b4e2261d608d93fdc5c8c95e5ed6d0
+| | | | | Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| | | | | Date:   Thu Nov 6 16:49:03 2025 -0500
+| | | | | 
+| | | | |     Updated sprint/product backlog for BUG3.006 (ahme1250)
+| | | | | 
+| * | | | commit e3ef9a5d3c14baafef777e28d48be4fcbd879370
+| | |/ /  Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| |/| |   Date:   Thu Nov 6 16:47:54 2025 -0500
+| | | |   
+| | | |       BUG3.006 is complete, I have left a pull request in pullRequests.txt (ahme1250)
+| | | | 
+| * | | commit 344231c26516e642b3d8e95dee5d695b4c76394f
+| | | | Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| | | | Date:   Thu Nov 6 16:40:45 2025 -0500
+| | | | 
+| | | |     BUG3.001 merged successfully and reflected on pullRequests.txt (ahme1250)
+| | | |   
+| * | |   commit 545d2d4006de9802ac5e890a44532d66e5b3bffe
+| |\ \ \  Merge: 794c2b3 f122d3c
+| | |_|/  Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| |/| |   Date:   Thu Nov 6 16:38:38 2025 -0500
+| | | |   
+| | | |       Merge branch 'BUG3.001'
+| | | | 
+| | * | commit f122d3c8d524df7a51db301a7fd3fb1816efa28f
+| | | | Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| | | | Date:   Thu Nov 6 16:38:21 2025 -0500
+| | | | 
+| | | |     Assignment2/.idea/misc.xml added (ahme1250)
+| | | | 
+| | * | commit e5e8fe5bd743665524549cd7e6b50b558525fc90
+| | | | Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+| | | | Date:   Thu Nov 6 11:45:30 2025 -0500
+| | | | 
+| | | |     BUG3.001 completed
+| | | | 
+* | | | commit 16474e8c969894750c4f88b9076f35587c4f9c32
+|/ / /  Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| | |   Date:   Thu Nov 6 17:32:03 2025 -0500
+| | |   
+| | |       imrana15
+| | | 
+* | | commit 794c2b3ce1e2e23c9d62ed1fdb2eabeedee2135e
+| | | Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| | | Date:   Thu Nov 6 16:35:05 2025 -0500
+| | | 
+| | |     BUG3.006 added to product/sprint backlog (ahme1250)
+| | | 
+* | | commit 71380478d5938cfbb2ebad290cf8eef108408b5a
+| |/  Author: AshirAhmed1 <ashirahmed884@gmail.com>
+|/|   Date:   Thu Nov 6 16:32:01 2025 -0500
+| |   
+| |       BUG3.005 is complete, I have left a pull request in pullRequests.txt (ahme1250)
+| | 
+* | commit 4d45902e2a7c0fea5bc9b53ba818dc1e14eee8cd
+| | Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| | Date:   Thu Nov 6 16:20:43 2025 -0500
+| | 
+| |     Added BUG3.005 to sprintBackLog3 and productBackLog (ahme1250)
+| | 
+* | commit 4497e41a1265bdcb5a54f27576cf3ef583240164
+| | Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| | Date:   Thu Nov 6 16:12:39 2025 -0500
+| | 
+| |     BUG3.001 pull request from phanale5 accepted by ahme1250
+| | 
+* | commit cee9618fd0c03e4775a85b45be96ed89443e06b7
+|/  Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+|   Date:   Thu Nov 6 11:47:25 2025 -0500
+|   
+|       BUG3.001 is completed, a pull request have been made. (phanale5)
+|   
+*   commit 753cce01f77a557755ec6e0786b2c498ed8b2eda
+|\  Merge: db0a409 46d81ae
+| | Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+| | Date:   Thu Nov 6 11:37:19 2025 -0500
+| | 
+| |     BUG3.004 Completed
+| | 
+| * commit 46d81ae2c3c8805fdd83f24110ec205ca0d57cf5
+| | Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| | Date:   Thu Nov 6 01:34:32 2025 -0500
+| | 
+| |     Completed BUG3.004 – refactored PaintModel using Composite Pattern
+| | 
+* | commit db0a409f56b9fb1eeedb5738bc4ccaea8d730d8c
+| | Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+| | Date:   Thu Nov 6 11:33:37 2025 -0500
+| | 
+| |     BUG3.004 Pull Request from ahme1250 Accepted by phanale5
+| | 
+* | commit 0d7fe42405894baae8ba4be0f5de8fc4c7c8ed18
+|/  Author: AshirAhmed1 <ashirahmed884@gmail.com>
+|   Date:   Thu Nov 6 01:38:30 2025 -0500
+|   
+|       BUG3.004 is complete, I have left a pull request in pullRequests.txt (ahme1250)
+| 
+* commit 19ccbf19b36bfa70bd2a7628623164d449ebc079
+| Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| Date:   Wed Nov 5 20:52:50 2025 -0500
+| 
+|     scrum/pullRequests.txt added (ahme1250)
+| 
+* commit 3780f7a19af75664aaefc76aba43b96c8c32c814
+| Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| Date:   Wed Nov 5 20:46:38 2025 -0500
+| 
+|     sprintBackLog3 and productBacklog updated (ahme1250)
+| 
+* commit 13bcff34fe8520aeadc751178ee8c1bb5f933d48
+| Author: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| Date:   Thu Oct 30 23:46:31 2025 -0400
+| 
+|     Sprint 2 completed – implemented Strategy + Factory architecture (BUG2.003), refactored PaintPanel/View/ShapeChooserPanel, and finalized new shape tools: US2.001 Draw Square, US2.002 Draw Triangle, US2.003 Draw Oval with live feedback. Architecture.txt, backlogs, and Scrum logs updated for Sprint 2 completion. (alnabu11)
+| 
+* commit 126d8500c91731fdc962712bcac5959c3b5ea9a3
+| Author: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| Date:   Thu Oct 30 23:43:26 2025 -0400
+| 
+|     Added completed backlog entry for architecture refactor (Strategy+Factory) alnabu11
+|     
+|     Signed-off-by: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| 
+* commit afdd0515aff3433033d6eaf0ee2e6bd4accad4e7
+| Author: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| Date:   Thu Oct 30 23:42:35 2025 -0400
+| 
+|     Recorded completion of PaintPanel/View refactor and design pattern integration in Sprint 2 backlog alnabu11
+|     
+|     Signed-off-by: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| 
+* commit 231b2382aa696fa1bd674320e5386bdbcab652ef
+| Author: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| Date:   Thu Oct 30 23:39:13 2025 -0400
+| 
+|     Updated architecture.txt for Sprint 2: documented Strategy + Factory refactor, MVC refinement, and preview system integration
+|     
+|     Signed-off-by: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| 
+* commit f76edd4d3600b4f86781619eb97e0fb81613d951
+| Author: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| Date:   Thu Oct 30 23:31:59 2025 -0400
+| 
+|     Updated dailyScrumMeeting alnabu11
+|     
+|     Signed-off-by: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| 
+* commit ecea055cc19cd207b7b8311ee6b87b469e8e0200
+| Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| Date:   Thu Oct 30 23:26:23 2025 -0400
+| 
+|     Updated DailyScrum ahme1250
+| 
+* commit f82dedcad45fb07291a69372ffe5164592c7e7ee
+| Author: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| Date:   Thu Oct 30 23:14:54 2025 -0400
+| 
+|     BUG2.003 – Updated ToolFactory to handle POLYLINE ToolType with graceful placeholder; full coverage for all defined tool types
+|     
+|     Signed-off-by: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| 
+* commit f3e7927d8bff3320f172857dfdd0c0425ac687ad
+| Author: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| Date:   Thu Oct 30 23:14:10 2025 -0400
+| 
+|     BUG2.003 – Added POLYLINE to ToolType enum for future tool expansion; ensures ShapeChooserPanel mapping consistency
+|     
+|     Signed-off-by: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| 
+* commit b6d091c9b94a2d743cebaf8961d430128d19788e
+| Author: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| Date:   Thu Oct 30 23:13:46 2025 -0400
+| 
+|     BUG2.003 – Reworked ShapeChooserPanel buttons to call view.setTool(ToolType.valueOf(label.toUpperCase())); removed string-based mode handling
+|     
+|     Signed-off-by: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| 
+* commit 5cad2143a6e4b99baf06e45d9bdd3b9469e02719
+| Author: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| Date:   Thu Oct 30 23:11:42 2025 -0400
+| 
+|     BUG2.003 – Updated View to support ToolFactory and setTool(ToolType); removed old setMode method and linked PaintPanel.setCurrentTool()
+|     
+|     Signed-off-by: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| 
+* commit 2691b3a8ab0da34c0518bb67e8f20a078794978d
+| Author: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| Date:   Thu Oct 30 23:11:15 2025 -0400
+| 
+|     BUG2.003 – Refactored PaintPanel to use Tool delegation (Strategy pattern); removed switch(mode) logic and added preview rendering via model.getPreview()
+|     
+|     Signed-off-by: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| 
+* commit 0404ba4ad3d4b670bf4534f446a4635c5fcaf20d
+| Author: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| Date:   Wed Oct 29 21:49:16 2025 -0400
+| 
+|     BUG2.003 – Add preview Object support to PaintModel for live tool drawing feedback
+|     
+|     Signed-off-by: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| 
+* commit 2ec354c69f0d30534fe8dd543cffcbb25bd5215a
+| Author: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| Date:   Wed Oct 29 21:39:24 2025 -0400
+| 
+|     BUG2.003 – Implement all concrete Tool strategies (Circle, Rectangle, Square, Triangle, Oval, Squiggle) + Made Point.Point() public for access from the package
+|     
+|     Signed-off-by: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| 
+* commit ca4abbfb8a6c69df39deca94d93373ae50567adf
+| Author: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| Date:   Wed Oct 29 21:20:01 2025 -0400
+| 
+|     BUG2.003 – Add AbstractShapeTool helper for common shape behavior
+|     
+|     Signed-off-by: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| 
+* commit 3f08b08888add42806c133b6df175d93579667dc
+| Author: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| Date:   Wed Oct 29 21:17:57 2025 -0400
+| 
+|     BUG2.003 – Implement ToolFactory (Factory Pattern) for Tool creation
+|     
+|     Signed-off-by: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| 
+* commit 556490ed85e237d1294f854f18261e0d6bf95521
+| Author: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| Date:   Wed Oct 29 21:16:29 2025 -0400
+| 
+|     BUG2.003 – Add ToolType enum to represent available drawing tools
+|     
+|     Signed-off-by: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| 
+* commit 86e3f6890b79797893348fa731e86abd04e97db2
+| Author: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| Date:   Wed Oct 29 21:13:28 2025 -0400
+| 
+|     BUG2.003 – Add Tool interface for Strategy pattern
+|     
+|     Signed-off-by: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+|   
+*   commit bae32e85b311b7cd44fb6b5bd45c387e9d653c5f
+|\  Merge: fd7f4cf bbc616a
+| | Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| | Date:   Wed Oct 29 18:40:38 2025 -0400
+| | 
+| |     imrana15
+| | 
+| * commit bbc616afc9cc703fef4fcae350b4a0a9f1fa6b01
+| | Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| | Date:   Wed Oct 29 18:37:11 2025 -0400
+| | 
+| |     imrana15
+| | 
+| * commit f83124874df352ecc0c43bdcd85e360713df7fac
+| | Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| | Date:   Wed Oct 29 04:54:15 2025 -0400
+| | 
+| |     imrana15
+| | 
+* | commit fd7f4cf122dbbcf5e816e0f902bfabb94f17291f
+|/  Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+|   Date:   Wed Oct 29 04:54:15 2025 -0400
+|   
+|       imrana15
+|   
+*   commit 8f206fcb0c6248ab70d534b2b74fb0666a90b119
+|\  Merge: b82abaa 2cbe130
+| | Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| | Date:   Wed Oct 29 02:11:08 2025 -0400
+| | 
+| |     Merge remote-tracking branch 'origin/master'
+| |   
+| *   commit 2cbe130f88a71b0ad092cb5c8cd49191edbc0d57
+| |\  Merge: 8d848bf 3293e4a
+| | | Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| | | Date:   Wed Oct 29 02:04:02 2025 -0400
+| | | 
+| | |     imrana15
+| | |   
+* | |   commit b82abaa3325956e94b9e86937736a35dc668aeff
+|\ \ \  Merge: 658fb9e a56dd50
+| | | | Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| | | | Date:   Wed Oct 29 02:10:42 2025 -0400
+| | | | 
+| | | |     imrana15
+| | | |   
+| * | |   commit a56dd50c95dc8d5340bdfd8d111acdd1a047fbd9
+| |\ \ \  Merge: 74a73a5 427d152
+| | | | | Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| | | | | Date:   Wed Oct 29 02:08:42 2025 -0400
+| | | | | 
+| | | | |     imrana15
+| | | | | 
+| | * | | commit 427d15256eb9865c2d87fc813520a06b396c4202
+| | | | | Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| | | | | Date:   Tue Oct 28 20:59:52 2025 -0400
+| | | | | 
+| | | | |     imrana15
+| | | | |   
+| * | | |   commit 74a73a57647dfb60ef0828b41f056b9e32afb0f1
+| |\ \ \ \  Merge: 7b7ed08 d47c673
+| | | | | | Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| | | | | | Date:   Wed Oct 29 01:07:13 2025 -0400
+| | | | | | 
+| | | | | |     imrana15
+| | | | | |   
+* | | | | |   commit 658fb9e85ac29e5e9446548708be6700c8f7e670
+|\ \ \ \ \ \  Merge: 8d848bf 3293e4a
+| |_|_|_|/ /  Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+|/| | | | /   Date:   Wed Oct 29 02:04:02 2025 -0400
+| | |_|_|/    
+| |/| | |         imrana15
+| | | | |   
+| * | | |   commit 3293e4afa577f557d25547708cb6bcd4c9f0cdb3
+| |\ \ \ \  Merge: 7b7ed08 d47c673
+| | |/ / /  Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| |/| / /   Date:   Wed Oct 29 01:07:13 2025 -0400
+| | |/ /    
+| | | |         imrana15
+| | | | 
+| * | | commit 7b7ed082254aed43baecffd24aeb26635e26160d
+| | |/  Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| |/|   Date:   Tue Oct 28 20:59:52 2025 -0400
+| | |   
+| | |       imrana15
+| | |   
+* | |   commit 8d848bf0af0ca87a32e072b001ffe2b42724ac25
+|\ \ \  Merge: a212119 d47c673
+| | |/  Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| |/|   Date:   Wed Oct 29 02:03:34 2025 -0400
+| | |   
+| | |       Merge remote-tracking branch 'origin/master'
+| | | 
+| * | commit d47c6733809d8c4495ff80872bf66a23b1989058
+| |/  Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| |   Date:   Tue Oct 28 20:59:52 2025 -0400
+| |   
+| |       imrana15
+| | 
+* | commit a21211928202fb3a90698051ac9ff329c8c14dce
+|/  Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+|   Date:   Tue Oct 28 20:59:52 2025 -0400
+|   
+|       imrana15
+| 
+* commit 2884e13db51d3e1d37a7751ffc0baf71cde7e418
+| Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+| Date:   Tue Oct 28 14:16:33 2025 -0400
+| 
+|     US2.003 completed. Backlogs updated
+| 
+* commit 2b70e4ad682055ac990f9ff4a05d758726565d14
+| Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| Date:   Mon Oct 27 14:21:12 2025 -0400
+| 
+|     Completed US2.001
+| 
+* commit 38a88549afc92e221b4a73ee9617b43594af692e
+| Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| Date:   Mon Oct 27 11:34:21 2025 -0400
+| 
+|     Updated icons (ahme1250)
+| 
+* commit c7c04063dde0ba8da671b8d6c49e4da97f0e8756
+| Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| Date:   Mon Oct 27 10:54:11 2025 -0400
+| 
+|     updated product backlog
+| 
+* commit 263458d22af018a00d3c1f98e977b0e6aa300d0b
+| Author: Abdullah Mohamed Fawaz Alnabulsi <alnabu11@dh2020pc22.utm.utoronto.ca>
+| Date:   Thu Oct 23 23:44:21 2025 -0400
+| 
+|     Sprint 1 completed – all BUG1.00x and US1.00x branches merged and verified. (alnabu11)
+|   
+*   commit 8746faf1e45500f09488a9c497df143ebbdd3e07
+|\  Merge: 500c71e 957694e
+| | Author: Abdullah Mohamed Fawaz Alnabulsi <alnabu11@dh2020pc22.utm.utoronto.ca>
+| | Date:   Thu Oct 23 23:43:37 2025 -0400
+| | 
+| |     Merge BUG1.005 – fixed squiggle connection bug and restored live drawing. (alnabu11)
+| | 
+| * commit 957694ed0cb46d7d82ee242fb1f68e8918b1665a
+| | Author: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| | Date:   Thu Oct 23 22:37:51 2025 -0400
+| | 
+| |     Add dailyScrumMeeting2 entries
+| |     
+| |     Signed-off-by: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| | 
+| * commit 4be222448ec26bba7271a1927927b1028be5f6ab
+| | Author: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| | Date:   Thu Oct 23 22:29:50 2025 -0400
+| | 
+| |     updated Bug1.005 entry again
+| |     
+| |     Signed-off-by: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| | 
+| * commit f279613a3f753ba47ebfeaaa40a8a4c35a13a9ad
+| | Author: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| | Date:   Thu Oct 23 22:26:48 2025 -0400
+| | 
+| |     updated Bug1.005 entry (sprintbacklog1)
+| |     
+| |     Signed-off-by: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| | 
+| * commit 26da6230fa1d891b84890921422c2d74f7e92dbb
+| | Author: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| | Date:   Thu Oct 23 22:09:59 2025 -0400
+| | 
+| |     restored squiggle live-drawing feedback that was lost (BUG1.005)
+| |     
+| |     Signed-off-by: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| | 
+| * commit 265d6e551ebaaa2c072dbb071de4897e6be40b31
+| | Author: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| | Date:   Thu Oct 23 22:04:32 2025 -0400
+| | 
+| |     Update PaintPanel – handle independent squiggle strokes (BUG1.005)
+| |     
+| |     Signed-off-by: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| | 
+| * commit 195a26543b3942c9963163118d9298facac963fe
+| | Author: Abdullah Mohamed Fawaz Alnabulsi <alnabu11@dh2020pc14.utm.utoronto.ca>
+| | Date:   Thu Oct 23 22:03:25 2025 -0400
+| | 
+| |     Refactor PaintModel – store list of Squiggles instead of Points (BUG1.005)
+| |     
+| |     Signed-off-by: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| | 
+| * commit 94aeba60d7abffda9741e8c76aecba27d02d4841
+| | Author: midnights8452 <145616884+midnights8452@users.noreply.github.com>
+| | Date:   Thu Oct 23 20:56:39 2025 -0400
+| | 
+| |     Add Squiggle.java – class for individual stroke (BUG1.005)
+| | 
+* | commit 500c71ed9a83ab58acc893d0d1ae86cbcff7d8c4
+| | Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| | Date:   Thu Oct 23 21:58:36 2025 -0400
+| | 
+| |     imrana15
+| | 
+* | commit d603b04ae03596dcd508881edb33bc20ffd51372
+|\| Merge: 19aabd7 40e13a6
+| | Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| | Date:   Thu Oct 23 21:46:35 2025 -0400
+| | 
+| |     Merge remote-tracking branch 'origin/master'
+| | 
+| * commit 40e13a6fa8bce4f31385e505cae104d321c8c489
+| | Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| | Date:   Thu Oct 23 16:44:30 2025 -0400
+| | 
+| |     DailyScrum1 (ahme1250
+| | 
+| * commit 9bd2d6f68faa64b5ae1524c94d27d72c107456c4
+| | Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+| | Date:   Thu Oct 23 09:13:10 2025 -0400
+| | 
+| |     Daily Scrum 4 Updated (phanale5)
+| | 
+* | commit 19aabd7e76f240109b3c5bae2b3b4ea00f8ba802
+|/  Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+|   Date:   Thu Oct 23 21:46:25 2025 -0400
+|   
+|       imrana15
+| 
+* commit 69ee8d0904b6484deee5fee2bf9488641a3af34c
+| Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| Date:   Thu Oct 23 02:07:06 2025 -0400
+| 
+|     imrana15
+| 
+* commit 24687c4c7719fb9fe32325fa04d14406aede1cf5
+| Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| Date:   Thu Oct 23 02:01:31 2025 -0400
+| 
+|     imrana15
+| 
+* commit 953e00f1ce85ffd8ff07d7a11a82b756ba0b8a4d
+| Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| Date:   Wed Oct 22 21:35:56 2025 -0400
+| 
+|     DailyScrum1 (ahme1250)
+|   
+*   commit 9ff05aa75bfed3266b7b36d8c92822301c90dc3c
+|\  Merge: f2a642c 64bb357
+| | Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| | Date:   Tue Oct 21 16:49:24 2025 -0400
+| | 
+| |     Merge remote-tracking branch 'origin/master'
+| |   
+| *   commit 64bb357b0bd5df33a374fd70fd929f8fa1617031
+| |\  Merge: f76a050 97d4e09
+| | | Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| | | Date:   Mon Oct 20 17:15:05 2025 -0400
+| | | 
+| | |     Merge remote-tracking branch 'origin/master'
+| | |   
+| | *   commit 97d4e0991733aae2cf17f1eae93a9b1e627acecc
+| | |\  Merge: c099752 4a80a37
+| | | | Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| | | | Date:   Mon Oct 20 17:14:40 2025 -0400
+| | | | 
+| | | |     Merge remote-tracking branch 'origin/master'
+| | | |   
+| * | |   commit f76a050d4e52002baf1754f1405d73d7e854a4a4
+| |\ \ \  Merge: c099752 4a80a37
+| | |/ /  Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| |/| /   Date:   Mon Oct 20 17:14:40 2025 -0400
+| | |/    
+| | |         Merge remote-tracking branch 'origin/master'
+| | |   
+| | *   commit 4a80a3723a3de49e1376201eb53bbce8699da9ee
+| | |\  Merge: 71700d8 5a3aa40
+| | | | Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| | | | Date:   Mon Oct 20 17:13:40 2025 -0400
+| | | | 
+| | | |     Merge branch 'bug1.004'
+| | | |   
+| * | |   commit c0997528f63415bbfbdab6292eee6103d896a013
+| |\ \ \  Merge: 71700d8 5a3aa40
+| | |/ /  Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| |/| /   Date:   Mon Oct 20 17:13:40 2025 -0400
+| | |/    
+| | |         Merge branch 'bug1.004'
+| | | 
+| | * commit 5a3aa40f0cb8db6a6fd4a0f425be838a36357681
+| | | Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| | | Date:   Mon Oct 20 17:12:00 2025 -0400
+| | | 
+| | |     imrana15
+| | |   
+| * |   commit 71700d86076c5a405d361e57c32eb11356268108
+| |\ \  Merge: 265eaff e10c28b
+| | | | Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| | | | Date:   Mon Oct 20 17:13:22 2025 -0400
+| | | | 
+| | | |     Merge remote-tracking branch 'origin/master'
+| | | | 
+| | * | commit e10c28b6b7f5c4343a447583b9792fa2ec5670c8
+| | |/  Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| | |   Date:   Mon Oct 20 17:12:00 2025 -0400
+| | |   
+| | |       imrana15
+| | | 
+| * | commit 265eaff3eff390b3ad6004592b2e731c62d274f0
+| |/  Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| |   Date:   Mon Oct 20 17:12:00 2025 -0400
+| |   
+| |       imrana15
+| | 
+| * commit 5d76858e560540f76fb6dc2637e27ed7fda3ee28
+| | Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| | Date:   Mon Oct 20 17:00:41 2025 -0400
+| | 
+| |     imrana15
+| | 
+| * commit 064cb5fb08e35c99a28f5160daa3ac6d0a88bf1e
+| | Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| | Date:   Mon Oct 20 16:59:29 2025 -0400
+| | 
+| |     imrana15
+| |   
+| *   commit d627777a20a80bc184f175e9c5b691505d86769e
+| |\  Merge: 43a2696 ce9897e
+| | | Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+| | | Date:   Mon Oct 20 14:34:41 2025 -0400
+| | | 
+| | |     Merge remote-tracking branch 'origin/master'
+| | | 
+| | * commit ce9897ec4f7ec09700711ff94473505b94dfc117
+| | | Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| | | Date:   Mon Oct 20 14:33:32 2025 -0400
+| | | 
+| | |     imrana15
+| | | 
+| | * commit 21b5ab3229027912769594cd3cc41918adf1900d
+| | | Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| | | Date:   Mon Oct 20 14:31:28 2025 -0400
+| | | 
+| | |     Merge branch 'BUG1.002'
+| | |   
+| | *   commit a0a6af3b8b5f1196f5ef3338138f23e6c38c7102
+| | |\  Merge: 7bf3d90 011b996
+| | | | Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| | | | Date:   Mon Oct 20 14:31:10 2025 -0400
+| | | | 
+| | | |     Merge remote-tracking branch 'origin/master'
+| | | |   
+| | * |   commit 7bf3d90d0b3a44097c609552bed2efa88d38eeff
+| | |\ \  Merge: 0abbfc1 29a0ce0
+| | | | | Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| | | | | Date:   Mon Oct 20 14:30:14 2025 -0400
+| | | | | 
+| | | | |     Merge branch 'BUG1.002'
+| | | | | 
+| | | * | commit 29a0ce066a1ac48f689c79d8eaff8a1570ad30d8
+| | | | | Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| | | | | Date:   Mon Oct 20 14:29:35 2025 -0400
+| | | | | 
+| | | | |     fixed bug1.004 imrana15
+| | | | | 
+| | * | | commit 0abbfc1f8e6a41dfaca6bd0754ec5e9ebc773777
+| | |/ /  Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| | | |   Date:   Mon Oct 20 13:01:39 2025 -0400
+| | | |   
+| | | |       fixed bug1.004
+| | | | 
+| | * | commit 5fb37334af0278e9d5baeed2a87a539d3e0dc884
+| | | | Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| | | | Date:   Mon Oct 20 04:54:30 2025 -0400
+| | | | 
+| | | |     fixed bug1.004
+| | | | 
+| | * | commit cd6e31711979bb06e1ce5d618c13c9e220d1a127
+| | | | Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| | | | Date:   Mon Oct 20 04:53:55 2025 -0400
+| | | | 
+| | | |     fixed bug1.004
+| | | | 
+| | * | commit 865e53640334c46cff1fc99291a6f69b3eadf4d1
+| | | | Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| | | | Date:   Mon Oct 20 04:39:29 2025 -0400
+| | | | 
+| | | |     imrana15
+| | | | 
+| | * | commit 12acba374f7ff1de24b3ae84746f4fd9adf889de
+| | | | Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| | | | Date:   Mon Oct 20 04:38:15 2025 -0400
+| | | | 
+| | | |     imrana15
+| | | | 
+| * | | commit 43a2696791373cc3be651d2628c0ecc4e7c2d6ef
+| | | | Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+| | | | Date:   Mon Oct 20 14:34:22 2025 -0400
+| | | | 
+| | | |     Updated sprintBacklog1.txt
+| | | | 
+* | | | commit f2a642c9b70a0db5adfeb666bc203e3cdf931335
+| |_|/  Author: AshirAhmed1 <ashirahmed884@gmail.com>
+|/| |   Date:   Tue Oct 21 16:46:47 2025 -0400
+| | |   
+| | |       DailyScrum1 ahme1250
+| | | 
+* | | commit 011b9960bd2a2d7e18fd659438d9d3af8523ebbe
+|/ /  Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| |   Date:   Mon Oct 20 13:22:07 2025 -0400
+| |   
+| |       DailyScrum1 (Ashir)
+| | 
+* | commit b193893fb1ff8da7dcadda06f5b655a4fff46713
+|/  Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+|   Date:   Mon Oct 20 10:59:04 2025 -0400
+|   
+|       Updated dailyScrumMeeting4.txt
+| 
+* commit 10af662628e4dd8545c024ca784f4ba5e5289aed
+| Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| Date:   Mon Oct 20 04:28:27 2025 -0400
+| 
+|     imrana15
+| 
+* commit 855c1c7cf96982cea295354c1ad85fe15deac0c5
+| Author: Ahmed Imran <ahmed.imranali@mail.utoronto.ca>
+| Date:   Mon Oct 20 04:26:59 2025 -0400
+| 
+|     imrana15
+| 
+* commit 629dea2488a2f6cb85293536be3013adabd3c201
+| Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| Date:   Sun Oct 19 18:39:20 2025 -0400
+| 
+|     Updated my dailyScrumMeeting (Ashir)
+| 
+* commit a558dd97c689768cc0548bade789cafabb8ffdf3
+| Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| Date:   Sat Oct 18 23:36:06 2025 -0400
+| 
+|     Completed US1.003 (Ashir)
+| 
+* commit afde8722aca489a661e630b8697f65973836213f
+| Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| Date:   Sat Oct 18 16:34:54 2025 -0400
+| 
+|     Completed BUG1.001 (ASHIR)
+| 
+* commit 1b99bd61c528a72f9bc6a3ad5d7346720d835b7a
+| Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+| Date:   Sat Oct 18 10:52:59 2025 -0400
+| 
+|     Backlog: US1.002 Completed
+| 
+* commit 7cca75e00946ade012e37b230d449ae473839401
+| Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+| Date:   Sat Oct 18 10:50:02 2025 -0400
+| 
+|     This commit is in branch US1.002
+| 
+* commit 313c4dd7474c03a0773f4371a249b2b872b132be
+| Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+| Date:   Sat Oct 18 00:07:48 2025 -0400
+| 
+|     Backlog: BUG1.006 Completed
+| 
+* commit 9342d7d8193d5d720f172feb919bb88772f93166
+| Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+| Date:   Fri Oct 17 23:53:52 2025 -0400
+| 
+|     This commit is in branch BUG1.006
+| 
+* commit 449b696af9da2222bac376f614b9b58bd081d089
+| Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+| Date:   Fri Oct 17 12:29:52 2025 -0400
+| 
+|     BUG1.006 and US1.002 BackLog
+| 
+* commit a1ff6e40ec2722dfddb2a7694e59ea83b730b09a
+| Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+| Date:   Fri Oct 17 12:29:32 2025 -0400
+| 
+|     BUG1.006 and US1.002 Claimed
+| 
+* commit 517a791f7e657298cd836215ab13a081e370608f
+| Author: AshirAhmed1 <ashirahmed884@gmail.com>
+| Date:   Thu Oct 16 23:54:12 2025 -0400
+| 
+|     US1.003 ASHIR BackLog
+| 
+* commit 6c66d8a025350487e5c6f2f9d62efbe9d43b1671
+| Author: Alexander Phan <alexanderjacob.phan@mail.utoronto.ca>
+| Date:   Thu Oct 16 11:38:08 2025 -0400
+| 
+|     Added member4 to members.txt
+| 
+* commit 082eb9b38c6cee38f06ea6baccaea3bee0bc658d
+| Author: Ashir Ahmed <ahme1250@dh2020pc15.utm.utoronto.ca>
+| Date:   Thu Oct 16 11:24:25 2025 -0400
+| 
+|     PRODUCTBACKLOG USER STORY us1.003
+| 
+* commit ae3f135bf5964f407075787e644475845facb309
+| Author: Ashir Ahmed <ahme1250@dh2020pc15.utm.utoronto.ca>
+| Date:   Thu Oct 16 11:05:57 2025 -0400
+| 
+|     Ashir BUG1.001
+| 
+* commit e08143a3a05b65ee79b0f463063244e481ef865d
+| Author: Abdullah Mohamed Fawaz Alnabulsi <alnabu11@dh2020pc14.utm.utoronto.ca>
+| Date:   Thu Oct 16 10:52:09 2025 -0400
+| 
+|     Assignment 2 Starter Code
+| 
+* commit fc4d35c377525adadf394472817636804010a21e
+  Author: Ashir Ahmed <ahme1250@dh2020pc15.utm.utoronto.ca>
+  Date:   Thu Oct 16 10:42:53 2025 -0400
+  
+      Members complete

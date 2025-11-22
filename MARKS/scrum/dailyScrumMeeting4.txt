@@ -1,0 +1,160 @@
+# Fill in, commit and push each day.
+Member name: Alexander Phan      email: alexanderjacob.phan@mail.utoronto.ca    utorid: phanale5
+
+Oct 15,2025
+	What I did yesterday: Read over assignment 2
+	What I will do today: Plan and prepare for sprint1
+	Obstacles I face:
+
+Oct 16,2025
+	What I did yesterday: Plan and prepare sprint1
+	What I will do today: Fix Bug1.006 and work of User1.002
+	Obstacles I face: Familiarizing myself with the GraphicContext Class
+
+Oct 17,2025
+	What I did yesterday:Completed Bug1.006
+	What I will do today: Finish User1.002
+	Obstacles I face: Learning the functions of mouse events
+
+Oct 18,2025
+	What I did yesterday: Completed User1.002
+	What I will do today: Look over bug1.006 and user1.002 in case of any bugs
+	Obstacles I face: no obstacles
+
+Oct 19,2025
+	What I did yesterday: Look over my code
+	What I will do today: Look over other completed bugs and stories
+	Obstacles I face: no obstacles
+
+Oct 20,2025
+	What I did yesterday: Look over completed code
+	What I will do today: Check in with group, individual tasks completed
+	Obstacles I face: no obstacles
+
+Oct 21,2025
+	What I did yesterday: check in with group
+	What I will do today: Give reminders and help other group members
+	Obstacles I face: no obstacles
+
+Oct 22,2025
+	What I did yesterday: help group
+	What I will do today: look over and prepare for sprint 2
+	Obstacles I face: no obstacles
+
+Oct 23,2025
+	What I did yesterday:Look over and prepare for sprint 2
+	What I will do today: finished sprint 1
+	Obstacles I face: no obstacles
+
+Oct 24,2025
+	What I did yesterday: finished sprint 1
+	What I will do today: Plan sprint 2 with group mates
+	Obstacles I face: No obstacles
+
+Oct 25,2025
+	What I did yesterday: Planned sprint 2
+	What I will do today: Finalize plan for sprint 2
+	Obstacles I face: No obstacles
+
+Oct 26,2025
+	What I did yesterday: Finalize plan for sprint 2
+	What I will do today: Begin working on US2.003
+	Obstacles I face: No Obstacles
+
+Oct 27,2025
+	What I did yesterday: Begin US2.003
+	What I will do today: Finish implementing oval to add to canvas
+	Obstacles I face: No obstacles
+
+Oct 28,2025
+	What I did yesterday: Finish drawing oval
+	What I will do today: Add oval feedback and preview
+	Obstacles I face: No obstacles
+
+Oct 29,2025
+	What I did yesterday: Add oval feedback and preview
+	What I will do today: Finish and look over US2.003
+	Obstacles I face: No obstacles
+
+Oct 30,2025
+	What I did yesterday: Finish US2.003
+	What I will do today: Check up with group and finalize sprint 2
+	Obstacles I face: No obstacles
+
+Oct 31,2025
+	What I did yesterday: Finished sprint 2
+	What I will do today: Discuss sprint 3 with group
+	Obstacles I face: No obstacles
+
+Nov 1,2025
+	What I did yesterday: Plan sprint 3
+	What I will do today: Help group member think of reimplementation of the architecture
+	Obstacles I face: No obstacles
+
+Nov 2,2025
+	What I did yesterday: Worked on thinking of a reimplementation
+	What I will do today: Discuss bugs of shapes that should be fixed
+	Obstacles I face: No obstacles
+
+Nov 3,2025
+	What I did yesterday: Discussed possible bugs
+	What I will do today: Work on Bug3.001
+	Obstacles I face: No obstacles
+
+Nov 4,2025
+	What I did yesterday:work on Bug3.001
+	What I will do today: Continue Bug3.001 and fix ovals implementation
+	Obstacles I face: No obstacles
+
+Nov 5,2025
+	What I did yesterday: fix ovals implementation
+	What I will do today: Request a pull request for BUG3.001
+	Obstacles I face: No obstacles
+
+Nov 6,2025
+	What I did yesterday: Waited for pull request to be completed
+	What I will do today: Finalize sprint 3 and accept any pull requests
+	Obstacles I face:No obstacles
+
+Nov 7,2025
+	What I did yesterday: Finalize sprint 3
+	What I will do today: Implement Polyline tool
+	Obstacles I face: None
+
+Nov 8,2025
+	What I did yesterday: Implement Polyline tool
+	What I will do today: Added visual feedback to polyline tool
+	Obstacles I face: Understanding architecture rework for previews
+
+Nov 9,2025
+	What I did yesterday: Added visual feedback to polyline
+	What I will do today: Implement a color change panel
+	Obstacles I face: Adjusting abstract interface and shape tools
+
+Nov 10,2025
+	What I did yesterday:Implement color change panel
+	What I will do today: Look over group members work
+	Obstacles I face: none
+
+Nov 11,2025
+	What I did yesterday:Look over group members work
+	What I will do today: Accept pull requests
+	Obstacles I face: Merging conflicts
+
+Nov 12,2025
+	What I did yesterday: Accept pull requests
+	What I will do today: Implement eraser tool, fix bugs from merging.
+	Obstacles I face: Fixing bugs by understanding new refactored code
+
+Nov 13,2025
+	What I did yesterday: Implement eraser tool.
+	What I will do today: Implement paint bucket tool and eye drop tool. Add javadoc to most shapes.
+	Obstacles I face: Fixing bugs lost from merging branches.
+
+Nov 14,2025
+	What I did yesterday: Implement paint bucket tool
+	What I will do today: Merge group members features and finish up sprint 4.
+	Looked for bugs in the code and adjusted areas of code. For example, the selected color viewer to
+	update from the eye dropper.
+	Obstacles I face: Had to scrap eraser due to bugs and to avoid rework on the architecture
+

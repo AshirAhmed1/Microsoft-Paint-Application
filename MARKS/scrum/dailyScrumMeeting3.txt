@@ -1,0 +1,158 @@
+# Fill in, commit and push each day.
+Member name: Ahmed Imran Ali     email: ahmed.imranali@mail.utornto.ca  utorid:  imrana15
+
+Oct 15,2025
+	What I did yesterday:Read over assignment 2
+	What I will do today:  Plan and prepare for sprint1
+	Obstacles I face:
+
+Oct 16,2025
+	What I did yesterday:Plan and prepare for sprint1
+	What I will do today: Fix Bug1.004
+	Obstacles I face: Getting familiar with all the classes
+
+Oct 17,2025
+	What I did yesterday: fix Bud1.002
+	What I will do today:Prepare for Bug1.002
+	Obstacles I face: I did not know javafx was
+
+Oct 18,2025
+	What I did yesterday:Prepare for Bug1.002
+	What I will do today: Learn more about javafx
+	Obstacles I face: no obstacles
+
+Oct 19,2025
+	What I did yesterday: Learn more about javafx
+	What I will do today: Read through the button class and understand it
+	Obstacles I face: no obstacles
+
+Oct 20,2025
+	What I did yesterday: Read through the button class and understand it
+	What I will do today: Started Bug1.002
+	Obstacles I face:no obstacles
+
+Oct 21,2025
+	What I did yesterday:Started Bug0.002
+	What I will do today: Learn more to finish bug1.002
+	Obstacles I face: no obstacles
+
+Oct 22,2025
+	What I did yesterday: Learn more to finish bug1.002
+	What I will do today: Complete Bug1.002
+	Obstacles I face:no obstacles
+
+Oct 23,2025
+	What I did yesterday:Complete Bug1.002
+	What I will do today: Check with teammates
+	Obstacles I face:no obstacles
+
+Oct 24,2025
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+
+Oct 25,2025
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+
+Oct 26,2025
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+
+Oct 27,2025
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+
+Oct 28,2025
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+
+Oct 29,2025
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+
+Oct 30,2025
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+
+Oct 31,2025
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+
+Nov 1,2025
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+
+Nov 2,2025
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+
+Nov 3,2025
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+
+Nov 4,2025
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+
+Nov 5,2025
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+
+Nov 6,2025
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+
+Nov 7,2025
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+
+Nov 8,2025
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+
+Nov 9,2025
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+
+Nov 10,2025
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+
+Nov 11,2025
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+
+Nov 12,2025
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+
+Nov 13,2025
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+
+Nov 14,2025
+	What I did yesterday:
+	What I will do today:
+	Obstacles I face:
+
