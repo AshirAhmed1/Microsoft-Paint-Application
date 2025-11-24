@@ -43,6 +43,12 @@
 --------------------------------------------------------------------
  git log --graph 
 --------------------------------------------------------------------
+* commit 64b90a6cf69c3edd868b031a7ba971b5c86fd60b
+| Author: MCS CSC207H5 <207@dh2010pc10.utm.utoronto.ca>
+| Date:   Mon Nov 24 00:23:25 2025 -0500
+| 
+|     Completed setup for MARKS
+| 
 * commit 472374c4c7e74cf70b37700c451dba157395bf11
 | Author: MCS CSC207H5 <207@dh2010pc10.utm.utoronto.ca>
 | Date:   Sat Nov 22 10:34:38 2025 -0500
