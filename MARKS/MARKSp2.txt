@@ -3,37 +3,37 @@ Functionality Basics: Tested by running your code.
 	Mark with E for error
 	[0E] ERROR: 
 	
-	[YN] Icons for drawing modes
+	[Y] Icons for drawing modes
 		BUG1.001 Icons instead of text for drawing mode selection
 
-	[YN] Very easy to see which drawing mode is selected
+	[Y] Very easy to see which drawing mode is selected
 		BUG1.002 Drawing selection mode not indicated
 
-	[YN] Can create multiple, disconnected squiggles 
+	[Y] Can create multiple, disconnected squiggles 
 		without clicking on the drawing mode again.
 
 		BUG1.005 Squiggle is broken
 		Fix was to create multiple squiggle objects
 
-	[YN] Draw a circle by clicking on center and dragging radius.
+	[Y] Draw a circle by clicking on center and dragging radius.
 		BUG1.006 Circle drawing is broken
 		
-	[YN] Feedback as drag on radius happen
+	[Y] Feedback as drag on radius happen
 		US1.002 Draw Circle Feedback
 		Show drag on circle radius. 
 
-	[YN] Rectangle drawing works, with second corner in any location
+	[Y] Rectangle drawing works, with second corner in any location
 		US1.003 Draw Rectangle
 
-	[YN] Feedback as dragging second point
+	[Y] Feedback as dragging second point
 		US1.004 Draw Rectangle Feedback
 
-	[YN] Square 
-	[YN] Triangle
-	[YN] Oval
+	[Y] Square 
+	[Y] Triangle
+	[Y] Oval
 
 FUNCTIONALITY_END
-FUNCTIONALITY: /10
+FUNCTIONALITY: 10/10
 
 
 EXTRAFEATURES_START
@@ -51,11 +51,48 @@ EXTRAFEATURES_START
 		Mark with F for feature error
 		[0F] ERROR: 
 
-		Feature: DIFFICULTY:[123] OUR_NAME
-		FeatureName: THEIR_NAME
+		Feature: DIFFICULTY:[3] SelectXCutCopyXPasteXDrag
+		FeatureName: Select and Move Tool, Cut, Copy , Paste
 
-		TOTAL FEATURE SCORE: [] = sum(difficulty)
-		TOTAL FEATURE ERRORS: [] = sum(errors)
-		FEATURE SCORE: [] = TOTAL FEATURE SCORE - TOTAL FEATURE ERRORS
+		Feature: DIFFICULTY:[1] KeyboardShortcuts
+		FeatureName: Keyboard Shortcuts for Tool Selection
+
+		Feature: DIFFICULTY:[2] UndoRedo
+		FeatureName: Undo/Redo Functionality
+
+		Feature: DIFFICULTY:[1] RGBColorPicker
+		FeatureName: Color Wheel Selector
+
+		Feature: DIFFICULTY:[2] ModifyColorXFillXStrokeXThickness
+		FeatureName: PaintBucket Tool
+		[F] Missing atleast one of the above
+
+		Feature: DIFFICULTY:[1] Eyedropper
+		FeatureName: EyeDropper Tool
+
+		Feature: DIFFICULTY:[1] CursorSize
+		FeatureName: Adaptive Cursor
+
+		Feature: DIFFICULTY:[3] TextTool
+		FeatureName: Text Tool Color and Movement
+		[F] if missing choice of font and/or size
+		[F] if missing font weight (bold or other measure)
+
+		Feature: DIFFICULTY:[1] CanvasSize
+		FeatureName: Adjustable Canvas
+		[F] starting size doesn't fit all elements of the application
+
+		Feature: DIFFICULTY:[1] New screen
+		FeatureName: Clear
+
+		Feature: DIFFICULTY:[3] Polyline
+		FeatureName: Polyline
+
+		Feature: DIFFICULTY:[1] PrettyGUI
+		FeatureName: Not Specified
+
+		TOTAL FEATURE SCORE: [20] = sum(difficulty)
+		TOTAL FEATURE ERRORS: [4] = sum(errors)
+		FEATURE SCORE: [16] = TOTAL FEATURE SCORE - TOTAL FEATURE ERRORS
 EXTRAFEATURES_END
-EXTRAFEATURES: 000
+EXTRAFEATURES: 16
