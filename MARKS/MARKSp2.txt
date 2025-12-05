@@ -54,9 +54,6 @@ EXTRAFEATURES_START
 		Feature: DIFFICULTY:[3] SelectXCutCopyXPasteXDrag
 		FeatureName: Select and Move Tool, Cut, Copy , Paste
 
-		Feature: DIFFICULTY:[1] KeyboardShortcuts
-		FeatureName: Keyboard Shortcuts for Tool Selection
-
 		Feature: DIFFICULTY:[2] UndoRedo
 		FeatureName: Undo/Redo Functionality
 
@@ -91,17 +88,17 @@ EXTRAFEATURES_START
 		Feature: DIFFICULTY:[1] PrettyGUI
 		FeatureName: Not Specified
 
-		TOTAL FEATURE SCORE: [20] = sum(difficulty)
+		TOTAL FEATURE SCORE: [19] = sum(difficulty)
 		TOTAL FEATURE ERRORS: [4] = sum(errors)
-		FEATURE SCORE: [16] = TOTAL FEATURE SCORE - TOTAL FEATURE ERRORS
+		FEATURE SCORE: [15] = TOTAL FEATURE SCORE - TOTAL FEATURE ERRORS
 EXTRAFEATURES_END
-EXTRAFEATURES: 16
+EXTRAFEATURES: 15
 
 ACCESSIBILITYFEATURES_START
-	AccessibilityFeature: OUR_NAME
-        AccessibilityFeatureName: THEIR_NAME
+	AccessibilityFeature: KeyboardShortcuts
+        AccessibilityFeatureName: Keyboard Shortcuts for Tool Selection
 
-	[01] Accessibility feature attempted
-	[01] Accessibility has an impact
+	[1] Accessibility feature attempted
+	[1] Accessibility has an impact
 ACCESSIBILITYFEATURES_END
-ACCESSIBILITY: /2
+ACCESSIBILITY: 2/2
