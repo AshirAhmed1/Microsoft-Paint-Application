@@ -105,10 +105,10 @@ ARCHITECTURE: 3/6
 GIT_START
 Git: We expect to see simultaneous working branches merging into master, moving the project forward.
 	1) branches on BUG/US
-		[YN] list of branches named according to US/BUG
+		[Y] list of branches named according to US/BUG
 
 	2) quality of git log --graph 
-		[YN] clean git graph (branches and merges)
+		[Y] clean git graph (branches and merges)
 GIT_END
 GIT: 2/2
 
