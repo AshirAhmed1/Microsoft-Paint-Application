@@ -378,9 +378,7 @@ When pasted, the copied shape is translated to the requested location and added 
 
 - Ashir
 - Alex
-- Abdullah
 - Ahmed
-- Arnold
 
 ## Notes
 
