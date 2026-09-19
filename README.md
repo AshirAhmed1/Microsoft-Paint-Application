@@ -1,115 +1,206 @@
 # Microsoft Paint Application
 
-## Overview
+A JavaFX desktop drawing application featuring shape tools, freehand drawing, object selection and movement, customizable styling, clipboard operations, and command-based undo/redo.
 
-Microsoft Paint Application is a JavaFX-based drawing program built for a university software design assignment. The project recreates many core features of a basic paint application, allowing users to draw shapes, change colors, adjust line thickness, move objects, add text, and use editing actions such as copy, cut, paste, undo, redo, and clear.
-
-The application follows an object-oriented design and uses several design patterns, including MVC, Observer, Factory, and Command, to keep the code organized, scalable, and easier to maintain.
+The application is built using object-oriented design principles and applies **MVC, Observer, Command, and Factory design patterns** to separate application state, rendering, user interaction, and tool creation.
 
 ## Features
 
 ### Drawing Tools
 
-Users can draw multiple types of shapes and freehand objects on the canvas:
+Create and edit multiple types of drawable objects:
 
-- Circle
-- Rectangle
-- Square
-- Triangle
-- Oval
-- Squiggle/freehand drawing
-- Polyline
-- Text
+* Circle
+* Rectangle
+* Square
+* Triangle
+* Oval
+* Squiggle / freehand drawing
+* Polyline
+* Text
 
-Each shape supports drawing with the currently selected color, line thickness, and fill style.
+Shapes support configurable colors, line thickness, and fill styles.
 
 ### Editing Tools
 
-The application includes several editing tools similar to a standard paint program:
+* Select and move shapes
+* Copy selected shapes
+* Cut selected shapes
+* Paste copied or cut shapes
+* Clear the canvas
+* Undo previous actions
+* Redo undone actions
 
-- Select and move shapes
-- Copy selected shapes
-- Cut selected shapes
-- Paste copied or cut shapes
-- Clear the canvas
-- Undo previous actions
-- Redo undone actions
+### Styling Tools
 
-### Styling Options
+* Custom color picker
+* Preset colors
+* Fill or outline mode
+* Adjustable line thickness
+* Paint bucket for recoloring shapes
+* Eyedropper for selecting an existing shape color
 
-Users can customize how shapes appear:
+## Architecture
 
-- Color picker for custom colors
-- Preset color buttons
-- Fill or outline mode
-- Adjustable line thickness
-- Paint bucket tool for recoloring shapes
-- Eyedropper tool for selecting a shape’s existing color
+The application is centered around `PaintModel`, which stores the drawing state, selected objects, current styling settings, clipboard contents, and undo/redo history.
+
+`PaintPanel` renders the canvas and observes changes to the model. User interaction is handled through dedicated tool classes such as `CircleTool`, `RectangleTool`, `SquiggleTool`, and `SelectMoveTool`.
+
+Actions that require undo and redo support are implemented as command objects, including:
+
+* `AddShapeCommand`
+* `MoveCommand`
+* `CutCommand`
+* `PasteCommand`
+* `ClearCanvasCommand`
+* `RecolorCommand`
+* `StyleCommand`
+* `TextCommand`
+
+This separates user actions from application state and allows editing operations to be reversed and reapplied consistently.
+
+## Design Patterns
+
+### MVC
+
+The project separates application state, interface construction, rendering, and user interaction.
+
+* `PaintModel` manages application state
+* `View` builds the main interface and connects controls to application actions
+* `PaintPanel` renders the canvas and delegates mouse input to the active tool
+
+### Observer
+
+`PaintModel` extends `Observable`, while `PaintPanel` observes the model.
+
+Whenever the application's state changes, the canvas is notified and redrawn automatically.
+
+### Command
+
+Editing operations that support undo and redo are represented as command objects.
+
+Each command implements the `Command` interface and provides `execute()` and `undo()` behavior.
+
+This pattern is used for actions such as:
+
+* Adding shapes
+* Moving shapes
+* Cutting and pasting
+* Clearing the canvas
+* Recoloring objects
+* Changing styles
+* Adding text
+
+### Factory
+
+`ToolFactory` creates the appropriate tool implementation based on the selected `ToolType`.
+
+Centralizing tool creation makes the application easier to extend without tightly coupling the interface to individual tool classes.
+
+## Undo and Redo
+
+Undo and redo are implemented using two stacks maintained by `PaintModel`.
+
+* The **undo stack** stores executed commands
+* The **redo stack** stores commands that have been undone
+
+When a command executes, it is added to the undo stack and the redo stack is cleared.
+
+When undo is triggered, the most recent command is reversed and transferred to the redo stack. Redo executes the command again and returns it to the undo stack.
+
+This allows drawing and editing operations to maintain consistent reversible behavior.
+
+## Clipboard System
+
+The application includes an internal clipboard for copying, cutting, and pasting drawable objects.
+
+Supported objects include:
+
+* Circle
+* Rectangle
+* Square
+* Triangle
+* Oval
+* Text
+* Polyline
+* Squiggle
+
+Copied objects are duplicated before being stored in the clipboard. Pasted shapes are translated to their new position and inserted using `PasteCommand`, allowing paste operations to also be undone and redone.
+
+## Tool System
+
+Each interaction mode is implemented as a dedicated tool class.
+
+### Shape Tools
+
+Shape tools use click-and-drag interaction and display a preview while the shape is being created.
+
+Examples include:
+
+* `CircleTool`
+* `RectangleTool`
+* `SquareTool`
+* `TriangleTool`
+* `OvalTool`
+
+### Freehand Tools
+
+* `SquiggleTool` creates continuous freehand drawings
+* `PolylineTool` creates connected line segments using multiple clicks
+
+### Editing Tools
+
+* `SelectMoveTool`
+* `CopyTool`
+* `CutTool`
+* `PasteTool`
+* `ClearCanvasTool`
+* `UndoTool`
+
+### Color and Style Tools
+
+* `PaintBucketTool`
+* `EyeDropperTool`
+* `TextTool`
 
 ## Keyboard Shortcuts
 
 ### Tool Shortcuts
 
-| Key | Tool |
-|---|---|
-| C | Circle |
-| R | Rectangle |
-| S | Square |
-| T | Triangle |
-| O | Oval |
-| Q | Squiggle |
-| L | Polyline |
-| P | Paint Bucket |
-| I | Eyedropper |
-| M | Select/Move |
-| X | Text |
+| Key | Tool          |
+| --- | ------------- |
+| `C` | Circle        |
+| `R` | Rectangle     |
+| `S` | Square        |
+| `T` | Triangle      |
+| `O` | Oval          |
+| `Q` | Squiggle      |
+| `L` | Polyline      |
+| `P` | Paint Bucket  |
+| `I` | Eyedropper    |
+| `M` | Select / Move |
+| `X` | Text          |
 
-### Edit Shortcuts
+### Editing Shortcuts
 
-| Shortcut | Action |
-|---|---|
-| Ctrl + C | Copy |
-| Ctrl + X | Cut |
-| Ctrl + V | Paste |
-| Ctrl + Z | Undo |
-| Ctrl + Y | Redo |
-| Delete | Clear canvas |
+| Shortcut   | Action       |
+| ---------- | ------------ |
+| `Ctrl + C` | Copy         |
+| `Ctrl + X` | Cut          |
+| `Ctrl + V` | Paste        |
+| `Ctrl + Z` | Undo         |
+| `Ctrl + Y` | Redo         |
+| `Delete`   | Clear canvas |
 
-## Technologies Used
+## Technologies
 
-- Java
-- JavaFX
-- Object-Oriented Programming
-- MVC architecture
-- Observer pattern
-- Command pattern
-- Factory pattern
-
-## How to Run
-
-1. Clone the repository:
-
-```bash
-git clone https://github.com/your-username/Microsoft-Paint-Application.git
-```
-
-2. Open the project in an IDE that supports JavaFX, such as IntelliJ IDEA or Eclipse.
-
-3. Make sure JavaFX is properly configured in your project settings.
-
-4. Run the `Paint.java` file to start the application.
-
-The main file is located at:
-
-```text
-src/main/java/ca/utoronto/utm/assignment2/paint/Paint.java
-```
-
-or by package path:
-
-```text
-ca.utoronto.utm.assignment2.paint.Paint
-```
+* Java
+* JavaFX
+* Object-Oriented Programming
+* MVC Architecture
+* Observer Pattern
+* Command Pattern
+* Factory Pattern
 
 ## Project Structure
 
@@ -123,7 +214,6 @@ src/main/java/ca/utoronto/utm/assignment2/
 │   ├── PaintPanel.java
 │   ├── Drawable.java
 │   ├── AbstractShapeDrawable.java
-│   ├── Point.java
 │   │
 │   ├── Circle.java
 │   ├── Rectangle.java
@@ -133,12 +223,6 @@ src/main/java/ca/utoronto/utm/assignment2/
 │   ├── Squiggle.java
 │   ├── Polyline.java
 │   ├── Text.java
-│   │
-│   ├── ShapeChooserPanel.java
-│   ├── ColorChooserPanel.java
-│   ├── ThicknessChooserPanel.java
-│   ├── FillStyleChooserPanel.java
-│   ├── EditToolPanel.java
 │   │
 │   ├── command/
 │   │   ├── Command.java
@@ -181,205 +265,45 @@ src/main/java/ca/utoronto/utm/assignment2/
 └── HelloController.java
 ```
 
-## How It Works
+## Running the Application
 
-The application is built around a central `PaintModel`, which stores all drawable objects, current drawing settings, selected shapes, clipboard contents, and undo/redo stacks.
+### 1. Clone the repository
 
-The `PaintPanel` observes the model and redraws the canvas whenever the model changes. User input is handled through different tool classes, such as `CircleTool`, `RectangleTool`, `SquiggleTool`, and `SelectMoveTool`.
+```bash
+git clone https://github.com/AshirAhmed1/Microsoft-Paint-Application.git
+```
 
-When a user performs an action, the selected tool updates the model. For actions that should support undo and redo, the application uses command objects such as `AddShapeCommand`, `MoveCommand`, `CutCommand`, and `RecolorCommand`.
+### 2. Open the project
 
-## Design Patterns Used
+Open the repository in a Java IDE with JavaFX support, such as:
 
-### MVC Architecture
+* IntelliJ IDEA
+* Eclipse
 
-The project separates the application into model, view, and controller-style responsibilities.
+### 3. Configure JavaFX
 
-- `PaintModel` stores the application state.
-- `View` builds the main interface and connects UI controls to model actions.
-- `PaintPanel` displays the canvas and delegates mouse input to the active tool.
+Make sure JavaFX is installed and properly configured in the project's runtime settings.
 
-### Observer Pattern
+### 4. Run the application
 
-`PaintModel` extends `Observable`, and `PaintPanel` observes it. Whenever the model changes, the panel is notified and the canvas is redrawn.
+Run:
 
-This keeps the visual display synchronized with the application state.
+```text
+src/main/java/ca/utoronto/utm/assignment2/paint/Paint.java
+```
 
-### Command Pattern
+or the corresponding package:
 
-The command pattern is used for actions that need undo and redo functionality.
-
-Examples include:
-
-- Adding a shape
-- Moving a shape
-- Cutting a shape
-- Pasting a shape
-- Clearing the canvas
-- Recoloring a shape
-- Changing fill style
-- Adding text
-
-Each command implements the `Command` interface and provides both `execute()` and `undo()` methods.
-
-### Factory Pattern
-
-`ToolFactory` creates the correct tool object based on the selected `ToolType`. This keeps tool creation centralized and makes it easier to add new tools later.
-
-## Main Classes
-
-### `Paint`
-
-The main entry point of the paint application. It launches JavaFX, creates the model, and initializes the main view.
-
-### `View`
-
-Builds the full application interface, including the canvas, tool panels, color panel, edit panel, menu bar, and keyboard shortcuts.
-
-### `PaintModel`
-
-Stores the core application data, including:
-
-- Drawn shapes
-- Preview shape
-- Current color
-- Current line thickness
-- Fill mode
-- Clipboard
-- Selected shape
-- Undo stack
-- Redo stack
-
-### `PaintPanel`
-
-The canvas where all drawings appear. It listens for mouse events and forwards them to the currently selected tool.
-
-### `Drawable`
-
-An interface implemented by all drawable objects. It requires shapes to support drawing, color changes, thickness changes, movement, and hit detection.
-
-### `AbstractShapeDrawable`
-
-A base class for drawable shapes. It stores shared properties such as color, line thickness, and fill state.
-
-## Supported Shapes
-
-### Circle
-
-Drawn from a center point and radius. Supports filled and outlined modes, hit detection, and movement.
-
-### Rectangle
-
-Drawn using a top-left point, width, and height. Supports fill mode, outline mode, selection, and translation.
-
-### Square
-
-Extends `Rectangle` while keeping width and height equal.
-
-### Triangle
-
-Drawn from a bottom-left point, base, side lengths, and calculated height.
-
-### Oval
-
-Drawn from a top-left point, width, and height. Uses oval-based hit detection.
-
-### Squiggle
-
-A freehand drawing made from a list of connected points.
-
-### Polyline
-
-A multi-segment line created from multiple user clicks. The polyline is finalized with a right-click.
-
-### Text
-
-Allows the user to click on the canvas and enter text through a dialog box.
-
-## Tools
-
-The application uses a separate class for each tool. Each tool handles mouse events differently depending on its purpose.
-
-### Shape Tools
-
-Shape tools use click-and-drag behavior. They show a preview while dragging and commit the final shape when the mouse is released.
-
-Examples:
-
-- `CircleTool`
-- `RectangleTool`
-- `SquareTool`
-- `TriangleTool`
-- `OvalTool`
-
-### Freehand Tools
-
-Freehand tools build drawings from many points.
-
-- `SquiggleTool` creates a continuous freehand line.
-- `PolylineTool` creates connected line segments from multiple clicks.
-
-### Editing Tools
-
-Editing tools interact with existing objects on the canvas.
-
-- `SelectMoveTool` selects and moves shapes.
-- `CopyTool` copies the selected shape.
-- `CutTool` removes a shape and stores it in the clipboard.
-- `PasteTool` places the clipboard shape onto the canvas.
-- `ClearCanvasTool` clears all shapes from the canvas.
-- `UndoTool` undoes the most recent command.
-
-### Color and Style Tools
-
-- `PaintBucketTool` recolors a clicked shape.
-- `EyeDropperTool` selects the color of a clicked shape.
-- `TextTool` adds text at the clicked location.
-
-## Undo and Redo System
-
-Undo and redo are handled using two stacks in `PaintModel`.
-
-- The undo stack stores executed commands.
-- The redo stack stores commands that were undone.
-
-When a command is executed, it is pushed onto the undo stack and the redo stack is cleared. When undo is triggered, the command is removed from the undo stack, reversed, and pushed onto the redo stack. Redo executes the command again and returns it to the undo stack.
-
-This system makes the application more reliable and keeps editing actions consistent.
-
-## Clipboard System
-
-The clipboard stores a copied version of a selected drawable object. The model includes helper methods to create copies of supported shape types, including:
-
-- Circle
-- Rectangle
-- Square
-- Triangle
-- Oval
-- Text
-- Polyline
-- Squiggle
-
-When pasted, the copied shape is translated to the requested location and added through a `PasteCommand`, which means paste actions can also be undone.
-
-## Possible Future Improvements
-
-- Add file saving and loading for drawings
-- Add image export support
-- Add resize handles for selected shapes
-- Improve triangle hit detection using exact geometric bounds
-- Add shape layering controls such as bring forward and send backward
-- Add redo as a canvas tool in addition to the edit panel shortcut
-- Add more advanced text editing options
-- Add eraser support
-- Add custom canvas sizes
+```text
+ca.utoronto.utm.assignment2.paint.Paint
+```
 
 ## Contributors
 
-- Ashir
-- Alex
-- Ahmed
+* Ashir
+* Alex
+* Ahmed
 
-## Notes
+## About
 
-This project was created as part of a JavaFX paint application assignment. It demonstrates object-oriented programming, GUI development, event handling, and the use of software design patterns in a larger application.
+This project was developed as part of a university software design course and demonstrates practical use of object-oriented programming, GUI development, event-driven programming, application architecture, and software design patterns in a larger Java application.
